@@ -20,6 +20,7 @@
 
 import { readFileSync } from "node:fs"
 import path from "node:path"
+import { isValidDateString } from "./date-validation"
 
 export type VerifiedReviewerStatus = "active" | "inactive" | "revoked"
 
@@ -57,19 +58,12 @@ function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0
 }
 
-/**
- * Rejects malformed dates rather than trusting whatever `new Date()`
- * happens to parse. Requires an ISO-8601-shaped date (YYYY-MM-DD prefix,
- * as produced by `.toISOString()`) that also parses to a real instant —
- * so a string like "June 2025" or "not a date" is rejected even though
- * `new Date("June 2025")` alone would not throw.
- */
-export function isValidDateString(value: unknown): value is string {
-  if (!isNonEmptyString(value)) return false
-  if (!/^\d{4}-\d{2}-\d{2}/.test(value)) return false
-  const parsed = new Date(value)
-  return !Number.isNaN(parsed.getTime())
-}
+// Issue #27 item 1: strict calendar-date validation now lives in
+// ./date-validation (it also rejects impossible calendar dates like
+// "2026-02-31" that JS's Date constructor would otherwise silently
+// normalize). Re-exported here unchanged so every existing import of
+// isValidDateString from this module keeps working.
+export { isValidDateString } from "./date-validation"
 
 export function validateVerifiedReviewer(record: VerifiedReviewer): { valid: boolean; errors: string[] } {
   const errors: string[] = []

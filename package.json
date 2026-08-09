@@ -10,6 +10,11 @@
     "start": "next start -p 3000",
     "content:snapshot": "node scripts/export-content-snapshot.mjs",
     "validate:articles": "tsx scripts/validate-articles.ts",
+    "validate:sources": "tsx scripts/validate-sources.ts",
+    "validate:claims": "tsx scripts/validate-claims.ts",
+    "validate:topics": "tsx scripts/validate-topics.ts",
+    "validate:evidence": "tsx scripts/validate-evidence.ts",
+    "audit:evidence-dependencies": "tsx scripts/audit-evidence-dependencies.ts",
     "test": "vitest run"
   },
   "dependencies": {

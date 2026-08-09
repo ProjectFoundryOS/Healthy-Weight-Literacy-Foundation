@@ -51,10 +51,12 @@ export default function MedicalReviewPage() {
       </p>
       <p>
         Every published article shows its real review status — including &ldquo;not yet reviewed&rdquo; — in a Content Review
-        Status section on the article itself, and in the same structured data search engines read. We do not display
-        or emit a review claim that isn&apos;t backed by an actual, recorded review of that exact version of the
-        article. We are auditing our published articles against this framework in stages; as reviews are completed,
-        the counts above and the affected articles will update to show the real reviewer, review type, and date.
+        Status section on the article itself. In the structured data the same article emits for search engines, an
+        actual, recorded review of that exact version adds a reviewer and review date; an article with no such review
+        simply omits those fields rather than asserting a &ldquo;not reviewed&rdquo; value. Either way, we never display or
+        emit a review claim that isn&apos;t backed by a real, recorded review. We are auditing our published articles
+        against this framework in stages; as reviews are completed, the counts above and the affected articles will
+        update to show the real reviewer, review type, and date.
       </p>
 
       <h2 id="what-gets-reviewed">What Gets Reviewed</h2>

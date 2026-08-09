@@ -136,3 +136,21 @@ describe("residual current-state overclaims removed (Issue #26)", () => {
     expect(medicalReview).toContain("stats.unreviewedCount")
   })
 })
+
+// Issue #27 item 2: Medical Review previously claimed an unreviewed
+// article's "not yet reviewed" status is shown "in the same structured
+// data search engines read." In reality, the JSON-LD an unreviewed
+// article emits (components/seo/article-schema.tsx) never encodes a
+// negative/no-review value — it simply omits reviewedBy/lastReviewed.
+// This test locks in the corrected, accurate description of that
+// behavior and catches a regression back to the inaccurate claim.
+describe("Medical Review's structured-data description is accurate (Issue #27 item 2)", () => {
+  it("no longer claims structured data displays a 'not yet reviewed' status", () => {
+    expect(medicalReview).not.toContain("including “not yet reviewed” — in a Content Review\n        Status section on the article itself, and in the same structured data")
+    expect(medicalReview).not.toMatch(/not yet reviewed.{0,400}same structured data/s)
+  })
+
+  it("accurately states that structured data omits reviewedBy/lastReviewed rather than asserting a negative value", () => {
+    expect(medicalReview).toMatch(/omits those fields rather than asserting a .*not reviewed.* value/)
+  })
+})
