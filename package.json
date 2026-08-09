@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/check-content-registry.mjs",
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start -p 3000",
-    "content:snapshot": "node scripts/export-content-snapshot.mjs"
+    "content:snapshot": "node scripts/export-content-snapshot.mjs",
+    "validate:articles": "tsx scripts/validate-articles.ts",
+    "test": "vitest run"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -49,7 +52,6 @@
     "embla-carousel-react": "latest",
     "framer-motion": "latest",
     "input-otp": "latest",
-    "isomorphic-dompurify": "^3.7.1",
     "lucide-react": "^0.454.0",
     "next": "16.0.10",
     "next-themes": "latest",
@@ -75,9 +77,13 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/turndown": "latest",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.0.10",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
+    "tsx": "^4.19.2",
     "tw-animate-css": "1.3.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.0.5"
   }
 }

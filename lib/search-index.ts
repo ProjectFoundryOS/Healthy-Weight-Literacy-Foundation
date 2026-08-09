@@ -1,25 +1,20 @@
-import { blogPosts, programs, resources } from "./mdx"
+// Server-only search index builder. Imports lib/content-registry.ts,
+// which reads the committed snapshot via node:fs — this module must only
+// ever be imported from server components/routes, never from a "use
+// client" component (see lib/search-filter.ts for the client-safe half).
 
-export interface SearchItem {
-  type: "blog" | "program" | "resource"
-  slug: string
-  title: string
-  description: string
-  tags: string[]
-  category: string
-  url: string
-}
+import { getBlogPosts } from "./content-registry"
+import { programs, resources } from "./mdx"
+import { filterSearchIndex, type SearchItem, type SearchResult } from "./search-filter"
 
-export interface SearchResult {
-  type: "blog" | "programs" | "resources"
-  slug: string
-  title: string
-  excerpt: string
-  tags: string[]
-}
+export type { SearchItem, SearchResult }
+export { filterSearchIndex }
 
 export function getSearchIndex(): SearchItem[] {
-  const blogItems: SearchItem[] = blogPosts.map((post) => ({
+  // Blog entries come from the same committed content registry that backs
+  // /blog and the sitemap (Issue #15/#23), so search can never disagree
+  // with the live corpus or surface stale/sample article metadata.
+  const blogItems: SearchItem[] = getBlogPosts().map((post) => ({
     type: "blog",
     slug: post.slug,
     title: post.title,
@@ -52,22 +47,7 @@ export function getSearchIndex(): SearchItem[] {
   return [...blogItems, ...programItems, ...resourceItems]
 }
 
+/** Server-only convenience wrapper: builds the index and filters it in one call. */
 export function searchContent(query: string): SearchResult[] {
-  const searchIndex = getSearchIndex()
-  const lowerQuery = query.toLowerCase()
-
-  const results = searchIndex.filter((item) => {
-    const titleMatch = item.title.toLowerCase().includes(lowerQuery)
-    const descriptionMatch = item.description.toLowerCase().includes(lowerQuery)
-    const tagMatch = item.tags.some((tag) => tag.toLowerCase().includes(lowerQuery))
-    return titleMatch || descriptionMatch || tagMatch
-  })
-
-  return results.map((item) => ({
-    type: item.type === "blog" ? "blog" : item.type === "program" ? "programs" : "resources",
-    slug: item.slug,
-    title: item.title,
-    excerpt: item.description,
-    tags: item.tags,
-  }))
+  return filterSearchIndex(getSearchIndex(), query)
 }

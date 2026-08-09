@@ -1,4 +1,4 @@
-import { getBlogPosts } from "../lib/supabase-blog"
+import { getBlogPosts } from "../lib/content-registry"
 
 const HTML_PATTERN = /<\/?[a-z][^>]*>/i
 const MARKDOWN_HEADING = /^#+ /m
@@ -14,9 +14,9 @@ interface ValidationResult {
 }
 
 async function validateArticles() {
-  console.log("🔍 Scanning all published articles...\n")
-  
-  const posts = await getBlogPosts()
+  console.log("🔍 Scanning the committed content registry...\n")
+
+  const posts = getBlogPosts()
   const results: ValidationResult[] = []
   
   for (const post of posts) {

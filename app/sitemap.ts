@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next"
 import { siteConfig } from "@/lib/seo"
-import { getBlogPosts } from "@/lib/supabase-blog"
+import { getBlogPosts } from "@/lib/content-registry"
 import { ROUTES } from "@/lib/routes"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -34,19 +34,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}${ROUTES.TERMS}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   ]
 
-  // Blog post dynamic routes
-  let blogRoutes: MetadataRoute.Sitemap = []
-  try {
-    const posts = await getBlogPosts()
-    blogRoutes = posts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.updated_at || post.published_at),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }))
-  } catch {
-    // Silently handle Supabase errors during build
-  }
+  // Blog post dynamic routes — sourced from the same committed content
+  // registry as the blog index/article routes/search (Issue #23). This is
+  // intentionally NOT wrapped in a try/catch that swallows the error: a
+  // broken or missing registry must fail the build, not silently produce a
+  // sitemap with no article URLs.
+  const posts = getBlogPosts()
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.updated_at || post.published_at),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }))
 
   return [...staticRoutes, ...blogRoutes]
 }
