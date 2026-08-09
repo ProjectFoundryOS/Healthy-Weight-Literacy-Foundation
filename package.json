@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start -p 3000"
+    "start": "next start -p 3000",
+    "content:snapshot": "node scripts/export-content-snapshot.mjs"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
