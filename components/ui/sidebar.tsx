@@ -606,10 +606,12 @@ function SidebarMenuSkeleton({
 }: React.ComponentProps<'div'> & {
   showIcon?: boolean
 }) {
-  // Random width between 50 to 90%.
-  const width = React.useMemo(() => {
-    return `${Math.floor(Math.random() * 40) + 50}%`
-  }, [])
+  // Random width between 50 to 90%, generated once per instance. A lazy
+  // useState initializer (rather than useMemo) is the correct primitive
+  // here: React guarantees it runs exactly once per mount, whereas useMemo
+  // callbacks are expected to be pure/repeatable and must not call an
+  // impure function like Math.random().
+  const [width] = React.useState(() => `${Math.floor(Math.random() * 40) + 50}%`)
 
   return (
     <div

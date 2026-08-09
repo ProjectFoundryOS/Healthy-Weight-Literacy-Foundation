@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react"
 import { cn } from "@/lib/utils"
 
 interface TOCItem {
@@ -13,19 +13,42 @@ interface TableOfContentsProps {
   className?: string
 }
 
+const EMPTY_HEADINGS: TOCItem[] = []
+
+function readHeadingsFromDom(): TOCItem[] {
+  const elements = document.querySelectorAll("article h2, article h3")
+  return Array.from(elements).map((element) => ({
+    id: element.id,
+    text: element.textContent || "",
+    level: element.tagName === "H2" ? 2 : 3,
+  }))
+}
+
 export function TableOfContents({ className }: TableOfContentsProps) {
-  const [headings, setHeadings] = useState<TOCItem[]>([])
   const [activeId, setActiveId] = useState<string>("")
 
-  useEffect(() => {
-    const elements = document.querySelectorAll("article h2, article h3")
-    const items: TOCItem[] = Array.from(elements).map((element) => ({
-      id: element.id,
-      text: element.textContent || "",
-      level: element.tagName === "H2" ? 2 : 3,
-    }))
-    setHeadings(items)
+  // The article body is rendered by a sibling component, so the set of
+  // headings is external state from this component's point of view — it
+  // only changes once, when that sibling's markup lands in the DOM.
+  // useSyncExternalStore reads it without ever calling setState from
+  // inside an effect body: React re-renders this component itself once
+  // the client snapshot differs from the (empty) server snapshot.
+  const headingsRef = useRef<TOCItem[] | null>(null)
+  const subscribe = useCallback(() => () => {}, [])
+  const getSnapshot = useCallback(() => {
+    if (headingsRef.current === null) {
+      headingsRef.current = readHeadingsFromDom()
+    }
+    return headingsRef.current
+  }, [])
+  const getServerSnapshot = useCallback(() => EMPTY_HEADINGS, [])
 
+  const headings = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+
+  useEffect(() => {
+    if (headings.length === 0) return
+
+    const elements = document.querySelectorAll("article h2, article h3")
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -39,7 +62,7 @@ export function TableOfContents({ className }: TableOfContentsProps) {
 
     elements.forEach((element) => observer.observe(element))
     return () => observer.disconnect()
-  }, [])
+  }, [headings])
 
   if (headings.length === 0) return null
 

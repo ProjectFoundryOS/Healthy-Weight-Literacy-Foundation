@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Section } from "@/components/layout/section"
 import { Container } from "@/components/layout/container"
 import { BookOpen, Users, GraduationCap, ArrowRight } from "lucide-react"
-import { getBlogPosts } from "@/lib/supabase-blog"
+import { getBlogPosts } from "@/lib/content-registry"
 import { ROUTES, dynamicRoutes } from "@/lib/routes"
 
 export default async function HomePage() {

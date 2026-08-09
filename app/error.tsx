@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { Section } from "@/components/layout/section"
 import { Container } from "@/components/layout/container"
 import { Button } from "@/components/ui/button"
@@ -13,6 +14,8 @@ export default function Error({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  const router = useRouter()
+
   useEffect(() => {
     console.error(error)
   }, [error])
@@ -34,7 +37,7 @@ export default function Error({
           <Button size="lg" onClick={() => reset()}>
             Try Again
           </Button>
-          <Button variant="outline" size="lg" onClick={() => (window.location.href = "/")}>
+          <Button variant="outline" size="lg" onClick={() => router.push("/")}>
             Return Home
           </Button>
         </div>

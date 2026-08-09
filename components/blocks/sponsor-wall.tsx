@@ -17,7 +17,7 @@ export function SponsorWall() {
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-2xl font-bold tracking-tight text-secondary sm:text-3xl">Our Partners & Supporters</h2>
-          <p className="mt-3 text-muted-foreground">Together, we're making a difference in community health.</p>
+          <p className="mt-3 text-muted-foreground">Together, we&apos;re making a difference in community health.</p>
         </div>
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
           {sponsors.map((sponsor) => (

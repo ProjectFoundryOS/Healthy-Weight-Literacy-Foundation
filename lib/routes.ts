@@ -16,7 +16,6 @@ export const ROUTES = {
   
   // Content pages
   BLOG: "/blog",
-  RESOURCES: "/resources",
   EVENTS: "/events",
   
   // Get Involved
@@ -50,7 +49,6 @@ export const ROUTES = {
 export const dynamicRoutes = {
   blogPost: (slug: string) => `/blog/${slug}`,
   program: (slug: string) => `/programs/${slug}`,
-  resource: (slug: string) => `/resources/${slug}`,
 }
 
 /**

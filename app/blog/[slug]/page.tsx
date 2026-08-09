@@ -8,55 +8,19 @@ import { Container } from "@/components/layout/container"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { getBlogPost, getBlogPosts } from "@/lib/supabase-blog"
+import { getBlogPost, getBlogPosts } from "@/lib/content-registry"
 import { generatePageMetadata, siteConfig } from "@/lib/seo"
 import { formatDate } from "@/lib/utils"
 import { ArticleSchema } from "@/components/seo/article-schema"
 import { ArticleRenderer } from "@/components/content/article-renderer"
-import DOMPurify from "isomorphic-dompurify"
 import { Clock } from "lucide-react"
 
-const HTML_PATTERN = /<\/?[a-z][^>]*>/i
-
-const ALLOWED_TAGS = [
-  "p", "br", "strong", "em", "b", "i", "u", "s",
-  "h1", "h2", "h3", "h4", "h5", "h6",
-  "ul", "ol", "li", "blockquote", "pre", "code",
-  "a", "img", "figure", "figcaption",
-  "table", "thead", "tbody", "tr", "th", "td",
-  "hr", "sup", "sub", "span", "div",
-]
-const ALLOWED_ATTR = ["href", "src", "alt", "title", "class", "id", "target", "rel"]
-
-function prepareContent(raw: string, slug: string): { content: string; isHtml: boolean } {
-  if (!raw) {
-    console.error(`[v0] Article ${slug}: empty content`)
-    return { content: "", isHtml: false }
-  }
-
-  const isHtml = HTML_PATTERN.test(raw)
-  const preview = raw.slice(0, 100).replace(/\n/g, " ")
-  console.log(`[v0] Article ${slug}: format=${isHtml ? "HTML" : "Markdown"}, length=${raw.length}, preview="${preview}..."`)
-
-  if (isHtml) {
-    try {
-      const sanitized = DOMPurify.sanitize(raw, { ALLOWED_TAGS, ALLOWED_ATTR })
-      console.log(`[v0] Article ${slug}: sanitized HTML length=${sanitized.length} (original=${raw.length})`)
-      
-      if (sanitized.length === 0 && raw.length > 0) {
-        console.error(`[v0] Article ${slug}: DOMPurify stripped all content! Using raw HTML.`)
-        return { content: raw, isHtml: true }
-      }
-      
-      return { content: sanitized, isHtml: true }
-    } catch (err) {
-      console.error(`[v0] Article ${slug}: DOMPurify error:`, err)
-      return { content: raw, isHtml: true }
-    }
-  }
-
-  return { content: raw, isHtml: false }
-}
+// Legacy HTML rows are normalized to Markdown once, at content-registry
+// load time (see lib/content-normalize.ts). By the time content reaches
+// this page it is always Markdown, so no jsdom-backed sanitizer runs in
+// this server route (Issue #24). react-markdown does not execute raw HTML
+// embedded in its input without the (unused) rehype-raw plugin, so this
+// path has no DOM-parsing dependency at request time.
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -90,7 +54,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const allPosts = await getBlogPosts()
   const relatedPosts = allPosts.filter((p) => p.slug !== post.slug && p.category === post.category).slice(0, 2)
-  const { content, isHtml } = prepareContent(post.content, post.slug)
 
   return (
     <>
@@ -149,7 +112,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               />
 
               {/* Article Content */}
-              <ArticleRenderer content={content} isHtml={isHtml} />
+              <ArticleRenderer content={post.content} />
 
               {/* Related Posts */}
               {relatedPosts.length > 0 && (

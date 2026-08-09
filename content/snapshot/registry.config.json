@@ -1,0 +1,4 @@
+{
+  "minExpectedArticles": 30,
+  "notes": "Floor guard for the committed article registry (Issue #23). The Stage #14 snapshot taken 2026-08-09 reconciled to exactly 34 published articles (matching the public /blog card count exactly). The historical '39' count is the total row count in blog_posts including 5 currently-unpublished telehealth/prescription rows. This floor (30) sits below 34 so ordinary single-article unpublish/retire actions do not fail the build, while a large accidental drop (e.g. a broken export or a mass-unpublish) still fails it loudly."
+}

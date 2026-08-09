@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { generatePageMetadata } from "@/lib/seo"
 import { BookOpen, Heart, Activity, Brain, ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { getBlogPosts } from "@/lib/supabase-blog"
+import { getBlogPosts } from "@/lib/content-registry"
 import { ROUTES, dynamicRoutes } from "@/lib/routes"
 
 export const metadata: Metadata = generatePageMetadata({

@@ -4,7 +4,7 @@ import { Section } from "@/components/layout/section"
 import { Container } from "@/components/layout/container"
 import { BlogCard } from "@/components/blocks/blog-card"
 import { generatePageMetadata } from "@/lib/seo"
-import { getBlogPosts } from "@/lib/supabase-blog"
+import { getBlogPosts } from "@/lib/content-registry"
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Educational Articles",
