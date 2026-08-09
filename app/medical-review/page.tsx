@@ -2,11 +2,12 @@ import type { Metadata } from "next"
 import { generatePageMetadata } from "@/lib/seo"
 import { PolicyLayout } from "@/components/layout/policy-layout"
 import type { TocItem } from "@/components/layout/policy-layout"
+import { getReviewRegistryStats } from "@/lib/review-stats"
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Medical Review Process | WeightLiteracy.org",
   description:
-    "How WeightLiteracy.org reviews clinical content before publication and keeps it current — including what review covers, what it does not, and how review frequency is assigned.",
+    "Our review framework for clinical health content — what editorial, clinical-evidence, and licensed medical review each mean, our current review status, and what a completed review represents.",
   path: "/medical-review",
 })
 
@@ -20,31 +21,40 @@ const toc: TocItem[] = [
 ]
 
 export default function MedicalReviewPage() {
+  const stats = getReviewRegistryStats()
+
   return (
     <PolicyLayout
       title="Medical Review Process"
-      lastUpdated="June 2025"
+      lastUpdated="August 2026"
       toc={toc}
     >
       <p>
         The Healthy Weight Literacy Foundation publishes content that covers medications, metabolic conditions, and
         other topics where accuracy has real consequences for readers. This page describes our review framework —
-        what each type of review means, what it evaluates, and how review status is shown to readers — and states our
-        actual current status plainly.
+        what each type of review means and what it evaluates when performed — and separately states our actual
+        current review status, computed directly from our review records, so this page can never drift out of sync
+        with what has actually been reviewed.
       </p>
 
       <h2 id="current-status">Current Status</h2>
       <p>
         Our editorial team does not currently include licensed medical professionals, and we do not have a licensed
-        clinical review program in place today. No article in our published corpus has yet completed a documented
-        clinical-evidence or licensed medical review under the process described below.
+        clinical review program in place today.
+      </p>
+      <p>
+        Of {stats.publishedArticleCount} published articles: {stats.licensedMedicalReviewedCount} have completed a
+        licensed medical review, {stats.clinicalEvidenceReviewedCount} have completed a clinical-evidence review,{" "}
+        {stats.editoriallyReviewedCount} have completed an editorial review, and {stats.unreviewedCount} have not yet
+        completed any documented review under this framework. These counts are computed from our review records
+        every time this page is generated, not written by hand.
       </p>
       <p>
         Every published article shows its real review status — including &ldquo;not yet reviewed&rdquo; — in a Content Review
         Status section on the article itself, and in the same structured data search engines read. We do not display
         or emit a review claim that isn&apos;t backed by an actual, recorded review of that exact version of the
         article. We are auditing our published articles against this framework in stages; as reviews are completed,
-        the affected articles will show the real reviewer, review type, and date.
+        the counts above and the affected articles will update to show the real reviewer, review type, and date.
       </p>
 
       <h2 id="what-gets-reviewed">What Gets Reviewed</h2>

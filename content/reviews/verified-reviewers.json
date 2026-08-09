@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "notes": "Stage 2A closure (Issue #26) verified-reviewer provenance registry. Zero entries is the truthful current state. A licensed_medical_review record's reviewer_id must resolve to an active, fully-provenanced entry here — a review record can no longer self-assert its own reviewer's identity or credentials inline. This file must never contain an entry that is not a real, actually-verified human reviewer.",
+  "reviewers": []
+}

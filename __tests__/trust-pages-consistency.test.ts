@@ -27,9 +27,9 @@ describe("trust/policy page consistency (Issue #15)", () => {
     expect(medicalReview).toContain(SHARED_TRUTH)
   })
 
-  it("Medical Review states its current status plainly, including a zero-reviews admission", () => {
+  it("Medical Review states its current status plainly, via a data-driven, non-hand-written count", () => {
     expect(medicalReview).toContain("Current Status")
-    expect(medicalReview.toLowerCase()).toMatch(/no article in our published corpus has yet completed/)
+    expect(medicalReview).toContain("stats.unreviewedCount")
   })
 
   it("Editorial Policy no longer claims review dates are unconditionally shown in an article footer", () => {
@@ -78,5 +78,61 @@ describe("trust/policy page consistency (Issue #15)", () => {
 
   it("Medical Disclaimer remains a liability disclaimer only — it never claims a review process occurred", () => {
     expect(medicalDisclaimer.toLowerCase()).not.toMatch(/reviewed by|medical review process|licensed reviewer/)
+  })
+})
+
+// Issue #26 closure: Stage 2A materially rewrote Medical Review, Editorial
+// Policy, and How We Create Content, but all three still displayed the
+// stale `lastUpdated="June 2025"` value from before those rewrites. These
+// tests pin the corrected date and prevent a future edit to these three
+// specific files from silently reintroducing the known-stale value —
+// this is intentionally narrow to these three pages, not a blanket rule
+// requiring every page's lastUpdated to track git history.
+describe("stale trust-page update dates (Issue #26)", () => {
+  const materiallyRevisedPages = {
+    "editorial-policy": editorialPolicy,
+    "medical-review": medicalReview,
+    "how-we-create-content": howWeCreateContent,
+  }
+
+  for (const [name, text] of Object.entries(materiallyRevisedPages)) {
+    it(`${name} no longer displays the known-stale "June 2025" lastUpdated value`, () => {
+      expect(text).not.toContain('lastUpdated="June 2025"')
+    })
+
+    it(`${name} displays a truthful Stage 2A/closure update date`, () => {
+      expect(text).toContain('lastUpdated="August 2026"')
+    })
+  }
+})
+
+// Issue #26 closure: residual current-state overclaims. Stage 2A already
+// distinguished "current verified state" from "V5 standard/target" in
+// several places, but a few corpus-wide absolutes and one contradictory
+// metadata description survived. These tests lock in the corrected text.
+describe("residual current-state overclaims removed (Issue #26)", () => {
+  it("Medical Review's metadata no longer implies an already-operating pre-publication review gate", () => {
+    expect(medicalReview).not.toContain(
+      "How WeightLiteracy.org reviews clinical content before publication and keeps it current",
+    )
+  })
+
+  it("How We Create Content frames corpus-wide sourcing claims as the V5 standard, not an unconditional current fact", () => {
+    expect(howWeCreateContent).toContain("Our V5 editorial standard")
+    expect(howWeCreateContent).not.toMatch(/^\s*Every factual claim in a published article is either:/m)
+  })
+
+  it("How We Create Content names a specific, concrete example of the legacy corpus not yet meeting the sourcing standard", () => {
+    expect(howWeCreateContent.toLowerCase()).toMatch(/set point theory/)
+  })
+
+  it("Editorial Policy frames medical-claims requirements as the V5 standard being audited against, not a completed fact", () => {
+    expect(editorialPolicy).toContain("Our V5 editorial standard requires")
+    expect(editorialPolicy.toLowerCase()).toMatch(/actively\s+auditing\s+our\s+existing\s+published\s+corpus/)
+  })
+
+  it("Medical Review's current status is computed from the real registries, not a hand-written sentence", () => {
+    expect(medicalReview).toContain("getReviewRegistryStats")
+    expect(medicalReview).toContain("stats.unreviewedCount")
   })
 })

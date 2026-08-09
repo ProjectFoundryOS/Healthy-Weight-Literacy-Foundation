@@ -26,7 +26,7 @@ export default function HowWeCreateContentPage() {
   return (
     <PolicyLayout
       title="How We Create Content"
-      lastUpdated="June 2025"
+      lastUpdated="August 2026"
       toc={toc}
     >
       <p>
@@ -65,7 +65,10 @@ export default function HowWeCreateContentPage() {
       </p>
 
       <h2 id="sourcing-standards">Sourcing Standards</h2>
-      <p>Every factual claim in a published article is either:</p>
+      <p>
+        Our V5 editorial standard, applied to new and revised content, is that every factual claim in a published
+        article is either:
+      </p>
       <ul>
         <li>
           Attributed to a named published source inline — a clinical trial, FDA document, peer-reviewed journal
@@ -74,16 +77,23 @@ export default function HowWeCreateContentPage() {
         <li>Stated as general medical consensus and qualified accordingly</li>
       </ul>
       <p>
-        We do not publish specific statistics, outcome figures, or mechanistic claims without inline attribution. If a
-        claim cannot be sourced, it is generalized or removed.
+        Under this standard, we do not publish new or revised content containing specific statistics, outcome
+        figures, or mechanistic claims without inline attribution. If a claim cannot be sourced, it is generalized or
+        removed.
       </p>
       <p>
         Our standard is that sources are listed at the end of every clinical article, following a hierarchy:
         peer-reviewed primary research, systematic reviews, FDA prescribing information and regulatory documents,
         major health authority publications. Manufacturer materials, press releases, and secondary aggregators are
-        not used as primary sources. As of this stage, we are auditing our published corpus against this standard
-        (see Current Status below) and not every currently published article yet has a structured source list that
-        meets it — we are not going to claim otherwise.
+        not used as primary sources.
+      </p>
+      <p>
+        This is the standard against which we are actively auditing our existing published corpus — it is not yet
+        true of every currently published article. For example, our Set Point Theory article currently states a
+        specific defended-weight range without inline claim-level attribution, backed only by a generic source list
+        further down the page. We are not going to claim our legacy corpus already meets this standard, and we will
+        not represent an individual article as meeting it until it actually does (see Current Status on our{" "}
+        <a href="/medical-review">Medical Review Process</a> page).
       </p>
 
       <h2 id="the-review-process">The Review Process</h2>

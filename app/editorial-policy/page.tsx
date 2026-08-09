@@ -24,7 +24,7 @@ export default function EditorialPolicyPage() {
   return (
     <PolicyLayout
       title="Editorial Policy"
-      lastUpdated="June 2025"
+      lastUpdated="August 2026"
       toc={toc}
     >
       <p>
@@ -87,7 +87,7 @@ export default function EditorialPolicyPage() {
       </ul>
 
       <h2 id="medical-claims">How We Handle Medical Claims</h2>
-      <p>We treat medical claim accuracy as the highest editorial priority.</p>
+      <p>We treat medical claim accuracy as the highest editorial priority. Our V5 editorial standard requires that:</p>
       <ul>
         <li>
           Claims about medication or intervention efficacy are attributed to named published sources (clinical trials,
@@ -107,6 +107,12 @@ export default function EditorialPolicyPage() {
       </ul>
       <p>
         When evidence is limited or conflicting, we say so clearly rather than presenting false certainty.
+      </p>
+      <p>
+        This is a requirement for new and revised content, and the standard we are actively auditing our existing
+        published corpus against — not a claim that every currently published article already meets it. See{" "}
+        <a href="/medical-review">Medical Review Process</a> for our current, data-derived review status, and{" "}
+        <a href="/how-we-create-content">How We Create Content</a> for specific known gaps we are remediating.
       </p>
 
       <h2 id="corrections">Corrections Policy</h2>
