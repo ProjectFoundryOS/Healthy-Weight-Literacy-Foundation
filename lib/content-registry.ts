@@ -167,17 +167,33 @@ function readManifest(): Manifest {
 }
 
 let cachedPosts: BlogPost[] | null = null
+let cachedManifest: Manifest | null = null
 
 function loadRegistry(): BlogPost[] {
   if (cachedPosts) return cachedPosts
 
   const config = readRegistryConfig()
   const manifest = readManifest()
+  cachedManifest = manifest
 
   const readArticleFile = (slug: string) => readFileSync(path.join(ARTICLES_DIR, `${slug}.json`), "utf8")
 
   cachedPosts = buildRegistryFromManifest(manifest, readArticleFile, config)
   return cachedPosts
+}
+
+/**
+ * The Stage #14 manifest hash for a slug — the same sha256 already used to
+ * verify snapshot integrity (Issue #23), reused here as the article
+ * revision identifier for the Stage 2A review registry (Issue #15). A
+ * review record is only valid evidence about the exact content it names;
+ * this lets review lookups detect when an article's committed content has
+ * changed since a review was recorded.
+ */
+export function getRevisionHash(slug: string): string | null {
+  loadRegistry() // ensures cachedManifest is populated (and integrity-checked)
+  const entry = cachedManifest?.articles.find((a) => a.slug === slug)
+  return entry?.sha256 ?? null
 }
 
 export function getBlogPosts(): BlogPost[] {

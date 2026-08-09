@@ -11,6 +11,7 @@ export const metadata: Metadata = generatePageMetadata({
 })
 
 const toc: TocItem[] = [
+  { id: "current-status", label: "Current Status" },
   { id: "what-gets-reviewed", label: "What Gets Reviewed" },
   { id: "what-review-covers", label: "What Review Covers" },
   { id: "what-review-does-not-cover", label: "What Review Does Not Cover" },
@@ -27,20 +28,35 @@ export default function MedicalReviewPage() {
     >
       <p>
         The Healthy Weight Literacy Foundation publishes content that covers medications, metabolic conditions, and
-        other topics where accuracy has real consequences for readers. This page describes
-        how that content is reviewed before publication and how it is kept current after publication.
+        other topics where accuracy has real consequences for readers. This page describes our review framework —
+        what each type of review means, what it evaluates, and how review status is shown to readers — and states our
+        actual current status plainly.
+      </p>
+
+      <h2 id="current-status">Current Status</h2>
+      <p>
+        Our editorial team does not currently include licensed medical professionals, and we do not have a licensed
+        clinical review program in place today. No article in our published corpus has yet completed a documented
+        clinical-evidence or licensed medical review under the process described below.
+      </p>
+      <p>
+        Every published article shows its real review status — including &ldquo;not yet reviewed&rdquo; — in a Content Review
+        Status section on the article itself, and in the same structured data search engines read. We do not display
+        or emit a review claim that isn&apos;t backed by an actual, recorded review of that exact version of the
+        article. We are auditing our published articles against this framework in stages; as reviews are completed,
+        the affected articles will show the real reviewer, review type, and date.
       </p>
 
       <h2 id="what-gets-reviewed">What Gets Reviewed</h2>
       <p>
-        Not all content carries the same medical risk. We categorize our articles and apply review requirements
-        accordingly.
+        Not all content carries the same medical risk. This is how we categorize articles and the review depth each
+        category is intended to receive once reviewed under this framework.
       </p>
       <p>
         <strong>Clinical content</strong> — articles covering specific medications, dosing, side effects,
-        contraindications, or clinical outcomes — receives the most rigorous review process. This includes all GLP-1
-        medication articles, compound pharmacy guidance, metabolic health content, and any article making specific
-        claims about medication efficacy or safety.
+        contraindications, or clinical outcomes — is intended to receive the most rigorous review. This includes all
+        GLP-1 medication articles, compound pharmacy guidance, metabolic health content, and any article making
+        specific claims about medication efficacy or safety.
       </p>
       <p>
         <strong>Patient guidance content</strong> — articles covering what to ask a provider, how to interpret a
@@ -54,7 +70,7 @@ export default function MedicalReviewPage() {
       </p>
 
       <h2 id="what-review-covers">What Review Covers</h2>
-      <p>Medical review for clinical content evaluates:</p>
+      <p>When a clinical-evidence or licensed medical review is performed on an article, it evaluates:</p>
       <p>
         <strong>Claim accuracy</strong> — Are the specific claims made in the article consistent with current
         published evidence? Are trial results cited correctly? Are mechanism descriptions accurate?
@@ -98,18 +114,20 @@ export default function MedicalReviewPage() {
 
       <h2 id="review-frequency">Review Frequency</h2>
       <p>
-        Published articles are assigned a review schedule based on how quickly the relevant medical landscape is
-        likely to change. Articles covering FDA-approved medications and clinical trial evidence are reviewed on an
-        annual basis at minimum. Articles covering areas of active regulatory or policy change — including drug access
-        and compound pharmacy rules — are reviewed more frequently.
+        Once an article has completed its first clinical-evidence or licensed medical review, our target is to
+        re-review it based on how quickly the relevant medical landscape is likely to change: at least annually for
+        articles covering FDA-approved medications and clinical trial evidence, and more frequently for articles
+        covering areas of active regulatory or policy change, such as drug access and compound pharmacy rules.
       </p>
       <p>
         When a significant development occurs in a covered area — a new FDA warning, a major trial publication, a
-        guideline update — relevant articles are flagged for out-of-cycle review regardless of their scheduled date.
+        guideline update — the relevant articles are intended to be flagged for out-of-cycle review regardless of
+        their scheduled date.
       </p>
       <p>
-        The review date shown in each article footer reflects the most recent medical review, distinct from any
-        editorial updates made to the article for clarity or accuracy.
+        Any review date shown on an article reflects an actual completed clinical-evidence or licensed medical
+        review of that exact version of the article, and is always distinct from the article&apos;s content-update
+        date. An article that has not completed a review shows no review date.
       </p>
 
       <h2 id="our-standard">Our Standard</h2>

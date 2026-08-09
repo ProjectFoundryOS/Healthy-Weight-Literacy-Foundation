@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "notes": "Stage 2A (Issue #15) review registry. Zero entries is the truthful current state: no article in the 34-article corpus has yet completed a documented editorial, clinical-evidence, or licensed-medical review under the V5 process. Issue #17 (legacy article audit) will add real, evidenced records here as reviews actually occur — this file must never be populated with a record that does not correspond to a review that actually happened.",
+  "reviews": []
+}

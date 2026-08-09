@@ -130,26 +130,34 @@ export default function EditorialPolicyPage() {
         revised.
       </p>
       <p>
-        We assign each published article a review date based on how quickly the underlying information is likely to
-        change:
+        Every article displays a truthful, distinct &ldquo;Content last updated&rdquo; date under its Content Review Status
+        section — that date reflects an editorial content change, not a claim that any evidence or clinical review
+        occurred. Where an article has completed a documented editorial, evidence, or licensed medical review, that
+        review type, reviewer, and date are shown in the same section. An article that has not yet completed one of
+        those reviews says so plainly rather than displaying an unsupported review claim.
+      </p>
+      <p>
+        Once an article has completed evidence or licensed medical review, our target re-review cadence depends on
+        how quickly the underlying information is likely to change:
       </p>
       <ul>
         <li>
-          Articles covering medication mechanisms and chronic disease biology are reviewed every 24 months
+          Articles covering medication mechanisms and chronic disease biology: every 24 months
         </li>
         <li>
-          Articles covering medications, clinical outcomes, and patient guidance are reviewed every 12 months
+          Articles covering medications, clinical outcomes, and patient guidance: every 12 months
         </li>
         <li>
-          Articles covering drug access and regulatory developments are reviewed every 3 months
+          Articles covering drug access and regulatory developments: every 3 months
         </li>
         <li>
-          Articles covering scam alerts, FDA actions, and regulatory developments are reviewed monthly
+          Articles covering scam alerts, FDA actions, and regulatory developments: monthly
         </li>
       </ul>
       <p>
-        Review dates are shown in the article footer. Articles that have passed their review date are flagged
-        internally for update before continued promotion.
+        As of this stage, our published corpus is being audited article by article against this standard (see our{" "}
+        <a href="/medical-review">Medical Review Process</a> page); an article that has not yet been through that
+        audit will show no review date, not an assumed one.
       </p>
 
       <h2 id="independence">Independence Statement</h2>

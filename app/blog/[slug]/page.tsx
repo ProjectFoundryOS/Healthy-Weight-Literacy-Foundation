@@ -13,6 +13,7 @@ import { generatePageMetadata, siteConfig } from "@/lib/seo"
 import { formatDate } from "@/lib/utils"
 import { ArticleSchema } from "@/components/seo/article-schema"
 import { ArticleRenderer } from "@/components/content/article-renderer"
+import { ArticleReviewStatus } from "@/components/content/article-review-status"
 import { Clock } from "lucide-react"
 
 // Legacy HTML rows are normalized to Markdown once, at content-registry
@@ -64,6 +65,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         publishedAt={post.published_at}
         updatedAt={post.updated_at ?? undefined}
         category={post.category}
+        author={post.author}
       />
 
       <PageHeader title={post.title} breadcrumbs={[{ label: "Blog", href: "/blog" }, { label: post.title }]}>
@@ -170,6 +172,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   {post.author_bio && (
                     <p className="text-sm text-muted-foreground">{post.author_bio}</p>
                   )}
+                </CardContent>
+              </Card>
+
+              {/* Review Status */}
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-bold text-secondary mb-3">Content Review Status</h3>
+                  <ArticleReviewStatus slug={post.slug} contentUpdatedAt={post.updated_at || post.published_at} />
                 </CardContent>
               </Card>
 

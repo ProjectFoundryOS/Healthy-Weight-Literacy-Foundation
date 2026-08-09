@@ -182,6 +182,33 @@ export default function AboutPage() {
           </div>
         </Container>
       </Section>
+
+      {/* Who Reviews Our Content */}
+      <Section>
+        <Container size="sm">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl mb-6">
+              Who Reviews Our Content
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Our editorial team does not currently include licensed medical professionals, and we do not have a
+              licensed clinician review program in place today. Articles are researched and edited by our editorial
+              team, with AI tools assisting with drafting and research support, and are evaluated against published
+              clinical sources rather than independent clinical expertise. If and when a specific article completes
+              a documented evidence review or an actual review by a verified, licensed reviewer, that is shown on the
+              article itself — see our{" "}
+              <a href="/medical-review" className="text-primary underline">
+                Medical Review Process
+              </a>{" "}
+              page for what each type of review does and does not mean, and{" "}
+              <a href="/how-we-create-content" className="text-primary underline">
+                How We Create Content
+              </a>{" "}
+              for how AI tools are used in our editorial process.
+            </p>
+          </div>
+        </Container>
+      </Section>
     </>
   )
 }

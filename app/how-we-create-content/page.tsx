@@ -78,14 +78,22 @@ export default function HowWeCreateContentPage() {
         claim cannot be sourced, it is generalized or removed.
       </p>
       <p>
-        Sources are listed at the end of every clinical article. Source selection follows a
-        hierarchy: peer-reviewed primary research, systematic reviews, FDA prescribing information and regulatory
-        documents, major health authority publications. Manufacturer materials, press releases, and secondary
-        aggregators are not used as primary sources.
+        Our standard is that sources are listed at the end of every clinical article, following a hierarchy:
+        peer-reviewed primary research, systematic reviews, FDA prescribing information and regulatory documents,
+        major health authority publications. Manufacturer materials, press releases, and secondary aggregators are
+        not used as primary sources. As of this stage, we are auditing our published corpus against this standard
+        (see Current Status below) and not every currently published article yet has a structured source list that
+        meets it — we are not going to claim otherwise.
       </p>
 
       <h2 id="the-review-process">The Review Process</h2>
-      <p>Every article passes through multiple review stages before publication.</p>
+      <p>
+        This is the review process we apply, and the process our published corpus is being progressively audited
+        against. It has three intended stages, described below. Not every currently published article has completed
+        all three — see{" "}
+        <a href="/medical-review">Medical Review Process</a> for the real, current review status framework, and each
+        article&apos;s own Content Review Status section for that article&apos;s actual status.
+      </p>
       <p>
         <strong>Editorial review</strong> covers structure, clarity, tone, and adherence to the brief. Reviewers
         check that the article does not overstate evidence, does not present uncertain findings as established fact,
@@ -93,9 +101,11 @@ export default function HowWeCreateContentPage() {
         decision.
       </p>
       <p>
-        <strong>Medical review</strong> for clinical content covers claim accuracy, source quality, contraindication
-        completeness, harm risk, and appropriate hedging. The specific scope of medical review is described on our{" "}
-        <a href="/medical-review">Medical Review Process</a> page.
+        <strong>Clinical-evidence / medical review</strong> for clinical content covers claim accuracy, source
+        quality, contraindication completeness, harm risk, and appropriate hedging. This requires either a documented
+        evidence review or, for a &ldquo;licensed medical review&rdquo; claim specifically, a real, verified, credentialed human
+        reviewer — never an assumption based on category or an AI audit. The specific scope of this review is
+        described on our <a href="/medical-review">Medical Review Process</a> page.
       </p>
       <p>
         <strong>Compliance review</strong> checks for absolute claims that should be hedged, statistics without
@@ -103,8 +113,9 @@ export default function HowWeCreateContentPage() {
         readers about risk or appropriate use.
       </p>
       <p>
-        An article that does not pass all three stages is revised. It is not published with known problems and
-        corrected afterward.
+        Our standard is that an article which does not pass all applicable stages is revised, not published with
+        known problems and corrected afterward. Articles already public before this standard existed are being
+        brought into compliance with it in stages, not all at once.
       </p>
 
       <h2 id="pre-publish-checklist">What We Check Before Publishing</h2>
@@ -123,8 +134,9 @@ export default function HowWeCreateContentPage() {
           exception, or uncertainty in the same section
         </li>
         <li>
-          The review date and next scheduled review date are set correctly based on how quickly the content is likely
-          to change
+          If the article has completed a clinical-evidence or licensed medical review, the review date and next
+          scheduled review date are set correctly based on how quickly the content is likely to change; if it has
+          not, no review date is shown
         </li>
         <li>
           The article does not contain content that could cause a reader to delay appropriate care or make a clinical
@@ -134,14 +146,20 @@ export default function HowWeCreateContentPage() {
 
       <h2 id="medical-disclaimers">Medical Disclaimers</h2>
       <p>
-        All articles covering medications, clinical conditions, or health decisions include this disclaimer or a close
-        equivalent:
+        Our standard is that every article covering medications, clinical conditions, or health decisions includes
+        this disclaimer or a close equivalent:
       </p>
       <blockquote>
         This article is for educational purposes only. It is not medical advice, diagnosis, or a recommendation for
         any specific course of action. Talk to a qualified healthcare provider before making any changes to your
         health plan.
       </blockquote>
+      <p>
+        The site-wide{" "}
+        <a href="/medical-disclaimer">Medical Disclaimer</a> applies to all content regardless of whether an
+        individual article also carries this notice inline. We are auditing our published corpus to confirm the
+        inline disclaimer is present everywhere our standard requires it.
+      </p>
       <p>
         The presence of a disclaimer does not make a harmful article safe. Our review process is designed to ensure
         that the article itself is sound — the disclaimer is not a substitute for accuracy.
