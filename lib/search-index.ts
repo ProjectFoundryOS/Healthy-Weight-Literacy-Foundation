@@ -4,7 +4,7 @@
 // client" component (see lib/search-filter.ts for the client-safe half).
 
 import { getBlogPosts } from "./content-registry"
-import { programs, resources } from "./mdx"
+import { programs } from "./mdx"
 import { filterSearchIndex, type SearchItem, type SearchResult } from "./search-filter"
 
 export type { SearchItem, SearchResult }
@@ -34,17 +34,7 @@ export function getSearchIndex(): SearchItem[] {
     url: `/programs/${program.slug}`,
   }))
 
-  const resourceItems: SearchItem[] = resources.map((resource) => ({
-    type: "resource",
-    slug: resource.slug,
-    title: resource.title,
-    description: resource.description,
-    tags: resource.tags,
-    category: resource.category,
-    url: `/resources/${resource.slug}`,
-  }))
-
-  return [...blogItems, ...programItems, ...resourceItems]
+  return [...blogItems, ...programItems]
 }
 
 /** Server-only convenience wrapper: builds the index and filters it in one call. */

@@ -72,7 +72,7 @@ export function TestimonialCarousel() {
             aria-label={`${current + 1} of ${testimonials.length}`}
           >
             <blockquote className="text-xl sm:text-2xl text-secondary font-medium leading-relaxed max-w-3xl mx-auto">
-              "{testimonials[current].quote}"
+              &quot;{testimonials[current].quote}&quot;
             </blockquote>
             <div className="mt-8 flex flex-col items-center">
               <Image

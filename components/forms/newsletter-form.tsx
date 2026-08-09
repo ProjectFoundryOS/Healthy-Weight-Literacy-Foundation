@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useForm } from "react-hook-form"
+import { useForm, useWatch } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -24,14 +24,16 @@ export function NewsletterForm({ variant = "default" }: NewsletterFormProps) {
     handleSubmit,
     reset,
     setValue,
-    watch,
+    control,
     formState: { errors },
   } = useForm<NewsletterFormData>({
     resolver: zodResolver(newsletterFormSchema),
     defaultValues: { consent: false },
   })
 
-  const consent = watch("consent")
+  // useWatch (rather than the form instance's watch()) is the
+  // React-Compiler-safe way to subscribe to a single field's value.
+  const consent = useWatch({ control, name: "consent" })
 
   useEffect(() => {
     if (status === "success") {

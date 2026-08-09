@@ -6,11 +6,14 @@
 // (node:fs cannot be bundled for the browser).
 //
 // lib/search-index.ts is the server-only counterpart: it builds the
-// SearchItem[] index from the content registry + static programs/resources
-// and is imported only by server components/routes.
+// SearchItem[] index from the content registry + static programs and is
+// imported only by server components/routes.
+//
+// Issue #25: the "resource" item type (and the /resources feature it
+// pointed at) was removed — see next.config.mjs for the routing decision.
 
 export interface SearchItem {
-  type: "blog" | "program" | "resource"
+  type: "blog" | "program"
   slug: string
   title: string
   description: string
@@ -20,7 +23,7 @@ export interface SearchItem {
 }
 
 export interface SearchResult {
-  type: "blog" | "programs" | "resources"
+  type: "blog" | "programs"
   slug: string
   title: string
   excerpt: string
@@ -39,7 +42,7 @@ export function filterSearchIndex(searchIndex: SearchItem[], query: string): Sea
   })
 
   return results.map((item) => ({
-    type: item.type === "blog" ? "blog" : item.type === "program" ? "programs" : "resources",
+    type: item.type === "blog" ? "blog" : "programs",
     slug: item.slug,
     title: item.title,
     excerpt: item.description,
