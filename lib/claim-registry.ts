@@ -17,7 +17,21 @@
 import { readFileSync } from "node:fs"
 import path from "node:path"
 import { isValidDateString } from "./date-validation"
-import { isAtLeastTier, type SourceRecord } from "./source-registry"
+import type { SourceRecord } from "./source-registry"
+import {
+  hasQualifyingActivePrimarySupport,
+  isActiveSource,
+  requiredActiveTierForRisk,
+  VALID_YMYL_RISKS,
+  type YmylRisk,
+} from "./evidence-support-policy"
+
+// YmylRisk now lives in ./evidence-support-policy (so that module can
+// define the shared active-support policy without importing back from
+// here). Re-exported unchanged so every existing import of YmylRisk /
+// VALID_YMYL_RISKS from "./claim-registry" keeps working.
+export type { YmylRisk }
+export { VALID_YMYL_RISKS }
 
 export type ClaimType =
   | "definition"
@@ -39,8 +53,6 @@ export type ClaimType =
   | "other"
 
 export type ClaimClassification = "established" | "qualified" | "preliminary" | "uncertain" | "disputed" | "superseded"
-
-export type YmylRisk = "low" | "medium" | "high" | "critical"
 
 export type DecayClass =
   | "regulatory_drug_access" // 30-90 days
@@ -78,8 +90,6 @@ export const VALID_CLASSIFICATIONS: ClaimClassification[] = [
   "disputed",
   "superseded",
 ]
-
-export const VALID_YMYL_RISKS: YmylRisk[] = ["low", "medium", "high", "critical"]
 
 export const VALID_DECAY_CLASSES: DecayClass[] = [
   "regulatory_drug_access",
@@ -266,34 +276,33 @@ export function validateClaimRecord(record: ClaimRecord, sources: SourceRecord[]
     }
   }
 
-  // classification/ymyl_risk vs. trust-tier gate.
+  // classification/ymyl_risk vs. trust-tier gate — delegated to the
+  // shared policy in lib/evidence-support-policy.ts so this rule cannot
+  // silently drift from the one findHighRiskClaimsLackingCurrentPrimarySupport
+  // (lib/evidence-dependency-audit.ts) applies at dependency-audit time.
   {
     if (record.classification === "established") {
-      const hasAtLeastTierB = resolvedPrimarySources.some((s) => isAtLeastTier(s.trust_tier, "B"))
-      if (!hasAtLeastTierB) {
+      const requiredTier = requiredActiveTierForRisk(record.ymyl_risk)
+      if (!hasQualifyingActivePrimarySupport(primaryIds, sources, requiredTier)) {
         errors.push(
-          'classification "established" requires at least one primary source of Tier A or B — Tier C/D sources cannot carry an established claim',
+          `classification "established" with ymyl_risk "${record.ymyl_risk}" requires at least one primary source that is ` +
+            `both currently active (not superseded/retracted/unavailable) and at least Tier ${requiredTier}`,
         )
-      }
-      if (record.ymyl_risk === "high" || record.ymyl_risk === "critical") {
-        const hasTierA = resolvedPrimarySources.some((s) => isAtLeastTier(s.trust_tier, "A"))
-        if (!hasTierA) {
-          errors.push(
-            `classification "established" with ymyl_risk "${record.ymyl_risk}" requires at least one Tier A primary source`,
-          )
-        }
       }
     }
 
-    // A retracted source can never be the sole primary support for an
-    // active (non-superseded) high/critical-risk claim.
+    // A source that is no longer active (superseded/retracted/unavailable)
+    // can never be the sole primary support for an active (non-superseded)
+    // high/critical-risk claim — even if it was Tier A when first cited.
     if (
       record.classification !== "superseded" &&
       (record.ymyl_risk === "high" || record.ymyl_risk === "critical") &&
       resolvedPrimarySources.length > 0 &&
-      resolvedPrimarySources.every((s) => s.status === "retracted")
+      resolvedPrimarySources.every((s) => !isActiveSource(s))
     ) {
-      errors.push("every primary source for this active, high-risk claim has status \"retracted\" — the claim has lost its support")
+      errors.push(
+        "every primary source for this active, high/critical-risk claim is no longer active (superseded/retracted/unavailable) — the claim has lost its support",
+      )
     }
   }
 

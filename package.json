@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node scripts/check-content-registry.mjs",
+    "prebuild": "node scripts/check-content-registry.mjs && tsx scripts/validate-evidence-all.ts",
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
@@ -15,6 +15,7 @@
     "validate:topics": "tsx scripts/validate-topics.ts",
     "validate:evidence": "tsx scripts/validate-evidence.ts",
     "audit:evidence-dependencies": "tsx scripts/audit-evidence-dependencies.ts",
+    "validate:evidence-all": "tsx scripts/validate-evidence-all.ts",
     "test": "vitest run"
   },
   "dependencies": {

@@ -389,3 +389,107 @@ npm run audit:evidence-dependencies   clean, 0 violations
 `content/snapshot/manifest.json`); 5 historical unpublished rows untouched; 0
 build-time Supabase article reads; 0 article bodies rewritten; 0 new review records
 (`content/reviews/registry.json` still has zero entries); 0 new verified reviewers.
+
+## 16. Stage 3 closure pass (Issue #28)
+
+A follow-up pass corrected several evidence-accuracy defects found in the initial
+seed and closed architectural gaps in the validators themselves. Evidence accuracy
+took priority over preserving the original 9-source/11-claim counts, per the closure
+brief — the counts changed (9→10 sources, 11→12 claims) as a direct result of fixing
+real defects, not scope creep.
+
+**Wegovy source currency (Blocker 1).** `src-fda-wegovy-label` pointed at an
+A-S Medication Solutions repackaged DailyMed listing revised April 2024. Independently
+re-verified via DailyMed: the current official Novo Nordisk manufacturer label
+(setid `ee06186f-2aa3-4990-a760-757579d8f77b`, revised 6/2026) now also covers an
+oral tablet formulation and two injection-only indications the 2024 label did not have
+(pediatric obesity ages 12+; MASH treatment in adults). `src-fda-wegovy-label` now
+points at the current label (source_id kept stable so existing claim references
+resolve automatically); the retired listing was kept as
+`src-fda-wegovy-label-2024-repackaged-historical` with `status: "superseded"` and
+`superseded_by_source_id` pointing at the current record. `claim-wegovy-regulatory-
+status` was rewritten to drop a now-ambiguous specific dose figure and explicitly
+scope itself to the indications both formulations share, with required_qualifiers
+naming what it deliberately excludes (pediatric/MASH). `claim-wegovy-boxed-warning-
+thyroid` was reverified against the 2026 label and found unchanged; only its
+verification metadata and notes were updated.
+
+**Fothergill claim-splitting (Blocker 2).** The single seed claim's own
+`statistical_detail` was already the correct raw figure (RMR 704 ± 427 kcal/day below
+baseline-predicted, independently reconfirmed against the PubMed abstract), but the
+topic and packet `allowed_conclusions` had labeled that raw figure "metabolic
+adaptation" — the paper's own, separately defined term for a materially different,
+smaller-magnitude number (-499 ± 207 kcal/day, the RMR residual *after* adjusting for
+6-year body composition and age). The single claim was split into
+`claim-biggestloser-rmr-below-baseline` (Claim A, -704) and
+`claim-biggestloser-metabolic-adaptation-residual` (Claim B, -499), each independently
+reconfirmed against the abstract, each with limitations/required_qualifiers stating
+explicitly that the other claim's figure is not interchangeable with it.
+`topic-why-body-resists-weight-loss` and `packet-why-body-resists-weight-loss` now
+require both claims, and the packet's `allowed_conclusions` state the two figures
+separately rather than conflating them.
+
+**Fasting errata (closure item 3).** PMID 31881139 carries two published NEJM
+errata. Independently retrieved both: the January 2020 erratum corrects an
+adiposity/lifespan sentence unrelated to this registry's claim; the March 2020
+erratum corrects specific ketone-concentration/timing figures in the same
+"metabolic switching" section `claim-fasting-metabolic-switch` draws from — but that
+claim states no specific concentration or hour threshold, so the correction does not
+touch anything it asserts. `src-decabo-mattson-2019.status` changed from `"current"`
+to `"corrected"` (both errata recorded in a new `corrections[]` array with an explicit
+`affects_existing_claims: false` determination per erratum) — a factual correction to
+the source record, not a downgrade in trustworthiness; see closure item 6 below for
+why `"corrected"` still counts as active support. The claim's own review-due schedule
+was reset since it was freshly reverified.
+
+**National Academies DOI (closure item 4).** Independently confirmed
+`https://doi.org/10.17226/10925` on the report's landing page (distinct from the
+`read/10925/chapter/2` canonical_url already on file) and added it to
+`src-nasem-water-dri-2005`. The hydration claim's wording was not touched, per the
+closure brief's instruction not to modify it unless the primary source required it —
+it didn't.
+
+**Protein topic scope (closure item 5, option A).** `topic-protein-preserve-muscle-
+during-weight-loss`'s `canonical_question` asked "how much protein do I need" —
+implying an individualized quantitative target — while its only backing claim
+establishes only a directional finding (above-RDA intake attenuates lean-mass loss
+during energy restriction), with no specific gram target ever verified. Rather than
+manufacture a number, the question and packet were narrowed to what the evidence
+actually supports ("does eating more protein than the RDA help preserve muscle"), and
+a `prohibited_claims` entry now explicitly blocks stating a specific gram target.
+
+**Centralized active-support policy (closure item 6).** Creation-time validation
+(`validateClaimRecord`) and dependency-time validation
+(`findHighRiskClaimsLackingCurrentPrimarySupport`) had silently drifted: the former
+required Tier A support for both "high" and "critical" risk, the latter only required
+Tier A for "critical" and Tier B for "high" — a claim could pass creation-time
+validation under a bar the dependency audit would not have enforced on its own. New
+module `lib/evidence-support-policy.ts` is now the single place either rule lives
+(`ACTIVE_SOURCE_STATUSES`, `requiredActiveTierForRisk`,
+`hasQualifyingActivePrimarySupport`); both call sites consume it, and per-status
+negative tests (superseded/retracted/unavailable all FAIL; corrected explicitly
+passes) exist at both the shared-policy level and each call site.
+
+**Packet source referential integrity (closure item 7).** `validatePacketRecord`
+previously never checked that `source_ids` entries resolved to real sources, and
+never took a `sources` parameter at all. It now requires every `source_ids` entry to
+resolve against the real source registry, and additionally enforces that
+`source_ids` is *exactly* the union of sources the packet's approved claims require —
+no invented, typo'd, or merely-unrelated source may ride along. `loadPackets` and
+every call site (scripts, tests) were updated to thread `sources` through.
+
+**Mandatory evidence gate (closure item 8).** No GitHub Actions or other CI
+workflow exists in this repository — the actual enforced release gate is
+`prebuild` (which npm runs automatically before every `next build`, including on
+Vercel), currently home to Stage 1's `check-content-registry.mjs`. New script
+`scripts/validate-evidence-all.ts` (`npm run validate:evidence-all`) runs all five
+evidence validators in dependency order, stopping at the first failure, and is now
+chained into `prebuild` alongside the existing content-registry check. Verified by
+deliberately corrupting a source's `trust_tier`, confirming both `npm run
+validate:evidence-all` and `npm run build` fail with a non-zero exit status, then
+restoring the file and reconfirming both pass — an evidence gate that only exists as
+a script nobody runs is not a gate; it now runs on every build automatically.
+
+Full re-verification after this pass: `npm test`, `npm run lint`, `npm run build`,
+`npm run validate:articles`, and `npm run validate:evidence-all` all pass; see the
+closure handoff for exact counts.

@@ -87,7 +87,7 @@ describe("validateClaimRecord — claim-source contract", () => {
     })
     const { valid, errors } = validateClaimRecord(claim, [homepage])
     expect(valid).toBe(false)
-    expect(errors.join(" ")).toMatch(/Tier A primary source/)
+    expect(errors.join(" ")).toMatch(/at least Tier A/)
   })
 
   it("FAILS an established high-risk claim supported only by a Tier C source", () => {
@@ -95,7 +95,7 @@ describe("validateClaimRecord — claim-source contract", () => {
     const claim = makeClaim({ ymyl_risk: "high", source_ids: ["src-c"], primary_source_ids: ["src-c"] })
     const { valid, errors } = validateClaimRecord(claim, [tierC])
     expect(valid).toBe(false)
-    expect(errors.join(" ")).toMatch(/Tier A primary source/)
+    expect(errors.join(" ")).toMatch(/at least Tier A/)
   })
 
   it("FAILS an established claim supported only by a Tier D source (below even the low-risk B/A bar)", () => {
@@ -103,7 +103,7 @@ describe("validateClaimRecord — claim-source contract", () => {
     const claim = makeClaim({ ymyl_risk: "low", source_ids: ["src-d"], primary_source_ids: ["src-d"] })
     const { valid, errors } = validateClaimRecord(claim, [tierD])
     expect(valid).toBe(false)
-    expect(errors.join(" ")).toMatch(/Tier A or B/)
+    expect(errors.join(" ")).toMatch(/at least Tier B/)
   })
 
   it("PASSES a low-risk established claim supported by a Tier B source", () => {
@@ -142,6 +142,26 @@ describe("validateClaimRecord — claim-source contract", () => {
     const { valid, errors } = validateClaimRecord(claim, [retracted])
     expect(valid).toBe(false)
     expect(errors.join(" ")).toMatch(/retracted/)
+  })
+
+  describe("Issue #28 closure item 6: no non-current status may satisfy established/high-risk primary support", () => {
+    it.each(["superseded", "retracted", "unavailable"] as const)(
+      "FAILS an established, high-risk claim whose sole Tier A primary source has status %s",
+      (status) => {
+        const source = makeTierASource({ source_id: "src-x", status, trust_tier: "A" })
+        const claim = makeClaim({ ymyl_risk: "high", source_ids: ["src-x"], primary_source_ids: ["src-x"] })
+        const { valid, errors } = validateClaimRecord(claim, [source])
+        expect(valid, `status=${status}`).toBe(false)
+        expect(errors.join(" ")).toMatch(/currently active/)
+      },
+    )
+
+    it("PASSES an established, high-risk claim whose sole Tier A primary source has status \"corrected\" — corrected is handled explicitly as still-active", () => {
+      const source = makeTierASource({ source_id: "src-x", status: "corrected", trust_tier: "A" })
+      const claim = makeClaim({ ymyl_risk: "high", source_ids: ["src-x"], primary_source_ids: ["src-x"] })
+      const { valid } = validateClaimRecord(claim, [source])
+      expect(valid).toBe(true)
+    })
   })
 
   it("FAILS an unknown claim_type", () => {

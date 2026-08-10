@@ -32,10 +32,10 @@
       "limitations": ["A narrative review synthesizing many underlying studies, not a single controlled trial of the mechanism itself.", "Exact fasting duration needed to trigger the switch varies by individual and was not reduced to one number in this source."],
       "required_qualifiers": ["timeframe and individual variation in when the switch occurs are not precisely defined by this source"],
       "prohibited_wording": ["the metabolic switch happens at exactly the same time for everyone", "fasting immediately switches the body to ketone use"],
-      "last_verified_at": "2026-08-09",
-      "review_due_at": "2028-02-09",
+      "last_verified_at": "2026-08-10",
+      "review_due_at": "2028-02-10",
       "decay_class": "nutrition_physiology",
-      "notes": "Definitional/mechanistic claim only — not an efficacy or outcome claim about fasting for weight loss."
+      "notes": "Definitional/mechanistic claim only — not an efficacy or outcome claim about fasting for weight loss. Reverified during the Stage 3 closure pass (Issue #28) against the source's two published NEJM errata (see src-decabo-mattson-2019.corrections[]): neither correction touches anything this claim asserts, since this claim states no specific ketone concentration or hour threshold and makes no adiposity/lifespan claim."
     },
     {
       "claim_id": "claim-step1-semaglutide-primary-result",
@@ -99,18 +99,19 @@
       "population": "prospective and current Wegovy patients",
       "outcome": "boxed warning + absolute contraindication as stated in labeling",
       "jurisdiction": "United States (FDA)",
-      "limitations": ["The thyroid C-cell tumor finding is from rodent studies; the label states human relevance has not been determined."],
+      "limitations": ["The thyroid C-cell tumor finding is from rodent studies; the label states human relevance has not been determined.", "The current label also lists a separate hypersensitivity contraindication (prior serious hypersensitivity reaction to semaglutide or WEGOVY excipients), which is out of scope for this specific thyroid/MTC/MEN2 claim."],
       "required_qualifiers": ["applies specifically to Wegovy (semaglutide) FDA-approved prescribing information", "thyroid C-cell tumor finding is from rodent studies; human relevance undetermined per the label"],
       "allowed_wording": ["carries a boxed warning for thyroid C-cell tumors seen in rodent studies", "is contraindicated in people with a personal or family history of MTC or MEN 2"],
       "prohibited_wording": ["has been proven to cause thyroid cancer in humans", "is safe for everyone regardless of thyroid history"],
       "medical_advice_boundary": "States what the FDA label discloses; does not substitute for an individualized prescribing decision by a clinician.",
-      "last_verified_at": "2026-08-09",
-      "review_due_at": "2026-11-07",
-      "decay_class": "medication_safety_active"
+      "last_verified_at": "2026-08-10",
+      "review_due_at": "2026-11-08",
+      "decay_class": "medication_safety_active",
+      "notes": "Reverified during the Stage 3 closure pass (Issue #28) against the current 2026 Novo Nordisk label (src-fda-wegovy-label, DailyMed setid ee06186f...) after that source replaced a retired 2024 repackaged listing. The boxed warning and MTC/MEN2 contraindication text are confirmed unchanged between the 2024 and 2026 labels, and identical across the injection and tablet formulations — no wording change to this claim was required."
     },
     {
       "claim_id": "claim-wegovy-regulatory-status",
-      "canonical_claim": "Wegovy (semaglutide 2.4 mg) is FDA-approved for chronic weight management in adults with obesity, or with overweight plus at least one weight-related comorbidity, as an adjunct to a reduced-calorie diet and increased physical activity, and for reducing cardiovascular risk in adults with established cardiovascular disease who have obesity or overweight.",
+      "canonical_claim": "Wegovy (semaglutide) — in both its original once-weekly subcutaneous injection formulation and its newer oral tablet formulation — is FDA-approved for weight reduction and maintenance in adults with obesity, or with overweight plus at least one weight-related comorbidity, as an adjunct to a reduced-calorie diet and increased physical activity, and for reducing the risk of major adverse cardiovascular events in adults with established cardiovascular disease who have obesity or overweight.",
       "claim_type": "regulatory_status",
       "classification": "established",
       "ymyl_risk": "high",
@@ -118,11 +119,13 @@
       "primary_source_ids": ["src-fda-wegovy-label"],
       "support_strength": "current FDA-approved prescribing information (Tier A)",
       "jurisdiction": "United States (FDA)",
-      "required_qualifiers": ["reflects United States FDA approval status only; regulatory status may differ in other jurisdictions"],
-      "prohibited_wording": ["approved for cosmetic weight loss with no medical indication required"],
-      "last_verified_at": "2026-08-09",
-      "review_due_at": "2026-10-08",
-      "decay_class": "regulatory_drug_access"
+      "limitations": ["This claim covers only the adult weight-management and cardiovascular-risk-reduction indications shared by both formulations. It does NOT cover two additional, injection-only indications also present in the current label: weight reduction in pediatric patients aged 12 and older with obesity, and treatment of noncirrhotic MASH (metabolic dysfunction-associated steatohepatitis) with moderate-to-advanced liver fibrosis in adults. Neither the pediatric nor the MASH indication applies to the tablet formulation per this same label."],
+      "required_qualifiers": ["reflects United States FDA approval status only; regulatory status may differ in other jurisdictions", "does not by itself describe the injection-only pediatric-obesity or MASH-treatment indications — those require a separate, dedicated claim if an article needs to state them"],
+      "prohibited_wording": ["approved for cosmetic weight loss with no medical indication required", "approved for pediatric use or MASH treatment in tablet form"],
+      "last_verified_at": "2026-08-10",
+      "review_due_at": "2026-10-09",
+      "decay_class": "regulatory_drug_access",
+      "notes": "Rewritten during the Stage 3 closure pass (Issue #28): the prior wording named a specific injection dose (\"semaglutide 2.4 mg\") and did not account for the current label's oral tablet formulation or its two additional injection-only indications (pediatric obesity ages 12+, and MASH treatment) added since the 2024 label this claim originally cited. The dose figure was removed from this claim's scope (a specific dose can differ by formulation and is better carried on a dosing-specific claim if one is added later) and the claim is now explicitly scoped to only the indications the two formulations share."
     },
     {
       "claim_id": "claim-surmount1-tirzepatide-primary-result",
@@ -251,35 +254,90 @@
       "decay_class": "nutrition_physiology"
     },
     {
-      "claim_id": "claim-adaptive-thermogenesis-rmr-suppression",
-      "canonical_claim": "In a 6-year follow-up of 14 'Biggest Loser' Season 8 competitors, resting metabolic rate remained on average 704 kcal/day below the baseline-predicted value, despite substantial weight regain in most participants.",
+      "claim_id": "claim-biggestloser-rmr-below-baseline",
+      "canonical_claim": "In a 6-year follow-up of 14 'Biggest Loser' Season 8 competitors (of 16 originally studied), observed resting metabolic rate (RMR) was on average 704 +/- 427 kcal/day below the value predicted from each participant's original baseline (pre-competition) measurements (P<0.0001), despite substantial weight regain in most participants.",
       "claim_type": "statistical_result",
       "classification": "established",
       "ymyl_risk": "medium",
       "source_ids": ["src-fothergill-biggestloser-2016"],
       "primary_source_ids": ["src-fothergill-biggestloser-2016"],
       "support_strength": "single long-term (6-year) observational follow-up cohort (Tier A); small sample size",
-      "population": "14 'Biggest Loser' Season 8 competitors",
-      "outcome": "persistent suppression of resting metabolic rate relative to baseline-predicted value",
+      "population": "14 of the original 16 'Biggest Loser' Season 8 competitors",
+      "outcome": "observed resting metabolic rate relative to baseline-predicted value (raw comparison, not adjusted for 6-year body composition)",
       "timeframe": "6 years post-competition",
-      "limitations": ["Very small sample size (n=14).", "Single reality-TV-derived cohort with an unusually extreme initial weight-loss intervention; may not generalize to typical weight-loss approaches."],
+      "limitations": [
+        "Very small sample size (n=14 of 16 original competitors).",
+        "Single reality-TV-derived cohort with an unusually extreme initial weight-loss intervention; may not generalize to typical weight-loss approaches.",
+        "This is the raw observed-vs-baseline-predicted comparison; it is NOT the same figure as this source's separately defined 'metabolic adaptation' residual (see claim-biggestloser-metabolic-adaptation-residual), which differs materially because it additionally adjusts for the participant's actual body composition and age at the 6-year visit."
+      ],
       "confounders": ["Substantial weight regain occurred in most participants during the follow-up period, which itself interacts with metabolic rate."],
-      "required_qualifiers": ["based on a very small (n=14), atypical cohort; not a general population estimate"],
-      "prohibited_wording": ["proves that weight loss permanently and irreversibly damages metabolism for everyone", "applies to typical, moderate weight-loss programs"],
+      "required_qualifiers": [
+        "based on a very small (n=14), atypical cohort; not a general population estimate",
+        "this is the raw observed-vs-baseline-predicted RMR difference, not the source's separately defined 'metabolic adaptation' figure"
+      ],
+      "prohibited_wording": [
+        "proves that weight loss permanently and irreversibly damages metabolism for everyone",
+        "applies to typical, moderate weight-loss programs",
+        "is the same number as this source's metabolic adaptation figure"
+      ],
       "statistical_detail": {
         "value": -704,
         "unit": "kcal/day",
-        "measure_type": "mean difference between observed and baseline-predicted resting metabolic rate",
-        "population": "14 'Biggest Loser' Season 8 competitors, 6-year follow-up",
+        "measure_type": "mean difference between observed and baseline-predicted resting metabolic rate (unadjusted for 6-year body composition)",
+        "population": "14 'Biggest Loser' Season 8 competitors (of 16 original), 6-year follow-up",
         "sample_size": 14,
-        "confidence_interval": "SD 427 kcal/day",
+        "confidence_interval": "SD 427 kcal/day; P<0.0001",
         "comparison": "observed RMR vs baseline-predicted RMR",
         "time_point": "6 years post-competition",
-        "source_location": "Obesity (Silver Spring). 2016;24(8):1612-1619, Results"
+        "source_location": "Obesity (Silver Spring). 2016;24(8):1612-1619, Results (RMR result)"
       },
-      "last_verified_at": "2026-08-09",
-      "review_due_at": "2028-02-09",
-      "decay_class": "nutrition_physiology"
+      "last_verified_at": "2026-08-10",
+      "review_due_at": "2028-02-10",
+      "decay_class": "nutrition_physiology",
+      "notes": "Split from the former single claim \"claim-adaptive-thermogenesis-rmr-suppression\" during the Stage 3 closure pass (Issue #28): that claim's own statistical_detail was correctly the raw -704 figure, but the topic/packet allowed_conclusions that referenced it had used 'metabolic adaptation' language for it — improperly conflating this raw figure with the source's distinctly-defined, smaller-magnitude 'metabolic adaptation' residual. This claim (Claim A) is the raw observed-vs-baseline-predicted RMR difference only. See claim-biggestloser-metabolic-adaptation-residual for Claim B, the source's separately defined 'metabolic adaptation' residual. Independently re-verified against the PubMed abstract: \"RMR was 704 +/- 427 kcal/day below baseline (P < 0.0001)\"."
+    },
+    {
+      "claim_id": "claim-biggestloser-metabolic-adaptation-residual",
+      "canonical_claim": "In the same 6-year follow-up of 14 'Biggest Loser' Season 8 competitors, the paper's specifically defined 'metabolic adaptation' — the residual resting metabolic rate (RMR) after statistically adjusting for each participant's actual body composition and age at the 6-year visit — was -499 +/- 207 kcal/day (P<0.0001), a smaller-magnitude figure than the raw observed-vs-baseline-predicted RMR difference.",
+      "claim_type": "statistical_result",
+      "classification": "established",
+      "ymyl_risk": "medium",
+      "source_ids": ["src-fothergill-biggestloser-2016"],
+      "primary_source_ids": ["src-fothergill-biggestloser-2016"],
+      "support_strength": "single long-term (6-year) observational follow-up cohort (Tier A); small sample size",
+      "population": "14 of the original 16 'Biggest Loser' Season 8 competitors",
+      "outcome": "metabolic adaptation, as the paper defines it: residual RMR after adjusting for body composition and age",
+      "timeframe": "6 years post-competition",
+      "limitations": [
+        "Very small sample size (n=14 of 16 original competitors).",
+        "Single reality-TV-derived cohort with an unusually extreme initial weight-loss intervention; may not generalize to typical weight-loss approaches.",
+        "The adjustment removes the portion of RMR suppression attributable to changed body composition, so this number is not interchangeable with the raw observed-vs-baseline-predicted RMR difference (see claim-biggestloser-rmr-below-baseline)."
+      ],
+      "confounders": ["Substantial weight regain occurred in most participants during the follow-up period, which itself interacts with body composition and therefore with this adjusted residual."],
+      "required_qualifiers": [
+        "based on a very small (n=14), atypical cohort; not a general population estimate",
+        "'metabolic adaptation' here is a specific statistical residual (adjusted for body composition and age), not simply 'how far below baseline RMR remains'"
+      ],
+      "prohibited_wording": [
+        "proves that weight loss permanently and irreversibly damages metabolism for everyone",
+        "applies to typical, moderate weight-loss programs",
+        "is the same number as the raw RMR-below-baseline figure"
+      ],
+      "statistical_detail": {
+        "value": -499,
+        "unit": "kcal/day",
+        "measure_type": "metabolic adaptation: residual resting metabolic rate after adjusting for changes in body composition and age",
+        "population": "14 'Biggest Loser' Season 8 competitors (of 16 original), 6-year follow-up",
+        "sample_size": 14,
+        "confidence_interval": "SD 207 kcal/day; P<0.0001",
+        "comparison": "adjusted residual RMR vs zero (no adaptation)",
+        "time_point": "6 years post-competition",
+        "source_location": "Obesity (Silver Spring). 2016;24(8):1612-1619, Results (metabolic adaptation result)"
+      },
+      "last_verified_at": "2026-08-10",
+      "review_due_at": "2028-02-10",
+      "decay_class": "nutrition_physiology",
+      "notes": "Split out during the Stage 3 closure pass (Issue #28) as Claim B alongside claim-biggestloser-rmr-below-baseline (Claim A) — see that claim's notes for why the split was needed. Independently re-verified against the PubMed abstract: \"Metabolic adaptation was defined as the residual RMR after adjusting for changes in body composition and age\" ... \"metabolic adaptation was -499 +/- 207 kcal/day (P < 0.0001).\""
     }
   ]
 }

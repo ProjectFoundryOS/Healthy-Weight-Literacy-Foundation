@@ -79,11 +79,21 @@ export function computeRegistryRevisionHash(records: unknown[]): string {
 /**
  * Validates a single evidence packet against the topic/claim/source
  * registries it draws from. Pure — takes already-loaded arrays.
+ *
+ * Issue #28 closure item 7: `sources` is required so every entry in
+ * `source_ids` can be checked against the real source registry — an
+ * invented source_id that resolves to nothing must fail, not silently
+ * pass. Additionally, `source_ids` must be exactly the union of sources
+ * required by `approved_claim_ids` — no extra, unaccounted-for source may
+ * ride along in a packet (no "supporting-source" role is modeled here;
+ * if one is ever introduced, this exact-union check is the place to
+ * relax).
  */
 export function validatePacketRecord(
   record: ArticleEvidencePacket,
   topics: TopicRecord[],
   claims: ClaimRecord[],
+  sources: SourceRecord[],
 ): { valid: boolean; errors: string[] } {
   const errors: string[] = []
 
@@ -131,11 +141,32 @@ export function validatePacketRecord(
 
   // The packet must carry every source its approved claims depend on —
   // a writer must never need to reach outside the packet for support.
+  const requiredSourceIds = new Set<string>()
   for (const claim of resolvedApprovedClaims) {
     for (const srcId of claim.source_ids) {
+      requiredSourceIds.add(srcId)
       if (!sourceIds.includes(srcId)) {
         errors.push(`source_ids is missing "${srcId}", required by approved claim "${claim.claim_id}"`)
       }
+    }
+  }
+
+  // Every source_ids entry must itself resolve to a real source record —
+  // an invented/typo'd source_id must never silently pass validation.
+  for (const srcId of sourceIds) {
+    if (!sources.some((s) => s.source_id === srcId)) {
+      errors.push(`source_ids references unknown source_id "${srcId}"`)
+    }
+  }
+
+  // source_ids must be exactly the union of sources required by approved
+  // claims — no unrelated or invented source may ride along in a packet
+  // (no supporting-source role is modeled; see doc comment above).
+  for (const srcId of sourceIds) {
+    if (!requiredSourceIds.has(srcId)) {
+      errors.push(
+        `source_ids includes "${srcId}", which is not required by any approved claim — packet source_ids must be exactly the union of sources required by approved_claim_ids`,
+      )
     }
   }
 
@@ -187,7 +218,7 @@ export function findDuplicatePacketIds(records: ArticleEvidencePacket[]): string
 
 let cachedPackets: ArticleEvidencePacket[] | null = null
 
-function loadPacketsFromDisk(topics: TopicRecord[], claims: ClaimRecord[]): ArticleEvidencePacket[] {
+function loadPacketsFromDisk(topics: TopicRecord[], claims: ClaimRecord[], sources: SourceRecord[]): ArticleEvidencePacket[] {
   if (cachedPackets) return cachedPackets
 
   let raw: string
@@ -207,7 +238,7 @@ function loadPacketsFromDisk(topics: TopicRecord[], claims: ClaimRecord[]): Arti
   }
 
   for (const record of packets) {
-    const { valid, errors } = validatePacketRecord(record, topics, claims)
+    const { valid, errors } = validatePacketRecord(record, topics, claims, sources)
     if (!valid) {
       throw new Error(`[evidence-packet-registry] Invalid packet "${record.packet_id ?? "(no id)"}": ${errors.join("; ")}`)
     }
@@ -217,8 +248,8 @@ function loadPacketsFromDisk(topics: TopicRecord[], claims: ClaimRecord[]): Arti
   return cachedPackets
 }
 
-export function loadPackets(topics: TopicRecord[], claims: ClaimRecord[]): ArticleEvidencePacket[] {
-  return loadPacketsFromDisk(topics, claims)
+export function loadPackets(topics: TopicRecord[], claims: ClaimRecord[], sources: SourceRecord[]): ArticleEvidencePacket[] {
+  return loadPacketsFromDisk(topics, claims, sources)
 }
 
 export function getPacket(packets: ArticleEvidencePacket[], packetId: string): ArticleEvidencePacket | null {

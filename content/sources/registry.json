@@ -38,9 +38,9 @@
       "pmid": "31881139",
       "retrieved_at": "2026-08-09",
       "trust_tier": "B",
-      "status": "current",
+      "status": "corrected",
       "topics": ["fasting", "intermittent-fasting"],
-      "notes": "Authors affiliated with NIA/NIH (de Cabo) and Johns Hopkins (Mattson). A narrative review, not a primary trial — cited only for definitional/mechanistic overview claims, not for a specific numeric efficacy result.",
+      "notes": "Authors affiliated with NIA/NIH (de Cabo) and Johns Hopkins (Mattson). A narrative review, not a primary trial — cited only for definitional/mechanistic overview claims, not for a specific numeric efficacy result. Status changed from \"current\" to \"corrected\" during the Stage 3 closure pass (Issue #28) after independently confirming this article carries two published NEJM errata (see corrections[] below) — this is a factual correction to the source record, not a downgrade in how much the claim citing it can be trusted; see lib/evidence-support-policy.ts for why \"corrected\" still counts as active support.",
       "verification": {
         "url_checked": true,
         "identifier_checked": true,
@@ -48,7 +48,29 @@
         "publication_metadata_matched": true,
         "verified_at": "2026-08-09",
         "verification_method": "Direct WebFetch of the PubMed abstract page; confirmed title, authors, journal, exact date, volume/pages, DOI, and PMID against the record."
-      }
+      },
+      "corrections": [
+        {
+          "correction_doi": "10.1056/NEJMx190038",
+          "correction_pmid": "31940711",
+          "published_at": "2020-01-16",
+          "description": "NEJM erratum (N Engl J Med. 2020;382(3):298): in the second paragraph of the \"Effects of Intermittent Fasting on Health and Aging\" section (original page 2544), the final sentence should have begun \"There was an inverse relationship between adiposity reduction and life span,\" rather than \"...between adiposity and life span.\" Concerns the adiposity/lifespan association discussion, not the metabolic-switch mechanism section this registry's claim draws from.",
+          "affects_existing_claims": false,
+          "checked_claim_ids": ["claim-fasting-metabolic-switch"],
+          "checked_at": "2026-08-10",
+          "notes": "claim-fasting-metabolic-switch makes no statement about adiposity/lifespan association, so this correction does not affect it."
+        },
+        {
+          "correction_doi": "10.1056/NEJMx200002",
+          "correction_pmid": "32130832",
+          "published_at": "2020-03-05",
+          "description": "NEJM erratum (N Engl J Med. 2020;382(10):978): in the first paragraph of the \"Intermittent Fasting and Metabolic Switching\" section (original page 2542), the fifth sentence should have read that in humans, ketone-body blood levels rise within 8-12 hours after the onset of fasting, reaching 0.2-0.5 mM maintained through 24 hours, with a subsequent increase to 1-2 mM by 48 hours — rather than the original text's \"reaching levels as high as 2 to 5 mM by 24 hours.\" References 15 and 16 were also replaced. This is in the same section (metabolic switching) that claim-fasting-metabolic-switch draws from.",
+          "affects_existing_claims": false,
+          "checked_claim_ids": ["claim-fasting-metabolic-switch"],
+          "checked_at": "2026-08-10",
+          "notes": "claim-fasting-metabolic-switch is a general statement that fasting shifts fuel use from glucose to ketones — it does not cite any specific ketone concentration (mM) value or specific hour threshold, so the corrected numbers do not touch anything this claim actually asserts. Independently re-confirmed via search of the erratum's described correction text before reaching this determination; not assumed."
+        }
+      ]
     },
     {
       "source_id": "src-wilding-step1-2021",
@@ -77,24 +99,47 @@
     },
     {
       "source_id": "src-fda-wegovy-label",
-      "title": "WEGOVY (semaglutide) injection, for subcutaneous use — FDA-approved prescribing information",
-      "publisher_or_journal": "Novo Nordisk Inc. (FDA-approved labeling; distributed via NIH DailyMed)",
+      "title": "WEGOVY (semaglutide) injection and tablets — FDA-approved prescribing information",
+      "publisher_or_journal": "Novo Nordisk Pharmaceutical Industries, LP (FDA-approved labeling; distributed via NIH DailyMed)",
+      "publication_date": "2026-06-01",
+      "source_type": "FDA_label",
+      "canonical_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ee06186f-2aa3-4990-a760-757579d8f77b",
+      "other_identifier": "DailyMed setid ee06186f-2aa3-4990-a760-757579d8f77b",
+      "retrieved_at": "2026-08-10",
+      "trust_tier": "A",
+      "status": "current",
+      "topics": ["glp-1-semaglutide", "medication-safety", "medication-regulatory-status"],
+      "notes": "Replaces the retired 2024 repackaged listing (see src-fda-wegovy-label-2024-repackaged-historical) during the Stage 3 closure pass (Issue #28). This is the current official Novo Nordisk manufacturer label (not a repackager listing), covering both the original once-weekly subcutaneous injection and a newer oral tablet formulation. The label's own footer states \"Revised: 6/2026\" (day-of-month not given there, defaulted to the 1st for publication_date); DailyMed's separate page metadata additionally shows \"Updated June 18, 2026\" for when this SPL version was posted to DailyMed — recorded here for transparency but not used as publication_date, since it describes DailyMed's posting rather than the label's own revision date. Materially expanded since the 2024 label: the injection formulation is now also approved for pediatric patients (12 years and older) with obesity, and for treatment of noncirrhotic MASH (metabolic dysfunction-associated steatohepatitis) with moderate-to-advanced liver fibrosis (stages F2-F3) in adults; a new oral tablet formulation is approved for the same adult weight-management and cardiovascular-risk-reduction indications as the injection, but the tablet is NOT indicated for pediatric use or MASH per this label. Boxed warning for thyroid C-cell tumors and the MTC/MEN2 contraindication were confirmed unchanged from the 2024 label.",
+      "verification": {
+        "url_checked": true,
+        "identifier_checked": true,
+        "title_matched": true,
+        "publication_metadata_matched": true,
+        "verified_at": "2026-08-10",
+        "verification_method": "Three separate direct WebFetch calls against the DailyMed HTML label page: (1) confirmed labeler (Novo Nordisk Pharmaceutical Industries, LP), drug name/active ingredient, and both formulations; (2) quoted the exact INDICATIONS AND USAGE text for each formulation; (3) quoted the label's own \"Revised: 6/2026\" line and DailyMed's separate page-metadata \"Updated June 18, 2026\" date."
+      }
+    },
+    {
+      "source_id": "src-fda-wegovy-label-2024-repackaged-historical",
+      "title": "WEGOVY (semaglutide) injection, for subcutaneous use — FDA-approved prescribing information (A-S Medication Solutions repackaged listing)",
+      "publisher_or_journal": "A-S Medication Solutions (repackager listing mirroring Novo Nordisk NDC 0169-4525; distributed via NIH DailyMed)",
       "publication_date": "2024-04-01",
       "source_type": "FDA_label",
       "canonical_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f5e548d0-cc79-4c34-a3f5-e20a5b8b6564",
       "other_identifier": "DailyMed setid f5e548d0-cc79-4c34-a3f5-e20a5b8b6564",
       "retrieved_at": "2026-08-09",
       "trust_tier": "A",
-      "status": "current",
+      "status": "superseded",
+      "superseded_by_source_id": "src-fda-wegovy-label",
       "topics": ["glp-1-semaglutide", "medication-safety", "medication-regulatory-status"],
-      "notes": "DailyMed footer states \"Revised: 4/2024\"; exact day-of-month not shown, defaulted to the 1st. This specific DailyMed record is a repackager (A-S Medication Solutions) listing that mirrors the original manufacturer NDC 0169-4525 (Novo Nordisk). Confirmed content: GLP-1 receptor agonist; boxed warning for thyroid C-cell tumors (seen in rodents); contraindicated with personal/family history of medullary thyroid carcinoma or MEN 2; indicated for chronic weight management and, in adults with established cardiovascular disease, cardiovascular risk reduction.",
+      "notes": "Retired during the Stage 3 closure pass (Issue #28): this was a repackager (A-S Medication Solutions) DailyMed listing last revised April 2024, retained only for historical provenance. It must never again be treated as the current authoritative Wegovy label — superseded by src-fda-wegovy-label, which now points at the current official Novo Nordisk manufacturer label (DailyMed setid ee06186f-2aa3-4990-a760-757579d8f77b, revised 6/2026). The 2024 label predates the pediatric-obesity, MASH-treatment, and oral-tablet-formulation indications present in the 2026 label.",
       "verification": {
         "url_checked": true,
         "identifier_checked": true,
         "title_matched": true,
         "publication_metadata_matched": true,
         "verified_at": "2026-08-09",
-        "verification_method": "Direct WebFetch of the DailyMed HTML label page; confirmed drug name, active ingredient, labeler/NDC chain, and the \"Revised 4/2024\" footer date, plus boxed warning/contraindication/indication text."
+        "verification_method": "Direct WebFetch of the DailyMed HTML label page; confirmed drug name, active ingredient, labeler/NDC chain, and the \"Revised 4/2024\" footer date, plus boxed warning/contraindication/indication text. (Original Stage 3 verification, retained unchanged as historical provenance.)"
       }
     },
     {
@@ -175,18 +220,19 @@
       "publication_date": "2005-01-01",
       "source_type": "government_health_authority",
       "canonical_url": "https://www.nationalacademies.org/read/10925/chapter/2",
-      "retrieved_at": "2026-08-09",
+      "doi": "10.17226/10925",
+      "retrieved_at": "2026-08-10",
       "trust_tier": "A",
       "status": "current",
       "topics": ["hydration", "water-intake-recommendations"],
-      "notes": "Exact publication day not shown on the page; day-of-month defaulted to the 1st. Confirmed exact quote: \"The AI for total water intake for young men and women (19 through 30 years) is 3.7 L and 2.7 L per day, respectively.\" Approximately 81% of total water intake reported as coming from beverages/drinking water and ~19% from food.",
+      "notes": "Exact publication day not shown on the page; day-of-month defaulted to the 1st. Confirmed exact quote: \"The AI for total water intake for young men and women (19 through 30 years) is 3.7 L and 2.7 L per day, respectively.\" Approximately 81% of total water intake reported as coming from beverages/drinking water and ~19% from food. DOI added during the Stage 3 closure pass (Issue #28) after independently confirming it on the report's landing page at nationalacademies.org/publications/10925 (distinct from the read/10925/chapter/2 canonical_url, which is the same report's online-reader view). The hydration claim's wording was not changed — only the source's identifier provenance was strengthened.",
       "verification": {
         "url_checked": true,
-        "identifier_checked": false,
+        "identifier_checked": true,
         "title_matched": true,
         "publication_metadata_matched": true,
-        "verified_at": "2026-08-09",
-        "verification_method": "Direct WebFetch of the nationalacademies.org report chapter page; confirmed title, publisher, and the exact Adequate Intake figures and percentage breakdown quoted in the notes."
+        "verified_at": "2026-08-10",
+        "verification_method": "Direct WebFetch of the nationalacademies.org report chapter page; confirmed title, publisher, and the exact Adequate Intake figures and percentage breakdown quoted in the notes. Separately, direct WebFetch of https://www.nationalacademies.org/publications/10925 confirmed the exact title, year, publisher, and DOI (https://doi.org/10.17226/10925)."
       }
     },
     {

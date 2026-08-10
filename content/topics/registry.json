@@ -86,12 +86,12 @@
     },
     {
       "topic_id": "topic-protein-preserve-muscle-during-weight-loss",
-      "canonical_question": "How much protein do I need to help preserve muscle while losing weight?",
-      "reader_intent": "Get an actionable, evidence-based sense of protein needs during a weight-loss effort.",
+      "canonical_question": "Does eating more protein than the RDA help preserve muscle while losing weight?",
+      "reader_intent": "Understand whether protein intake above the RDA specifically helps preserve lean mass during a weight-loss effort — not to receive one specific gram-per-day target.",
       "reader_stage": "decision_support",
       "cluster": "protein-and-lean-mass",
       "target_reader": "An adult actively trying to lose weight who is worried about losing muscle in the process.",
-      "desired_reader_outcome": "Reader understands that protein intake above the RDA is associated with attenuated lean-mass loss during energy restriction, and the limits of that evidence.",
+      "desired_reader_outcome": "Reader understands that protein intake above the RDA (0.8 g/kg/day) is associated with attenuated lean-mass loss during energy restriction, and the limits of that evidence. This topic does not establish, and should not be used to imply, one specific optimal gram-per-day target or range.",
       "ymyl_class": "low",
       "medical_risk": "low",
       "decay_class": "nutrition_physiology",
@@ -99,7 +99,7 @@
       "existing_article_slugs": ["understanding-macronutrients-proteins-carbs-fats"],
       "status": "existing_article",
       "priority": "medium",
-      "notes": "Legacy macronutrients article covers protein generally; not yet audited against this specific lean-mass-preservation claim (Issue #17)."
+      "notes": "Legacy macronutrients article covers protein generally; not yet audited against this specific lean-mass-preservation claim (Issue #17). Narrowed during the Stage 3 closure pass (Issue #28, closure item 5, option A): the canonical_question previously asked \"how much protein do I need\" — implying a quantitative individualized target — while the only backing claim (claim-protein-intake-lean-mass) establishes only a directional finding (above-RDA intake attenuates lean-mass loss during energy restriction), with no specific gram target verified. Rather than manufacture a number to match the original question, the question itself was narrowed to what the evidence actually supports. A quantitative target could be added later (option B) if a specific, independently verified authoritative source/claim is found — see claim-protein-intake-lean-mass's own limitations for why none is recorded yet."
     },
     {
       "topic_id": "topic-how-much-water-do-you-need",
@@ -130,7 +130,7 @@
       "ymyl_class": "medium",
       "medical_risk": "medium",
       "decay_class": "nutrition_physiology",
-      "required_claim_ids": ["claim-adaptive-thermogenesis-rmr-suppression"],
+      "required_claim_ids": ["claim-biggestloser-rmr-below-baseline", "claim-biggestloser-metabolic-adaptation-residual"],
       "existing_article_slugs": [
         "set-point-theory-why-body-resists-weight-loss",
         "understanding-your-metabolism-facts-vs-myths",
@@ -138,7 +138,7 @@
       ],
       "status": "existing_article",
       "priority": "high",
-      "notes": "Three legacy articles touch this reader job; none yet audited against this claim's required qualifiers (very small n=14 cohort; atypical intervention) — Issue #17. The claim's own limitations/required_qualifiers exist precisely to prevent this evidence from being overgeneralized in article prose."
+      "notes": "Three legacy articles touch this reader job; none yet audited against these claims' required qualifiers (very small n=14 cohort; atypical intervention) — Issue #17. Stage 3 closure (Issue #28) split the former single claim into two: the raw RMR-below-baseline figure and the source's separately defined 'metabolic adaptation' residual, since the topic's own canonical_question asks what 'metabolic adaptation' means and previously had no claim actually stating that specific, distinctly-defined figure. Both claims' limitations/required_qualifiers exist precisely to prevent this evidence from being overgeneralized in article prose."
     }
   ]
 }

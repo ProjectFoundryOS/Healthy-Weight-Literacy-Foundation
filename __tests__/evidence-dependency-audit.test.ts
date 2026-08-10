@@ -137,6 +137,34 @@ describe("end-to-end retraction/supersession cascade (Issue #16 required depende
   })
 })
 
+describe("findHighRiskClaimsLackingCurrentPrimarySupport — Issue #28 closure item 6 (shared policy, per non-current status)", () => {
+  it.each(["superseded", "retracted", "unavailable"] as const)(
+    "FAILS (flags) a high-risk claim whose sole Tier A primary source has status %s",
+    (status) => {
+      const source = makeSource({ status, trust_tier: "A" })
+      const claim = makeClaim({ ymyl_risk: "high", primary_source_ids: ["src-a"] })
+      expect(findHighRiskClaimsLackingCurrentPrimarySupport([claim], [source])).toEqual(["claim-a"])
+    },
+  )
+
+  it("does not flag a high-risk claim whose sole Tier A primary source has status \"corrected\"", () => {
+    const source = makeSource({ status: "corrected", trust_tier: "A" })
+    const claim = makeClaim({ ymyl_risk: "high", primary_source_ids: ["src-a"] })
+    expect(findHighRiskClaimsLackingCurrentPrimarySupport([claim], [source])).toEqual([])
+  })
+
+  it("applies the identical Tier A bar to both high and critical risk (no drift between the two)", () => {
+    const tierBSource = makeSource({ status: "current", trust_tier: "B" })
+    const highClaim = makeClaim({ claim_id: "claim-high", ymyl_risk: "high", primary_source_ids: ["src-a"] })
+    const criticalClaim = makeClaim({ claim_id: "claim-critical", ymyl_risk: "critical", primary_source_ids: ["src-a"] })
+    // A Tier B source is not enough for EITHER high or critical risk under the unified policy.
+    expect(findHighRiskClaimsLackingCurrentPrimarySupport([highClaim, criticalClaim], [tierBSource])).toEqual([
+      "claim-high",
+      "claim-critical",
+    ])
+  })
+})
+
 describe("findClaimsWithoutCurrentSupport", () => {
   it("FAILS a claim whose only source is unavailable", () => {
     const source = makeSource({ status: "unavailable" })
@@ -241,7 +269,7 @@ describe("real registries: end-to-end audit produces a clean report", () => {
     const sources = loadSources()
     const claims = loadClaims(sources)
     const topics = loadTopics(claims)
-    const packets = loadPackets(topics, claims)
+    const packets = loadPackets(topics, claims, sources)
 
     const report = buildDependencyAuditReport(sources, claims, topics, packets, new Date("2026-08-09"))
     expect(isReportClean(report), JSON.stringify(report, null, 2)).toBe(true)

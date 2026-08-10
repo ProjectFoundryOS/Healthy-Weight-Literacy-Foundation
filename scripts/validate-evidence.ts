@@ -9,11 +9,11 @@ function main() {
   const sources = loadSources()
   const claims = loadClaims(sources)
   const topics = loadTopics(claims)
-  const packets = loadPackets(topics, claims)
+  const packets = loadPackets(topics, claims, sources)
 
   let failures = 0
   for (const packet of packets) {
-    const { valid, errors } = validatePacketRecord(packet, topics, claims)
+    const { valid, errors } = validatePacketRecord(packet, topics, claims, sources)
     if (!valid) {
       failures++
       console.error(`FAIL ${packet.packet_id}: ${errors.join("; ")}`)

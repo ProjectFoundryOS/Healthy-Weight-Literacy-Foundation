@@ -11,16 +11,11 @@
 // script (scripts/audit-evidence-dependencies.ts) that a human/CI job
 // can run on demand.
 
-import { isAtLeastTier, type SourceRecord, type TrustTier } from "./source-registry"
+import type { SourceRecord } from "./source-registry"
 import type { ClaimRecord } from "./claim-registry"
 import type { TopicRecord } from "./topic-registry"
 import { isPacketStale, type ArticleEvidencePacket } from "./evidence-packet-registry"
-
-const ACTIVE_SOURCE_STATUSES: SourceRecord["status"][] = ["current", "corrected"]
-
-function isActiveSource(source: SourceRecord | undefined): boolean {
-  return Boolean(source) && ACTIVE_SOURCE_STATUSES.includes(source!.status)
-}
+import { hasQualifyingActivePrimarySupport, isActiveSource, requiredActiveTierForRisk } from "./evidence-support-policy"
 
 /** Claims with zero source_ids resolving to a currently-active (non-retracted/superseded/unavailable) source. */
 export function findClaimsWithoutCurrentSupport(claims: ClaimRecord[], sources: SourceRecord[]): string[] {
@@ -32,22 +27,16 @@ export function findClaimsWithoutCurrentSupport(claims: ClaimRecord[], sources: 
 /**
  * High/critical-risk claims whose primary sources, as they currently
  * stand, no longer include an active source meeting the required trust
- * tier (Tier B minimum for "high", Tier A for "critical"). This re-derives
- * the tier gate dynamically against the *current* source registry, unlike
- * validateClaimRecord's static check — a source that was Tier A and
- * current when the claim was authored, but has since been retracted,
- * shows up here even if the claim record itself was never edited.
+ * tier. Uses the exact same lib/evidence-support-policy.ts rule
+ * validateClaimRecord applies at creation time (Issue #28 closure item
+ * 6) — a source that was Tier A and current when the claim was authored,
+ * but has since been retracted, shows up here even if the claim record
+ * itself was never edited.
  */
 export function findHighRiskClaimsLackingCurrentPrimarySupport(claims: ClaimRecord[], sources: SourceRecord[]): string[] {
   return claims
     .filter((c) => c.ymyl_risk === "high" || c.ymyl_risk === "critical")
-    .filter((claim) => {
-      const requiredTier: TrustTier = claim.ymyl_risk === "critical" ? "A" : "B"
-      return !claim.primary_source_ids.some((id) => {
-        const src = sources.find((s) => s.source_id === id)
-        return isActiveSource(src) && isAtLeastTier(src!.trust_tier, requiredTier)
-      })
-    })
+    .filter((claim) => !hasQualifyingActivePrimarySupport(claim.primary_source_ids, sources, requiredActiveTierForRisk(claim.ymyl_risk)))
     .map((c) => c.claim_id)
 }
 

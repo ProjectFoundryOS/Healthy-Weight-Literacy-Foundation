@@ -10,7 +10,7 @@ function main() {
   const sources = loadSources()
   const claims = loadClaims(sources)
   const topics = loadTopics(claims)
-  const packets = loadPackets(topics, claims)
+  const packets = loadPackets(topics, claims, sources)
 
   const report = buildDependencyAuditReport(sources, claims, topics, packets)
 

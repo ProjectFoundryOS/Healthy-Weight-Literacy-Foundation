@@ -83,6 +83,29 @@ export interface SourceVerification {
   verification_method: string
 }
 
+/**
+ * A published erratum/correction against this source, recorded so the
+ * relationship is auditable rather than left implicit. Recording a
+ * correction here does NOT by itself mean any claim citing this source is
+ * affected — `affects_existing_claims` and `checked_claim_ids` say
+ * explicitly whether the claims that cite this source were actually
+ * checked against this specific correction, and what was found. A source
+ * with real, non-retraction corrections should generally carry
+ * `status: "corrected"` rather than "current" — see ACTIVE_SOURCE_STATUSES
+ * in lib/evidence-support-policy.ts for why "corrected" still counts as
+ * valid, current support.
+ */
+export interface SourceCorrection {
+  correction_doi?: string
+  correction_pmid?: string
+  published_at: string
+  description: string
+  affects_existing_claims: boolean
+  checked_claim_ids: string[]
+  checked_at: string
+  notes?: string
+}
+
 export interface SourceRecord {
   source_id: string
   title: string
@@ -102,6 +125,8 @@ export interface SourceRecord {
   topics: string[]
   notes?: string
   verification: SourceVerification
+  /** Published errata/corrections against this exact source, each with an explicit checked-against-claims determination. See SourceCorrection. */
+  corrections?: SourceCorrection[]
 }
 
 interface SourceRegistryFile {
@@ -172,6 +197,18 @@ export function validateSourceRecord(record: SourceRecord): { valid: boolean; er
     if (hasIdentifier && v.identifier_checked !== true) {
       errors.push("a durable identifier (doi/pmid/other_identifier) is present but verification.identifier_checked is not true")
     }
+  }
+
+  for (const [i, correction] of (record.corrections ?? []).entries()) {
+    if (!isValidDateString(correction.published_at)) errors.push(`corrections[${i}] missing or invalid published_at`)
+    if (!isNonEmptyString(correction.description)) errors.push(`corrections[${i}] missing description`)
+    if (typeof correction.affects_existing_claims !== "boolean") {
+      errors.push(`corrections[${i}] missing affects_existing_claims boolean — whether this correction was checked against citing claims must be explicit, not implied`)
+    }
+    if (!Array.isArray(correction.checked_claim_ids)) {
+      errors.push(`corrections[${i}] missing checked_claim_ids array`)
+    }
+    if (!isValidDateString(correction.checked_at)) errors.push(`corrections[${i}] missing or invalid checked_at`)
   }
 
   return { valid: errors.length === 0, errors }
