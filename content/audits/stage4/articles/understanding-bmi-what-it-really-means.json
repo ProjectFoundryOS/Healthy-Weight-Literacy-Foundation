@@ -1,0 +1,100 @@
+{
+  "audit_id": "audit-understanding-bmi-what-it-really-means",
+  "slug": "understanding-bmi-what-it-really-means",
+  "snapshot_hash": "139a1a95f3fda68e1f592db3508179f034294ff1d61930a55c443fdc321a898b",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Understanding BMI: What It Really Means for Your Health",
+  "category": "Weight Literacy",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "What does a BMI number actually measure, and what are its limitations?",
+  "reader_intent": "Understand what BMI can and cannot tell an individual about their health, and what other markers matter more.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands BMI is a population-level screening surrogate for body fatness, not an individual diagnostic, and knows its specific limitations (body composition, fat distribution, group variation).",
+  "ymyl_class": "medium",
+  "medical_risk": "low",
+  "decay_class": "basic_definition",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "BMI cannot distinguish muscle, fat, bone, and water weight, and was designed as a population-level statistical tool, not an individual diagnostic.",
+      "claim_type": "definition",
+      "ymyl_risk": "low",
+      "mapping_status": "mapped_existing_claim",
+      "article_location": "\"What BMI Can Tell You\" / \"Important Limitations of BMI\" sections",
+      "severity": "info",
+      "recommended_action": "Accurately matches the corpus's existing claim-bmi-surrogate-measure, though the article itself cites zero sources (no Sources section at all) \u2014 recommend citing Prentice & Jebb 2001 directly.",
+      "registry_claim_id": "claim-bmi-surrogate-measure",
+      "source_ids": [
+        "src-prentice-jebb-2001"
+      ]
+    },
+    {
+      "article_claim_id": "c2",
+      "proposition": "BMI was originally developed in the 1800s by Adolphe Quetelet as a population-level statistical tool.",
+      "claim_type": "definition",
+      "ymyl_risk": "low",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"What BMI Is and How It Works\" section",
+      "severity": "info",
+      "recommended_action": "Historically accurate (Quetelet's work on the BMI/Quetelet Index dates to the 1830s-1840s) but stated without a citation."
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 2,
+    "mapped_claim_count": 1,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 3,
+    "claim_traceability": 8,
+    "ymyl_safety": 12,
+    "freshness": 8,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 9,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 66
+  },
+  "cannibalization_cluster_ids": [
+    "cluster-bmi-healthy-weight-overlap"
+  ],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-metabolic-health",
+      "reason": "Directly supports the 'look beyond BMI' message with concrete alternative markers.",
+      "reader_stage": "understanding"
+    },
+    {
+      "target_slug": "understanding-healthy-weight",
+      "reason": "Complementary broader framing of health beyond a single number.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "high",
+  "disposition": "REFRESH",
+  "disposition_reason": "Accurate and well-aligned with the corpus's own verified claim-bmi-surrogate-measure, but has zero citations of any kind despite being a claims-bearing definitional article \u2014 the easiest possible fix is adding the Prentice & Jebb 2001 citation the corpus already has verified.",
+  "rewrite_priority": "P2",
+  "blocking_findings": [],
+  "required_research": [
+    "None \u2014 the supporting source (src-prentice-jebb-2001) already exists in the registry; this is a citation-attachment task, not new research."
+  ],
+  "recommended_rewrite_scope": [
+    "Add a Sources section citing Prentice & Jebb 2001 directly for the BMI-as-surrogate claim."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

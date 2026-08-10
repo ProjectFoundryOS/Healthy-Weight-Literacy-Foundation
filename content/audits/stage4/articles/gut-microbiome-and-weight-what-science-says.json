@@ -1,0 +1,75 @@
+{
+  "audit_id": "audit-gut-microbiome-and-weight-what-science-says",
+  "slug": "gut-microbiome-and-weight-what-science-says",
+  "snapshot_hash": "6691e7600508e6aab72d73c8ee27f9b743ebfeb0687c3763062b2cb62ddcf42f",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "The Gut Microbiome and Weight: What Science Says",
+  "category": "Metabolic Health",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation",
+    "author_type": "organization",
+    "consistency_issue": true,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "What does current science say about the relationship between the gut microbiome and body weight?",
+  "reader_intent": "Understand what is and is not yet known about gut bacteria and weight, without being misled by microbiome-testing weight-loss products.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands the microbiome-weight relationship is real but early-stage and bidirectional, and is appropriately skeptical of products claiming to prescribe weight solutions from microbiome testing.",
+  "ymyl_class": "medium",
+  "medical_risk": "low",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "Gut bacteria composition differs between lean and obese individuals, though causality is unclear; some bacteria may extract more energy from food.",
+      "claim_type": "association",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"The Microbiome and Weight: What Research Shows\" section",
+      "severity": "low",
+      "recommended_action": "Appropriately hedged as uncertain/bidirectional; cites general NIH/NIDDK/Harvard/ISAPP sources rather than a specific study. Acceptable given the deliberately cautious framing, but a specific review citation (e.g., a systematic review of microbiome-obesity studies) would strengthen it."
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 1,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 10,
+    "claim_traceability": 9,
+    "ymyl_safety": 13,
+    "freshness": 9,
+    "trust_integrity": 8,
+    "cannibalization_distinctness": 10,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 3,
+    "total": 77
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-macronutrients-proteins-carbs-fats",
+      "reason": "Fiber/diverse-plant-food guidance for gut health connects naturally to macronutrient education.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "medium",
+  "disposition": "KEEP",
+  "disposition_reason": "Genuinely well-hedged, appropriately cautious content that explicitly warns readers away from overclaiming products \u2014 exactly the right posture for an early-stage research area. Cites real organizational sources (NIDDK, NIH Human Microbiome Project, AGA, Harvard, ISAPP) appropriate to the hedged, qualitative claims actually made. No unsupported specific numbers. Only trivial editing needed.",
+  "rewrite_priority": "none",
+  "blocking_findings": [],
+  "required_research": [],
+  "recommended_rewrite_scope": [],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

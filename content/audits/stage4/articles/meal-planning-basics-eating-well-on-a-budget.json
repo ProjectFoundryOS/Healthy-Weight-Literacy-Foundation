@@ -1,0 +1,83 @@
+{
+  "audit_id": "audit-meal-planning-basics-eating-well-on-a-budget",
+  "slug": "meal-planning-basics-eating-well-on-a-budget",
+  "snapshot_hash": "9a527fabd2cd5d612e26e43ba571479727ec627f5a11b75952b96fd01de880ba",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Meal Planning Basics: Eating Well on a Budget",
+  "category": "Nutrition Literacy",
+  "authorship": {
+    "current_visible_author": "HWLF Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": true,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "How can I plan meals and eat well on a limited budget?",
+  "reader_intent": "Get practical, budget-conscious meal-planning strategies.",
+  "reader_stage": "decision_support",
+  "desired_reader_outcome": "Reader has concrete budget-food staples and batch-cooking/shopping strategies.",
+  "ymyl_class": "low",
+  "medical_risk": "low",
+  "decay_class": "regulatory_drug_access",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "The USDA estimates the average American household wastes approximately 30-40% of its food supply.",
+      "claim_type": "statistical_result",
+      "ymyl_risk": "low",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"Why Meal Planning Matters\" section",
+      "severity": "low",
+      "recommended_action": "A commonly cited USDA/food-waste figure; not independently reverified against a primary USDA source this session."
+    },
+    {
+      "article_claim_id": "c2",
+      "proposition": "Specific grocery prices (dried beans $1-2/lb, eggs ~25-30 cents each).",
+      "claim_type": "other",
+      "ymyl_risk": "low",
+      "mapping_status": "outdated",
+      "article_location": "\"Budget-Friendly Staples\" section",
+      "severity": "low",
+      "recommended_action": "Grocery prices are inherently fast-decaying (classified here under a drug-access-style fast decay class by analogy) and will drift with inflation/market conditions regardless of when verified; flag for periodic refresh rather than one-time sourcing."
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 2,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 1,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 8,
+    "evidence_quality": 4,
+    "claim_traceability": 5,
+    "ymyl_safety": 12,
+    "freshness": 5,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 10,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 3,
+    "total": 60
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [],
+  "ad_grant_fit": "low",
+  "disposition": "REFRESH",
+  "disposition_reason": "Practically useful, distinct, low-risk content, but the USDA food-waste statistic is uncited and the specific grocery prices will predictably drift out of date and should be revisited on a recurring schedule rather than treated as a one-time fix.",
+  "rewrite_priority": "P2",
+  "blocking_findings": [],
+  "required_research": [
+    "Verify the USDA food-waste percentage against a primary USDA source."
+  ],
+  "recommended_rewrite_scope": [
+    "Refresh specific grocery price figures periodically; consider using ranges or removing exact cents-level prices that will become stale quickly."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

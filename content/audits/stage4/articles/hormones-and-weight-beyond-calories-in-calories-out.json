@@ -1,0 +1,85 @@
+{
+  "audit_id": "audit-hormones-and-weight-beyond-calories-in-calories-out",
+  "slug": "hormones-and-weight-beyond-calories-in-calories-out",
+  "snapshot_hash": "f8fa77387de7829b58b628c511882d5fc4c3c1f312461ebf67a07bb6baae74c9",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Hormones and Weight: Beyond Calories In, Calories Out",
+  "category": "Metabolic Health",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation",
+    "author_type": "organization",
+    "consistency_issue": true,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "How do hormones like leptin, ghrelin, cortisol, and thyroid hormones influence body weight beyond simple calorie counting?",
+  "reader_intent": "Understand the hormonal complexity of weight regulation to reduce self-blame and set realistic expectations.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands leptin resistance, ghrelin's rise after weight loss, cortisol's effect on fat storage, and thyroid's role, and knows these are testable via a healthcare provider.",
+  "ymyl_class": "medium",
+  "medical_risk": "medium",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "Leptin resistance can cause persistent hunger despite adequate or high fat stores.",
+      "claim_type": "mechanism",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"Leptin: The Satiety Signal\" section",
+      "severity": "low",
+      "recommended_action": "Standard endocrinology; article cites Endocrine Society/NIDDK/NIH generally rather than a specific leptin-resistance study, but this is a well-established, appropriately hedged mechanism claim."
+    },
+    {
+      "article_claim_id": "c2",
+      "proposition": "Ghrelin levels tend to increase with weight loss, contributing to increased hunger during and after dieting.",
+      "claim_type": "mechanism",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"Ghrelin: The Hunger Hormone\" section",
+      "severity": "info",
+      "recommended_action": "Well-established and consistent with claim-biggestloser-metabolic-adaptation-residual's broader adaptive-response theme, though not directly citing Fothergill; general sourcing to Endocrine Society/NIH is adequate for this qualitative claim."
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 2,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 9,
+    "claim_traceability": 8,
+    "ymyl_safety": 12,
+    "freshness": 8,
+    "trust_integrity": 8,
+    "cannibalization_distinctness": 10,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 74
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "set-point-theory-why-body-resists-weight-loss",
+      "reason": "Set point theory directly builds on the ghrelin/leptin mechanisms introduced here.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "medium",
+  "disposition": "KEEP",
+  "disposition_reason": "Well-hedged standard endocrinology with real organizational sourcing (Endocrine Society, NIDDK, American Thyroid Association, NIH, Harvard) matching the qualitative, non-specific-numeric claims actually made. No unsupported specific statistics. Only trivial editing needed.",
+  "rewrite_priority": "none",
+  "blocking_findings": [],
+  "required_research": [],
+  "recommended_rewrite_scope": [],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

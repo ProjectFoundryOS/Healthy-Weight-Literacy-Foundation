@@ -1,0 +1,96 @@
+{
+  "audit_id": "audit-added-sugars-hidden-sources-and-health-effects",
+  "slug": "added-sugars-hidden-sources-and-health-effects",
+  "snapshot_hash": "879d97dfb4a0806323969ec1ce9b1e6c34675eb48c52c5da2ffc3cab45d7b5f4",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Added Sugars: Hidden Sources and Their Effects on Health",
+  "category": "Nutrition Literacy",
+  "authorship": {
+    "current_visible_author": "HWLF Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": true,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "Where do added sugars hide in everyday foods, and how do they affect health?",
+  "reader_intent": "Identify hidden added sugars in packaged foods and understand their health effects.",
+  "reader_stage": "awareness",
+  "desired_reader_outcome": "Reader knows AHA's added-sugar limits, the many names for sugar, common hidden-sugar foods, and practical reduction strategies.",
+  "ymyl_class": "low",
+  "medical_risk": "low",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "The average American consumes approximately 17 teaspoons (71g) of added sugar per day.",
+      "claim_type": "statistical_result",
+      "ymyl_risk": "low",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"The Added Sugar Problem\" section",
+      "severity": "low",
+      "recommended_action": "A commonly cited NHANES-derived figure; not independently reverified against a primary CDC/NHANES source this session."
+    },
+    {
+      "article_claim_id": "c2",
+      "proposition": "AHA recommends limiting added sugar to 6 tsp (25g) for women and 9 tsp (36g) for men.",
+      "claim_type": "recommendation",
+      "ymyl_risk": "low",
+      "mapping_status": "mapped_existing_claim",
+      "article_location": "\"The Added Sugar Problem\" section",
+      "severity": "info",
+      "recommended_action": "Matches the newly added claim-aha-added-sugar-limit almost exactly (that claim's primary source states the recommendation in calories \u2014 100/150 kcal/day \u2014 and the gram figures are the standard conversion).",
+      "registry_claim_id": "claim-aha-added-sugar-limit",
+      "source_ids": [
+        "src-aha-dietary-sugars-2009"
+      ]
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 2,
+    "mapped_claim_count": 1,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 8,
+    "evidence_quality": 6,
+    "claim_traceability": 8,
+    "ymyl_safety": 10,
+    "freshness": 7,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 4,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 3,
+    "total": 59
+  },
+  "cannibalization_cluster_ids": [
+    "cluster-added-sugars-duplicate"
+  ],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-food-labels-added-sugars",
+      "reason": "Near-duplicate reader job with more label-specific detail.",
+      "reader_stage": "awareness"
+    }
+  ],
+  "ad_grant_fit": "low",
+  "disposition": "MERGE",
+  "disposition_reason": "This reader job (hidden sugar sources, many names for sugar, health effects) is heavily duplicated by understanding-food-labels-added-sugars, which additionally covers the FDA's 2020 label-format change and the Dietary Guidelines' separate <10%-of-calories figure with more regulatory context. This article's distinct value \u2014 its longer, more example-rich 'where sugar hides' food list \u2014 is worth preserving in the merge.",
+  "rewrite_priority": "P2",
+  "blocking_findings": [],
+  "required_research": [
+    "Verify the ~17 tsp/71g average daily added-sugar consumption figure against a primary CDC/NHANES source."
+  ],
+  "recommended_rewrite_scope": [
+    "Fold this article's more extensive hidden-sugar food examples into the survivor during rewrite."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  },
+  "merge_target_slug": "understanding-food-labels-added-sugars"
+}

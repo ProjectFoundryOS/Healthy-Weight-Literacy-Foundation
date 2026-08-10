@@ -1,0 +1,83 @@
+{
+  "audit_id": "audit-sleep-and-weight-understanding-the-connection",
+  "slug": "sleep-and-weight-understanding-the-connection",
+  "snapshot_hash": "2cae934e001d3c5973233c99a7510d2ae0ec22e45e0606fb601af420d0698661",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Sleep and Weight: Understanding the Connection",
+  "category": "Metabolic Health",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "How does sleep quality and duration affect weight, appetite hormones, and metabolism?",
+  "reader_intent": "Understand the mechanisms connecting sleep to hunger hormones, food choices, and metabolic health.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands ghrelin/leptin/cortisol responses to sleep loss and the approximate magnitude of insulin-sensitivity impact, and adopts practical sleep-hygiene steps.",
+  "ymyl_class": "medium",
+  "medical_risk": "medium",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "Just a few nights of restricted sleep can reduce insulin sensitivity by 25-30 percent.",
+      "claim_type": "statistical_result",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"Insulin Sensitivity\" section",
+      "severity": "medium",
+      "recommended_action": "A specific, checkable statistic with zero citation. This figure is consistent with published short-term sleep-restriction studies (e.g., Donga et al. 2010-type single-night sleep restriction research) but was not independently reverified against a primary source this audit \u2014 verify the exact figure and population before restating with this precision."
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 1,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 5,
+    "claim_traceability": 6,
+    "ymyl_safety": 11,
+    "freshness": 8,
+    "trust_integrity": 8,
+    "cannibalization_distinctness": 5,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 62
+  },
+  "cannibalization_cluster_ids": [
+    "cluster-sleep-duplicate"
+  ],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "how-sleep-affects-weight-health-daily-functioning",
+      "reason": "Near-identical reader job; should be consulted together until merged.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "medium",
+  "disposition": "REFRESH",
+  "disposition_reason": "More substantive and mechanistically detailed than its near-duplicate (how-sleep-affects-weight-health-daily-functioning) and selected as the cluster survivor, but it has zero citations anywhere and one specific, unverified statistic (25-30% insulin sensitivity reduction) that needs a primary-source check before this article can be considered adequately sourced.",
+  "rewrite_priority": "P1",
+  "blocking_findings": [],
+  "required_research": [
+    "Verify the exact insulin-sensitivity reduction figure and study population against a primary sleep-restriction study."
+  ],
+  "recommended_rewrite_scope": [
+    "Add a Sources section.",
+    "Verify or requalify the specific insulin-sensitivity statistic.",
+    "Fold in the merged article's practical, plain-language framing where it adds value."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

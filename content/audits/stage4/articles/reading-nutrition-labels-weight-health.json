@@ -1,0 +1,82 @@
+{
+  "audit_id": "audit-reading-nutrition-labels-weight-health",
+  "slug": "reading-nutrition-labels-weight-health",
+  "snapshot_hash": "d70682ce82c76ad304341f5bcfdf001230411838802ecfb29ef325dbd3b5c66b",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "How to Read Nutrition Labels for Better Weight Health Understanding",
+  "category": "Nutrition Education",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "How do I read a nutrition label to make informed food choices for weight health?",
+  "reader_intent": "Understand every major section of a Nutrition Facts label (serving size, calories, fats, sodium, carbs, protein, vitamins, %DV) and use it to compare products.",
+  "reader_stage": "decision_support",
+  "desired_reader_outcome": "Reader can read a full nutrition label end-to-end and use %DV to compare products.",
+  "ymyl_class": "low",
+  "medical_risk": "low",
+  "decay_class": "basic_definition",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "Recommended limits: cholesterol <300mg/day (<200mg with heart disease); sodium <2,300mg/day; fiber 25-30g/day; added sugars <50g/day (ideally <25g).",
+      "claim_type": "recommendation",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "Sections 4-7",
+      "severity": "low",
+      "recommended_action": "Standard, widely published guideline figures (consistent with Dietary Guidelines/AHA benchmarks) but stated with zero citation."
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 1,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 6,
+    "claim_traceability": 8,
+    "ymyl_safety": 11,
+    "freshness": 8,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 5,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 64
+  },
+  "cannibalization_cluster_ids": [
+    "cluster-nutrition-labels-duplicate"
+  ],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-food-labels-added-sugars",
+      "reason": "Complementary added-sugar-specific deep dive.",
+      "reader_stage": "decision_support"
+    }
+  ],
+  "ad_grant_fit": "low",
+  "disposition": "REFRESH",
+  "disposition_reason": "The most comprehensive of the two near-duplicate label-reading articles (covers vitamins/minerals and protein-per-meal guidance the other omits) and selected as cluster survivor, but has zero citations for several specific numeric guideline thresholds.",
+  "rewrite_priority": "P2",
+  "blocking_findings": [],
+  "required_research": [
+    "Cite Dietary Guidelines for Americans / AHA / FDA label-format sources directly for each numeric threshold."
+  ],
+  "recommended_rewrite_scope": [
+    "Add a Sources section.",
+    "Fold in reading-nutrition-labels-what-to-look-for's FDA-2020-format-update framing and front-of-package marketing-claims section, which this article omits."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

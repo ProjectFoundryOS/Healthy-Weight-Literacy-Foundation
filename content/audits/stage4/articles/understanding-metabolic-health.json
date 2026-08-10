@@ -1,0 +1,94 @@
+{
+  "audit_id": "audit-understanding-metabolic-health",
+  "slug": "understanding-metabolic-health",
+  "snapshot_hash": "17f9c6e091f9e4c87c14e7812323e8afd5e878098f2f717f22d36fae75879d48",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Understanding Metabolic Health and Why It Matters",
+  "category": "Metabolic Health",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "What is metabolic health, what are its key clinical markers, and how can I support it?",
+  "reader_intent": "Understand the five clinical markers of metabolic syndrome and how lifestyle factors influence metabolic health independent of weight.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands the five metabolic-syndrome criteria and specific threshold numbers, and that metabolic health can improve even without weight change.",
+  "ymyl_class": "high",
+  "medical_risk": "medium",
+  "decay_class": "clinical_efficacy",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "Metabolic syndrome is diagnosed when three or more of five specific criteria are met: waist circumference (>40in men/>35in women), blood pressure \u2265130/85, fasting glucose \u2265100 mg/dL, triglycerides \u2265150 mg/dL, HDL <40 (men)/<50 (women).",
+      "claim_type": "prevalence",
+      "ymyl_risk": "high",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"The Five Pillars of Metabolic Health\" section",
+      "severity": "medium",
+      "recommended_action": "These are specific clinical diagnostic thresholds stated with zero citation anywhere in the article. The numbers are consistent with well-known consensus criteria (NCEP ATP III / AHA-NHLBI harmonized definition) but must be directly cited, not left unsourced, given they are exact clinical cutoffs a reader could misapply."
+    },
+    {
+      "article_claim_id": "c2",
+      "proposition": "Losing 5-10% of body weight can significantly improve metabolic markers (blood sugar, blood pressure, cholesterol).",
+      "claim_type": "efficacy",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"Maintain a Healthy Weight (If Needed)\" section",
+      "severity": "low",
+      "recommended_action": "A widely supported clinical finding but stated without a specific trial or guideline citation."
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 2,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 4,
+    "claim_traceability": 6,
+    "ymyl_safety": 10,
+    "freshness": 7,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 10,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 63
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-your-metabolism-facts-vs-myths",
+      "reason": "Directly complementary metabolism content.",
+      "reader_stage": "understanding"
+    },
+    {
+      "target_slug": "understanding-bmi-what-it-really-means",
+      "reason": "Explains why metabolic markers matter more than weight/BMI alone.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "medium",
+  "disposition": "REFRESH",
+  "disposition_reason": "Substantively accurate and genuinely useful clinical-marker education, but every specific diagnostic threshold (waist circumference, BP, glucose, triglycerides, HDL) is stated with zero citation, which is not acceptable for exact clinical cutoff numbers even though the numbers themselves appear consistent with consensus criteria.",
+  "rewrite_priority": "P1",
+  "blocking_findings": [],
+  "required_research": [
+    "Cite the specific consensus metabolic syndrome definition (e.g., the AHA/NHLBI harmonized criteria) directly for the five diagnostic thresholds."
+  ],
+  "recommended_rewrite_scope": [
+    "Add a Sources section citing the specific metabolic syndrome criteria source and a source for the 5-10% weight-loss metabolic-marker-improvement claim."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

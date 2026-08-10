@@ -1,0 +1,68 @@
+{
+  "audit_id": "audit-understanding-healthy-weight",
+  "slug": "understanding-healthy-weight",
+  "snapshot_hash": "3c55f2e527e6abf5b24ee12e230a31ae48446852069f77be08cf3c006f48008b",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Understanding Healthy Weight: Beyond the Numbers",
+  "category": "Weight Literacy",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "What does 'healthy weight' actually mean, beyond a number on a chart?",
+  "reader_intent": "Reframe 'healthy weight' around functional, metabolic, and mental well-being rather than a single ideal number.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands weight is one data point among many and adopts health-behavior-focused goals instead of a target weight.",
+  "ymyl_class": "low",
+  "medical_risk": "low",
+  "decay_class": "basic_definition",
+  "claims": [],
+  "evidence_summary": {
+    "material_claim_count": 0,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 8,
+    "evidence_quality": 5,
+    "claim_traceability": 7,
+    "ymyl_safety": 12,
+    "freshness": 7,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 7,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 3,
+    "total": 62
+  },
+  "cannibalization_cluster_ids": [
+    "cluster-bmi-healthy-weight-overlap"
+  ],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-bmi-what-it-really-means",
+      "reason": "Directly complementary BMI-specific detail; distinct primary question (what should MY weight be vs. what does the BMI number mean) but real thematic overlap.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "low",
+  "disposition": "REFRESH",
+  "disposition_reason": "Distinct primary question from understanding-bmi-what-it-really-means (personal framing vs. BMI-mechanics explanation) with real but partial overlap in BMI-critique content; no unsupported specific claims found, but zero sources given for a piece that references BMI's technical limitations.",
+  "rewrite_priority": "P2",
+  "blocking_findings": [],
+  "required_research": [],
+  "recommended_rewrite_scope": [
+    "Cross-link to understanding-bmi-what-it-really-means rather than re-explaining BMI mechanics in depth here."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

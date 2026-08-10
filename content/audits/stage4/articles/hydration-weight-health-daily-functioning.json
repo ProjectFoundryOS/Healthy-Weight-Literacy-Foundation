@@ -1,0 +1,106 @@
+{
+  "audit_id": "audit-hydration-weight-health-daily-functioning",
+  "slug": "hydration-weight-health-daily-functioning",
+  "snapshot_hash": "b62710e002e42b11e488f0e6ff52518db91556d21e503005256c1425af778bf9",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "How Hydration Supports Weight Health and Everyday Functioning",
+  "category": "Public Health Awareness",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "How does hydration affect weight health specifically, and how much water do I need?",
+  "reader_intent": "Understand the specific mechanisms by which hydration may support weight management.",
+  "reader_stage": "awareness",
+  "desired_reader_outcome": "Reader understands general hydration needs and several specific weight-management-adjacent hydration mechanisms.",
+  "ymyl_class": "low",
+  "medical_risk": "low",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "One study found that people who drank water before meals ate fewer calories than those who didn't.",
+      "claim_type": "efficacy",
+      "ymyl_risk": "medium",
+      "mapping_status": "unsupported",
+      "article_location": "\"Water Can Reduce Calorie Intake\" section",
+      "severity": "medium",
+      "recommended_action": "Names an unidentified 'one study' with zero citation \u2014 a real, checkable claim (this describes a genuine, identifiable line of research, most commonly a Davy et al.-type pre-meal water study) is currently presented as if from memory. Identify and cite the actual specific study before restating this claim."
+    },
+    {
+      "article_claim_id": "c2",
+      "proposition": "Drinking cold water may slightly boost metabolism as the body expends energy to warm it to body temperature.",
+      "claim_type": "physiology",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"Water Supports Metabolism\" section",
+      "severity": "low",
+      "recommended_action": "Appropriately hedged as a small, non-primary effect; still uncited."
+    },
+    {
+      "article_claim_id": "c3",
+      "proposition": "The National Academies recommends approximately 3.7 liters (men) / 2.7 liters (women) of total fluids per day.",
+      "claim_type": "recommendation",
+      "ymyl_risk": "low",
+      "mapping_status": "mapped_existing_claim",
+      "article_location": "\"How Much Water Do You Need?\" section",
+      "severity": "info",
+      "recommended_action": "Matches claim-hydration-adequate-intake.",
+      "registry_claim_id": "claim-hydration-adequate-intake",
+      "source_ids": [
+        "src-nasem-water-dri-2005"
+      ]
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 3,
+    "mapped_claim_count": 1,
+    "unsupported_count": 1,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 8,
+    "evidence_quality": 4,
+    "claim_traceability": 5,
+    "ymyl_safety": 10,
+    "freshness": 6,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 3,
+    "usefulness": 4,
+    "internal_linking": 1,
+    "ad_grant_fit": 3,
+    "total": 51
+  },
+  "cannibalization_cluster_ids": [
+    "cluster-hydration-duplicate"
+  ],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "hydration-and-health-how-much-water-do-you-need",
+      "reason": "Nearly identical reader job; should be consulted together until merged.",
+      "reader_stage": "awareness"
+    }
+  ],
+  "ad_grant_fit": "low",
+  "disposition": "MERGE",
+  "disposition_reason": "This reader job (how much water do I need, plus weight-management hydration mechanisms) is almost entirely duplicated by hydration-and-health-how-much-water-do-you-need, which covers the same NASEM figures and myth-debunking more rigorously. This article's genuinely distinct content \u2014 the thirst-vs-hunger reframe and the specific 'water before meals' claim (once properly sourced) \u2014 is worth preserving by folding into the survivor rather than maintaining two near-identical URLs.",
+  "rewrite_priority": "P2",
+  "blocking_findings": [],
+  "required_research": [
+    "Identify and cite the actual specific study behind the 'water before meals reduces calorie intake' claim before it is carried into the merged article."
+  ],
+  "recommended_rewrite_scope": [
+    "Fold the thirst-vs-hunger and pre-meal-water content into hydration-and-health-how-much-water-do-you-need as a properly sourced subsection, then redirect this URL."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  },
+  "merge_target_slug": "hydration-and-health-how-much-water-do-you-need"
+}

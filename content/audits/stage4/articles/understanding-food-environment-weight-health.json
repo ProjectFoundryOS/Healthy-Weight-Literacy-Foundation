@@ -1,0 +1,58 @@
+{
+  "audit_id": "audit-understanding-food-environment-weight-health",
+  "slug": "understanding-food-environment-weight-health",
+  "snapshot_hash": "011ff6049a6ded8e1254c44011a976655ec2d983aad2f50b5ed3481e72428acf",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Understanding Food Environment and Its Effect on Weight Health",
+  "category": "Public Health Awareness",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "How does the food environment (access, marketing, cost) shape eating choices independent of willpower?",
+  "reader_intent": "Understand food deserts, marketing, and economic factors that shape food choices.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands structural factors (access, cost, marketing) shaping food choices and reduces self-blame.",
+  "ymyl_class": "low",
+  "medical_risk": "low",
+  "decay_class": "basic_definition",
+  "claims": [],
+  "evidence_summary": {
+    "material_claim_count": 0,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 5,
+    "claim_traceability": 6,
+    "ymyl_safety": 12,
+    "freshness": 7,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 9,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 3,
+    "total": 64
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [],
+  "ad_grant_fit": "medium",
+  "disposition": "KEEP",
+  "disposition_reason": "Distinct, well-hedged structural/public-health framing not duplicated elsewhere; makes no specific unsupported numeric claims. Only trivial editing needed.",
+  "rewrite_priority": "none",
+  "blocking_findings": [],
+  "required_research": [],
+  "recommended_rewrite_scope": [],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

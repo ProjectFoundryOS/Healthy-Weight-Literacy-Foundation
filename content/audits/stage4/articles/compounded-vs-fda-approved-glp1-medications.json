@@ -1,0 +1,109 @@
+{
+  "audit_id": "audit-compounded-vs-fda-approved-glp1-medications",
+  "slug": "compounded-vs-fda-approved-glp1-medications",
+  "snapshot_hash": "101d2711f8bb954e73354872c7f0f33f1bc1f979ce371e076031fd0733998a05",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Compounded vs. FDA-Approved GLP-1s: What You Need to Know",
+  "category": "Medication Literacy",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation",
+    "author_type": "organization",
+    "consistency_issue": true,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "What is the difference between FDA-approved and compounded GLP-1 medications, and how do I evaluate a compounding pharmacy's legitimacy?",
+  "reader_intent": "Decide whether to use a compounded GLP-1 medication and how to verify a pharmacy before doing so.",
+  "reader_stage": "decision_support",
+  "desired_reader_outcome": "Reader understands that compounded medications are not FDA-approved, knows the specific red flags and verification steps (NABP, state boards, 503A/503B), and knows what to ask a provider.",
+  "ymyl_class": "critical",
+  "medical_risk": "critical",
+  "decay_class": "regulatory_drug_access",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "Compounded medications are not FDA-approved and have not undergone the same rigorous safety/effectiveness/manufacturing testing.",
+      "claim_type": "regulatory",
+      "ymyl_risk": "high",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"What Are Compounded Medications?\" section",
+      "severity": "low",
+      "recommended_action": "This is an accurate, well-established regulatory fact but the article cites zero sources anywhere; add a direct citation to FDA compounding guidance."
+    },
+    {
+      "article_claim_id": "c2",
+      "proposition": "The FDA has issued multiple warnings about risks associated with compounded GLP-1 products, including reports of adverse events.",
+      "claim_type": "safety",
+      "ymyl_risk": "high",
+      "mapping_status": "unsupported",
+      "article_location": "\"Key Risks of Compounded GLP-1 Medications\" section",
+      "severity": "medium",
+      "recommended_action": "Vague, undated claim with zero citation for a medication-safety assertion. Identify and cite the specific current FDA safety communication(s) by date before restating this claim."
+    },
+    {
+      "article_claim_id": "c3",
+      "proposition": "503A pharmacies compound based on individual prescriptions; 503B outsourcing facilities can produce larger quantities but must register with the FDA.",
+      "claim_type": "regulatory",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"How to Identify Legitimate Compounding Pharmacies\" section",
+      "severity": "low",
+      "recommended_action": "Directionally accurate framework from the FD&C Act; cite FDA's own compounding guidance page directly rather than leaving it unsourced."
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 3,
+    "mapped_claim_count": 0,
+    "unsupported_count": 1,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 4,
+    "claim_traceability": 5,
+    "ymyl_safety": 11,
+    "freshness": 7,
+    "trust_integrity": 8,
+    "cannibalization_distinctness": 10,
+    "usefulness": 4,
+    "internal_linking": 1,
+    "ad_grant_fit": 5,
+    "total": 64
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "science-of-glp1-how-medications-affect-your-body",
+      "reason": "Reader who understands compounded-vs-FDA-approved risk may next want the underlying GLP-1 mechanism explanation.",
+      "reader_stage": "understanding"
+    },
+    {
+      "target_slug": "questions-to-ask-doctor-about-glp1-medications",
+      "reason": "Natural next step after evaluating a medication option is preparing provider questions.",
+      "reader_stage": "decision_support"
+    }
+  ],
+  "ad_grant_fit": "high",
+  "disposition": "REFRESH",
+  "disposition_reason": "Genuinely important, distinct, mission-critical consumer-safety content with accurate substance, but it has zero cited sources anywhere and one medium-severity vague/undated safety claim ('multiple warnings...adverse events') that needs a specific, current, dated FDA citation before it can be considered adequately sourced.",
+  "rewrite_priority": "P0",
+  "blocking_findings": [],
+  "required_research": [
+    "Identify and cite the specific, current FDA safety communication(s) about compounded semaglutide/tirzepatide by date.",
+    "Cite FDA's own 503A/503B compounding guidance directly."
+  ],
+  "recommended_rewrite_scope": [
+    "Add direct source citations throughout, especially for the FDA-warnings claim.",
+    "Re-verify current compounding/shortage status, since FDA's compounded-GLP-1 posture has shifted as manufacturer shortages have resolved."
+  ],
+  "safety_language_findings": [
+    "No overstated efficacy or guaranteed-outcome language found.",
+    "Appropriately frames compounded medication risk without alarmism; red-flags list is accurate and non-alarmist."
+  ],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

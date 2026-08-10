@@ -1,0 +1,104 @@
+{
+  "audit_id": "audit-set-point-theory-why-body-resists-weight-loss",
+  "slug": "set-point-theory-why-body-resists-weight-loss",
+  "snapshot_hash": "7d1910341e6041faffa8ec9dc2433e8c5e0532bb1b7ec33b056f57c2e952a92c",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Set Point Theory: Why Your Body Resists Weight Loss",
+  "category": "Metabolic Health",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation",
+    "author_type": "organization",
+    "consistency_issue": true,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "Why does the body seem to resist and reverse weight loss, and what is 'set point theory'?",
+  "reader_intent": "Understand the biological basis for weight-loss resistance and regain to reduce self-blame.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands adaptive thermogenesis and set point theory as real biological phenomena, with accurate scope on what is and isn't known, rather than an overclaimed specific number.",
+  "ymyl_class": "medium",
+  "medical_risk": "medium",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "The body's set point is not a fixed number but a range, typically spanning about 10-15 pounds.",
+      "claim_type": "statistical_result",
+      "ymyl_risk": "medium",
+      "mapping_status": "unsupported",
+      "article_location": "\"What Is Set Point Theory?\" section, second paragraph",
+      "severity": "high",
+      "recommended_action": "This is the exact kind of pseudo-citation Issue #16 warned against: a specific numeric range with zero source capable of supporting it (the article's own Sources list is five generic organization homepages \u2014 NIH, Endocrine Society, APA, NIDDK, Obesity Society \u2014 none of which is cited as specifically supporting this number). Either locate and cite a primary source stating this specific range, or generalize the claim to avoid asserting an unsupported number."
+    },
+    {
+      "article_claim_id": "c2",
+      "proposition": "Adaptive thermogenesis (metabolic adaptation) after weight loss involves decreased resting metabolic rate, increased ghrelin/decreased leptin, decreased NEAT, and improved muscle efficiency.",
+      "claim_type": "physiology",
+      "ymyl_risk": "medium",
+      "mapping_status": "mapped_existing_claim",
+      "article_location": "\"Adaptive Thermogenesis\" section",
+      "severity": "info",
+      "recommended_action": "Directionally consistent with claim-biggestloser-rmr-below-baseline and claim-biggestloser-metabolic-adaptation-residual, though the article does not cite Fothergill et al. by name or number. Recommend citing that source directly and carrying its specific n=14/atypical-cohort limitation forward rather than presenting adaptive thermogenesis as a fully generalized phenomenon.",
+      "registry_claim_id": "claim-biggestloser-metabolic-adaptation-residual",
+      "source_ids": [
+        "src-fothergill-biggestloser-2016"
+      ]
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 2,
+    "mapped_claim_count": 1,
+    "unsupported_count": 1,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 1
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 6,
+    "claim_traceability": 6,
+    "ymyl_safety": 9,
+    "freshness": 8,
+    "trust_integrity": 8,
+    "cannibalization_distinctness": 10,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 66
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-your-metabolism-facts-vs-myths",
+      "reason": "Reader learning about adaptive thermogenesis benefits from the broader metabolism-myths context.",
+      "reader_stage": "understanding"
+    },
+    {
+      "target_slug": "hormones-and-weight-beyond-calories-in-calories-out",
+      "reason": "Set point theory builds directly on the leptin/ghrelin mechanisms explained there.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "medium",
+  "disposition": "REFRESH",
+  "disposition_reason": "One of the highest-value findings in this audit: a specific, unsupported numeric claim (the 10-15 lb 'defended weight range') is stated as fact with no source capable of supporting it, despite the article otherwise being a genuinely valuable, well-hedged explanation of a real phenomenon. Cannot be KEEP while this claim is unresolved. The broader adaptive-thermogenesis content can be strengthened by directly citing the corpus's own Fothergill-based claims.",
+  "rewrite_priority": "P1",
+  "blocking_findings": [
+    "Specific 'defended weight range of 10-15 pounds' claim has no supporting source and must be sourced or generalized before this article can be reconsidered for KEEP."
+  ],
+  "required_research": [
+    "Locate a primary source (if one exists) for the specific 10-15 lb defended-range figure, or rewrite the claim to avoid an unsupported specific number."
+  ],
+  "recommended_rewrite_scope": [
+    "Resolve the unsupported 10-15 lb claim.",
+    "Directly cite claim-biggestloser-rmr-below-baseline / claim-biggestloser-metabolic-adaptation-residual and carry forward their n=14/atypical-cohort limitations rather than generalizing adaptive thermogenesis without qualification."
+  ],
+  "safety_language_findings": [
+    "Appropriately frames set-point biology as real but not deterministic; no guaranteed-outcome language.",
+    "Correctly avoids implying every individual has an identical, precisely-known set point."
+  ],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

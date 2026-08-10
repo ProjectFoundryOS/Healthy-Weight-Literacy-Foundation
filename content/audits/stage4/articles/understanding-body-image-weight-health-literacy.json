@@ -1,0 +1,64 @@
+{
+  "audit_id": "audit-understanding-body-image-weight-health-literacy",
+  "slug": "understanding-body-image-weight-health-literacy",
+  "snapshot_hash": "c2db6a18f76aac9773a0e22520f1a68d27e06c0b5de7167cf718b127ab43fb7a",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Understanding Body Image and Its Connection to Weight Health Literacy",
+  "category": "Weight Literacy",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "How does body image affect well-being, and how does it connect to weight health literacy?",
+  "reader_intent": "Understand body image's mental-health effects and paths toward body neutrality.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands negative body image's effects and evidence-informed paths (body neutrality/acceptance) toward improvement.",
+  "ymyl_class": "medium",
+  "medical_risk": "low",
+  "decay_class": "basic_definition",
+  "claims": [],
+  "evidence_summary": {
+    "material_claim_count": 0,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 5,
+    "claim_traceability": 6,
+    "ymyl_safety": 13,
+    "freshness": 8,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 9,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 3,
+    "total": 66
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-weight-stigma-impact-health",
+      "reason": "Directly complementary psychosocial content.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "medium",
+  "disposition": "KEEP",
+  "disposition_reason": "Distinct, well-hedged psychosocial content with clear escalation-to-professional-support guidance and no specific unsupported numeric claims. Only trivial editing needed.",
+  "rewrite_priority": "none",
+  "blocking_findings": [],
+  "required_research": [],
+  "recommended_rewrite_scope": [],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "audit_id": "audit-understanding-your-metabolism-facts-vs-myths",
+  "slug": "understanding-your-metabolism-facts-vs-myths",
+  "snapshot_hash": "1669be1c1d2b1ceea5fee3c952cbf792e20a9fd3dc79423cf3dafb281a6b3c37",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Understanding Your Metabolism: Facts vs. Myths",
+  "category": "Metabolic Health",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation",
+    "author_type": "organization",
+    "consistency_issue": true,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "What does the science actually say about how metabolism works, and which common metabolism myths are false?",
+  "reader_intent": "Replace common metabolism myths (fast/slow metabolism, dramatic age decline, meal-frequency effects, metabolic damage from dieting) with accurate, cited science.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands BMR/TEF/activity components of TDEE and knows metabolism is stable from 20-60 and declines only gradually after, directly citing the Pontzer et al. 2021 Science study.",
+  "ymyl_class": "medium",
+  "medical_risk": "low",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "A landmark 2021 study published in Science (Pontzer et al.) found that metabolic rate remains relatively stable from ages 20 to 60 after accounting for body composition, with a gradual ~0.7%/year decline after 60.",
+      "claim_type": "statistical_result",
+      "ymyl_risk": "low",
+      "mapping_status": "mapped_existing_claim",
+      "article_location": "\"Myth: Metabolism slows dramatically with age\" section",
+      "severity": "info",
+      "recommended_action": "Accurately represents the cited study by name, journal, and year; independently reconfirmed against the primary abstract during this audit. This is one of the corpus's best-sourced claims.",
+      "registry_claim_id": "claim-metabolic-rate-stable-20-to-60",
+      "source_ids": [
+        "src-pontzer-energy-expenditure-lifecourse-2021"
+      ]
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 1,
+    "mapped_claim_count": 1,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 12,
+    "claim_traceability": 12,
+    "ymyl_safety": 13,
+    "freshness": 9,
+    "trust_integrity": 8,
+    "cannibalization_distinctness": 10,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 83
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-metabolic-health",
+      "reason": "Directly complementary metabolism content.",
+      "reader_stage": "understanding"
+    },
+    {
+      "target_slug": "set-point-theory-why-body-resists-weight-loss",
+      "reason": "Metabolic adaptation content connects to set point theory.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "high",
+  "disposition": "KEEP",
+  "disposition_reason": "One of the best-sourced articles in the corpus: correctly names and represents its primary source (Pontzer et al. 2021, Science), independently reconfirmed accurate during this audit. Well-hedged myth-by-myth structure with no unsupported specific numbers found. Only trivial editing needed.",
+  "rewrite_priority": "none",
+  "blocking_findings": [],
+  "required_research": [],
+  "recommended_rewrite_scope": [],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

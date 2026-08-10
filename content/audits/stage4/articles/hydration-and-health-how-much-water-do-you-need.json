@@ -1,0 +1,86 @@
+{
+  "audit_id": "audit-hydration-and-health-how-much-water-do-you-need",
+  "slug": "hydration-and-health-how-much-water-do-you-need",
+  "snapshot_hash": "2e9b51e05d1860905ff046cc7d6a709d56c4140ee410f5e290681bea3e856269",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Hydration and Health: How Much Water Do You Really Need?",
+  "category": "Nutrition Literacy",
+  "authorship": {
+    "current_visible_author": "HWLF Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": true,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "How much water do I actually need to drink each day, and is the '8 glasses a day' rule real?",
+  "reader_intent": "Get an accurate reference figure for daily water intake and understand why the 8x8 rule isn't evidence-based.",
+  "reader_stage": "awareness",
+  "desired_reader_outcome": "Reader knows the National Academies' Adequate Intake figures (3.7L men / 2.7L women, including food) and uses urine color as a practical adequacy check.",
+  "ymyl_class": "low",
+  "medical_risk": "low",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "The National Academies recommends approximately 3.7 liters (men) and 2.7 liters (women) of total water per day, including water from food (~19-20%).",
+      "claim_type": "recommendation",
+      "ymyl_risk": "low",
+      "mapping_status": "mapped_existing_claim",
+      "article_location": "\"Debunking the 8-Glasses Myth\" section",
+      "severity": "info",
+      "recommended_action": "Matches claim-hydration-adequate-intake almost exactly (article says ~20% from food vs. the registry's verified ~19% \u2014 trivial rounding, not a material drift). The article does not formally cite NASEM in a Sources section despite naming them in prose.",
+      "registry_claim_id": "claim-hydration-adequate-intake",
+      "source_ids": [
+        "src-nasem-water-dri-2005"
+      ]
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 1,
+    "mapped_claim_count": 1,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 7,
+    "claim_traceability": 9,
+    "ymyl_safety": 12,
+    "freshness": 8,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 4,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 66
+  },
+  "cannibalization_cluster_ids": [
+    "cluster-hydration-duplicate"
+  ],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-macronutrients-proteins-carbs-fats",
+      "reason": "Both are foundational nutrition-basics content a new reader would want together.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "low",
+  "disposition": "REFRESH",
+  "disposition_reason": "Accurate and already matches the registry's own verified hydration claim almost exactly, but this reader job is heavily duplicated by hydration-weight-health-daily-functioning (see cluster-hydration-duplicate) and lacks a formal Sources section despite naming NASEM in prose. Selected as the cluster survivor given its more focused, myth-debunking structure.",
+  "rewrite_priority": "P2",
+  "blocking_findings": [],
+  "required_research": [
+    "None \u2014 claim-hydration-adequate-intake already exists and supports this article directly."
+  ],
+  "recommended_rewrite_scope": [
+    "Add a formal Sources section formally citing NASEM.",
+    "Incorporate the weight-management-specific angle (thirst-vs-hunger, water-before-meals) from the merged article during rewrite."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

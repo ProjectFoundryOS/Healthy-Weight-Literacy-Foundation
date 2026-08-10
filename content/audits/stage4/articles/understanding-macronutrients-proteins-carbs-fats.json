@@ -1,0 +1,79 @@
+{
+  "audit_id": "audit-understanding-macronutrients-proteins-carbs-fats",
+  "slug": "understanding-macronutrients-proteins-carbs-fats",
+  "snapshot_hash": "07b82c38e82dc650bca7be95dea0342720b6b94935f0f6a5c6af79a52c7db6e7",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Understanding Macronutrients: A Practical Guide to Proteins, Carbs, and Fats",
+  "category": "Nutrition Literacy",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation",
+    "author_type": "organization",
+    "consistency_issue": true,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "What do protein, carbohydrates, and fat actually do in the body, and how much of each do I need?",
+  "reader_intent": "Build balanced meals using accurate macronutrient information rather than diet-culture villain/hero framing.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands each macronutrient's function and the general protein intake range, and can build a balanced plate.",
+  "ymyl_class": "low",
+  "medical_risk": "low",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "General protein recommendations suggest 0.8-1.0 grams per kilogram of body weight for most adults.",
+      "claim_type": "nutrition",
+      "ymyl_risk": "medium",
+      "mapping_status": "mapped_existing_claim",
+      "article_location": "\"Protein: Building and Repair\" section",
+      "severity": "info",
+      "recommended_action": "0.8 g/kg matches the RDA exactly and is broadly consistent with claim-protein-intake-lean-mass's above-RDA framing; the article cites Dietary Guidelines for Americans generally, which is an appropriate real primary source for this claim.",
+      "registry_claim_id": "claim-protein-intake-lean-mass",
+      "source_ids": [
+        "src-hudson-protein-metaanalysis-2020"
+      ]
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 1,
+    "mapped_claim_count": 1,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 11,
+    "claim_traceability": 10,
+    "ymyl_safety": 13,
+    "freshness": 9,
+    "trust_integrity": 8,
+    "cannibalization_distinctness": 10,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 80
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "topic-protein-preserve-muscle-during-weight-loss",
+      "reason": "Directly connects to the corpus's protein-and-lean-mass evidence topic.",
+      "reader_stage": "decision_support"
+    }
+  ],
+  "ad_grant_fit": "medium",
+  "disposition": "KEEP",
+  "disposition_reason": "Genuinely well-sourced (Dietary Guidelines for Americans, Harvard, Academy of Nutrition and Dietetics, NIDDK, AHA) with claims that match the registry's own verified protein finding. No unsupported specific numbers found. Only trivial editing needed.",
+  "rewrite_priority": "none",
+  "blocking_findings": [],
+  "required_research": [],
+  "recommended_rewrite_scope": [],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "audit_id": "audit-understanding-food-labels-added-sugars",
+  "slug": "understanding-food-labels-added-sugars",
+  "snapshot_hash": "e220ee040e6f78315bfdbc45e05f324dfa9324060b595d15ec009507b7a46a64",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Understanding Food Labels: Added Sugars and Hidden Ingredients",
+  "category": "Nutrition Education",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "How do I identify added sugars on a nutrition label, and how much added sugar is recommended?",
+  "reader_intent": "Read added-sugar information on a Nutrition Facts label accurately and understand the different recommended limits.",
+  "reader_stage": "decision_support",
+  "desired_reader_outcome": "Reader can find and interpret the Added Sugars line, recognizes sugar's many names, and knows the Dietary Guidelines' <10%-of-calories figure.",
+  "ymyl_class": "low",
+  "medical_risk": "low",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "The 2020-2025 Dietary Guidelines for Americans recommend added sugars make up less than 10% of daily calories (about 50g/12 tsp for a 2,000-calorie diet).",
+      "claim_type": "recommendation",
+      "ymyl_risk": "low",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "Introduction",
+      "severity": "low",
+      "recommended_action": "A real, correctly attributed federal guideline figure, distinct from (and not in true contradiction with) the AHA's separate, stricter 25g/36g figure cited in added-sugars-hidden-sources-and-health-effects \u2014 the audit's finding is that a future rewrite should clearly attribute each number to its own source rather than presenting only one without the other's context."
+    },
+    {
+      "article_claim_id": "c2",
+      "proposition": "Since 2020, the FDA has required food manufacturers to list added sugars separately on the Nutrition Facts label.",
+      "claim_type": "regulatory",
+      "ymyl_risk": "low",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"How to Read the Nutrition Facts Label\" section",
+      "severity": "info",
+      "recommended_action": "Accurate, well-known FDA labeling rule; would benefit from a direct FDA citation."
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 2,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 7,
+    "claim_traceability": 9,
+    "ymyl_safety": 11,
+    "freshness": 8,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 5,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 66
+  },
+  "cannibalization_cluster_ids": [
+    "cluster-added-sugars-duplicate"
+  ],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "reading-nutrition-labels-weight-health",
+      "reason": "Complementary broader label-reading skill.",
+      "reader_stage": "decision_support"
+    }
+  ],
+  "ad_grant_fit": "low",
+  "disposition": "REFRESH",
+  "disposition_reason": "Selected as the survivor of the added-sugars cluster given its more complete regulatory context (FDA 2020 label rule, Dietary Guidelines figure), but like nearly the whole corpus it has zero formal citations and would benefit from directly citing claim-aha-added-sugar-limit alongside its own DGA figure so both real, non-contradictory numbers are properly attributed.",
+  "rewrite_priority": "P2",
+  "blocking_findings": [],
+  "required_research": [
+    "Cite the Dietary Guidelines for Americans and FDA labeling rule directly."
+  ],
+  "recommended_rewrite_scope": [
+    "Fold added-sugars-hidden-sources-and-health-effects's hidden-sugar food examples in.",
+    "Cite both the DGA <10%-calories figure and the AHA claim-aha-added-sugar-limit figure, explicitly attributed to their respective sources so readers understand these are two different real benchmarks."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

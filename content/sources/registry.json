@@ -258,6 +258,54 @@
         "verified_at": "2026-08-09",
         "verification_method": "Direct WebFetch of the PubMed abstract page; confirmed title, authors, journal, year/month, volume/pages, DOI, and PMID against the record."
       }
+    },
+    {
+      "source_id": "src-pontzer-energy-expenditure-lifecourse-2021",
+      "title": "Daily energy expenditure through the human life course",
+      "publisher_or_journal": "Science",
+      "authors": ["Pontzer H", "Yamada Y", "Sagayama H", "et al."],
+      "publication_date": "2021-08-13",
+      "source_type": "peer_reviewed_observational",
+      "canonical_url": "https://pubmed.ncbi.nlm.nih.gov/34385400/",
+      "doi": "10.1126/science.abe5017",
+      "pmid": "34385400",
+      "retrieved_at": "2026-08-11",
+      "trust_tier": "A",
+      "status": "current",
+      "topics": ["metabolism", "energy-expenditure", "aging"],
+      "notes": "Large cross-sectional doubly-labeled-water dataset (males and females aged 8 days to 95 years), not a longitudinal trial of any single individual across the lifespan. Added during the Stage 4 legacy corpus audit (Issue #17) to verify a specific statistical claim in the existing article 'understanding-your-metabolism-facts-vs-myths'. The abstract confirms fat-free-mass-adjusted energy expenditure 'remains stable in adulthood (20 to 60 years), even during pregnancy... then declines in older adults,' but the abstract itself does not state a specific per-year percentage decline rate after 60. The commonly cited 'approximately 0.7% per year' figure was corroborated via a secondary source (Healio news summary of the study) rather than a direct quote from the primary abstract text — recorded here as a limitation, not resolved by inventing a primary-source quote.",
+      "verification": {
+        "url_checked": true,
+        "identifier_checked": true,
+        "title_matched": true,
+        "publication_metadata_matched": true,
+        "verified_at": "2026-08-11",
+        "verification_method": "Direct WebFetch of the PubMed abstract page; confirmed title, authors, journal, volume/issue/pages, DOI, and PMID, and quoted the exact life-course energy-expenditure pattern. The specific 0.7%/year post-60 decline rate was additionally checked via a secondary WebSearch summary (Healio), since the PubMed abstract text itself does not state that number — this is disclosed, not treated as directly primary-verified."
+      }
+    },
+    {
+      "source_id": "src-aha-dietary-sugars-2009",
+      "title": "Dietary sugars intake and cardiovascular health: a scientific statement from the American Heart Association",
+      "publisher_or_journal": "Circulation",
+      "authors": ["Johnson RK", "Appel LJ", "Brands M", "Howard BV", "Lefevre M", "Lustig RH", "Sacks F", "Steffen LM", "Wylie-Rosett J"],
+      "publication_date": "2009-09-15",
+      "source_type": "professional_society_guideline",
+      "canonical_url": "https://pubmed.ncbi.nlm.nih.gov/19704096/",
+      "doi": "10.1161/CIRCULATIONAHA.109.192627",
+      "pmid": "19704096",
+      "retrieved_at": "2026-08-11",
+      "trust_tier": "A",
+      "status": "current",
+      "topics": ["added-sugars", "nutrition", "cardiovascular-health"],
+      "notes": "Added during the Stage 4 legacy corpus audit (Issue #17) to verify the specific AHA added-sugar limit numbers repeated across several existing articles (e.g. 'no more than 25g/6 tsp for women, 36g/9 tsp for men'). The abstract states the recommendation in calories, not grams or teaspoons: no more than 100 calories/day (women) and 150 calories/day (men) from added sugars, representing half the discretionary calorie allowance under the 2005 Dietary Guidelines. The gram/teaspoon figures commonly quoted in consumer content are a conversion (roughly 4 kcal/g of sugar) of this calorie-based recommendation, not a separate primary figure — this is disclosed so a future rewrite cites the calorie basis accurately rather than treating grams as the AHA's own original unit. This is a 2009 statement; AHA has not been independently re-verified this session to have superseded these specific numbers with a more recent statement — flagged as a currentness item for a full rewrite pass, not resolved here.",
+      "verification": {
+        "url_checked": true,
+        "identifier_checked": true,
+        "title_matched": true,
+        "publication_metadata_matched": true,
+        "verified_at": "2026-08-11",
+        "verification_method": "Direct WebFetch of the PubMed abstract page; confirmed title, authors, journal, exact volume/issue/pages, DOI, PMID, and the exact calorie-based recommendation text (100 kcal/day women, 150 kcal/day men)."
+      }
     }
   ]
 }

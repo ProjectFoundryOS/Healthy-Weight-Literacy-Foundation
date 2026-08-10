@@ -139,6 +139,41 @@
       "status": "existing_article",
       "priority": "high",
       "notes": "Three legacy articles touch this reader job; none yet audited against these claims' required qualifiers (very small n=14 cohort; atypical intervention) — Issue #17. Stage 3 closure (Issue #28) split the former single claim into two: the raw RMR-below-baseline figure and the source's separately defined 'metabolic adaptation' residual, since the topic's own canonical_question asks what 'metabolic adaptation' means and previously had no claim actually stating that specific, distinctly-defined figure. Both claims' limitations/required_qualifiers exist precisely to prevent this evidence from being overgeneralized in article prose."
+    },
+    {
+      "topic_id": "topic-does-metabolism-slow-with-normal-aging",
+      "canonical_question": "Does resting metabolism meaningfully decline with normal aging between roughly age 20 and 60, independent of any weight-loss history?",
+      "reader_intent": "Find out whether a slow metabolism in midlife is an inevitable, largely fixed biological fact, as opposed to weight-regain-specific metabolic adaptation (see topic-why-body-resists-weight-loss, a distinct reader job about post-weight-loss adaptation, not normal aging).",
+      "reader_stage": "understanding",
+      "cluster": "metabolism-myths",
+      "target_reader": "An adult in their 30s-50s who has heard 'your metabolism slows down as you age' and wants to know whether that is true before ~60.",
+      "desired_reader_outcome": "Reader understands that total daily energy expenditure adjusted for body size/composition is comparatively stable from about age 20 to 60, and that the widely-cited 'metabolism slows down every decade after 20' framing overstates what large life-course studies actually show — without overclaiming that metabolism never changes at any age.",
+      "ymyl_class": "low",
+      "medical_risk": "low",
+      "decay_class": "nutrition_physiology",
+      "required_claim_ids": ["claim-metabolic-rate-stable-20-to-60"],
+      "existing_article_slugs": ["understanding-your-metabolism-facts-vs-myths", "understanding-metabolic-health"],
+      "status": "existing_article",
+      "priority": "medium",
+      "notes": "Stage 4 (Issue #17) audit finding: understanding-your-metabolism-facts-vs-myths makes a 'metabolism slows with age' style claim that this stage flagged as needs_semantic_review pending a fuller check against the newly-added Pontzer et al. 2021 source (content/sources/registry.json). This single claim is NOT a complete evidence packet for a full metabolism-myths rewrite — that article covers several distinct myths (muscle vs. fat, starvation mode, metabolic testing, etc.), each of which would need its own verified claim before an evidence packet could responsibly constrain a rewrite. No evidence packet has been created for this topic; required_research (recorded on the two existing_article_slugs' Stage 4 audit records in content/audits/stage4/articles/) lists what else must be verified first. This is a deliberate packet_status=incomplete outcome, not an oversight."
+    },
+    {
+      "topic_id": "topic-how-much-added-sugar-is-too-much",
+      "canonical_question": "How much added sugar per day is considered too much, and how do the different guideline numbers (AHA teaspoons vs. Dietary Guidelines for Americans percent-of-calories) relate to each other?",
+      "reader_intent": "Get a concrete, non-contradictory daily added-sugar limit before trying to read a food label.",
+      "reader_stage": "understanding",
+      "cluster": "nutrition-labels",
+      "target_reader": "An adult trying to figure out whether their added-sugar intake is too high, confused by seeing different numbers (grams, teaspoons, percent of calories) in different places.",
+      "desired_reader_outcome": "Reader understands the AHA's 2009 scientific-statement figures (100 kcal/day women, 150 kcal/day men, i.e. roughly 6 and 9 teaspoons) and the separate 2020-2025 Dietary Guidelines for Americans <10%-of-calories figure as two related but distinct benchmarks, not as contradictory or interchangeable numbers.",
+      "ymyl_class": "low",
+      "medical_risk": "low",
+      "decay_class": "nutrition_physiology",
+      "required_claim_ids": ["claim-aha-added-sugar-limit"],
+      "existing_article_slugs": ["added-sugars-hidden-sources-and-health-effects", "understanding-food-labels-added-sugars"],
+      "cannibalization_candidates": ["added-sugars-hidden-sources-and-health-effects", "understanding-food-labels-added-sugars"],
+      "status": "existing_article",
+      "priority": "medium",
+      "notes": "Stage 4 (Issue #17) audit + cannibalization finding (cluster-added-sugars-duplicate): these two legacy articles cover nearly the same reader job; the audit recommends MERGE (added-sugars-hidden-sources-and-health-effects into understanding-food-labels-added-sugars) rather than treating them as genuinely distinct topics. This single AHA claim is not a complete evidence packet on its own — a rewrite constrained by evidence would also need the Dietary Guidelines for Americans <10%-of-calories figure added as its own verified claim/source first (it is currently only referenced descriptively in this claim's required_qualifiers, not itself a separately sourced claim). No evidence packet has been created for this topic for that reason; this is a deliberate packet_status=incomplete outcome."
     }
   ]
 }

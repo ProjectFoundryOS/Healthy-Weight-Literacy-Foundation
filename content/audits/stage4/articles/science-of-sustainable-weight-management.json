@@ -1,0 +1,83 @@
+{
+  "audit_id": "audit-science-of-sustainable-weight-management",
+  "slug": "science-of-sustainable-weight-management",
+  "snapshot_hash": "5761249274a7815173423a84e6f6a1511141d44cc05b7c1c64611e0d91e84c36",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "The Science of Sustainable Weight Management",
+  "category": "Education",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "Why do restrictive diets usually fail long-term, and what does the science support instead?",
+  "reader_intent": "Understand set point theory, metabolic adaptation, and the restrict-binge cycle well enough to choose sustainable, evidence-based strategies over restrictive dieting.",
+  "reader_stage": "evaluation",
+  "desired_reader_outcome": "Reader understands why aggressive dieting triggers biological rebound and adopts process-goal-based, sustainable strategies instead.",
+  "ymyl_class": "medium",
+  "medical_risk": "medium",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "Severe caloric restriction triggers metabolic adaptation (reduced energy expenditure) that can persist for months or years after dieting ends.",
+      "claim_type": "physiology",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"Metabolic Adaptation\" section",
+      "severity": "low",
+      "recommended_action": "Directionally consistent with claim-biggestloser-rmr-below-baseline/claim-biggestloser-metabolic-adaptation-residual, but the article cites no source anywhere and does not name a specific study.",
+      "registry_claim_id": "claim-biggestloser-metabolic-adaptation-residual",
+      "source_ids": [
+        "src-fothergill-biggestloser-2016"
+      ]
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 1,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 4,
+    "claim_traceability": 6,
+    "ymyl_safety": 11,
+    "freshness": 8,
+    "trust_integrity": 8,
+    "cannibalization_distinctness": 10,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 66
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "set-point-theory-why-body-resists-weight-loss",
+      "reason": "Directly overlapping set-point/adaptive-thermogenesis content that could be cross-linked.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "medium",
+  "disposition": "REFRESH",
+  "disposition_reason": "Accurate, well-hedged, and practically useful, but has zero cited sources anywhere despite making physiological claims (metabolic adaptation, hormonal changes) that should be attributable to specific evidence, several of which the corpus's own Stage 3/4 registry can now support directly.",
+  "rewrite_priority": "P1",
+  "blocking_findings": [],
+  "required_research": [
+    "Cite claim-biggestloser-rmr-below-baseline / claim-biggestloser-metabolic-adaptation-residual (Fothergill et al. 2016) directly for the metabolic-adaptation claim."
+  ],
+  "recommended_rewrite_scope": [
+    "Add source citations throughout, particularly for the hormone and metabolic-adaptation sections."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "audit_id": "audit-reading-nutrition-labels-what-to-look-for",
+  "slug": "reading-nutrition-labels-what-to-look-for",
+  "snapshot_hash": "35916c9e8075cd3ce8c0765da256b8baabcdd2687cbbf27492025235a95f2078",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Reading Nutrition Labels: What to Actually Look For",
+  "category": "Nutrition Literacy",
+  "authorship": {
+    "current_visible_author": "HWLF Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": true,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "What should I actually look for when reading a nutrition label?",
+  "reader_intent": "Get a concise, practical walkthrough of the most important parts of a nutrition label.",
+  "reader_stage": "decision_support",
+  "desired_reader_outcome": "Reader knows to check serving size first, compare added sugars/sodium/saturated fat, look for fiber/vitamin D/calcium/iron/potassium, and question front-of-package marketing claims.",
+  "ymyl_class": "low",
+  "medical_risk": "low",
+  "decay_class": "basic_definition",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "AHA recommends limiting added sugars to 25g (women) / 36g (men) per day; sodium limit 2,300mg/day.",
+      "claim_type": "recommendation",
+      "ymyl_risk": "low",
+      "mapping_status": "mapped_existing_claim",
+      "article_location": "\"Nutrients to Limit\" section",
+      "severity": "info",
+      "recommended_action": "Matches claim-aha-added-sugar-limit.",
+      "registry_claim_id": "claim-aha-added-sugar-limit",
+      "source_ids": [
+        "src-aha-dietary-sugars-2009"
+      ]
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 1,
+    "mapped_claim_count": 1,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 6,
+    "claim_traceability": 8,
+    "ymyl_safety": 11,
+    "freshness": 7,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 5,
+    "usefulness": 4,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 62
+  },
+  "cannibalization_cluster_ids": [
+    "cluster-nutrition-labels-duplicate"
+  ],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "reading-nutrition-labels-weight-health",
+      "reason": "More comprehensive near-duplicate; should be consulted together until merged.",
+      "reader_stage": "decision_support"
+    }
+  ],
+  "ad_grant_fit": "low",
+  "disposition": "MERGE",
+  "disposition_reason": "This reader job (how to read a nutrition label) is substantially duplicated by reading-nutrition-labels-weight-health, which additionally covers vitamins/minerals and per-meal protein guidance. This article's distinct value \u2014 the FDA 2020 label-format-update context and the front-of-package marketing-claims caution \u2014 is worth preserving in the merge.",
+  "rewrite_priority": "P2",
+  "blocking_findings": [],
+  "required_research": [],
+  "recommended_rewrite_scope": [
+    "Fold the FDA 2020 label-update context and marketing-claims section into the survivor."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  },
+  "merge_target_slug": "reading-nutrition-labels-weight-health"
+}

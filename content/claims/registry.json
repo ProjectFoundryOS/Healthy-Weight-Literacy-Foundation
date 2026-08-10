@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "notes": "V5 Stage 3 (Issue #16) atomic claim registry. Each claim is the smallest independently assessable factual proposition supported by content/sources/registry.json — never a bundled paragraph of assertions. This is a small, real seed set (11 claims) spanning the requested domains, intended to exercise the architecture (claim-source contract, trust-tier gating, statistical/trial detail preservation, decay scheduling), not to pre-populate the corpus. Issue #17 will grow this registry as real article research occurs.",
+  "notes": "V5 Stage 3 (Issue #16) atomic claim registry, grown during the Stage 4 legacy corpus audit (Issue #17). Each claim is the smallest independently assessable factual proposition supported by content/sources/registry.json — never a bundled paragraph of assertions. This is a small, real, independently verified set intended to exercise the architecture (claim-source contract, trust-tier gating, statistical/trial detail preservation, decay scheduling) and to back real legacy-article audit findings — not to pre-populate the corpus wholesale. The exact claim count is intentionally not hard-coded here (it has already drifted once from a stale '11 claims' note after the Fothergill split); see content/audits/stage4/corpus-summary.json or the claims array length itself for the authoritative current count. Issue #18+ will continue to grow this registry as further article rewrite research occurs.",
   "claims": [
     {
       "claim_id": "claim-bmi-surrogate-measure",
@@ -341,6 +341,75 @@
       "review_due_at": "2028-02-10",
       "decay_class": "nutrition_physiology",
       "notes": "Split out during the Stage 3 closure pass (Issue #28) as Claim B alongside claim-biggestloser-rmr-below-baseline (Claim A) — see that claim's notes for why the split was needed. Independently re-verified against the PubMed abstract: \"Metabolic adaptation was defined as the residual RMR after adjusting for changes in body composition and age\" ... \"metabolic adaptation was -499 +/- 207 kcal/day (P < 0.0001).\" A follow-up Issue #28 review pass corrected Claim A's comparator wording (it had incorrectly borrowed \"baseline-predicted\" language that actually describes this claim's adjusted/predicted residual); this claim's own wording was already correct and required no change beyond tightening its cross-references to Claim A."
+    },
+    {
+      "claim_id": "claim-metabolic-rate-stable-20-to-60",
+      "canonical_claim": "Fat-free-mass-adjusted total daily energy expenditure remains statistically stable across adulthood from approximately age 20 to age 60, then declines gradually in older adults — a decline commonly summarized as approximately 0.7% per year, though the primary study's own abstract does not itself state that specific per-year figure.",
+      "claim_type": "physiology",
+      "classification": "established",
+      "ymyl_risk": "low",
+      "source_ids": ["src-pontzer-energy-expenditure-lifecourse-2021"],
+      "primary_source_ids": ["src-pontzer-energy-expenditure-lifecourse-2021"],
+      "support_strength": "single large cross-sectional doubly-labeled-water dataset spanning ages 8 days to 95 years (Tier A)",
+      "population": "males and females aged 8 days to 95 years (cross-sectional, not a single longitudinal cohort)",
+      "outcome": "fat-free-mass-adjusted total daily energy expenditure across the life course",
+      "timeframe": "cross-sectional snapshot across the human lifespan, not a multi-decade follow-up of the same individuals",
+      "jurisdiction": "international pooled dataset",
+      "limitations": [
+        "Cross-sectional (different people at different ages), not a longitudinal study following the same individuals from 20 to 60+.",
+        "The frequently repeated 'approximately 0.7% per year' post-60 decline figure is corroborated only via a secondary news summary (Healio) of the study, not a direct quote from the primary abstract itself — this claim discloses that distinction rather than presenting the number as directly abstract-sourced."
+      ],
+      "confounders": ["Body composition, health status, and activity level all vary across the age groups compared, even after fat-free-mass adjustment."],
+      "required_qualifiers": [
+        "applies to fat-free-mass-adjusted expenditure, not raw/unadjusted total energy expenditure",
+        "the specific 0.7%-per-year post-60 decline rate is a secondary-source summary figure, not a direct primary-abstract quote"
+      ],
+      "prohibited_wording": [
+        "metabolism does not change at all with age",
+        "proves individual metabolic decline for any one specific person"
+      ],
+      "statistical_detail": {
+        "value": 0.7,
+        "unit": "percent per year",
+        "measure_type": "approximate rate of decline in fat-free-mass-adjusted total daily energy expenditure after age 60",
+        "population": "adults over age 60 in the pooled cross-sectional dataset",
+        "comparison": "post-60 age groups vs. the stable 20-60 adult baseline",
+        "time_point": "cross-sectional, by age group",
+        "source_location": "Science. 2021;373(6556):808-812 general findings; specific 0.7%/year figure corroborated via secondary (Healio) summary, not directly quoted from the abstract"
+      },
+      "last_verified_at": "2026-08-11",
+      "review_due_at": "2028-08-11",
+      "decay_class": "nutrition_physiology",
+      "notes": "Added during the Stage 4 legacy corpus audit (Issue #17) to verify a specific metabolism-and-age claim in the existing article 'understanding-your-metabolism-facts-vs-myths', which cites this same study by name. Mapped as mapped_existing_claim-eligible support for that article's general 'metabolism is stable 20-60, declines gradually after 60' assertion; the article does not itself state the specific 0.7% figure, so no number-drift issue exists there."
+    },
+    {
+      "claim_id": "claim-aha-added-sugar-limit",
+      "canonical_claim": "The American Heart Association's 2009 scientific statement recommends limiting added sugar intake to no more than 100 calories per day for women and no more than 150 calories per day for men — commonly (and approximately correctly) converted in consumer material to about 6 teaspoons (25 g) for women and 9 teaspoons (36 g) for men.",
+      "claim_type": "recommendation",
+      "classification": "established",
+      "ymyl_risk": "low",
+      "source_ids": ["src-aha-dietary-sugars-2009"],
+      "primary_source_ids": ["src-aha-dietary-sugars-2009"],
+      "support_strength": "professional-society scientific statement (Tier A)",
+      "population": "general adult population (United States)",
+      "outcome": "recommended upper limit on added sugar intake",
+      "jurisdiction": "United States (American Heart Association)",
+      "limitations": [
+        "This is a 2009 statement; whether AHA has issued a more recent statement with different numbers was not independently re-checked this session — flagged as a currentness item for a future rewrite pass, not resolved here.",
+        "The gram/teaspoon figures widely quoted in consumer articles are a conversion of the AHA's own calorie-based recommendation, not a value AHA itself published in grams."
+      ],
+      "required_qualifiers": [
+        "the AHA's own recommendation is stated in calories (100/150 kcal per day), not grams or teaspoons directly",
+        "distinct from the 2020-2025 Dietary Guidelines for Americans' separate <10%-of-calories general population ceiling (about 50 g/12 tsp for a 2,000-calorie diet) — the two are different recommendations from different bodies, not a contradiction, and should be attributed to the correct source when cited"
+      ],
+      "prohibited_wording": [
+        "the only added sugar recommendation that exists",
+        "a hard medical limit that applies identically to every individual regardless of total calorie needs"
+      ],
+      "last_verified_at": "2026-08-11",
+      "review_due_at": "2027-08-11",
+      "decay_class": "nutrition_physiology",
+      "notes": "Added during the Stage 4 legacy corpus audit (Issue #17) to verify the specific added-sugar gram/teaspoon figures repeated across 'added-sugars-hidden-sources-and-health-effects' and 'reading-nutrition-labels-what-to-look-for'. Resolves an apparent (but not actual) contradiction with 'understanding-food-labels-added-sugars', which separately and correctly cites the Dietary Guidelines for Americans' <10%-of-calories/50g figure — both numbers are independently real, from different authoritative bodies with different scope, and the audit's finding is that articles should attribute each figure to its correct source rather than presenting one as if it were the other."
     }
   ]
 }

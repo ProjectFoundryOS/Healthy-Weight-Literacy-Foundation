@@ -1,0 +1,68 @@
+{
+  "audit_id": "audit-building-healthy-habits-takes-time-patience",
+  "slug": "building-healthy-habits-takes-time-patience",
+  "snapshot_hash": "5f0680679bfca0ba076012984f4b6d2e6ddb90558cf805a57178c3aae2e6ab23",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "How Building Healthy Habits Takes Time and Patience",
+  "category": "Weight Literacy",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "Why do healthy habits take time to build, and how should I think about setbacks?",
+  "reader_intent": "Understand habit-formation psychology (cue-behavior-result cycle) and reframe setbacks as normal.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands why quick changes are hard to sustain and adopts a patience-oriented approach to habit-building.",
+  "ymyl_class": "low",
+  "medical_risk": "low",
+  "decay_class": "basic_definition",
+  "claims": [],
+  "evidence_summary": {
+    "material_claim_count": 0,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 8,
+    "evidence_quality": 6,
+    "claim_traceability": 7,
+    "ymyl_safety": 12,
+    "freshness": 7,
+    "trust_integrity": 7,
+    "cannibalization_distinctness": 6,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 3,
+    "total": 62
+  },
+  "cannibalization_cluster_ids": [
+    "cluster-habits-partial-overlap"
+  ],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-weight-health-everyday-habits",
+      "reason": "Shares the small-changes/consistency theme; cross-link rather than merge given each has a distinct angle.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "low",
+  "disposition": "REFRESH",
+  "disposition_reason": "Genuinely distinct angle (habit-formation psychology and setback-reframing specifically) from understanding-weight-health-everyday-habits (which is framed around a five-pillar wellness checklist), so a merge is not clearly warranted, but the two share enough thematic ground (start small, consistency over perfection) that a rewrite should sharpen the distinction rather than leave it implicit.",
+  "rewrite_priority": "P2",
+  "blocking_findings": [],
+  "required_research": [],
+  "recommended_rewrite_scope": [
+    "Sharpen the distinction from understanding-weight-health-everyday-habits during rewrite \u2014 lean further into habit-formation psychology specifically."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

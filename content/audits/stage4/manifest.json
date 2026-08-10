@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "audit_version": "stage4-v1",
+  "generated_at": "2026-08-10",
+  "article_count": 34,
+  "articles": [
+    {
+      "slug": "added-sugars-hidden-sources-and-health-effects",
+      "audit_id": "audit-added-sugars-hidden-sources-and-health-effects",
+      "snapshot_hash": "879d97dfb4a0806323969ec1ce9b1e6c34675eb48c52c5da2ffc3cab45d7b5f4"
+    },
+    {
+      "slug": "building-healthy-habits-family-wellness",
+      "audit_id": "audit-building-healthy-habits-family-wellness",
+      "snapshot_hash": "a2a8a4c6364fba17c458af685ddebd4524382ba3e4f3c05f1d66c9058f656f3d"
+    },
+    {
+      "slug": "building-healthy-habits-takes-time-patience",
+      "audit_id": "audit-building-healthy-habits-takes-time-patience",
+      "snapshot_hash": "5f0680679bfca0ba076012984f4b6d2e6ddb90558cf805a57178c3aae2e6ab23"
+    },
+    {
+      "slug": "compounded-vs-fda-approved-glp1-medications",
+      "audit_id": "audit-compounded-vs-fda-approved-glp1-medications",
+      "snapshot_hash": "101d2711f8bb954e73354872c7f0f33f1bc1f979ce371e076031fd0733998a05"
+    },
+    {
+      "slug": "gut-microbiome-and-weight-what-science-says",
+      "audit_id": "audit-gut-microbiome-and-weight-what-science-says",
+      "snapshot_hash": "6691e7600508e6aab72d73c8ee27f9b743ebfeb0687c3763062b2cb62ddcf42f"
+    },
+    {
+      "slug": "hormones-and-weight-beyond-calories-in-calories-out",
+      "audit_id": "audit-hormones-and-weight-beyond-calories-in-calories-out",
+      "snapshot_hash": "f8fa77387de7829b58b628c511882d5fc4c3c1f312461ebf67a07bb6baae74c9"
+    },
+    {
+      "slug": "how-sleep-affects-weight-health-daily-functioning",
+      "audit_id": "audit-how-sleep-affects-weight-health-daily-functioning",
+      "snapshot_hash": "868f0b131a07061766eb190f84d5d9ab4a990b7487fc6dab40cffcd0228ae6ac"
+    },
+    {
+      "slug": "hydration-and-health-how-much-water-do-you-need",
+      "audit_id": "audit-hydration-and-health-how-much-water-do-you-need",
+      "snapshot_hash": "2e9b51e05d1860905ff046cc7d6a709d56c4140ee410f5e290681bea3e856269"
+    },
+    {
+      "slug": "hydration-weight-health-daily-functioning",
+      "audit_id": "audit-hydration-weight-health-daily-functioning",
+      "snapshot_hash": "b62710e002e42b11e488f0e6ff52518db91556d21e503005256c1425af778bf9"
+    },
+    {
+      "slug": "meal-planning-basics-eating-well-on-a-budget",
+      "audit_id": "audit-meal-planning-basics-eating-well-on-a-budget",
+      "snapshot_hash": "9a527fabd2cd5d612e26e43ba571479727ec627f5a11b75952b96fd01de880ba"
+    },
+    {
+      "slug": "nutrition-myths-debunked",
+      "audit_id": "audit-nutrition-myths-debunked",
+      "snapshot_hash": "a805069122154b5a02ff9f9b4c66985e22550ce93309b6e71c93df7d903add32"
+    },
+    {
+      "slug": "physical-activity-for-health-beyond-weight-loss",
+      "audit_id": "audit-physical-activity-for-health-beyond-weight-loss",
+      "snapshot_hash": "2eafb94763d0afae48cdcff6fcabb0cc72c09f91ac3e5052d6763269573651ab"
+    },
+    {
+      "slug": "questions-to-ask-doctor-about-glp1-medications",
+      "audit_id": "audit-questions-to-ask-doctor-about-glp1-medications",
+      "snapshot_hash": "08821c71c0c83f9a3b3f3156b8e80fcb6a9ff7d1351d42dc1b5e43ba0441b362"
+    },
+    {
+      "slug": "reading-nutrition-labels-weight-health",
+      "audit_id": "audit-reading-nutrition-labels-weight-health",
+      "snapshot_hash": "d70682ce82c76ad304341f5bcfdf001230411838802ecfb29ef325dbd3b5c66b"
+    },
+    {
+      "slug": "reading-nutrition-labels-what-to-look-for",
+      "audit_id": "audit-reading-nutrition-labels-what-to-look-for",
+      "snapshot_hash": "35916c9e8075cd3ce8c0765da256b8baabcdd2687cbbf27492025235a95f2078"
+    },
+    {
+      "slug": "role-of-social-support-weight-health-wellness",
+      "audit_id": "audit-role-of-social-support-weight-health-wellness",
+      "snapshot_hash": "91ae98f45a479f8f16790bce6567ae2be625186ecedef8ef619b831cee952730"
+    },
+    {
+      "slug": "science-of-glp1-how-medications-affect-your-body",
+      "audit_id": "audit-science-of-glp1-how-medications-affect-your-body",
+      "snapshot_hash": "ee92d9ac66cfa27e8214a0b31a5bc241a986a9be904dc3674075aabca440de83"
+    },
+    {
+      "slug": "science-of-sustainable-weight-management",
+      "audit_id": "audit-science-of-sustainable-weight-management",
+      "snapshot_hash": "5761249274a7815173423a84e6f6a1511141d44cc05b7c1c64611e0d91e84c36"
+    },
+    {
+      "slug": "set-point-theory-why-body-resists-weight-loss",
+      "audit_id": "audit-set-point-theory-why-body-resists-weight-loss",
+      "snapshot_hash": "7d1910341e6041faffa8ec9dc2433e8c5e0532bb1b7ec33b056f57c2e952a92c"
+    },
+    {
+      "slug": "sleep-and-weight-understanding-the-connection",
+      "audit_id": "audit-sleep-and-weight-understanding-the-connection",
+      "snapshot_hash": "2cae934e001d3c5973233c99a7510d2ae0ec22e45e0606fb601af420d0698661"
+    },
+    {
+      "slug": "stress-weight-health-daily-well-being",
+      "audit_id": "audit-stress-weight-health-daily-well-being",
+      "snapshot_hash": "c590d9976051611e37089cb741e58597d81a830e564b138548c3e029b51fbf89"
+    },
+    {
+      "slug": "understanding-bmi-what-it-really-means",
+      "audit_id": "audit-understanding-bmi-what-it-really-means",
+      "snapshot_hash": "139a1a95f3fda68e1f592db3508179f034294ff1d61930a55c443fdc321a898b"
+    },
+    {
+      "slug": "understanding-body-image-weight-health-literacy",
+      "audit_id": "audit-understanding-body-image-weight-health-literacy",
+      "snapshot_hash": "c2db6a18f76aac9773a0e22520f1a68d27e06c0b5de7167cf718b127ab43fb7a"
+    },
+    {
+      "slug": "understanding-food-environment-weight-health",
+      "audit_id": "audit-understanding-food-environment-weight-health",
+      "snapshot_hash": "011ff6049a6ded8e1254c44011a976655ec2d983aad2f50b5ed3481e72428acf"
+    },
+    {
+      "slug": "understanding-food-labels-added-sugars",
+      "audit_id": "audit-understanding-food-labels-added-sugars",
+      "snapshot_hash": "e220ee040e6f78315bfdbc45e05f324dfa9324060b595d15ec009507b7a46a64"
+    },
+    {
+      "slug": "understanding-healthy-weight",
+      "audit_id": "audit-understanding-healthy-weight",
+      "snapshot_hash": "3c55f2e527e6abf5b24ee12e230a31ae48446852069f77be08cf3c006f48008b"
+    },
+    {
+      "slug": "understanding-macronutrients-proteins-carbs-fats",
+      "audit_id": "audit-understanding-macronutrients-proteins-carbs-fats",
+      "snapshot_hash": "07b82c38e82dc650bca7be95dea0342720b6b94935f0f6a5c6af79a52c7db6e7"
+    },
+    {
+      "slug": "understanding-metabolic-health",
+      "audit_id": "audit-understanding-metabolic-health",
+      "snapshot_hash": "17f9c6e091f9e4c87c14e7812323e8afd5e878098f2f717f22d36fae75879d48"
+    },
+    {
+      "slug": "understanding-mindful-eating-weight-health",
+      "audit_id": "audit-understanding-mindful-eating-weight-health",
+      "snapshot_hash": "ac99cee0f99f645f363bb33b4917ec6c4b9ebdd439593290544cadd6fbe34e39"
+    },
+    {
+      "slug": "understanding-nutrition-timing-daily-eating",
+      "audit_id": "audit-understanding-nutrition-timing-daily-eating",
+      "snapshot_hash": "1342d4d26debe6bddf3fea35bbfd292f78bca4001d27787d558e9b6a42b9a02c"
+    },
+    {
+      "slug": "understanding-physical-activity-weight-health",
+      "audit_id": "audit-understanding-physical-activity-weight-health",
+      "snapshot_hash": "51997cff87426364ade7b78f27a50ab5f648ab30d33a9f01a66bb6771d4d6086"
+    },
+    {
+      "slug": "understanding-weight-health-everyday-habits",
+      "audit_id": "audit-understanding-weight-health-everyday-habits",
+      "snapshot_hash": "cd76f32fb4345a54b9724c7442058990928163d1241dc1550c7f1ea7b84fab78"
+    },
+    {
+      "slug": "understanding-weight-stigma-impact-health",
+      "audit_id": "audit-understanding-weight-stigma-impact-health",
+      "snapshot_hash": "eab245a5552bfa398e3e9090cfeb8482d543ae53fe38ccf55ad3e3bb83239816"
+    },
+    {
+      "slug": "understanding-your-metabolism-facts-vs-myths",
+      "audit_id": "audit-understanding-your-metabolism-facts-vs-myths",
+      "snapshot_hash": "1669be1c1d2b1ceea5fee3c952cbf792e20a9fd3dc79423cf3dafb281a6b3c37"
+    }
+  ]
+}

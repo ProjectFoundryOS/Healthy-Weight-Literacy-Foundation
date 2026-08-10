@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "audit_version": "stage4-v1",
+  "generated_at": "2026-08-10",
+  "published_article_count": 34,
+  "unpublished_row_count": 5,
+  "disposition_counts": {
+    "KEEP": 13,
+    "REFRESH": 16,
+    "MERGE": 5,
+    "REDIRECT": 0,
+    "NOINDEX": 0,
+    "RETIRE": 0
+  },
+  "rewrite_priority_counts": {
+    "P0": 2,
+    "P1": 5,
+    "P2": 14,
+    "none": 13
+  },
+  "rewrite_priority_slugs": {
+    "P0": [
+      "compounded-vs-fda-approved-glp1-medications",
+      "science-of-glp1-how-medications-affect-your-body"
+    ],
+    "P1": [
+      "physical-activity-for-health-beyond-weight-loss",
+      "science-of-sustainable-weight-management",
+      "set-point-theory-why-body-resists-weight-loss",
+      "sleep-and-weight-understanding-the-connection",
+      "understanding-metabolic-health"
+    ]
+  },
+  "ymyl_class_counts": {
+    "low": 17,
+    "medium": 14,
+    "high": 2,
+    "critical": 1
+  },
+  "ad_grant_fit_counts": {
+    "high": 5,
+    "medium": 18,
+    "low": 11,
+    "not_suitable": 0
+  },
+  "scores": {
+    "average_total": 65.0,
+    "min_total": 51,
+    "max_total": 83
+  },
+  "claim_audit_totals": {
+    "material_claims_extracted": 36,
+    "mapping_status_counts": {
+      "mapped_existing_claim": 8,
+      "unsupported": 3,
+      "outdated": 1,
+      "needs_semantic_review": 24
+    },
+    "severity_counts": {
+      "info": 13,
+      "low": 16,
+      "medium": 6,
+      "high": 1,
+      "critical": 0
+    }
+  },
+  "blocking_findings": {
+    "articles_with_at_least_one_blocking_finding": 1,
+    "total_blocking_findings": 1,
+    "affected_slugs": ["set-point-theory-why-body-resists-weight-loss"]
+  },
+  "cannibalization": {
+    "cluster_count": 7,
+    "merge_clusters": 5,
+    "differentiate_and_keep_both_clusters": 2,
+    "cluster_ids": [
+      "cluster-added-sugars-duplicate",
+      "cluster-sleep-duplicate",
+      "cluster-hydration-duplicate",
+      "cluster-nutrition-labels-duplicate",
+      "cluster-physical-activity-duplicate",
+      "cluster-bmi-healthy-weight-overlap",
+      "cluster-habits-partial-overlap"
+    ]
+  },
+  "merge_pairs": [
+    { "from_slug": "added-sugars-hidden-sources-and-health-effects", "into_slug": "understanding-food-labels-added-sugars" },
+    { "from_slug": "how-sleep-affects-weight-health-daily-functioning", "into_slug": "sleep-and-weight-understanding-the-connection" },
+    { "from_slug": "hydration-weight-health-daily-functioning", "into_slug": "hydration-and-health-how-much-water-do-you-need" },
+    { "from_slug": "reading-nutrition-labels-what-to-look-for", "into_slug": "reading-nutrition-labels-weight-health" },
+    { "from_slug": "understanding-physical-activity-weight-health", "into_slug": "physical-activity-for-health-beyond-weight-loss" }
+  ],
+  "unpublished_row_disposition_counts": {
+    "REPUBLISH_AFTER_REFRESH": 5,
+    "MERGE": 0,
+    "REDIRECT": 0,
+    "RETIRE": 0,
+    "KEEP_UNPUBLISHED": 0
+  },
+  "notes": [
+    "No article received REDIRECT, NOINDEX, or RETIRE — the corpus has no content judged actively harmful or worthless, only duplicated (MERGE) or in need of evidence/currentness work (REFRESH). This reflects the actual quality distribution found, not a scoring artifact: RETIRE/REDIRECT/NOINDEX remain live options for any future re-audit that finds different evidence.",
+    "The needs_semantic_review majority (24 of 36 claims) is an explicit, intended output of this stage, not a gap: Stage 4's validators can check hash/reference/structural integrity but cannot themselves verify prose-level semantic accuracy against a claim's cited source. Each needs_semantic_review claim's recommended_action names what a human/Opus reviewer should check next.",
+    "The single blocking_finding (set-point-theory-why-body-resists-weight-loss) is why that article's disposition is REFRESH rather than KEEP even though nothing else about the article is disqualifying — see STAGE4_LEGACY_CORPUS_AUDIT.md section 5 for the specific claim.",
+    "P0 count (2) is deliberately small and specific to the two articles whose primary subject is prescription GLP-1/compounded-medication mechanics; other medication-adjacent articles (e.g. questions-to-ask-doctor-about-glp1-medications) were found KEEP-worthy because they make no specific drug-mechanism or efficacy claims of their own.",
+    "This file is a derived summary of the 34 per-article records and the cannibalization registry; scripts/validate-stage4-audit.ts recomputes these counts from the source-of-truth files and fails if this summary drifts from them."
+  ]
+}

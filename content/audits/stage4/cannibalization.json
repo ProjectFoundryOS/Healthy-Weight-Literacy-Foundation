@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "notes": "Each cluster reflects an actual comparison of the member articles' canonical reader question, reader intent/stage, claim set, outline structure, likely query cluster, and reader outcome — never title similarity alone. Clusters where genuinely distinct reader jobs were found are marked differentiate_and_keep_both rather than merge, even when titles look similar (see cluster-bmi-healthy-weight-overlap and cluster-habits-partial-overlap).",
+  "clusters": [
+    {
+      "cluster_id": "cluster-added-sugars-duplicate",
+      "article_slugs": [
+        "added-sugars-hidden-sources-and-health-effects",
+        "understanding-food-labels-added-sugars"
+      ],
+      "shared_question": "How much added sugar is too much, and where does it hide in what I eat and drink?",
+      "overlap_dimensions": [
+        "claim_set (AHA added-sugar limit figures, average American added-sugar intake figure)",
+        "reader_intent (identify and reduce hidden added sugar in the diet)",
+        "query_cluster (added sugar limits, hidden sugar sources, added sugar health effects)",
+        "outcome (reader leaves able to estimate whether their own sugar intake is excessive)"
+      ],
+      "meaningful_differences": [
+        "understanding-food-labels-added-sugars has a Nutrition-Facts-panel/ingredient-list reading structure (how sugar is named under dozens of aliases on a label) that added-sugars-hidden-sources-and-health-effects does not have",
+        "added-sugars-hidden-sources-and-health-effects spends more of its body on downstream health effects (non-alcoholic fatty liver disease, tooth decay) in a more clinical register",
+        "understanding-food-labels-added-sugars separately cites the 2020-2025 Dietary Guidelines <10%-of-calories figure alongside the AHA teaspoon figure; added-sugars-hidden-sources-and-health-effects cites only the AHA figure"
+      ],
+      "recommended_survivor_slug": "understanding-food-labels-added-sugars",
+      "recommended_action": "merge",
+      "confidence": "high",
+      "notes": "Core claim set and reader outcome are the same article twice; the label-reading instructional content in the survivor is real added value worth preserving, so MERGE (not RETIRE) is the correct disposition for the non-survivor. See articles/added-sugars-hidden-sources-and-health-effects.json for the specific content-worth-preserving list."
+    },
+    {
+      "cluster_id": "cluster-sleep-duplicate",
+      "article_slugs": [
+        "how-sleep-affects-weight-health-daily-functioning",
+        "sleep-and-weight-understanding-the-connection"
+      ],
+      "shared_question": "How does sleep affect weight, appetite, and overall health?",
+      "overlap_dimensions": [
+        "claim_set (sleep deprivation and appetite-hormone/appetite disruption, sleep's effect on food choices and activity levels)",
+        "reader_intent (understand why sleep matters for weight health, not just diet and exercise)",
+        "query_cluster (sleep and weight connection, sleep and appetite/hunger)",
+        "outline (introduction framing sleep as an overlooked/underrated factor, then mechanism, then practical takeaway)"
+      ],
+      "meaningful_differences": [
+        "sleep-and-weight-understanding-the-connection opens with an explicit appetite-hormone mechanism section as its primary structural anchor",
+        "how-sleep-affects-weight-health-daily-functioning frames more broadly around daily functioning (energy, mood) in addition to weight, giving it a slightly wider scope than the more tightly weight-focused sibling"
+      ],
+      "recommended_survivor_slug": "sleep-and-weight-understanding-the-connection",
+      "recommended_action": "merge",
+      "confidence": "high",
+      "notes": "The daily-functioning framing in the non-survivor is minor added scope, not a distinct reader job; folding it into the survivor's REFRESH is more useful than maintaining two near-identical pages."
+    },
+    {
+      "cluster_id": "cluster-hydration-duplicate",
+      "article_slugs": [
+        "hydration-and-health-how-much-water-do-you-need",
+        "hydration-weight-health-daily-functioning"
+      ],
+      "shared_question": "How much water do I actually need, and how does hydration affect weight and daily health?",
+      "overlap_dimensions": [
+        "claim_set (body-water-percentage figure, hydration's role in digestion/energy/cognition/weight)",
+        "reader_intent (get a practical sense of adequate daily water intake)",
+        "query_cluster (how much water per day, hydration and weight)",
+        "outcome (reader leaves with a general hydration guideline and a list of hydration's bodily functions)"
+      ],
+      "meaningful_differences": [
+        "hydration-and-health-how-much-water-do-you-need includes an explicit medical caution for kidney disease/heart failure patients that the sibling article lacks",
+        "hydration-weight-health-daily-functioning is shorter and more listicle-like, with less depth on any single function"
+      ],
+      "recommended_survivor_slug": "hydration-and-health-how-much-water-do-you-need",
+      "recommended_action": "merge",
+      "confidence": "high",
+      "notes": "The survivor's condition-specific caution is a real safety-relevant addition worth preserving in its REFRESH; the sibling adds no reader job the survivor doesn't already cover."
+    },
+    {
+      "cluster_id": "cluster-nutrition-labels-duplicate",
+      "article_slugs": [
+        "reading-nutrition-labels-weight-health",
+        "reading-nutrition-labels-what-to-look-for"
+      ],
+      "shared_question": "How do I actually read a Nutrition Facts label to make informed food choices?",
+      "overlap_dimensions": [
+        "claim_set (Nutrition Facts panel components, serving size framing, %DV)",
+        "reader_intent (learn to read a label without being overwhelmed)",
+        "query_cluster (how to read nutrition labels, what to look for on food labels)",
+        "outline (why labels matter, walkthrough of the panel, practical guidance)"
+      ],
+      "meaningful_differences": [
+        "reading-nutrition-labels-what-to-look-for frames itself around correcting common misreadings (\"what to actually look for\"), giving it a mild mythbusting angle the sibling lacks",
+        "reading-nutrition-labels-weight-health is written as a straight step-by-step walkthrough with no myth-correction framing"
+      ],
+      "recommended_survivor_slug": "reading-nutrition-labels-weight-health",
+      "recommended_action": "merge",
+      "confidence": "medium",
+      "notes": "The mythbusting framing in the non-survivor is a genuine but minor angle difference; it is recommended as content worth folding into the survivor's REFRESH rather than a reason to keep both pages, since the underlying reader job and claim set are otherwise identical."
+    },
+    {
+      "cluster_id": "cluster-physical-activity-duplicate",
+      "article_slugs": [
+        "physical-activity-for-health-beyond-weight-loss",
+        "understanding-physical-activity-weight-health"
+      ],
+      "shared_question": "What does physical activity actually do for health, beyond burning calories for weight loss?",
+      "overlap_dimensions": [
+        "claim_set (activity's health benefits independent of weight change, weight-inclusive framing)",
+        "reader_intent (reframe activity as valuable regardless of its effect on the scale)",
+        "query_cluster (exercise benefits beyond weight loss, physical activity and weight health)",
+        "outcome (reader leaves valuing activity independent of weight outcome)"
+      ],
+      "meaningful_differences": [
+        "understanding-physical-activity-weight-health explicitly states the two-directional claim that activity alone does not determine weight AND weight does not determine fitness — a slightly more weight-inclusive/anti-weight-stigma framing than the sibling",
+        "physical-activity-for-health-beyond-weight-loss is framed more narrowly around correcting the specific \"exercise is for calorie-burning\" narrative"
+      ],
+      "recommended_survivor_slug": "physical-activity-for-health-beyond-weight-loss",
+      "recommended_action": "merge",
+      "confidence": "medium",
+      "notes": "The weight-inclusive framing in the non-survivor is worth preserving in the survivor's REFRESH (see recommended_rewrite_scope in understanding-physical-activity-weight-health.json), but does not by itself justify a separate page given how much of the rest overlaps."
+    },
+    {
+      "cluster_id": "cluster-bmi-healthy-weight-overlap",
+      "article_slugs": [
+        "understanding-bmi-what-it-really-means",
+        "understanding-healthy-weight"
+      ],
+      "shared_question": "What does it mean to be a healthy weight, and how much should BMI or the scale factor into that?",
+      "overlap_dimensions": [
+        "claim_set (limitations of single-number weight metrics, weight as one health indicator among many)",
+        "reader_intent (move beyond a single number toward a fuller picture of health)",
+        "query_cluster (what is BMI / what does BMI mean; what is a healthy weight)"
+      ],
+      "meaningful_differences": [
+        "understanding-bmi-what-it-really-means is a focused explainer of one specific metric — what BMI measures, how it is calculated, and its documented statistical limitations (e.g. not distinguishing muscle from fat, population-level vs individual validity)",
+        "understanding-healthy-weight is a broader conceptual article about what \"healthy weight\" means as an idea, only using BMI as one example among several numbers people fixate on",
+        "the two serve different search intents: someone searching \"what does my BMI number mean\" wants the BMI explainer specifically, not a general healthy-weight philosophy piece, and vice versa"
+      ],
+      "recommended_action": "differentiate_and_keep_both",
+      "confidence": "medium",
+      "notes": "Genuinely distinct reader jobs (a specific-metric explainer vs. a broader-concept piece) despite thematic adjacency. Both are independently REFRESH-worthy; recommended differentiation is to have understanding-healthy-weight cross-reference understanding-bmi-what-it-really-means for BMI specifics rather than re-explaining BMI limitations in its own body (see internal_link_recommendations in each record) — this is a recommendation only, no links have been added."
+    },
+    {
+      "cluster_id": "cluster-habits-partial-overlap",
+      "article_slugs": [
+        "building-healthy-habits-takes-time-patience",
+        "understanding-weight-health-everyday-habits"
+      ],
+      "shared_question": "How do everyday habits shape weight and health, and how should I approach building them?",
+      "overlap_dimensions": [
+        "reader_intent (both aim to help a reader build sustainable, non-punitive health habits)",
+        "query_cluster (building healthy habits, weight health and daily habits)"
+      ],
+      "meaningful_differences": [
+        "building-healthy-habits-takes-time-patience is a focused piece on the psychology and pacing of habit formation itself (why habits take time, how to be patient with the process)",
+        "understanding-weight-health-everyday-habits is a broader survey/hub-style article that touches many habit domains (sleep, food, activity, stress) at a shallower depth each, functioning more as an overview that could reasonably link out to focused pieces",
+        "the two do not share a claim set or outline — one is process-focused, the other is domain-survey-focused"
+      ],
+      "recommended_action": "differentiate_and_keep_both",
+      "confidence": "high",
+      "notes": "Not a genuine duplicate. building-healthy-habits-family-wellness was considered for this cluster but excluded — its household/family-environment framing is a third, distinct reader job (parents building a supportive home environment) rather than an individual habit-formation angle, so it was not added to this cluster."
+    }
+  ]
+}

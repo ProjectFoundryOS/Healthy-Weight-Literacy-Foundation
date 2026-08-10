@@ -18,6 +18,7 @@ const STEPS: { name: string; script: string }[] = [
   { name: "topics", script: "scripts/validate-topics.ts" },
   { name: "evidence packets", script: "scripts/validate-evidence.ts" },
   { name: "dependency audit", script: "scripts/audit-evidence-dependencies.ts" },
+  { name: "stage4 corpus audit", script: "scripts/validate-stage4-audit.ts" },
 ]
 
 console.log("Running the full evidence gate (validate:evidence-all), in dependency order...\n")
@@ -39,4 +40,4 @@ for (const step of STEPS) {
   console.log("")
 }
 
-console.log("OK: every evidence validator passed, in order — sources, claims, topics, evidence packets, dependency audit.")
+console.log("OK: every evidence validator passed, in order — sources, claims, topics, evidence packets, dependency audit, stage4 corpus audit.")

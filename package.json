@@ -16,6 +16,7 @@
     "validate:evidence": "tsx scripts/validate-evidence.ts",
     "audit:evidence-dependencies": "tsx scripts/audit-evidence-dependencies.ts",
     "validate:evidence-all": "tsx scripts/validate-evidence-all.ts",
+    "validate:stage4-audit": "tsx scripts/validate-stage4-audit.ts",
     "test": "vitest run"
   },
   "dependencies": {

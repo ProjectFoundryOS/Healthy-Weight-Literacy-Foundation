@@ -1,0 +1,93 @@
+{
+  "audit_id": "audit-physical-activity-for-health-beyond-weight-loss",
+  "slug": "physical-activity-for-health-beyond-weight-loss",
+  "snapshot_hash": "2eafb94763d0afae48cdcff6fcabb0cc72c09f91ac3e5052d6763269573651ab",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "Physical Activity for Health: Beyond Weight Loss",
+  "category": "Education",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation Editorial Team",
+    "author_type": "organization",
+    "consistency_issue": false,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "What are the health benefits of physical activity beyond weight loss, and how much activity is recommended?",
+  "reader_intent": "Find sustainable motivation for movement independent of the scale, backed by specific cardiovascular/metabolic/mental-health benefits.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands cardiovascular, mental-health, metabolic, bone, and sleep benefits of activity, and the AHA's specific weekly activity recommendation.",
+  "ymyl_class": "medium",
+  "medical_risk": "low",
+  "decay_class": "nutrition_physiology",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "The American Heart Association recommends at least 150 minutes/week of moderate-intensity activity or 75 minutes/week of vigorous activity.",
+      "claim_type": "recommendation",
+      "ymyl_risk": "low",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"Cardiovascular Health\" section",
+      "severity": "low",
+      "recommended_action": "Matches the well-known, widely published AHA/physical-activity-guideline figure; not independently reverified against a primary AHA page this session, but low risk given how standard and consistent this figure is across authorities."
+    },
+    {
+      "article_claim_id": "c2",
+      "proposition": "Regular moderate-intensity activity can reduce type 2 diabetes risk by 30-50 percent, even without significant weight change.",
+      "claim_type": "statistical_result",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"Reduced Risk of Type 2 Diabetes\" section",
+      "severity": "medium",
+      "recommended_action": "Specific, checkable statistic with zero citation. Verify the exact range and study population against a primary diabetes-prevention trial or meta-analysis (e.g., Diabetes Prevention Program-adjacent literature) before restating with this precision."
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 2,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 9,
+    "evidence_quality": 5,
+    "claim_traceability": 6,
+    "ymyl_safety": 11,
+    "freshness": 8,
+    "trust_integrity": 8,
+    "cannibalization_distinctness": 5,
+    "usefulness": 5,
+    "internal_linking": 1,
+    "ad_grant_fit": 4,
+    "total": 62
+  },
+  "cannibalization_cluster_ids": [
+    "cluster-physical-activity-duplicate"
+  ],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "understanding-physical-activity-weight-health",
+      "reason": "Near-identical reader job; should be consulted together until merged.",
+      "reader_stage": "understanding"
+    }
+  ],
+  "ad_grant_fit": "medium",
+  "disposition": "REFRESH",
+  "disposition_reason": "More detailed and citable than its near-duplicate, selected as cluster survivor, but has zero sources and one specific, unverified statistic (30-50% diabetes risk reduction) needing primary-source verification.",
+  "rewrite_priority": "P1",
+  "blocking_findings": [],
+  "required_research": [
+    "Verify the type-2-diabetes risk-reduction percentage range against a primary source.",
+    "Verify the AHA 150/75-minute recommendation against AHA's current guidance directly."
+  ],
+  "recommended_rewrite_scope": [
+    "Add a Sources section.",
+    "Verify the diabetes-risk statistic."
+  ],
+  "safety_language_findings": [],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

@@ -216,3 +216,15 @@ export function getBlogPostsByTag(tag: string): BlogPost[] {
 export function getRegistrySlugs(): string[] {
   return loadRegistry().map((post) => post.slug)
 }
+
+/**
+ * Raw manifest article entries (slug/id/is_published/dates/sha256), for
+ * callers that need to cross-check against the frozen snapshot itself
+ * rather than the derived BlogPost view — e.g. the Stage 4 article-audit
+ * registry (lib/article-audit-registry.ts), which must verify an audit
+ * record's snapshot_hash against the exact current manifest hash.
+ */
+export function getManifestArticles(): ManifestArticleEntry[] {
+  loadRegistry() // ensures cachedManifest is populated (and integrity-checked)
+  return cachedManifest?.articles ?? []
+}

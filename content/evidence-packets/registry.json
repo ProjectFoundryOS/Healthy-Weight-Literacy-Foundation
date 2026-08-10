@@ -1,62 +1,101 @@
 {
   "schema_version": 1,
-  "notes": "V5 Stage 3 (Issue #16) evidence packet registry. Each packet is the deterministic boundary of what a writer may assert for its topic: approved_claim_ids is the ceiling, mandatory_claim_ids are non-negotiable, source_ids are pre-resolved so a writer never needs to query the source registry ad hoc. source_registry_revision/claim_registry_revision are sha256 hashes of the live registries at generation time (computeRegistryRevisionHash in lib/evidence-packet-registry.ts) — if either registry changes, isPacketStale() will report this packet as stale and it must be regenerated before being trusted again.",
+  "notes": "V5 Stage 3 (Issue #16) evidence packet registry. Each packet is the deterministic boundary of what a writer may assert for its topic: approved_claim_ids is the ceiling, mandatory_claim_ids are non-negotiable, source_ids are pre-resolved so a writer never needs to query the source registry ad hoc. source_registry_revision/claim_registry_revision are sha256 hashes of the live registries at generation time (computeRegistryRevisionHash in lib/evidence-packet-registry.ts) \u2014 if either registry changes, isPacketStale() will report this packet as stale and it must be regenerated before being trusted again.",
   "packets": [
     {
       "packet_id": "packet-bmi-what-it-really-means",
       "topic_id": "topic-bmi-what-it-really-means",
       "canonical_question": "What does a BMI number actually measure, and what are its limitations?",
       "reader_intent": "Understand what a BMI number does and does not tell them about their health.",
-      "approved_claim_ids": ["claim-bmi-surrogate-measure"],
-      "mandatory_claim_ids": ["claim-bmi-surrogate-measure"],
+      "approved_claim_ids": [
+        "claim-bmi-surrogate-measure"
+      ],
+      "mandatory_claim_ids": [
+        "claim-bmi-surrogate-measure"
+      ],
       "optional_claim_ids": [],
-      "source_ids": ["src-prentice-jebb-2001"],
-      "required_limitations": ["Does not itself quantify how large the BMI-vs-body-fat discrepancy is for any individual."],
+      "source_ids": [
+        "src-prentice-jebb-2001"
+      ],
+      "required_limitations": [
+        "Does not itself quantify how large the BMI-vs-body-fat discrepancy is for any individual."
+      ],
       "required_safety_context": [],
-      "prohibited_claims": ["BMI is an accurate measure of body fat for every individual", "BMI directly measures body fat"],
-      "allowed_conclusions": ["BMI is a surrogate, population-level measure of body fatness and should be interpreted alongside other information."],
+      "prohibited_claims": [
+        "BMI is an accurate measure of body fat for every individual",
+        "BMI directly measures body fat"
+      ],
+      "allowed_conclusions": [
+        "BMI is a surrogate, population-level measure of body fatness and should be interpreted alongside other information."
+      ],
       "uncertainty_notes": [],
-      "related_articles": ["understanding-bmi-what-it-really-means"],
+      "related_articles": [
+        "understanding-bmi-what-it-really-means"
+      ],
       "generated_at": "2026-08-10",
-      "source_registry_revision": "75907110c73c0fa02382d95cba0f0d30c5efc2fd059c4ad6140ca2a24e124f2f",
-      "claim_registry_revision": "3bd0955ede9b73c42839f2ce526b0220ba12d720528671c56663ed7d36edcdf8"
+      "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+      "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
     },
     {
       "packet_id": "packet-fasting-metabolic-switch",
       "topic_id": "topic-fasting-metabolic-switch",
       "canonical_question": "What happens inside the body during intermittent fasting?",
       "reader_intent": "Understand the underlying mechanism of intermittent fasting before deciding whether to try it.",
-      "approved_claim_ids": ["claim-fasting-metabolic-switch"],
-      "mandatory_claim_ids": ["claim-fasting-metabolic-switch"],
+      "approved_claim_ids": [
+        "claim-fasting-metabolic-switch"
+      ],
+      "mandatory_claim_ids": [
+        "claim-fasting-metabolic-switch"
+      ],
       "optional_claim_ids": [],
-      "source_ids": ["src-decabo-mattson-2019"],
+      "source_ids": [
+        "src-decabo-mattson-2019"
+      ],
       "required_limitations": [
         "A narrative review synthesizing many underlying studies, not a single controlled trial of the mechanism itself.",
         "Exact fasting duration needed to trigger the switch varies by individual and was not reduced to one number in this source."
       ],
       "required_safety_context": [],
-      "prohibited_claims": ["the metabolic switch happens at exactly the same time for everyone", "fasting immediately switches the body to ketone use"],
-      "allowed_conclusions": ["Sufficiently long fasting periods shift the body toward ketone-based fuel use, per the cited review."],
-      "uncertainty_notes": ["Exact individual timing of the switch is not established by this source."],
+      "prohibited_claims": [
+        "the metabolic switch happens at exactly the same time for everyone",
+        "fasting immediately switches the body to ketone use"
+      ],
+      "allowed_conclusions": [
+        "Sufficiently long fasting periods shift the body toward ketone-based fuel use, per the cited review."
+      ],
+      "uncertainty_notes": [
+        "Exact individual timing of the switch is not established by this source."
+      ],
       "related_articles": [],
       "generated_at": "2026-08-10",
-      "source_registry_revision": "75907110c73c0fa02382d95cba0f0d30c5efc2fd059c4ad6140ca2a24e124f2f",
-      "claim_registry_revision": "3bd0955ede9b73c42839f2ce526b0220ba12d720528671c56663ed7d36edcdf8"
+      "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+      "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
     },
     {
       "packet_id": "packet-semaglutide-what-to-know-before-starting",
       "topic_id": "topic-semaglutide-what-to-know-before-starting",
       "canonical_question": "What are the FDA-approved uses, expected results, and major safety warnings for semaglutide (Wegovy) for weight management?",
       "reader_intent": "Gather baseline facts before a clinician conversation about semaglutide for weight management.",
-      "approved_claim_ids": ["claim-wegovy-regulatory-status", "claim-wegovy-boxed-warning-thyroid", "claim-step1-semaglutide-primary-result"],
-      "mandatory_claim_ids": ["claim-wegovy-regulatory-status", "claim-wegovy-boxed-warning-thyroid", "claim-step1-semaglutide-primary-result"],
+      "approved_claim_ids": [
+        "claim-wegovy-regulatory-status",
+        "claim-wegovy-boxed-warning-thyroid",
+        "claim-step1-semaglutide-primary-result"
+      ],
+      "mandatory_claim_ids": [
+        "claim-wegovy-regulatory-status",
+        "claim-wegovy-boxed-warning-thyroid",
+        "claim-step1-semaglutide-primary-result"
+      ],
       "optional_claim_ids": [],
-      "source_ids": ["src-fda-wegovy-label", "src-wilding-step1-2021"],
+      "source_ids": [
+        "src-fda-wegovy-label",
+        "src-wilding-step1-2021"
+      ],
       "required_limitations": [
         "Trial population (STEP 1) excluded people with diabetes.",
         "STEP 1's 68-week result does not by itself establish durability beyond the study period.",
         "The thyroid C-cell tumor finding is from rodent studies; the label states human relevance has not been determined.",
-        "This packet's regulatory-status claim covers only the adult weight-management and cardiovascular-risk-reduction indications shared by both the injection and tablet formulations — it does not cover the injection-only pediatric (ages 12+) obesity indication or the injection-only MASH treatment indication."
+        "This packet's regulatory-status claim covers only the adult weight-management and cardiovascular-risk-reduction indications shared by both the injection and tablet formulations \u2014 it does not cover the injection-only pediatric (ages 12+) obesity indication or the injection-only MASH treatment indication."
       ],
       "required_safety_context": [
         "carries a boxed warning for thyroid C-cell tumors seen in rodent studies",
@@ -72,28 +111,41 @@
       ],
       "allowed_conclusions": [
         "Wegovy (semaglutide), in its injection and tablet formulations, is FDA-approved for weight management under specific conditions and produced substantially greater weight loss than placebo in its pivotal trial.",
-        "The injection formulation is additionally approved for pediatric patients (12+) with obesity and for MASH treatment in adults — indications this packet does not otherwise detail.",
+        "The injection formulation is additionally approved for pediatric patients (12+) with obesity and for MASH treatment in adults \u2014 indications this packet does not otherwise detail.",
         "Anyone considering Wegovy should discuss the boxed warning and contraindications with a clinician."
       ],
-      "uncertainty_notes": ["Real-world results outside the trial population and duration may differ."],
+      "uncertainty_notes": [
+        "Real-world results outside the trial population and duration may differ."
+      ],
       "related_articles": [
         "science-of-glp1-how-medications-affect-your-body",
         "compounded-vs-fda-approved-glp1-medications",
         "questions-to-ask-doctor-about-glp1-medications"
       ],
       "generated_at": "2026-08-10",
-      "source_registry_revision": "75907110c73c0fa02382d95cba0f0d30c5efc2fd059c4ad6140ca2a24e124f2f",
-      "claim_registry_revision": "3bd0955ede9b73c42839f2ce526b0220ba12d720528671c56663ed7d36edcdf8"
+      "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+      "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
     },
     {
       "packet_id": "packet-tirzepatide-what-to-know-before-starting",
       "topic_id": "topic-tirzepatide-what-to-know-before-starting",
       "canonical_question": "What are the FDA-approved uses, expected results, and major safety warnings for tirzepatide (Zepbound) for weight management?",
       "reader_intent": "Gather baseline facts before a clinician conversation about tirzepatide for weight management.",
-      "approved_claim_ids": ["claim-zepbound-regulatory-status", "claim-zepbound-boxed-warning-thyroid", "claim-surmount1-tirzepatide-primary-result"],
-      "mandatory_claim_ids": ["claim-zepbound-regulatory-status", "claim-zepbound-boxed-warning-thyroid", "claim-surmount1-tirzepatide-primary-result"],
+      "approved_claim_ids": [
+        "claim-zepbound-regulatory-status",
+        "claim-zepbound-boxed-warning-thyroid",
+        "claim-surmount1-tirzepatide-primary-result"
+      ],
+      "mandatory_claim_ids": [
+        "claim-zepbound-regulatory-status",
+        "claim-zepbound-boxed-warning-thyroid",
+        "claim-surmount1-tirzepatide-primary-result"
+      ],
       "optional_claim_ids": [],
-      "source_ids": ["src-fda-zepbound-label", "src-jastreboff-surmount1-2022"],
+      "source_ids": [
+        "src-fda-zepbound-label",
+        "src-jastreboff-surmount1-2022"
+      ],
       "required_limitations": [
         "Trial population (SURMOUNT-1) excluded people with diabetes.",
         "SURMOUNT-1's 72-week result does not by itself establish durability beyond the study period.",
@@ -115,63 +167,103 @@
         "Zepbound (tirzepatide) is FDA-approved for chronic weight management and, separately, for moderate-to-severe obstructive sleep apnea in obese adults, and produced substantially greater weight loss than placebo in its pivotal trial.",
         "Anyone considering Zepbound should discuss the boxed warning and contraindications with a clinician."
       ],
-      "uncertainty_notes": ["Real-world results outside the trial population, dose, and duration may differ."],
+      "uncertainty_notes": [
+        "Real-world results outside the trial population, dose, and duration may differ."
+      ],
       "related_articles": [],
       "generated_at": "2026-08-10",
-      "source_registry_revision": "75907110c73c0fa02382d95cba0f0d30c5efc2fd059c4ad6140ca2a24e124f2f",
-      "claim_registry_revision": "3bd0955ede9b73c42839f2ce526b0220ba12d720528671c56663ed7d36edcdf8"
+      "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+      "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
     },
     {
       "packet_id": "packet-protein-preserve-muscle-during-weight-loss",
       "topic_id": "topic-protein-preserve-muscle-during-weight-loss",
       "canonical_question": "Does eating more protein than the RDA help preserve muscle while losing weight?",
-      "reader_intent": "Understand whether protein intake above the RDA specifically helps preserve lean mass during a weight-loss effort — not to receive one specific gram-per-day target.",
-      "approved_claim_ids": ["claim-protein-intake-lean-mass"],
-      "mandatory_claim_ids": ["claim-protein-intake-lean-mass"],
+      "reader_intent": "Understand whether protein intake above the RDA specifically helps preserve lean mass during a weight-loss effort \u2014 not to receive one specific gram-per-day target.",
+      "approved_claim_ids": [
+        "claim-protein-intake-lean-mass"
+      ],
+      "mandatory_claim_ids": [
+        "claim-protein-intake-lean-mass"
+      ],
       "optional_claim_ids": [],
-      "source_ids": ["src-hudson-protein-metaanalysis-2020"],
-      "required_limitations": ["Effect size and the specific protein intake threshold at which the effect is strongest are not reduced to one number applicable to every individual."],
+      "source_ids": [
+        "src-hudson-protein-metaanalysis-2020"
+      ],
+      "required_limitations": [
+        "Effect size and the specific protein intake threshold at which the effect is strongest are not reduced to one number applicable to every individual."
+      ],
       "required_safety_context": [],
       "prohibited_claims": [
         "more protein always builds more muscle regardless of energy balance",
         "the RDA is dangerously insufficient for everyone",
         "eat exactly [X] grams of protein per day to preserve muscle"
       ],
-      "allowed_conclusions": ["Protein intake above the RDA is associated with attenuated lean-mass loss during energy restriction, per the cited meta-analysis. This packet does not support stating a specific optimal gram-per-day target or range."],
-      "uncertainty_notes": ["This source addresses energy restriction (catabolic stress) specifically, not energy balance or surplus."],
-      "related_articles": ["understanding-macronutrients-proteins-carbs-fats"],
+      "allowed_conclusions": [
+        "Protein intake above the RDA is associated with attenuated lean-mass loss during energy restriction, per the cited meta-analysis. This packet does not support stating a specific optimal gram-per-day target or range."
+      ],
+      "uncertainty_notes": [
+        "This source addresses energy restriction (catabolic stress) specifically, not energy balance or surplus."
+      ],
+      "related_articles": [
+        "understanding-macronutrients-proteins-carbs-fats"
+      ],
       "generated_at": "2026-08-10",
-      "source_registry_revision": "75907110c73c0fa02382d95cba0f0d30c5efc2fd059c4ad6140ca2a24e124f2f",
-      "claim_registry_revision": "3bd0955ede9b73c42839f2ce526b0220ba12d720528671c56663ed7d36edcdf8"
+      "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+      "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
     },
     {
       "packet_id": "packet-how-much-water-do-you-need",
       "topic_id": "topic-how-much-water-do-you-need",
       "canonical_question": "How much water do I actually need to drink each day?",
       "reader_intent": "Get a concrete daily water-intake reference number.",
-      "approved_claim_ids": ["claim-hydration-adequate-intake"],
-      "mandatory_claim_ids": ["claim-hydration-adequate-intake"],
+      "approved_claim_ids": [
+        "claim-hydration-adequate-intake"
+      ],
+      "mandatory_claim_ids": [
+        "claim-hydration-adequate-intake"
+      ],
       "optional_claim_ids": [],
-      "source_ids": ["src-nasem-water-dri-2005"],
-      "required_limitations": ["Individual water needs vary with climate, activity level, and health status; this is a population-level reference value, not an individualized target."],
+      "source_ids": [
+        "src-nasem-water-dri-2005"
+      ],
+      "required_limitations": [
+        "Individual water needs vary with climate, activity level, and health status; this is a population-level reference value, not an individualized target."
+      ],
       "required_safety_context": [],
-      "prohibited_claims": ["everyone must drink exactly this many liters of plain water per day", "this is a medical requirement rather than a population reference value"],
-      "allowed_conclusions": ["The National Academies' Adequate Intake figures (3.7 L/day for adult men, 2.7 L/day for adult women ages 19-30, including food) are a reasonable population reference point."],
+      "prohibited_claims": [
+        "everyone must drink exactly this many liters of plain water per day",
+        "this is a medical requirement rather than a population reference value"
+      ],
+      "allowed_conclusions": [
+        "The National Academies' Adequate Intake figures (3.7 L/day for adult men, 2.7 L/day for adult women ages 19-30, including food) are a reasonable population reference point."
+      ],
       "uncertainty_notes": [],
-      "related_articles": ["hydration-and-health-how-much-water-do-you-need", "hydration-weight-health-daily-functioning"],
+      "related_articles": [
+        "hydration-and-health-how-much-water-do-you-need",
+        "hydration-weight-health-daily-functioning"
+      ],
       "generated_at": "2026-08-10",
-      "source_registry_revision": "75907110c73c0fa02382d95cba0f0d30c5efc2fd059c4ad6140ca2a24e124f2f",
-      "claim_registry_revision": "3bd0955ede9b73c42839f2ce526b0220ba12d720528671c56663ed7d36edcdf8"
+      "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+      "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
     },
     {
       "packet_id": "packet-why-body-resists-weight-loss",
       "topic_id": "topic-why-body-resists-weight-loss",
       "canonical_question": "Why does the body seem to resist sustained weight loss, and what does 'metabolic adaptation' actually mean?",
       "reader_intent": "Understand why weight regain is common and whether their own metabolism is 'broken.'",
-      "approved_claim_ids": ["claim-biggestloser-rmr-below-baseline", "claim-biggestloser-metabolic-adaptation-residual"],
-      "mandatory_claim_ids": ["claim-biggestloser-rmr-below-baseline", "claim-biggestloser-metabolic-adaptation-residual"],
+      "approved_claim_ids": [
+        "claim-biggestloser-rmr-below-baseline",
+        "claim-biggestloser-metabolic-adaptation-residual"
+      ],
+      "mandatory_claim_ids": [
+        "claim-biggestloser-rmr-below-baseline",
+        "claim-biggestloser-metabolic-adaptation-residual"
+      ],
       "optional_claim_ids": [],
-      "source_ids": ["src-fothergill-biggestloser-2016"],
+      "source_ids": [
+        "src-fothergill-biggestloser-2016"
+      ],
       "required_limitations": [
         "Very small sample size (n=14 of 16 original competitors).",
         "Single reality-TV-derived cohort with an unusually extreme initial weight-loss intervention; may not generalize to typical weight-loss approaches.",
@@ -187,14 +279,20 @@
       ],
       "allowed_conclusions": [
         "At six-year follow-up, measured resting metabolic rate was 704 kcal/day below the same participants' measured baseline RMR, per this small long-term cohort.",
-        "Separately, the paper's specifically defined 'metabolic adaptation' — the adjusted RMR residual relative to predicted RMR after accounting for 6-year body composition and age — was -499 kcal/day, a real but smaller-magnitude phenomenon than the raw measured-baseline-vs-measured-six-year RMR difference.",
-        "Together these show that some degree of metabolic adaptation can persist for years after extreme weight loss — a real phenomenon, but not evidence that every weight-loss attempt causes permanent metabolic damage, and not a single interchangeable number."
+        "Separately, the paper's specifically defined 'metabolic adaptation' \u2014 the adjusted RMR residual relative to predicted RMR after accounting for 6-year body composition and age \u2014 was -499 kcal/day, a real but smaller-magnitude phenomenon than the raw measured-baseline-vs-measured-six-year RMR difference.",
+        "Together these show that some degree of metabolic adaptation can persist for years after extreme weight loss \u2014 a real phenomenon, but not evidence that every weight-loss attempt causes permanent metabolic damage, and not a single interchangeable number."
       ],
-      "uncertainty_notes": ["Whether and to what degree this generalizes to typical, non-extreme weight-loss programs is not established by this single small cohort."],
-      "related_articles": ["set-point-theory-why-body-resists-weight-loss", "understanding-your-metabolism-facts-vs-myths", "understanding-metabolic-health"],
+      "uncertainty_notes": [
+        "Whether and to what degree this generalizes to typical, non-extreme weight-loss programs is not established by this single small cohort."
+      ],
+      "related_articles": [
+        "set-point-theory-why-body-resists-weight-loss",
+        "understanding-your-metabolism-facts-vs-myths",
+        "understanding-metabolic-health"
+      ],
       "generated_at": "2026-08-10",
-      "source_registry_revision": "75907110c73c0fa02382d95cba0f0d30c5efc2fd059c4ad6140ca2a24e124f2f",
-      "claim_registry_revision": "3bd0955ede9b73c42839f2ce526b0220ba12d720528671c56663ed7d36edcdf8"
+      "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+      "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
     }
   ]
 }

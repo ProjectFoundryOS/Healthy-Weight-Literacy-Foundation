@@ -1,0 +1,108 @@
+{
+  "audit_id": "audit-science-of-glp1-how-medications-affect-your-body",
+  "slug": "science-of-glp1-how-medications-affect-your-body",
+  "snapshot_hash": "ee92d9ac66cfa27e8214a0b31a5bc241a986a9be904dc3674075aabca440de83",
+  "audited_at": "2026-08-11",
+  "audit_version": "stage4-v1",
+  "title": "The Science of GLP-1: How These Medications Affect Your Body",
+  "category": "Metabolic Health",
+  "authorship": {
+    "current_visible_author": "Healthy Weight Literacy Foundation",
+    "author_type": "organization",
+    "consistency_issue": true,
+    "recommended_normalized_author": "Healthy Weight Literacy Foundation Editorial Team"
+  },
+  "primary_question": "How do GLP-1 receptor agonist medications work biologically, and how do they differ from older weight-management drugs?",
+  "reader_intent": "Understand the physiological mechanism of GLP-1 medications well enough to have an informed conversation with a provider.",
+  "reader_stage": "understanding",
+  "desired_reader_outcome": "Reader understands the natural GLP-1 hormone, the gut-brain axis, glucose-dependent insulin secretion, delayed gastric emptying, and why this differs from older appetite-suppressant/fat-blocker drugs.",
+  "ymyl_class": "high",
+  "medical_risk": "high",
+  "decay_class": "clinical_efficacy",
+  "claims": [
+    {
+      "article_claim_id": "c1",
+      "proposition": "Natural GLP-1 is broken down by the enzyme DPP-4 within just two to three minutes.",
+      "claim_type": "mechanism",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"The Natural GLP-1 Hormone\" section",
+      "severity": "medium",
+      "recommended_action": "Specific, checkable pharmacokinetic figure with zero citation. Verify the exact native GLP-1 half-life against a primary pharmacology source (e.g., a Drucker or Holst GLP-1 physiology review) before restating."
+    },
+    {
+      "article_claim_id": "c2",
+      "proposition": "GLP-1 insulin secretion is glucose-dependent, reducing hypoglycemia risk relative to some other diabetes medications when used alone.",
+      "claim_type": "mechanism",
+      "ymyl_risk": "high",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"Blood Sugar Regulation\" section",
+      "severity": "low",
+      "recommended_action": "Standard, well-established endocrine pharmacology, but zero citation anywhere in the article. Cite a primary GLP-1 mechanism review."
+    },
+    {
+      "article_claim_id": "c3",
+      "proposition": "GLP-1 receptor agonists slow gastric emptying, contributing to fullness and early digestive side effects.",
+      "claim_type": "mechanism",
+      "ymyl_risk": "medium",
+      "mapping_status": "needs_semantic_review",
+      "article_location": "\"Gastric Emptying Effects\" section",
+      "severity": "low",
+      "recommended_action": "Well-established mechanism; needs a citation, not a correction."
+    }
+  ],
+  "evidence_summary": {
+    "material_claim_count": 3,
+    "mapped_claim_count": 0,
+    "unsupported_count": 0,
+    "outdated_count": 0,
+    "overbroad_count": 0,
+    "high_or_critical_findings": 0
+  },
+  "scores": {
+    "reader_intent": 8,
+    "evidence_quality": 3,
+    "claim_traceability": 4,
+    "ymyl_safety": 10,
+    "freshness": 7,
+    "trust_integrity": 8,
+    "cannibalization_distinctness": 10,
+    "usefulness": 4,
+    "internal_linking": 1,
+    "ad_grant_fit": 5,
+    "total": 60
+  },
+  "cannibalization_cluster_ids": [],
+  "internal_link_recommendations": [
+    {
+      "target_slug": "compounded-vs-fda-approved-glp1-medications",
+      "reason": "After understanding the mechanism, a reader evaluating options should understand compounded-vs-FDA-approved risk.",
+      "reader_stage": "decision_support"
+    },
+    {
+      "target_slug": "questions-to-ask-doctor-about-glp1-medications",
+      "reason": "Mechanism understanding naturally leads into preparing provider questions.",
+      "reader_stage": "decision_support"
+    }
+  ],
+  "ad_grant_fit": "high",
+  "disposition": "REFRESH",
+  "disposition_reason": "Accurate, appropriately hedged, individual-variation-aware mechanism education, but it has zero cited sources for a medication-class physiology article, including one specific, checkable pharmacokinetic number (DPP-4 half-life) stated without support.",
+  "rewrite_priority": "P0",
+  "blocking_findings": [],
+  "required_research": [
+    "Cite a primary GLP-1 physiology review for the mechanism claims and independently verify the exact 2-3 minute DPP-4 degradation half-life figure."
+  ],
+  "recommended_rewrite_scope": [
+    "Add a Sources section citing primary GLP-1 pharmacology literature.",
+    "Attach the specific half-life claim to its source or qualify it as approximate if the exact source figure differs."
+  ],
+  "safety_language_findings": [
+    "Appropriately frames effects as varying by individual; does not promise outcomes.",
+    "No dosing instructions given (correctly deferred to providers)."
+  ],
+  "evidence_registry_revision": {
+    "source_registry_revision": "7d75f87258e894b9e8cb3592354aa67f3a10d8113fc0df672e6ae9b6f609f185",
+    "claim_registry_revision": "ce4cc04edca124e00f22e1604f5874a6ecad5454e0035ccd5313b5c376de039a"
+  }
+}

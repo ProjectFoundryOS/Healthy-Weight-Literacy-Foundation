@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "notes": "Read-only inspection of the 5 is_published=false rows in Supabase, performed during Stage 4 (Issue #17). No Supabase writes occurred. Titles are omitted here even though the task's own threshold would allow a historically/publicly-known title, because these five titles were never publicly published prior to this audit — omitting them is a stricter reading of the privacy constraint than the minimum required. Full draft bodies were read in-session for disposition purposes only and were never written to any file in this repository.",
+  "rows": [
+    {
+      "slug": "privacy-security-telehealth-what-you-should-know",
+      "category": "Telehealth Education",
+      "content_sha256": "b34cf8a043b948b8039bdf26cd64dfee9b4c65061e500aecbf826479ae73ab09",
+      "is_published": false,
+      "inspected_at": "2026-08-10",
+      "disposition": "REPUBLISH_AFTER_REFRESH",
+      "reason": "Reasonable, appropriately disclaimed general privacy/HIPAA education for telehealth with no fabricated statistics or medication claims. However every cited source is a bare organization homepage (HHS, OCR, FTC, NIST, ATA) rather than a specific HIPAA regulation, guidance document, or dated publication, which does not meet the source-registry's real-verified-research bar for P0 (telehealth/privacy-adjacent) content. Requires: replace homepage-only citations with specific HIPAA Privacy/Security Rule citations before republishing; no topic/claim registry entries exist for this content yet."
+    },
+    {
+      "slug": "telehealth-vs-in-person-care-right-choice",
+      "category": "Telehealth Education",
+      "content_sha256": "44c7000e4cba173d417daf862f27ef28718a0636c34e342a918507b5c567bec4",
+      "is_published": false,
+      "inspected_at": "2026-08-10",
+      "disposition": "REPUBLISH_AFTER_REFRESH",
+      "reason": "Balanced, non-alarmist comparison of telehealth vs. in-person care with no unsafe or unsupported medical claims; low YMYL risk since it makes no specific clinical assertions. Sourcing is homepage-only (ATA, AMA, CMS, NIH, AHRQ) and should be tightened to specific guidance documents before republishing, but this is a lower-severity gap than the P0 rows given the content's low medical-claim density."
+    },
+    {
+      "slug": "understanding-telehealth-weight-management-guide",
+      "category": "Telehealth Education",
+      "content_sha256": "02e42514f98a44fa8b941544c884654a5c37478e346e92b81fe8e30de445a5a5",
+      "is_published": false,
+      "inspected_at": "2026-08-10",
+      "disposition": "REPUBLISH_AFTER_REFRESH",
+      "reason": "Solid consumer-education overview of what telehealth weight management is and a genuinely useful \"questions to ask before choosing a service\" checklist, with an appropriate emergency-care caveat. Unlike its sibling rows, this draft has no Sources section at all — a deficiency that must be fixed (either by adding real citations or by confirming the content is intentionally general/non-citable) before republishing. No specific medication or outcome claims are made, so YMYL risk is low, but the missing-sources gap still blocks republication as-is."
+    },
+    {
+      "slug": "understanding-online-prescriptions-safety-best-practices",
+      "category": "Telehealth Education",
+      "content_sha256": "68b8ba0fad863e9dbf482e16703ec5ddd34300748a693f6335df995c7a9fe771",
+      "is_published": false,
+      "inspected_at": "2026-08-10",
+      "disposition": "REPUBLISH_AFTER_REFRESH",
+      "reason": "P0 priority: covers online/telehealth prescription safety, pharmacy-legitimacy verification (NABP VIPPS, safe.pharmacy), and red flags for counterfeit or unsafe online pharmacies. The named programs (NABP VIPPS, FDA BeSafeRx) are real and verifiable, but no source_ids/claim_ids exist for this content in the registries, and the specific guidance must be re-verified against current NABP/FDA program status (program names and verification URLs can change) before republishing, consistent with the currentness-re-check requirement for medication/prescribing-adjacent content. Contains no drug-specific dosing or efficacy claims."
+    },
+    {
+      "slug": "how-to-evaluate-telehealth-weight-management-provider",
+      "category": "Telehealth Education",
+      "content_sha256": "45251bc45070626c775cd5ed6f8075086709df4bfe37e1927dbe8dda378a7472",
+      "is_published": false,
+      "inspected_at": "2026-08-10",
+      "disposition": "REPUBLISH_AFTER_REFRESH",
+      "reason": "P0 priority: consumer-protection guidance for evaluating telehealth weight-management providers (credential verification via FSMB/state medical boards, red flags for predatory practices such as guaranteed results, bundled-product requirements, and prescribing without real evaluation). Directionally sound and consistent with known regulatory-consumer-protection guidance, but has no Sources section and no registry backing; recommend adding real FSMB/state-medical-board and FTC citations and a light currentness check before republishing given the prescribing-adjacent subject matter."
+    }
+  ]
+}
