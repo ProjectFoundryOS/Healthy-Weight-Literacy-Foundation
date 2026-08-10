@@ -249,7 +249,7 @@
       "trust_tier": "A",
       "status": "current",
       "topics": ["weight-regulation", "adaptive-thermogenesis", "metabolic-adaptation"],
-      "notes": "Exact publication day within August 2016 not shown on the PubMed record; day-of-month defaulted to the 1st. Long-term (6-year) follow-up cohort, not an RCT. Key finding: resting metabolic rate was 704 +/- 427 kcal/day below the baseline-predicted value at 6-year follow-up, despite substantial weight regain in most participants.",
+      "notes": "Exact publication day within August 2016 not shown on the PubMed record; day-of-month defaulted to the 1st. Long-term (6-year) follow-up cohort, not an RCT. Key finding: measured resting metabolic rate at 6-year follow-up was 704 +/- 427 kcal/day below the same participants' measured baseline RMR, despite substantial weight regain in most participants. Separately, the paper's adjusted 'metabolic adaptation' residual (relative to predicted RMR after accounting for body composition and age) was -499 +/- 207 kcal/day — a distinct, smaller-magnitude figure never interchangeable with the raw measured-baseline comparison. (Corrected during a follow-up Issue #28 review pass: this note previously mischaracterized the -704 comparator as a \"baseline-predicted value.\")",
       "verification": {
         "url_checked": true,
         "identifier_checked": true,

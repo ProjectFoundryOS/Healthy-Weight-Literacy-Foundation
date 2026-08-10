@@ -210,6 +210,134 @@ describe("findDuplicateClaimIds", () => {
   })
 })
 
+describe("Issue #28 follow-up: -704 vs -499 comparator wording must never be swapped", () => {
+  function flattenText(value: unknown): string {
+    if (typeof value === "string") return value
+    if (Array.isArray(value)) return value.map(flattenText).join(" \n ")
+    if (value !== null && typeof value === "object") {
+      return Object.values(value as Record<string, unknown>).map(flattenText).join(" \n ")
+    }
+    return ""
+  }
+
+  // The *live* description of what a claim's comparator actually is —
+  // deliberately excludes prohibited_wording (a safeguard list that must
+  // legitimately name the exact banned phrase) and notes (which
+  // legitimately quotes the old, now-corrected wording as history).
+  function flattenLiveDescription(claim: ClaimRecord): string {
+    return flattenText({
+      canonical_claim: claim.canonical_claim,
+      outcome: claim.outcome,
+      limitations: claim.limitations,
+      required_qualifiers: claim.required_qualifiers,
+      statistical_detail: claim.statistical_detail,
+    })
+  }
+
+  function loadRealClaims() {
+    const sources = loadSources()
+    const claims = loadClaims(sources)
+    const claimA = claims.find((c) => c.claim_id === "claim-biggestloser-rmr-below-baseline")
+    const claimB = claims.find((c) => c.claim_id === "claim-biggestloser-metabolic-adaptation-residual")
+    if (!claimA || !claimB) throw new Error("expected both Biggest Loser claims to exist in the real registry")
+    return { claimA, claimB }
+  }
+
+  it("Claim A (-704) never uses baseline-predicted/predicted-RMR terminology for its own comparator", () => {
+    const { claimA } = loadRealClaims()
+    const text = flattenLiveDescription(claimA).toLowerCase()
+    expect(text).not.toMatch(/baseline-predicted|baseline predicted|predicted baseline|predicted from.{0,20}baseline|value predicted from/)
+    // "predicted" must never appear at all in Claim A's own live description —
+    // that word belongs only to Claim B's adjusted residual.
+    expect(text).not.toMatch(/predicted/)
+  })
+
+  it("Claim A's comparison is stated as measured six-year RMR vs measured baseline RMR", () => {
+    const { claimA } = loadRealClaims()
+    expect(claimA.statistical_detail?.comparison.toLowerCase()).toMatch(/measured.*baseline|measured.*six-year/)
+    expect(claimA.statistical_detail?.value).toBe(-704)
+  })
+
+  it("FAILS (this assertion would fail) if Claim A were described as metabolic adaptation", () => {
+    const { claimA } = loadRealClaims()
+    // canonical_claim/outcome must not themselves label the -704 figure "metabolic adaptation" —
+    // they may only ever reference that term to say what this claim is NOT.
+    const ownDescription = `${claimA.canonical_claim} ${claimA.outcome}`.toLowerCase()
+    expect(ownDescription).not.toMatch(/^metabolic adaptation|is metabolic adaptation|, metabolic adaptation,/)
+  })
+
+  it("Claim B (-499) explicitly states its residual is relative to a predicted RMR, adjusted for body composition and age", () => {
+    const { claimB } = loadRealClaims()
+    const comparison = claimB.statistical_detail?.comparison.toLowerCase() ?? ""
+    expect(comparison).toMatch(/predicted/)
+    expect(comparison).toMatch(/body composition/)
+    expect(claimB.statistical_detail?.value).toBe(-499)
+  })
+
+  it("FAILS (this assertion would fail) if Claim B were reduced to a bare 'RMR below baseline' description with no adjustment basis", () => {
+    const { claimB } = loadRealClaims()
+    const text = flattenLiveDescription(claimB).toLowerCase()
+    // The adjustment basis (body composition + age) must appear in Claim B's
+    // live description — a record that only ever said "RMR below baseline"
+    // would fail this.
+    expect(text).toMatch(/body composition/)
+    expect(text).toMatch(/age/)
+  })
+
+  it("the two claims are never presented as interchangeable", () => {
+    const { claimA, claimB } = loadRealClaims()
+    expect(claimA.statistical_detail?.value).not.toBe(claimB.statistical_detail?.value)
+    expect(flattenLiveDescription(claimA).toLowerCase()).toMatch(/not.{0,40}interchangeable|not the same figure|is not the same/)
+  })
+
+  describe("detector sanity check: these checks actually catch the three forbidden regressions on a synthetic fixture", () => {
+    it("catches a -704 claim mislabeled with baseline-predicted terminology", () => {
+      const brokenClaimA = makeClaim({
+        canonical_claim: "RMR was 704 kcal/day below the baseline-predicted value.",
+        outcome: "observed RMR relative to baseline-predicted value",
+        statistical_detail: {
+          value: -704,
+          unit: "kcal/day",
+          measure_type: "difference vs baseline-predicted RMR",
+          population: "test",
+          source_location: "test",
+          comparison: "observed RMR vs baseline-predicted RMR",
+        },
+      })
+      const text = flattenLiveDescription(brokenClaimA).toLowerCase()
+      expect(text).toMatch(/baseline-predicted/)
+    })
+
+    it("catches a -704 claim described as metabolic adaptation", () => {
+      const brokenClaimA = makeClaim({
+        canonical_claim: "Metabolic adaptation was 704 kcal/day.",
+        outcome: "metabolic adaptation, six years post-competition",
+      })
+      const ownDescription = `${brokenClaimA.canonical_claim} ${brokenClaimA.outcome}`.toLowerCase()
+      expect(ownDescription).toMatch(/^metabolic adaptation|is metabolic adaptation|, metabolic adaptation,/)
+    })
+
+    it("catches a -499 claim reduced to a bare 'RMR below baseline' description with no adjustment basis", () => {
+      const brokenClaimB = makeClaim({
+        canonical_claim: "RMR was 499 kcal/day below baseline.",
+        outcome: "RMR below baseline",
+        limitations: [],
+        required_qualifiers: [],
+        statistical_detail: {
+          value: -499,
+          unit: "kcal/day",
+          measure_type: "RMR below baseline",
+          population: "test",
+          source_location: "test",
+          comparison: "RMR below baseline",
+        },
+      })
+      const text = flattenLiveDescription(brokenClaimB).toLowerCase()
+      expect(text).not.toMatch(/body composition/)
+    })
+  })
+})
+
 describe("real content/claims/registry.json", () => {
   it("loads and validates cleanly against the real source registry", () => {
     const sources = loadSources()

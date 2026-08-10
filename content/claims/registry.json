@@ -255,7 +255,7 @@
     },
     {
       "claim_id": "claim-biggestloser-rmr-below-baseline",
-      "canonical_claim": "In a 6-year follow-up of 14 'Biggest Loser' Season 8 competitors (of 16 originally studied), observed resting metabolic rate (RMR) was on average 704 +/- 427 kcal/day below the value predicted from each participant's original baseline (pre-competition) measurements (P<0.0001), despite substantial weight regain in most participants.",
+      "canonical_claim": "At six-year follow-up of 14 'Biggest Loser' Season 8 competitors (of 16 originally studied), measured resting metabolic rate (RMR) was on average 704 +/- 427 kcal/day below the same participants' measured baseline (pre-competition) RMR (P<0.0001), despite substantial weight regain in most participants.",
       "claim_type": "statistical_result",
       "classification": "established",
       "ymyl_risk": "medium",
@@ -263,42 +263,44 @@
       "primary_source_ids": ["src-fothergill-biggestloser-2016"],
       "support_strength": "single long-term (6-year) observational follow-up cohort (Tier A); small sample size",
       "population": "14 of the original 16 'Biggest Loser' Season 8 competitors",
-      "outcome": "observed resting metabolic rate relative to baseline-predicted value (raw comparison, not adjusted for 6-year body composition)",
+      "outcome": "measured six-year resting metabolic rate relative to the same participants' measured baseline RMR (raw comparison of two measured values, not adjusted for 6-year body composition)",
       "timeframe": "6 years post-competition",
       "limitations": [
         "Very small sample size (n=14 of 16 original competitors).",
         "Single reality-TV-derived cohort with an unusually extreme initial weight-loss intervention; may not generalize to typical weight-loss approaches.",
-        "This is the raw observed-vs-baseline-predicted comparison; it is NOT the same figure as this source's separately defined 'metabolic adaptation' residual (see claim-biggestloser-metabolic-adaptation-residual), which differs materially because it additionally adjusts for the participant's actual body composition and age at the 6-year visit."
+        "This is a raw comparison of two measured RMR values (baseline vs. six-year); it is NOT the same figure as this source's separately defined 'metabolic adaptation' residual (see claim-biggestloser-metabolic-adaptation-residual), which differs materially because it additionally adjusts for the participant's actual body composition and age at the 6-year visit."
       ],
       "confounders": ["Substantial weight regain occurred in most participants during the follow-up period, which itself interacts with metabolic rate."],
       "required_qualifiers": [
         "based on a very small (n=14), atypical cohort; not a general population estimate",
-        "this is the raw observed-vs-baseline-predicted RMR difference, not the source's separately defined 'metabolic adaptation' figure"
+        "this is the raw measured-six-year-vs-measured-baseline RMR difference, not the source's separately defined 'metabolic adaptation' figure"
       ],
       "prohibited_wording": [
         "proves that weight loss permanently and irreversibly damages metabolism for everyone",
         "applies to typical, moderate weight-loss programs",
-        "is the same number as this source's metabolic adaptation figure"
+        "is the same number as this source's metabolic adaptation figure",
+        "baseline-predicted",
+        "predicted from baseline"
       ],
       "statistical_detail": {
         "value": -704,
         "unit": "kcal/day",
-        "measure_type": "mean difference between observed and baseline-predicted resting metabolic rate (unadjusted for 6-year body composition)",
+        "measure_type": "mean difference between measured six-year resting metabolic rate and the same participants' measured baseline resting metabolic rate (unadjusted for 6-year body composition)",
         "population": "14 'Biggest Loser' Season 8 competitors (of 16 original), 6-year follow-up",
         "sample_size": 14,
         "confidence_interval": "SD 427 kcal/day; P<0.0001",
-        "comparison": "observed RMR vs baseline-predicted RMR",
+        "comparison": "measured six-year RMR vs measured baseline RMR",
         "time_point": "6 years post-competition",
         "source_location": "Obesity (Silver Spring). 2016;24(8):1612-1619, Results (RMR result)"
       },
       "last_verified_at": "2026-08-10",
       "review_due_at": "2028-02-10",
       "decay_class": "nutrition_physiology",
-      "notes": "Split from the former single claim \"claim-adaptive-thermogenesis-rmr-suppression\" during the Stage 3 closure pass (Issue #28): that claim's own statistical_detail was correctly the raw -704 figure, but the topic/packet allowed_conclusions that referenced it had used 'metabolic adaptation' language for it — improperly conflating this raw figure with the source's distinctly-defined, smaller-magnitude 'metabolic adaptation' residual. This claim (Claim A) is the raw observed-vs-baseline-predicted RMR difference only. See claim-biggestloser-metabolic-adaptation-residual for Claim B, the source's separately defined 'metabolic adaptation' residual. Independently re-verified against the PubMed abstract: \"RMR was 704 +/- 427 kcal/day below baseline (P < 0.0001)\"."
+      "notes": "Split from the former single claim \"claim-adaptive-thermogenesis-rmr-suppression\" during the Stage 3 closure pass (Issue #28): that claim's own statistical_detail was correctly the raw -704 figure, but the topic/packet allowed_conclusions that referenced it had used 'metabolic adaptation' language for it — improperly conflating this raw figure with the source's distinctly-defined, smaller-magnitude 'metabolic adaptation' residual. This claim (Claim A) is the raw measured-baseline-vs-measured-six-year RMR difference only. See claim-biggestloser-metabolic-adaptation-residual for Claim B, the source's separately defined 'metabolic adaptation' residual. Independently re-verified against the PubMed abstract: \"RMR was 704 +/- 427 kcal/day below baseline (P < 0.0001)\" — this comparison is against the participants' own measured baseline RMR, not a predicted value. Corrected during a follow-up Issue #28 review pass: this claim previously described its comparator as a \"baseline-predicted value\"/\"value predicted from... baseline measurements,\" which incorrectly borrowed the terminology of the source's separate, adjusted 'metabolic adaptation' residual (claim-biggestloser-metabolic-adaptation-residual) — the -704 figure is a comparison of two directly measured RMR values, not a predicted/modeled one."
     },
     {
       "claim_id": "claim-biggestloser-metabolic-adaptation-residual",
-      "canonical_claim": "In the same 6-year follow-up of 14 'Biggest Loser' Season 8 competitors, the paper's specifically defined 'metabolic adaptation' — the residual resting metabolic rate (RMR) after statistically adjusting for each participant's actual body composition and age at the 6-year visit — was -499 +/- 207 kcal/day (P<0.0001), a smaller-magnitude figure than the raw observed-vs-baseline-predicted RMR difference.",
+      "canonical_claim": "In the same 6-year follow-up of 14 'Biggest Loser' Season 8 competitors, the paper's specifically defined 'metabolic adaptation' — the residual resting metabolic rate (RMR) after statistically adjusting for each participant's actual body composition and age at the 6-year visit — was -499 +/- 207 kcal/day (P<0.0001), a smaller-magnitude figure than the raw measured-baseline-vs-measured-six-year RMR difference (see claim-biggestloser-rmr-below-baseline).",
       "claim_type": "statistical_result",
       "classification": "established",
       "ymyl_risk": "medium",
@@ -311,7 +313,7 @@
       "limitations": [
         "Very small sample size (n=14 of 16 original competitors).",
         "Single reality-TV-derived cohort with an unusually extreme initial weight-loss intervention; may not generalize to typical weight-loss approaches.",
-        "The adjustment removes the portion of RMR suppression attributable to changed body composition, so this number is not interchangeable with the raw observed-vs-baseline-predicted RMR difference (see claim-biggestloser-rmr-below-baseline)."
+        "The adjustment removes the portion of RMR suppression attributable to changed body composition, so this number is not interchangeable with the raw measured-baseline-vs-measured-six-year RMR difference (see claim-biggestloser-rmr-below-baseline)."
       ],
       "confounders": ["Substantial weight regain occurred in most participants during the follow-up period, which itself interacts with body composition and therefore with this adjusted residual."],
       "required_qualifiers": [
@@ -321,23 +323,24 @@
       "prohibited_wording": [
         "proves that weight loss permanently and irreversibly damages metabolism for everyone",
         "applies to typical, moderate weight-loss programs",
-        "is the same number as the raw RMR-below-baseline figure"
+        "is the same number as the raw RMR-below-baseline figure",
+        "simply how far below baseline RMR remains"
       ],
       "statistical_detail": {
         "value": -499,
         "unit": "kcal/day",
-        "measure_type": "metabolic adaptation: residual resting metabolic rate after adjusting for changes in body composition and age",
+        "measure_type": "metabolic adaptation: residual resting metabolic rate after adjusting for changes in body composition and age (deviation from statistically predicted RMR under that adjustment model)",
         "population": "14 'Biggest Loser' Season 8 competitors (of 16 original), 6-year follow-up",
         "sample_size": 14,
         "confidence_interval": "SD 207 kcal/day; P<0.0001",
-        "comparison": "adjusted residual RMR vs zero (no adaptation)",
+        "comparison": "adjusted metabolic-adaptation residual relative to predicted RMR after accounting for body composition and age",
         "time_point": "6 years post-competition",
         "source_location": "Obesity (Silver Spring). 2016;24(8):1612-1619, Results (metabolic adaptation result)"
       },
       "last_verified_at": "2026-08-10",
       "review_due_at": "2028-02-10",
       "decay_class": "nutrition_physiology",
-      "notes": "Split out during the Stage 3 closure pass (Issue #28) as Claim B alongside claim-biggestloser-rmr-below-baseline (Claim A) — see that claim's notes for why the split was needed. Independently re-verified against the PubMed abstract: \"Metabolic adaptation was defined as the residual RMR after adjusting for changes in body composition and age\" ... \"metabolic adaptation was -499 +/- 207 kcal/day (P < 0.0001).\""
+      "notes": "Split out during the Stage 3 closure pass (Issue #28) as Claim B alongside claim-biggestloser-rmr-below-baseline (Claim A) — see that claim's notes for why the split was needed. Independently re-verified against the PubMed abstract: \"Metabolic adaptation was defined as the residual RMR after adjusting for changes in body composition and age\" ... \"metabolic adaptation was -499 +/- 207 kcal/day (P < 0.0001).\" A follow-up Issue #28 review pass corrected Claim A's comparator wording (it had incorrectly borrowed \"baseline-predicted\" language that actually describes this claim's adjusted/predicted residual); this claim's own wording was already correct and required no change beyond tightening its cross-references to Claim A."
     }
   ]
 }

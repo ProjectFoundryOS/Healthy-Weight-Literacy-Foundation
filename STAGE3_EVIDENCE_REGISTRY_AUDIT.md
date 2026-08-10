@@ -415,9 +415,10 @@ thyroid` was reverified against the 2026 label and found unchanged; only its
 verification metadata and notes were updated.
 
 **Fothergill claim-splitting (Blocker 2).** The single seed claim's own
-`statistical_detail` was already the correct raw figure (RMR 704 ± 427 kcal/day below
-baseline-predicted, independently reconfirmed against the PubMed abstract), but the
-topic and packet `allowed_conclusions` had labeled that raw figure "metabolic
+`statistical_detail` already carried the correct raw figure (RMR 704 ± 427 kcal/day
+below the participants' measured baseline RMR, independently reconfirmed against the
+PubMed abstract), but the topic and packet `allowed_conclusions` had labeled that raw
+figure "metabolic
 adaptation" — the paper's own, separately defined term for a materially different,
 smaller-magnitude number (-499 ± 207 kcal/day, the RMR residual *after* adjusting for
 6-year body composition and age). The single claim was split into
@@ -493,3 +494,46 @@ a script nobody runs is not a gate; it now runs on every build automatically.
 Full re-verification after this pass: `npm test`, `npm run lint`, `npm run build`,
 `npm run validate:articles`, and `npm run validate:evidence-all` all pass; see the
 closure handoff for exact counts.
+
+## 17. Final narrow correction: -704 comparator wording (Issue #28 follow-up review)
+
+An independent review of the closure SHA found that, despite §16's claim split being
+structurally correct (two claims, right numbers, right N, right SD), Claim A
+(`claim-biggestloser-rmr-below-baseline`) still described its own -704 comparator as
+a "baseline-predicted value" / "value predicted from... baseline measurements" —
+language that actually belongs to Claim B's distinct, adjusted 'metabolic adaptation'
+residual. Independently reopened the primary paper's abstract again to confirm: "RMR
+was 704 ± 427 kcal/day below baseline (P < 0.0001)" is a comparison between the
+participants' own **measured** baseline RMR and their **measured** six-year RMR — the
+paper measured RMR "at baseline, at the end of the 30-week competition and 6 years
+later." Nothing about -704 is predicted or modeled; only the separate -499 'metabolic
+adaptation' figure is (it is defined as the residual after adjusting for body
+composition and age, i.e. relative to a statistically predicted RMR under that
+adjustment model).
+
+Every field on Claim A containing "baseline-predicted" or equivalent wording
+(`canonical_claim`, `outcome`, `limitations`, `required_qualifiers`,
+`statistical_detail.measure_type`, `statistical_detail.comparison`, `notes`) was
+corrected to state a measured-vs-measured comparison, and `prohibited_wording` gained
+explicit entries blocking a future re-introduction of "baseline-predicted"/"predicted
+from baseline" phrasing for this claim. Claim B's own text was already accurate but
+cross-referenced Claim A using the same incorrect phrase in two places (describing
+Claim A's figure, not its own) — those cross-references were corrected too, and
+Claim B's own `statistical_detail.comparison` was tightened to state explicitly that
+its residual is relative to a *predicted* RMR (the one place "predicted" terminology
+is genuinely correct). `packet-why-body-resists-weight-loss`'s `allowed_conclusions`
+and `prohibited_claims` were updated to match, and `src-fothergill-biggestloser-2016`'s
+own `notes` (which had independently repeated the same incorrect phrase) were
+corrected as well. A repository-wide search for `baseline-predicted`, `baseline
+predicted`, and `predicted baseline` confirmed no other occurrence existed outside
+this one propagation path (the -704 claim, its packet, and the source record).
+
+A new regression test (`__tests__/claim-registry.test.ts`, "Issue #28 follow-up:
+-704 vs -499 comparator wording must never be swapped") pins both claims' exact
+comparator framing going forward, and fails if -704 is ever described as metabolic
+adaptation, if -704 ever uses predicted-RMR terminology, or if -499 is ever reduced to
+a bare "RMR below baseline" description without its adjustment basis.
+
+The claim registry's revision hash changed as a result of this edit; every packet's
+`claim_registry_revision` was regenerated and reconfirmed non-stale via `isPacketStale`
+before this SHA was frozen.
