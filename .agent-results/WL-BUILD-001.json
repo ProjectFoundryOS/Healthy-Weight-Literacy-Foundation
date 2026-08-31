@@ -93,9 +93,9 @@
     "No live Supabase credentials are available in this environment, so no real content snapshot could be exported/committed. The fail-closed mechanism is fully in place and verified; populating lib/content-snapshot-data/ via `npm run content:snapshot` against a real Supabase connection is a follow-up for the owner (or a future worker with credentials)."
   ],
   "pr": {
-    "url": null,
-    "number": null,
-    "note": "To be opened/updated by this worker after pushing the branch."
+    "url": "https://github.com/TheRealSynth/Healthy-Weight-Literacy-Foundation/pull/29",
+    "number": 29,
+    "note": "Opened against main. merge_policy is owner_required; not merged."
   },
   "proposed_follow_ups": [
     "Run `npm run content:snapshot` against production Supabase to populate lib/content-snapshot-data/ for graceful degradation (currently the build fails closed with no fallback data, which is safe but not graceful).",
