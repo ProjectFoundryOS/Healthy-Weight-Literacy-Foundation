@@ -34,19 +34,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}${ROUTES.TERMS}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   ]
 
-  // Blog post dynamic routes
-  let blogRoutes: MetadataRoute.Sitemap = []
-  try {
-    const posts = await getBlogPosts()
-    blogRoutes = posts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.updated_at || post.published_at),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }))
-  } catch {
-    // Silently handle Supabase errors during build
-  }
+  // Blog post dynamic routes. getBlogPosts() already falls back to the
+  // validated content snapshot on failure and fails the build closed if
+  // neither source has content — do not swallow that error here, or the
+  // sitemap would silently ship with zero article URLs.
+  const posts = await getBlogPosts()
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.updated_at || post.published_at),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }))
 
   return [...staticRoutes, ...blogRoutes]
 }
