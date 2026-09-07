@@ -1,0 +1,132 @@
+{
+  "mission_id": "PFORG-MIG-WEIGHT-003",
+  "lease_id": null,
+  "lease_note": "Control-plane mission record showed assigned_worker: null, lease: null, state: READY at start of this attempt (preferred_workers: claude-seat-1). This worker cannot mutate control-plane mission state (root CLAUDE.md rule 25) and proceeded at direct operator instruction; no lease_id was minted.",
+  "worker": "claude-seat-1",
+  "result_contract_version": 3,
+  "target_repo": "TheRealSynth/Healthy-Weight-Literacy-Foundation",
+  "target_branch": "claude/claude-seat-1/pforg-mig-weight-003",
+  "base_sha": "fd31e2bee29661cb63d3a16567e1e43819c2475e",
+  "final_sha": "df069b9d4a1acc4b076fdc061dde37ad0b2d6b61",
+  "state": "DONE_PENDING_MERGE",
+  "benchmark_id": "PFORG-MIG-TOP5",
+  "benchmark_progress": "Healthy-Weight-Literacy-Foundation is the fourth of the five-repository ProjectFoundryOS migration cohort to reach a documented readiness verdict (READY_AFTER_OWNER_ACTION), following ideabin-ai (PFORG-MIG-IDEABIN-001) and v0-growlocalhub-new-motion-site (PFORG-MIG-GLH-PROD-002). This repository had zero hardcoded-ownership hazards (a first among the cohort so far) but a genuinely broken pnpm build (Turbopack panic + missing type declarations), which this mission root-caused, fixed with two minimal reversible dependency edits, and verified green -- distinguishing that pre-existing defect class from actual migration risk per the mission's acceptance requirements.",
+  "objective_readiness_verdict": "READY_AFTER_OWNER_ACTION",
+  "readiness_doc": "docs/PROJECTFOUNDRYOS_MIGRATION_READINESS.md",
+  "tests": {
+    "pnpm_lint": "FAIL (pre-existing, unrelated to migration) - ESLint couldn't find an eslint.config.(js|mjs|cjs) file; ESLint is not even declared as a project dependency. Not fixed: eslint.config.js is outside this mission's owns_paths and adding a lint toolchain from scratch is a nontrivial scope decision beyond migration-readiness. Recorded as follow-up WEIGHT-003-D3.",
+    "pnpm_build": "PASS - 40 routes generated (Turbopack), after bumping next to 16.2.6 and adding @types/turndown",
+    "additional_tests": "__tests__/routes.test.ts exists but no test runner is installed or wired to a package.json script (pre-existing, unrelated to migration); attempting an ad hoc vitest run failed for unrelated npx/environment reasons. Not fixed here: the already-open PR #29 (claude/claude-seat-2/wl-build-001) adds vitest.config.mts and new tests -- test-runner setup belongs there, not duplicated in this mission.",
+    "method": "Ran the repository's own mission-specified acceptance commands (pnpm install; pnpm lint; pnpm build) directly on the mission branch. No CI workflow exists on main to compare against (no .github/workflows at all)."
+  },
+  "builds": {
+    "install": "PASS (pnpm install)",
+    "lint": "FAIL (pre-existing tooling gap, see tests.pnpm_lint)",
+    "typecheck_within_build": "PASS (after adding @types/turndown)",
+    "production_build": "PASS (next build, 40 routes generated, verified twice including a clean .next removal)"
+  },
+  "defects_found": [
+    {
+      "id": "PFORG-MIG-WEIGHT-003-D1",
+      "severity": "high",
+      "category": "build-breaking",
+      "summary": "next build panicked with a Turbopack internal error (NftJsonAsset: cannot handle filepath node:worker_threads) on the pinned next@16.0.10. Pre-existing, unrelated to org transfer -- reproduces identically regardless of GitHub owner."
+    },
+    {
+      "id": "PFORG-MIG-WEIGHT-003-D2",
+      "severity": "medium",
+      "category": "build-breaking",
+      "summary": "next build's TypeScript pass failed on scripts/migrate-html-to-markdown.ts: 'Could not find a declaration file for module turndown' -- @types/turndown was never added. Masked before D1 was fixed since the build never reached the typecheck phase. Pre-existing, unrelated to org transfer."
+    },
+    {
+      "id": "PFORG-MIG-WEIGHT-003-D3",
+      "severity": "low",
+      "category": "tooling-gap",
+      "summary": "pnpm lint fails: no eslint.config.js exists and ESLint is not a declared dependency at all. Pre-existing; not fixed (eslint.config.js is outside owns_paths; adding a lint toolchain is a scope decision beyond this migration mission). Recorded as a follow-up."
+    },
+    {
+      "id": "PFORG-MIG-WEIGHT-003-D4",
+      "severity": "low",
+      "category": "tooling-gap",
+      "summary": "__tests__/routes.test.ts exists but no test runner is installed/wired. Pre-existing; not fixed here since the already-open PR #29 is the appropriate place for test-runner setup (it adds vitest.config.mts) and duplicating that work in this mission would risk conflicting with in-flight work."
+    },
+    {
+      "id": "PFORG-MIG-WEIGHT-003-D5",
+      "severity": "info",
+      "category": "environment-dependent",
+      "summary": "Static generation logs '[Supabase] CONFIG ERROR: NEXT_PUBLIC_SUPABASE_URL is not set' and /blog/[slug] generates zero static pages in this session (no live Supabase credentials available here). The underlying 'ships zero article slugs when the content source is unavailable' concern is already being addressed by the open PR #29 (WL-BUILD-001); not duplicated here."
+    }
+  ],
+  "defects_fixed": [
+    {
+      "id": "PFORG-MIG-WEIGHT-003-F1",
+      "file": "package.json",
+      "summary": "Bumped next from 16.0.10 to 16.2.6, resolving the Turbopack internal panic (D1). Matches the version already validated working in the sibling PFORG-MIG-GLH-PROD-002 migration mission's repository."
+    },
+    {
+      "id": "PFORG-MIG-WEIGHT-003-F2",
+      "file": "package.json",
+      "summary": "Added @types/turndown@^5.0.6 as a devDependency, resolving the missing-declaration-file typecheck failure (D2) in scripts/migrate-html-to-markdown.ts."
+    }
+  ],
+  "blockers": [],
+  "changed_paths": [
+    "package.json",
+    "pnpm-lock.yaml",
+    "docs/PROJECTFOUNDRYOS_MIGRATION_READINESS.md",
+    ".agent-results/PFORG-MIG-WEIGHT-003.json"
+  ],
+  "pr_number": null,
+  "pr_url": null,
+  "proposed_follow_up_missions": [
+    "Set up a real ESLint config and dependency (WEIGHT-003-D3) in a dedicated non-migration mission.",
+    "Do not duplicate test-runner setup here -- land the already-open PR #29 (claude/claude-seat-2/wl-build-001, fail-closed empty-article-build handling + vitest setup) and PR #22 (V5 content factory audit) on their own tracks.",
+    "Owner action: after the actual org transfer, verify in the Vercel dashboard that project v0-healthyweightliteracyfoundation's GitHub Git integration still resolves to ProjectFoundryOS/Healthy-Weight-Literacy-Foundation, and re-authorize the Vercel GitHub App for the new org if GitHub suspends it on transfer.",
+    "agent-mission-control's own PFORG-MIG-AMC-005 mission: land the control-plane repository registry/alias mechanism for this project's control/PROJECTS.yaml pointer."
+  ],
+  "challenge_pass": {
+    "real_objective": "Make TheRealSynth/Healthy-Weight-Literacy-Foundation -- the production site behind weightliteracy.org -- safe to hand off to ProjectFoundryOS later, without performing the transfer now, by finding and fixing every reversible repository-side hazard, correctly separating genuinely pre-existing build breakage from migration-caused risk, and without weakening any evidence/citation/medical-review safeguard.",
+    "hidden_assumptions": [
+      "That a 'not healthy' deployment state mentioned in the mission brief must be a migration-related concern -- rejected: root-caused it (Turbopack panic, then a masked type-declaration gap) and confirmed both are pre-existing defects with no relationship to which GitHub org hosts the repository.",
+      "That every pre-existing defect found during the audit should be fixed to make the mission look thorough -- rejected: pnpm lint's total absence of tooling and the orphaned test file are pre-existing but are genuine scope-expansion decisions (choosing a lint config/version, choosing a test runner) outside owns_paths and outside this migration mission's intent; fixing them would also risk duplicating/conflicting with the already-open PR #29 which is already doing test-runner setup.",
+      "That weightliteracy.org/info@weightliteracy.org references are repository-transfer hazards because they name the org's brand -- rejected: they are the production business domain/email, unaffected by which GitHub org hosts the source, and DNS/domain changes are explicitly out of scope regardless.",
+      "That a null lease/assigned_worker on the control-plane mission file authorized fabricating a lease_id -- rejected: this worker cannot mutate control-plane state and reports the true lease/state condition instead."
+    ],
+    "obvious_path": "Grep for 'TheRealSynth', replace any hits, add a generic readiness doc, and separately just report 'pnpm build fails' as a blocker without investigating why.",
+    "optimized_path": "Grep for 'TheRealSynth' and classify hits by live-config vs. historical-evidence (finding: none exist at all here), and actually run pnpm build/lint to see what breaks rather than assuming it works or reporting a bare failure.",
+    "non_obvious_path": "Root-cause the build failure by iterating: fix the first blocking error (Turbopack panic) with a minimal patch-version bump matching a value already validated by a sibling migration mission in this same cohort, re-run, discover and fix the next blocking error it was masking (missing turndown types), re-run again -- treating the build failure as a diagnosable defect chain rather than a single opaque blocker, while stopping at the point where further fixes (lint tooling, test runner) would require net-new scope decisions and would risk conflicting with already-open, in-flight PRs (#29, #22) doing related work.",
+    "cheapest_reversible_test": "A single read-only recursive grep for 'TheRealSynth' (zero hits, immediately falsifying the hardcoded-hazard hypothesis for this repository) followed by directly running pnpm build to observe the actual failure mode rather than guessing at it -- both zero/low write risk, both fully discriminating before any edit.",
+    "alternate_access_surfaces": "GitHub API (get_check_runs on the most recent merged PR) to confirm the Vercel GitHub App integration is installed, the same way it was confirmed for the sibling GLH-PROD-002 repository; list_pull_requests to discover PR #29 and PR #22 already in flight against this exact repository before making any edit, to avoid duplicating or conflicting with that work.",
+    "existing_assets_or_open_source": "Reused the exact next version (16.2.6) already validated working in the sibling PFORG-MIG-GLH-PROD-002 mission's repository rather than guessing at an arbitrary patch version. Reused the readiness-doc structure and historical-evidence-preservation precedent from PFORG-MIG-IDEABIN-001 and PFORG-MIG-GLH-PROD-002. Deliberately did not reinvent test-runner/lint setup that PR #29 is already building.",
+    "human_in_loop_option": "The actual GitHub organization transfer, Vercel dashboard re-linking, GitHub App re-authorization, production environment-variable configuration, and setting up a lint/test toolchain from scratch are all owner-executed or product-decision actions enumerated as follow-ups/owner actions, not automated here.",
+    "recommendation": "Adopted the non-obvious path: root-caused and fixed the two pre-existing build-breaking defects with minimal, reversible, evidence-backed dependency edits; confirmed zero hardcoded-ownership hazards; documented Vercel/GitHub-App binding assumptions and owner actions; explicitly declined to fix the lint/test-runner tooling gaps to avoid scope creep and conflict with already-open PRs, recording them as follow-ups instead.",
+    "assumptions_challenged": [
+      "Rejected reporting 'pnpm build fails' as an unexplained blocker; iteratively root-caused it to two distinct, unrelated defects and fixed both with minimal changes, verifying the fix twice (including a clean .next rebuild).",
+      "Rejected fixing pnpm lint and the orphaned test file just to have every acceptance command pass; verified both are pre-existing tooling gaps outside owns_paths/mission intent and that fixing the test runner specifically would risk conflicting with the already-open PR #29, so left both as documented follow-ups instead.",
+      "Rejected treating weightliteracy.org/info@weightliteracy.org as transfer hazards; confirmed they are the production business domain, explicitly out of scope.",
+      "Rejected inventing a lease_id or otherwise misrepresenting control-plane state; recorded the true null-lease/READY state honestly."
+    ],
+    "route_comparison": [
+      {
+        "route": "obvious: report the build/lint failures as a blocker without investigating root cause, or blanket-fix everything found (lint config, test runner, build) in one pass",
+        "tradeoffs": "Reporting as a bare blocker wastes the mission's own instruction to distinguish and fix safe issues; blanket-fixing everything (lint toolchain choice, test-runner choice) would introduce net-new tooling decisions and directly risk merge conflicts with the already-open, in-flight PR #29 which is independently adding a test runner."
+      },
+      {
+        "route": "non-obvious (chosen): root-cause and fix only the two build-breaking defects with minimal, evidence-backed, reversible dependency edits reusing a version already validated in a sibling migration mission; explicitly stop short of the lint/test-runner tooling gaps and record them as follow-ups",
+        "tradeoffs": "Leaves two acceptance-adjacent items (lint, an orphaned test file) unresolved, but avoids inventing tooling choices outside this mission's authority/owns_paths and avoids duplicating or conflicting with PR #29's in-flight work -- the safer, more scope-disciplined outcome for a migration-readiness mission specifically."
+      }
+    ],
+    "material_difference": "The chosen route changes what evidence backs the mission's conclusion: instead of an unexplained 'build fails' status or an over-broad tooling rewrite, the deliverable is a diagnosed defect chain (Turbopack panic -> masked type-declaration gap) fixed with two minimal, version-matched, already-validated-elsewhere edits, plus an honest boundary drawn at the tooling gaps that require net-new scope decisions and would conflict with already-open work. This changes the actual risk surface (verified build health vs. an assumed blocker) and the workflow (reusing a sibling mission's validated fix vs. guessing at a fix, and deferring to an already-in-flight PR vs. duplicating it).",
+    "validation_result": "Full-repository recursive search for 'TheRealSynth' returned zero hits. pnpm build initially failed with a Turbopack panic (node:worker_threads); bumping next to 16.2.6 (matching the sibling GLH-PROD-002 mission's validated version) resolved the panic and the build proceeded to a new failure: a TypeScript declaration error for 'turndown'. Adding @types/turndown@5.0.6 resolved that, and pnpm build then passed cleanly, generating 40 routes -- verified twice, including a run with .next removed first to rule out stale-cache artifacts. pnpm lint failed with 'no eslint.config.js found' both before and after these fixes, confirmed unrelated to the next-version change. list_pull_requests confirmed PR #29 and PR #22 are open against this exact repository; get_files on PR #29 confirmed it independently adds vitest.config.mts and new tests, informing the decision not to duplicate test-runner setup here. get_check_runs on merged PR #13 confirmed a Vercel GitHub App integration is installed on this repository.",
+    "evidence_refs": [
+      "docs/PROJECTFOUNDRYOS_MIGRATION_READINESS.md on the mission branch (full hazard inventory, defect-classification table, Vercel/domain binding assumptions, owner actions, validation checklist, rollback, verdict)",
+      "pnpm build output on branch claude/claude-seat-1/pforg-mig-weight-003 before commit df069b9 (Turbopack panic log at /tmp/next-panic-*.log: 'NftJsonAsset: cannot handle filepath node:worker_threads')",
+      "pnpm build output after bumping next to 16.2.6 (new failure: TS error on scripts/migrate-html-to-markdown.ts, turndown module)",
+      "pnpm build output after adding @types/turndown (PASS, 40 routes, verified again after `rm -rf .next`)",
+      "pnpm lint output before and after the above fixes (unchanged failure: 'ESLint couldn't find an eslint.config.(js|mjs|cjs) file')",
+      "TheRealSynth/Healthy-Weight-Literacy-Foundation open PR #29 (claude/claude-seat-2/wl-build-001) file list via mcp__github__pull_request_read get_files, confirming vitest.config.mts is already being added there",
+      "TheRealSynth/Healthy-Weight-Literacy-Foundation merged PR #13 check runs via mcp__github__pull_request_read get_check_runs, confirming the Vercel GitHub App integration"
+    ]
+  },
+  "completed_at": "2026-09-07T21:45:00Z"
+}
