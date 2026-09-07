@@ -6,7 +6,9 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start -p 3000"
+    "start": "next start -p 3000",
+    "test": "vitest run",
+    "content:snapshot": "node scripts/export-content-snapshot.mjs"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -77,6 +79,7 @@
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.11"
   }
 }

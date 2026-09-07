@@ -1,0 +1,106 @@
+{
+  "mission_id": "WL-BUILD-001",
+  "lease_id": "67b6092b-c87d-40ee-a770-fb37bf487981",
+  "worker": "claude-seat-2",
+  "target_repo": "TheRealSynth/Healthy-Weight-Literacy-Foundation",
+  "base_sha": "fd31e2bee29661cb63d3a16567e1e43819c2475e",
+  "base_ref": "main",
+  "final_sha": "66691443459a8e3d7e0b029952cdde54ecca7e39",
+  "branch": "claude/claude-seat-2/wl-build-001",
+  "state": "DONE_PENDING_MERGE",
+  "benchmark_id": "WL-B1",
+  "benchmark_progress": "Production content builds now fail closed (BuildContentIntegrityError) instead of silently generating zero article slugs when Supabase retrieval fails, with a validated/integrity-checked snapshot fallback mechanism in place. No production snapshot is committed yet (no live Supabase credentials available in this environment) — populating it via `npm run content:snapshot` is a non-blocking follow-up for the owner; the fail-closed default is strictly safer than the prior silent-empty-array behavior in the meantime.",
+  "objective": "Prevent a green production build from silently generating zero article slugs when Supabase content retrieval fails. Use a validated snapshot or fail closed.",
+  "summary": "getBlogPosts()/getBlogPost() in lib/supabase-blog.ts caught every Supabase config/query/network error and returned []/null, so every build-time consumer (generateStaticParams for /blog/[slug], the blog/education/home listing pages, and app/sitemap.ts) treated a failed fetch identically to 'no articles yet.' A Supabase outage during `next build` could therefore ship a fully green deploy with zero article routes. Added lib/content-snapshot.ts (a committed, sha256-integrity-checked JSON snapshot loader) and scripts/export-content-snapshot.mjs (a read-only exporter an operator runs against a healthy Supabase connection to populate/refresh it). getBlogPosts()/getBlogPost() now use live data when available, fall back to the validated snapshot on failure or an unexpected empty result, and throw BuildContentIntegrityError when neither source has any content, overridable only via an explicit ALLOW_EMPTY_ARTICLE_BUILD=true escape hatch. Also removed a bare try/catch in app/sitemap.ts that was silently swallowing this exact class of error for sitemap generation.",
+  "changed_paths": [
+    "lib/supabase-blog.ts",
+    "lib/content-snapshot.ts",
+    "lib/routes.ts",
+    "scripts/export-content-snapshot.mjs",
+    "app/sitemap.ts",
+    "vitest.config.mts",
+    "__tests__/content-snapshot.test.ts",
+    "__tests__/supabase-blog-resolution.test.ts",
+    "docs/CONTENT_BUILD_SAFETY.md",
+    "package.json",
+    "pnpm-lock.yaml"
+  ],
+  "adjacent_defects": [
+    {
+      "description": "next build's typecheck failed repo-wide on scripts/migrate-html-to-markdown.ts: 'Could not find a declaration file for module turndown'.",
+      "action": "fixed",
+      "detail": "Added @types/turndown as a devDependency. This was a hard blocker preventing any `next build` typecheck from completing, including for this mission's own verification, so it was fixed rather than deferred."
+    },
+    {
+      "description": "__tests__/routes.test.ts asserted VALID_ROUTES should not contain '/resources', but lib/routes.ts defined an unused ROUTES.RESOURCES = '/resources' constant (next.config.mjs redirects the bare path to /city-resources; the real /resources/[slug] pages are generated via dynamicRoutes.resource() instead). This test could never run before (no test runner was configured), so the drift was latent.",
+      "action": "fixed",
+      "detail": "Removed the dead/unused ROUTES.RESOURCES constant. Confirmed via grep it was referenced nowhere in app/."
+    },
+    {
+      "description": "`pnpm lint` fails repo-wide: 'ESLint couldn't find an eslint.config.js' (ESLint 9 requires flat config; the repo has no eslint.config.js).",
+      "action": "not fixed - recorded for follow-up",
+      "detail": "Pre-existing, unrelated to this mission's objective, and not a blocker for typecheck/tests. Left out of scope to keep this mission's diff focused; recommend a dedicated follow-up mission to introduce eslint.config.js."
+    },
+    {
+      "description": "A full, unrestricted `next build` (all routes, Turbopack) panics in this sandbox with a Turbopack NftJsonAsset 'cannot handle filepath node:worker_threads' internal error, unrelated to any code in this repo.",
+      "action": "not fixed - environment-specific, not a code defect",
+      "detail": "Worked around for verification via `next build --webpack` plus `--debug-build-paths` to exercise unaffected routes directly."
+    },
+    {
+      "description": "`next build --webpack` (all routes) fails collecting page data for /blog/[slug] with ENOENT on .next/server/browser/default-stylesheet.css, from the isomorphic-dompurify -> jsdom server dependency chain.",
+      "action": "not fixed - already tracked",
+      "detail": "This is the exact defect already tracked in open PR #22's description as 'Tracked in #24' (production Vercel runtime crashes on /blog/[slug] from the same dependency chain). Out of scope for WL-BUILD-001's objective (content-source fail-closed behavior, not DOMPurify/jsdom bundling); recommend the dispatcher route a dedicated mission at #24."
+    }
+  ],
+  "tests": {
+    "command": "pnpm test (vitest run)",
+    "result": "pass",
+    "detail": "17/17 tests passing: 3 pre-existing route tests (now actually executable for the first time - no test runner existed before) + 14 new tests covering the snapshot integrity loader and the resolveBlogPosts fail-closed/fallback logic."
+  },
+  "builds": {
+    "typecheck": {
+      "command": "npx tsc --noEmit -p tsconfig.json",
+      "result": "pass"
+    },
+    "next_build_full": {
+      "result": "blocked",
+      "detail": "Blocked by two pre-existing, unrelated environment/dependency issues (see adjacent_defects): a Turbopack panic in this sandbox, and the already-tracked isomorphic-dompurify/jsdom crash on /blog/[slug] (issue #24). Neither is caused by or related to this mission's change."
+    },
+    "next_build_scoped_verification": {
+      "command": "npx next build --webpack --debug-build-paths \"app/page.tsx\" (real Next.js production build pipeline, restricted to the one route unaffected by the jsdom issue)",
+      "scenarios": [
+        {
+          "condition": "No Supabase env configured, no committed snapshot",
+          "result": "Build fails closed with BuildContentIntegrityError (previously would have silently succeeded with zero article slugs)."
+        },
+        {
+          "condition": "No Supabase env configured, no committed snapshot, ALLOW_EMPTY_ARTICLE_BUILD=true",
+          "result": "Build succeeds, explicitly serving zero articles via the documented escape hatch."
+        },
+        {
+          "condition": "No Supabase env configured, temporary fixture snapshot present",
+          "result": "Build succeeds, serving posts from the validated snapshot. Fixture was created only to prove this path, then deleted; nothing fabricated is committed - no real snapshot exists yet."
+        }
+      ]
+    },
+    "lint": {
+      "command": "pnpm lint",
+      "result": "fail",
+      "detail": "Pre-existing, repo-wide, unrelated to this change - see adjacent_defects."
+    }
+  },
+  "blockers": [
+    "No live Supabase credentials are available in this environment, so no real content snapshot could be exported/committed. The fail-closed mechanism is fully in place and verified; populating lib/content-snapshot-data/ via `npm run content:snapshot` against a real Supabase connection is a follow-up for the owner (or a future worker with credentials)."
+  ],
+  "pr": {
+    "url": "https://github.com/TheRealSynth/Healthy-Weight-Literacy-Foundation/pull/29",
+    "number": 29,
+    "note": "Opened against main. merge_policy is owner_required; not merged."
+  },
+  "proposed_follow_ups": [
+    "Run `npm run content:snapshot` against production Supabase to populate lib/content-snapshot-data/ for graceful degradation (currently the build fails closed with no fallback data, which is safe but not graceful).",
+    "Add eslint.config.js (ESLint 9 flat config) - lint is currently broken repo-wide, unrelated to this mission.",
+    "Route issue #24 (isomorphic-dompurify/jsdom default-stylesheet.css crash on /blog/[slug]) to a dedicated mission; it currently blocks a full production build from completing in this sandbox and (per PR #22) in production Vercel builds too.",
+    "Consider wiring `npm run content:snapshot` into a scheduled/CI job so the fallback snapshot stays reasonably fresh without manual operator action."
+  ]
+}
