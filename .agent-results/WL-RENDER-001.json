@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "mission_id": "WL-RENDER-001",
+  "lease_id": "4ef71305-9a59-477e-89a9-59eb76fc0302",
+  "worker": "claude-seat-1",
+  "project": "weight-literacy",
+  "benchmark_id": "WL-B1",
+  "benchmark_progress": "Unblocks the WL-B1 'pass the project build/test gates' criterion: legacy-HTML article rendering no longer crashes the server bundle (the isomorphic-dompurify -> jsdom -> html-encoding-sniffer -> @exodus/bytes ESM-require chain is fully removed from the dependency graph), and `pnpm test` is wired up and green (10/10) for the first time in this repository, including catching and fixing a dormant routes-validation bug that had never been able to run. Does not itself address the separate WL-B1 fail-closed-build/snapshot criteria, which remain scoped to WL-BUILD-001 (PR #29, open, unmerged).",
+  "target_repo": "ProjectFoundryOS/Healthy-Weight-Literacy-Foundation",
+  "target_branch": "claude/claude-seat-1/wl-render-001",
+  "base_sha": "dda2a001c5dc305b0090ee02fd4062db1a2d098e",
+  "final_sha": "PLACEHOLDER_SET_AFTER_PUSH",
+  "state": "DONE_PENDING_MERGE",
+  "result_contract_version": 3,
+  "merge_policy": "owner_required",
+  "tests": {
+    "command": "pnpm test  (node --test)",
+    "result": "pass",
+    "passed": 10,
+    "failed": 0,
+    "detail": "__tests__/article-content.test.ts (new, 7 tests): jsdom-free import guard, Markdown passthrough, <script>/event-handler stripping on legacy HTML fixtures modeled on the two production-affected slugs, javascript: URL stripping, benign-formatting preservation, safe-fallback-not-raw-HTML on strip-to-empty, empty-content handling. __tests__/routes.test.ts (converted from unrunnable Jest-style globals to node:test; 3 tests) now passes after removing the dead/incorrect ROUTES.RESOURCES constant from lib/routes.ts."
+  },
+  "builds": {
+    "typecheck": "npx tsc --noEmit -> clean",
+    "build": "pnpm build (Next.js 16.2.6, Turbopack) -> succeeded, all 40 pages generated",
+    "lint": "pnpm lint -> fails repo-wide with a pre-existing, unrelated ESLint 9 flat-config migration error (ESLint couldn't find eslint.config.js); not touched, out of scope, already noted in open PR #29",
+    "bundle_check": "grep of .next/server compiled output confirms zero references to isomorphic-dompurify/jsdom/html-encoding-sniffer/@exodus/bytes; sanitize-html present instead"
+  },
+  "defects_found": [
+    "Production crash (issue #24): isomorphic-dompurify's jsdom dependency chain requires @exodus/bytes (pure ESM) via CJS require() inside html-encoding-sniffer@6, which throws ERR_REQUIRE_ESM on Node runtimes below the synchronous-require(esm) support line (Node < 20.19 / < 22.12) -- exactly the runtimes @exodus/bytes's own package.json 'engines' field excludes.",
+    "Adjacent security defect in the original prepareContent(): when the strict DOMPurify allowlist stripped an article to empty output, the code fell back to raw, unsanitized HTML -- silently defeating sanitization in exactly the highest-risk case (content the allowlist judged unsafe/malformed enough to remove entirely).",
+    "Dormant test-suite bug: __tests__/routes.test.ts used Jest-style describe/it/expect globals with no test runner ever configured in package.json, so it never actually ran. Once wired to node:test, it correctly failed on a real bug: lib/routes.ts exported ROUTES.RESOURCES = '/resources' as a 'valid' route, even though next.config.mjs permanently redirects /resources -> /city-resources."
+  ],
+  "defects_fixed": [
+    "Removed isomorphic-dompurify entirely (package.json + pnpm-lock.yaml) and replaced it with sanitize-html in the new lib/article-content.ts, eliminating the jsdom/ESM dependency chain from the runtime and the compiled server bundle.",
+    "Closed the raw-HTML fallback hole: prepareArticleContent() now re-sanitizes with sanitize-html's permissive safe defaults when the strict allowlist yields empty output, and returns empty content (not raw DB content) on any sanitizer error.",
+    "Removed the unused/incorrect ROUTES.RESOURCES constant from lib/routes.ts so VALID_ROUTES no longer lists a redirect source as a valid route.",
+    "Converted __tests__/routes.test.ts to node:test/node:assert so it actually executes."
+  ],
+  "blockers": [],
+  "changed_paths": [
+    "lib/article-content.ts",
+    "app/blog/[slug]/page.tsx",
+    "lib/routes.ts",
+    "__tests__/article-content.test.ts",
+    "__tests__/routes.test.ts",
+    "package.json",
+    "pnpm-lock.yaml",
+    ".agent-results/WL-RENDER-001.json"
+  ],
+  "pr_number": "PLACEHOLDER_SET_AFTER_PR",
+  "pr_url": "PLACEHOLDER_SET_AFTER_PR",
+  "proposed_follow_up_missions": [
+    "Once WL-BUILD-001 (PR #29) merges and a production content snapshot exists, run the full V5-plan legacy-HTML-to-Markdown ingestion migration described in issue #24, removing the HTML-rendering/dangerouslySetInnerHTML path from app/blog/[slug]/page.tsx entirely rather than only swapping its sanitizer.",
+    "Add an 'engines' field to package.json (e.g. >=20.19.0 or >=22.12.0) as defense-in-depth so any future ESM-only transitive dependency fails fast in CI instead of only in Vercel's production runtime.",
+    "Separately fix the repo-wide ESLint 9 flat-config migration (pnpm lint currently fails immediately with no config file found) -- unrelated to this mission, already noted in PR #29."
+  ],
+  "challenge_pass": {
+    "real_objective": "Eliminate the production ERR_REQUIRE_ESM crash on /blog/[slug] for legacy HTML articles (issue #24) without weakening XSS protection, and add regression tests that would have caught this class of bug before it reached production -- not merely make the named library (isomorphic-dompurify) go away.",
+    "hidden_assumptions": [
+      "That the crash is inherent to running any jsdom-based sanitizer under Node generally. It is not: it is conditional on the Node runtime version. @exodus/bytes (pulled in transitively via html-encoding-sniffer -> jsdom -> dompurify) is pure ESM and declares engines '^20.19.0 || ^22.12.0 || >=24.0.0' because it relies on Node's synchronous require(esm) support; below that, any require() reaching it throws ERR_REQUIRE_ESM exactly as seen in production.",
+      "That a local repro attempt would straightforwardly reproduce the crash. It did not: this sandbox's Node v22.22.2 is new enough to support require(esm), so `require('isomorphic-dompurify')` and even `require('jsdom')` succeeded cleanly here. Trusting that negative result would have wrongly suggested the bug was already fixed or unreproducible.",
+      "That the existing 'sanitized output is empty -> fall back to raw HTML' branch in the original code was an intentional, acceptable resilience choice. It is not: it silently serves attacker/DB-controlled raw HTML exactly when the allowlist judged the content least safe.",
+      "That adding regression tests requires adopting a test framework (vitest/jest) as a new dependency, as the parallel open PR #29 does. Node 22 ships a native `node --test` runner with unflagged TypeScript type-stripping, so zero-dependency tests are possible and avoid a second, competing test-framework introduction landing alongside PR #29's."
+    ],
+    "obvious_path": "Swap isomorphic-dompurify for sanitize-html in-place inside app/blog/[slug]/page.tsx, keeping the same ALLOWED_TAGS/ALLOWED_ATTR contract -- exactly the interim fix issue #24 itself names ('use a Node-native server sanitizer such as sanitize-html').",
+    "optimized_path": "Same library swap, plus: (a) extracted into standalone lib/article-content.ts so the sanitizer is unit-testable without booting the RSC/React tree or a live Supabase connection; (b) closed the raw-HTML fallback hole (re-sanitize with safe defaults instead of returning raw content); (c) fixed the dormant, never-executed routes test it surfaced once actually run; (d) added a zero-dependency `node --test` script rather than a new test framework.",
+    "non_obvious_path": "Do the full V5-plan fix instead of a sanitizer swap: normalize legacy HTML article rows to Markdown once, at content-ingestion time (a one-time batch job against Supabase), and delete the HTML-rendering/dangerouslySetInnerHTML path from app/blog/[slug]/page.tsx entirely, so no HTML sanitizer of any kind runs on every request ever again.",
+    "cheapest_reversible_test": "Before touching next.config.mjs or attempting a full production build, directly introspect the failing require chain locally (node_modules/.pnpm/{jsdom,html-encoding-sniffer,@exodus+bytes}/.../package.json engines/type fields and their require() call sites) and unit-test the new sanitizer module with `node --test` against fixtures modeled on the two production-affected slugs (script tags, onclick handlers, javascript: URLs) plus a Markdown fixture -- seconds, fully offline, fully reversible, and directly discriminates whether the fix both sanitizes correctly and removes the ESM-require risk, without needing a live Supabase connection or a Vercel deploy.",
+    "alternate_access_surfaces": "No external data source was needed for the fix itself; the original crash evidence came from Vercel production runtime logs already quoted verbatim in issue #24 (this sandbox has no Vercel API/log access). For root-causing *why* it crashed, local package-manager introspection (pnpm-resolved node_modules/.pnpm metadata) substituted for a live Vercel repro, since this sandbox's own Node version is new enough not to reproduce the failure directly.",
+    "existing_assets_or_open_source": "sanitize-html (mature, MIT-licensed, no DOM/jsdom dependency) was reused as-is -- it is the exact library issue #24 names as the preferred interim fix. react-markdown + remark-gfm (already a dependency, already used by ArticleRenderer for the Markdown path) were left untouched. Node's built-in node:test/node:assert runner was reused instead of adding vitest or jest.",
+    "human_in_loop_option": "The mission's own merge_policy (owner_required) is the human-in-the-loop gate already in force for this change; no additional manual workflow is cheaper or safer than an automated, fully-tested, offline-reversible library swap.",
+    "recommendation": "Ship the sanitize-html swap now (obvious/optimized path, this PR). Defer the HTML-to-Markdown ingestion migration (non-obvious path) until WL-BUILD-001's snapshot baseline is merged, per issue #24's own explicit sequencing rule ('Do not write conversion changes to production before the snapshot/rollback baseline exists').",
+    "assumptions_challenged": [
+      "That the crash is Node-version-independent and would reproduce in any Node environment -- disproved by direct testing in this sandbox (Node 22.22.2 does not crash on the same require chain).",
+      "That the original 'fall back to raw HTML on empty/error' behavior was safe resilience rather than a sanitization bypass -- rejected and fixed.",
+      "That fixing the crash necessarily means adding a new test-framework dependency -- rejected in favor of Node's built-in test runner.",
+      "That the dormant routes.test.ts was passing/irrelevant -- disproved once actually executed; it caught a real bug (ROUTES.RESOURCES)."
+    ],
+    "route_comparison": [
+      {
+        "route": "A: swap isomorphic-dompurify -> sanitize-html (chosen)",
+        "tradeoffs": "Small, local, fully offline-testable diff; removes jsdom/ESM-require risk entirely and permanently regardless of future Node/Vercel runtime choices; preserves the existing HTML-content code path and visual output for legacy articles; does not reduce the request-time sanitization cost or remove dangerouslySetInnerHTML as an architectural surface."
+      },
+      {
+        "route": "B: pin Node/Vercel runtime via package.json 'engines' to >=20.19.0/>=22.12.0, leave isomorphic-dompurify in place",
+        "tradeoffs": "Possibly a one-line fix if Vercel actually reads and applies the engines field for this project (it can), but unverifiable from this sandbox (no Vercel dashboard/API access, no evidence of the project's currently configured runtime); does not fix the separately-found raw-HTML-fallback security defect; leaves the repo dependent on a specific upstream package's ESM/CJS choices never regressing again. Rejected as the primary fix; recommended as a defense-in-depth follow-up regardless of route A."
+      },
+      {
+        "route": "C: full legacy-HTML-to-Markdown ingestion migration (non-obvious path)",
+        "tradeoffs": "Permanently removes the entire HTML-sanitizer-on-every-request architecture and its attack surface, not just one library's crash; but requires a live Supabase connection this sandbox does not have, requires the not-yet-merged snapshot/rollback baseline (WL-BUILD-001/PR #29) that issue #24 itself lists as a hard precondition, and is a data-model migration, not this mission's stated objective. Deferred, not rejected outright -- proposed as a follow-up mission."
+      }
+    ],
+    "material_difference": "Route C differs from Route A/B in mechanism, not just wording: it changes the canonical storage format of article content (HTML rows become Markdown), moves sanitization cost from 'every request, forever' to 'one batch job, once', and removes the dangerouslySetInnerHTML/HTML-sanitizer surface from the runtime entirely for migrated content, rather than narrowing which library sits behind that same surface.",
+    "validation_result": "pnpm test (node --test): 10/10 passing, covering XSS-payload stripping on legacy-HTML fixtures modeled on the two production-affected slugs, javascript:-URL stripping, the strip-to-empty safe-fallback path, Markdown passthrough, and empty-content handling. npx tsc --noEmit: clean. pnpm build (Next.js 16.2.6, Turbopack): succeeded, all 40 routes generated. Static analysis of the compiled .next/server bundle confirms zero remaining references to isomorphic-dompurify/jsdom/html-encoding-sniffer/@exodus/bytes, with sanitize-html present instead. Separately confirmed in this sandbox's Node 22.22.2 that `require('jsdom')` and `require('isomorphic-dompurify')` do NOT crash here, evidencing that the bug is Node-runtime-version-conditional and that a naive local repro would have been misleading.",
+    "evidence_refs": [
+      "ProjectFoundryOS/Healthy-Weight-Literacy-Foundation#24 (production crash report, preferred-fix guidance, 'Do not migrate before snapshot' constraint)",
+      "ProjectFoundryOS/Healthy-Weight-Literacy-Foundation#29 (WL-BUILD-001, open, unmerged: independently found the same ROUTES.RESOURCES defect and the same no-live-Supabase-credentials sandbox limitation)",
+      "lib/article-content.ts (new sanitizer module)",
+      "app/blog/[slug]/page.tsx (diff removing isomorphic-dompurify usage)",
+      "__tests__/article-content.test.ts (7 new regression tests)",
+      "__tests__/routes.test.ts (converted to node:test; now passes)",
+      "lib/routes.ts (ROUTES.RESOURCES removal)",
+      "package.json / pnpm-lock.yaml (dependency swap; jsdom/isomorphic-dompurify fully absent from lockfile after `pnpm remove isomorphic-dompurify && pnpm add sanitize-html`)",
+      "node_modules/.pnpm/@exodus+bytes@1.15.0/node_modules/@exodus/bytes/package.json ('type': 'module', engines '^20.19.0 || ^22.12.0 || >=24.0.0')",
+      "node_modules/.pnpm/jsdom@29.0.2/node_modules/jsdom/lib/api.js:7 (unconditional `require('html-encoding-sniffer')`)",
+      "node_modules/.pnpm/html-encoding-sniffer@6.0.0/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js:2 (`require('@exodus/bytes/encoding-lite.js')`)",
+      "local command output: `pnpm test` (10/10 pass), `npx tsc --noEmit` (clean), `pnpm build` (success), `.next/server` bundle grep (no jsdom/isomorphic-dompurify references)"
+    ]
+  }
+}
