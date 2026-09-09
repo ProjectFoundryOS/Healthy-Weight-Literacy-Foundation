@@ -16,7 +16,6 @@ export const ROUTES = {
   
   // Content pages
   BLOG: "/blog",
-  RESOURCES: "/resources",
   EVENTS: "/events",
   
   // Get Involved
