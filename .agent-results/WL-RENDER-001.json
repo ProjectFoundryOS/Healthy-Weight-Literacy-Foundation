@@ -9,7 +9,7 @@
   "target_repo": "ProjectFoundryOS/Healthy-Weight-Literacy-Foundation",
   "target_branch": "claude/claude-seat-1/wl-render-001",
   "base_sha": "dda2a001c5dc305b0090ee02fd4062db1a2d098e",
-  "final_sha": "PLACEHOLDER_SET_AFTER_PUSH",
+  "final_sha": "1e3b42f771ce9091277c31625cef059a5eb95de3",
   "state": "DONE_PENDING_MERGE",
   "result_contract_version": 3,
   "merge_policy": "owner_required",
@@ -48,8 +48,8 @@
     "pnpm-lock.yaml",
     ".agent-results/WL-RENDER-001.json"
   ],
-  "pr_number": "PLACEHOLDER_SET_AFTER_PR",
-  "pr_url": "PLACEHOLDER_SET_AFTER_PR",
+  "pr_number": 31,
+  "pr_url": "https://github.com/ProjectFoundryOS/Healthy-Weight-Literacy-Foundation/pull/31",
   "proposed_follow_up_missions": [
     "Once WL-BUILD-001 (PR #29) merges and a production content snapshot exists, run the full V5-plan legacy-HTML-to-Markdown ingestion migration described in issue #24, removing the HTML-rendering/dangerouslySetInnerHTML path from app/blog/[slug]/page.tsx entirely rather than only swapping its sanitizer.",
     "Add an 'engines' field to package.json (e.g. >=20.19.0 or >=22.12.0) as defense-in-depth so any future ESM-only transitive dependency fails fast in CI instead of only in Vercel's production runtime.",
