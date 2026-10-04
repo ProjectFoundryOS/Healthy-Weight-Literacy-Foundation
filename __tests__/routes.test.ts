@@ -1,31 +1,33 @@
-import { ROUTES, VALID_ROUTES } from "@/lib/routes"
+import { describe, it } from "node:test"
+import assert from "node:assert/strict"
+import { ROUTES, VALID_ROUTES } from "../lib/routes.ts"
 
 describe("Route Validation", () => {
   it("should have all routes defined", () => {
-    expect(ROUTES.HOME).toBe("/")
-    expect(ROUTES.ABOUT).toBe("/about")
-    expect(ROUTES.PROGRAMS).toBe("/programs")
-    expect(ROUTES.EDUCATION).toBe("/education")
-    expect(ROUTES.CITY_RESOURCES).toBe("/city-resources")
-    expect(ROUTES.CONTACT).toBe("/contact")
-    expect(ROUTES.DONATE).toBe("/donate")
+    assert.equal(ROUTES.HOME, "/")
+    assert.equal(ROUTES.ABOUT, "/about")
+    assert.equal(ROUTES.PROGRAMS, "/programs")
+    assert.equal(ROUTES.EDUCATION, "/education")
+    assert.equal(ROUTES.CITY_RESOURCES, "/city-resources")
+    assert.equal(ROUTES.CONTACT, "/contact")
+    assert.equal(ROUTES.DONATE, "/donate")
   })
 
   it("should have valid routes array", () => {
-    expect(VALID_ROUTES).toContain("/")
-    expect(VALID_ROUTES).toContain("/about")
-    expect(VALID_ROUTES).toContain("/programs")
-    expect(VALID_ROUTES).toContain("/education")
-    expect(VALID_ROUTES).toContain("/city-resources")
-    expect(VALID_ROUTES).toContain("/contact")
-    expect(VALID_ROUTES).toContain("/donate")
+    assert.ok(VALID_ROUTES.includes("/"))
+    assert.ok(VALID_ROUTES.includes("/about"))
+    assert.ok(VALID_ROUTES.includes("/programs"))
+    assert.ok(VALID_ROUTES.includes("/education"))
+    assert.ok(VALID_ROUTES.includes("/city-resources"))
+    assert.ok(VALID_ROUTES.includes("/contact"))
+    assert.ok(VALID_ROUTES.includes("/donate"))
   })
 
   it("should not contain invalid routes", () => {
     // These are common typos or old routes that should not exist
-    expect(VALID_ROUTES).not.toContain("/cityresources")
-    expect(VALID_ROUTES).not.toContain("/resources") // This redirects to /city-resources
-    expect(VALID_ROUTES).not.toContain("/articles") // This redirects to /education
-    expect(VALID_ROUTES).not.toContain("/learn") // This redirects to /education
+    assert.ok(!VALID_ROUTES.includes("/cityresources"))
+    assert.ok(!VALID_ROUTES.includes("/resources")) // This redirects to /city-resources
+    assert.ok(!VALID_ROUTES.includes("/articles")) // This redirects to /education
+    assert.ok(!VALID_ROUTES.includes("/learn")) // This redirects to /education
   })
 })
