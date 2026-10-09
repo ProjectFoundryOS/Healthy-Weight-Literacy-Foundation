@@ -1,0 +1,13 @@
+# ART-B1 Foundation companion: source safety and local staging
+
+Base: e919066f9e3748c83f537d783f8adea411a71fd7. This follow-up ports the useful fail-closed/snapshot work from PR #29 (9c489458a37d333e4976080695ada70c39eb4252) onto current main, preserving its existing sanitize-html and Turndown repairs. PR #22 remains an open draft historical audit; both prior branches and owner gates are preserved. This is not a merge or deploy authorization.
+
+Live missing/failed content falls back only to an integrity-validated snapshot. If neither source has valid article slugs, normal build and sitemap fail visibly. The read-only exporter paginates published rows, rejects duplicates/empty content/zero rows or unexpected corpus shrink, and never writes Supabase. No real production corpus is invented or committed.
+
+TEST ONLY snapshots can be consumed solely through explicit local fixture variables. VERCEL or CI blocks them regardless of that opt-in. Unpublished fixture records are not a production corpus and have null medical attribution. The companion Articles engine exports one isolated SQL-backed, two-source/three-claim repository-policy fixture, with no medical claims or human review represented.
+
+Validation: 14 Node tests, TypeScript, and full local next build --webpack pass. scripts/verify-staging-build.mjs reads the actual generated page and sitemap and checks both citations, title, disclaimer, TEST ONLY label, canonical metadata, JSON-LD and sitemap route. STAGING_BUILD_RECEIPT.json records actual runtime UTC and snapshot/render/sitemap hashes. Without live configuration and without a snapshot the full build fails with BuildContentIntegrityError: Refusing to build with zero article slugs. This intentional negative control is not a passing deployment build.
+
+Reproduce from the exact engine companion head: export its fixture to an absolute isolated directory, then from this branch run pnpm install --frozen-lockfile, pnpm test, pnpm exec tsc --noEmit, and HWLF_LOCAL_STAGING_FIXTURE=true HWLF_LOCAL_STAGING_SNAPSHOT_DIR=/absolute/isolated-fixture-dir pnpm exec next build --webpack. Run pnpm run staging:verify with the same two variables. Never configure these variables on any deployment.
+
+Remaining: independent exact-head review, owner integration decision for #22/#29 and this follow-up, live read-only Supabase availability/corpus/role/schema diagnosis, actual protected preview and supported Instinct receipt. Known live route failures remain unverified here. Local rendering does not prove deployed staging, real clinical signoff, public publication, or total ART-B1 completion.

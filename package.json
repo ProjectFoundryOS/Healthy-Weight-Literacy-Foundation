@@ -7,7 +7,9 @@
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start -p 3000",
-    "test": "node --test"
+    "test": "node --test",
+    "content:snapshot": "node scripts/export-content-snapshot.mjs",
+    "staging:verify": "node scripts/verify-staging-build.mjs"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
