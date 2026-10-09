@@ -1,4 +1,7 @@
+import { resolveBlogPosts, type LiveFetchResult } from "./content-resolution"
+export { resolveBlogPosts, BuildContentIntegrityError } from "./content-resolution"
 import { createClient } from "@supabase/supabase-js"
+import { getContentSnapshot, type ContentSnapshot } from "./content-snapshot"
 
 // Read env vars at call time (not module init) to avoid stale singleton issues
 // in environments where the Supabase project may have been paused/resumed.
@@ -75,12 +78,18 @@ export interface BlogPost {
   is_published: boolean
 }
 
-// Fetch all published blog posts sorted by published_at
-export async function getBlogPosts(): Promise<BlogPost[]> {
+// --- Build-time fail-closed / validated-snapshot fallback -----------------
+//
+// A green production build must never silently generate zero article slugs
+// because a live Supabase fetch failed. getBlogPosts()/getBlogPost() fall
+// back to the committed, integrity-checked snapshot (lib/content-snapshot.ts)
+// when live retrieval fails or unexpectedly returns nothing, and throw
+// (failing the build closed) only when neither source has any content.
+
+async function fetchLivePublishedPosts(): Promise<LiveFetchResult<BlogPost[]>> {
   const client = getSupabaseClient()
   if (!client) {
-    console.error("[Supabase] getBlogPosts: aborted — client config invalid")
-    return []
+    return { ok: false, reason: "Supabase client not configured" }
   }
 
   try {
@@ -91,25 +100,20 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       .order("published_at", { ascending: false })
 
     if (error) {
-      console.error("[Supabase] getBlogPosts QUERY ERROR:", error.message, "| code:", error.code)
-      return []
+      return { ok: false, reason: `query error: ${error.message} (code: ${error.code})` }
     }
 
-    console.log(`[Supabase] getBlogPosts: returned ${data?.length ?? 0} posts`)
-    return data || []
+    return { ok: true, data: data ?? [] }
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)
-    console.error("[Supabase] getBlogPosts NETWORK ERROR:", msg)
-    return []
+    return { ok: false, reason: `network error: ${msg}` }
   }
 }
 
-// Fetch a single blog post by slug
-export async function getBlogPost(slug: string): Promise<BlogPost | null> {
+async function fetchLiveSinglePost(slug: string): Promise<LiveFetchResult<BlogPost | null>> {
   const client = getSupabaseClient()
   if (!client) {
-    console.error("[Supabase] getBlogPost: aborted — client config invalid")
-    return null
+    return { ok: false, reason: "Supabase client not configured" }
   }
 
   try {
@@ -121,70 +125,66 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
       .single()
 
     if (error) {
-      console.error("[Supabase] getBlogPost QUERY ERROR:", error.message, "| code:", error.code)
-      return null
+      // PGRST116 = no row matched .single() — a genuine "not found", not a failure.
+      if (error.code === "PGRST116") {
+        return { ok: true, data: null }
+      }
+      return { ok: false, reason: `query error: ${error.message} (code: ${error.code})` }
     }
 
-    return data
+    return { ok: true, data }
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)
-    console.error("[Supabase] getBlogPost NETWORK ERROR:", msg)
-    return null
+    return { ok: false, reason: `network error: ${msg}` }
   }
+}
+
+// Fetch all published blog posts sorted by published_at.
+// Falls back to the validated snapshot on failure/empty; fails closed if
+// neither source has content — see resolveBlogPosts() above.
+export async function getBlogPosts(): Promise<BlogPost[]> {
+  const live = await fetchLivePublishedPosts()
+  const snapshot = getContentSnapshot()
+  const resolved = resolveBlogPosts(live, snapshot)
+
+  for (const warning of resolved.warnings) {
+    console.warn("[Supabase][content-safety] getBlogPosts:", warning)
+  }
+  console.log(`[Supabase] getBlogPosts: returned ${resolved.posts.length} posts (source: ${resolved.source})`)
+
+  return resolved.posts
+}
+
+// Fetch a single blog post by slug. Falls back to the validated snapshot
+// only when the live fetch itself fails (network/query error) — a genuine
+// "not found" from a healthy live fetch is respected as-is.
+export async function getBlogPost(slug: string): Promise<BlogPost | null> {
+  const live = await fetchLiveSinglePost(slug)
+
+  if (live.ok) {
+    return live.data
+  }
+
+  console.error("[Supabase] getBlogPost:", slug, "live fetch failed:", live.reason)
+
+  const snapshot = getContentSnapshot()
+  const fromSnapshot = snapshot.posts.find((post) => post.slug === slug) ?? null
+
+  if (fromSnapshot) {
+    console.warn(
+      `[Supabase][content-safety] getBlogPost: serving "${slug}" from validated snapshot after live fetch failure.`,
+    )
+  }
+
+  return fromSnapshot
 }
 
 // Fetch blog posts by category
 export async function getBlogPostsByCategory(category: string): Promise<BlogPost[]> {
-  const client = getSupabaseClient()
-  if (!client) {
-    return []
-  }
-
-  try {
-    const { data, error } = await client
-      .from("blog_posts")
-      .select("*")
-      .eq("category", category)
-      .eq("is_published", true)
-      .order("published_at", { ascending: false })
-
-    if (error) {
-      console.error("Error fetching blog posts by category:", error)
-      return []
-    }
-
-    return data || []
-  } catch (err) {
-    console.error("Error fetching blog posts by category:", err)
-    return []
-  }
+  return (await getBlogPosts()).filter(post => post.category === category)
 }
-
-// Fetch blog posts by tag
 export async function getBlogPostsByTag(tag: string): Promise<BlogPost[]> {
-  const client = getSupabaseClient()
-  if (!client) {
-    return []
-  }
-
-  try {
-    const { data, error } = await client
-      .from("blog_posts")
-      .select("*")
-      .contains("tags", [tag])
-      .eq("is_published", true)
-      .order("published_at", { ascending: false })
-
-    if (error) {
-      console.error("Error fetching blog posts by tag:", error)
-      return []
-    }
-
-    return data || []
-  } catch (err) {
-    console.error("Error fetching blog posts by tag:", err)
-    return []
-  }
+  return (await getBlogPosts()).filter(post => post.tags.includes(tag))
 }
 
 // Create a new blog post (for future admin functionality)

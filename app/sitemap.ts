@@ -35,18 +35,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   // Blog post dynamic routes
-  let blogRoutes: MetadataRoute.Sitemap = []
-  try {
-    const posts = await getBlogPosts()
-    blogRoutes = posts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.updated_at || post.published_at),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }))
-  } catch {
-    // Silently handle Supabase errors during build
-  }
+  const posts = await getBlogPosts()
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.updated_at || post.published_at),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }))
 
   return [...staticRoutes, ...blogRoutes]
 }

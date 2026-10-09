@@ -1,0 +1,22 @@
+{
+  "verifiedAt": "2026-10-09T00:45:42.254Z",
+  "scope": "isolated local Next.js build, not deployed staging",
+  "fixture": true,
+  "slug": "staging-citation-workflow",
+  "title": "Staging citation workflow",
+  "citations": 2,
+  "medicalReviewer": null,
+  "isPublished": false,
+  "snapshotSha256": "aa1826be146913545f726ca6efd0c798101110f97623c26bde7f23efd36fbf9d",
+  "renderSha256": "95f7e97d4209cf6795315e5cfd07aba0a07483ed69aeb12c4fbb891c2409b553",
+  "sitemapSha256": "36ba2e8dc05da0b5d460aedba3c4900f820650180576c5a5802c7c95e598f273",
+  "checks": [
+    "source URL parity",
+    "article title",
+    "TEST ONLY label",
+    "medical disclaimer",
+    "canonical metadata",
+    "JSON-LD",
+    "sitemap route"
+  ]
+}
