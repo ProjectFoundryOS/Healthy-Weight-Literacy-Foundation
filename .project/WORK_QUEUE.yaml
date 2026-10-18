@@ -1,0 +1,16 @@
+version: 1
+items:
+- id: WL-FAILCLOSED-001
+  state: READY
+  priority: 840
+  title: Prove fail-closed production content build
+  objective: Reproduce the production content build with content retrieval artificially failing and record evidence the build fails closed (no partial/empty deploy artifact).
+  owns_paths: [docs/**, scripts/**]
+  acceptance: [timestamped evidence of fail-closed behavior, no partial output]
+- id: WL-SNAPSHOT-002
+  state: READY
+  priority: 830
+  title: Validate snapshot fallback path
+  objective: Verify the build uses a validated snapshot when retrieval fails and that rendered article slugs are non-zero; add the check to the build gate if missing.
+  owns_paths: [scripts/**, docs/**]
+  acceptance: [snapshot validation runs in the build path, non-zero slug count asserted]
