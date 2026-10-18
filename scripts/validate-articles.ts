@@ -1,4 +1,5 @@
-import { getBlogPosts } from "../lib/supabase-blog"
+import { readFile } from "node:fs/promises"
+import { readPublishedCatalog, resolveArticleCatalog } from "../lib/article-publication.ts"
 
 const HTML_PATTERN = /<\/?[a-z][^>]*>/i
 const MARKDOWN_HEADING = /^#+ /m
@@ -16,7 +17,8 @@ interface ValidationResult {
 async function validateArticles() {
   console.log("🔍 Scanning all published articles...\n")
   
-  const posts = await getBlogPosts()
+  const catalog = JSON.parse(await readFile(new URL("../content/articles/catalog.json", import.meta.url), "utf8"))
+  const posts = resolveArticleCatalog(readPublishedCatalog(catalog))
   const results: ValidationResult[] = []
   
   for (const post of posts) {
@@ -84,4 +86,7 @@ async function validateArticles() {
   return { total, byFormat, issues }
 }
 
-validateArticles().catch(console.error)
+validateArticles().catch((error) => {
+  console.error(error instanceof Error ? error.message : error)
+  process.exitCode = 1
+})

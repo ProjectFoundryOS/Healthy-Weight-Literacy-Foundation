@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next"
 import { siteConfig } from "@/lib/seo"
-import { getBlogPosts } from "@/lib/supabase-blog"
+import { getBlogPosts } from "@/lib/articles"
 import { ROUTES } from "@/lib/routes"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -34,19 +34,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}${ROUTES.TERMS}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   ]
 
-  // Blog post dynamic routes
-  let blogRoutes: MetadataRoute.Sitemap = []
-  try {
-    const posts = await getBlogPosts()
-    blogRoutes = posts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.updated_at || post.published_at),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }))
-  } catch {
-    // Silently handle Supabase errors during build
-  }
+  // A missing content source is a build error, not a successful empty sitemap.
+  const posts = await getBlogPosts()
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.updated_at || post.published_at),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }))
 
   return [...staticRoutes, ...blogRoutes]
 }

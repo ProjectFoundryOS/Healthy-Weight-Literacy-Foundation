@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { formatDate } from "@/lib/utils"
 import { Clock, ArrowRight } from "lucide-react"
-import type { BlogPost } from "@/lib/supabase-blog"
+import type { BlogPost } from "@/lib/article-types"
 
 interface BlogCardProps {
   post: BlogPost

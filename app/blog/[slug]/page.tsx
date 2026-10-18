@@ -8,7 +8,7 @@ import { Container } from "@/components/layout/container"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { getBlogPost, getBlogPosts } from "@/lib/supabase-blog"
+import { getBlogPost, getBlogPosts } from "@/lib/articles"
 import { generatePageMetadata, siteConfig } from "@/lib/seo"
 import { formatDate } from "@/lib/utils"
 import { ArticleSchema } from "@/components/seo/article-schema"
@@ -48,7 +48,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const allPosts = await getBlogPosts()
   const relatedPosts = allPosts.filter((p) => p.slug !== post.slug && p.category === post.category).slice(0, 2)
-  const { content, isHtml } = prepareArticleContent(post.content, post.slug)
+  const body = post.editorial ? post.content.replace(/^# [^\n]+\n+/, "") : post.content
+  const { content, isHtml } = prepareArticleContent(body, post.slug)
 
   return (
     <>
@@ -59,18 +60,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         publishedAt={post.published_at}
         updatedAt={post.updated_at ?? undefined}
         category={post.category}
+        authorName={post.author}
+        reviewerName={post.editorial?.reviewer_name || post.medical_reviewer || undefined}
+        reviewedAt={post.reviewed_at || undefined}
       />
 
       <PageHeader title={post.title} breadcrumbs={[{ label: "Blog", href: "/blog" }, { label: post.title }]}>
         <div className="flex flex-wrap items-center gap-4 mt-4">
           <div className="flex items-center gap-3">
-            <Image
-              src={post.author_image || "/placeholder.svg?height=40&width=40&query=author+portrait"}
-              alt={post.author}
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
+            {post.author_image ? <Image src={post.author_image} alt="" width={40} height={40} className="rounded-full" /> : null}
             <div>
               <p className="font-medium text-secondary">{post.author}</p>
               <p className="text-sm text-muted-foreground">{formatDate(post.published_at)}</p>
@@ -96,18 +94,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="grid gap-12 lg:grid-cols-[1fr_300px]">
             {/* Main Content */}
             <div>
-              <Image
-                src={post.hero_image || "/placeholder.svg?height=600&width=1200&query=article+hero+image"}
-                alt={post.title}
-                width={1200}
-                height={600}
-                className="rounded-2xl shadow-card mb-8 w-full h-auto"
-                priority
-                loading="eager"
-              />
+              {post.hero_image ? (
+                <Image src={post.hero_image} alt={post.title} width={1200} height={600} className="rounded-2xl shadow-card mb-8 w-full h-auto" priority />
+              ) : null}
 
               {/* Article Content */}
               <ArticleRenderer content={content} isHtml={isHtml} />
+
+              {post.editorial ? (
+                <section aria-label="Editorial information" className="mt-10 border-t pt-6 text-sm text-muted-foreground space-y-2">
+                  <h2 className="font-semibold text-secondary">About this article</h2>
+                  <p>Edited by {post.editorial.editor_name}.</p>
+                  <p>Subject review: {post.editorial.reviewer_name}, {post.editorial.reviewer_credentials}, {formatDate(post.editorial.reviewed_at)}.</p>
+                  <p>{post.editorial.disclosure}</p>
+                </section>
+              ) : null}
 
               {/* Related Posts */}
               {relatedPosts.length > 0 && (
@@ -148,13 +149,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <CardContent className="p-6">
                   <h3 className="font-bold text-secondary mb-4">About the Author</h3>
                   <div className="flex items-center gap-3 mb-3">
-                    <Image
-                      src={post.author_image || "/placeholder.svg?height=60&width=60&query=author+portrait"}
-                      alt={post.author}
-                      width={60}
-                      height={60}
-                      className="rounded-full"
-                    />
+                    {post.author_image ? <Image src={post.author_image} alt="" width={60} height={60} className="rounded-full" /> : null}
                     <div>
                       <p className="font-medium text-secondary">{post.author}</p>
                       {post.author_title && (
