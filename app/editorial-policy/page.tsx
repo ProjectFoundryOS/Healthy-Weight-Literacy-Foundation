@@ -24,7 +24,7 @@ export default function EditorialPolicyPage() {
   return (
     <PolicyLayout
       title="Editorial Policy"
-      lastUpdated="June 2025"
+      lastUpdated="October 19, 2026"
       toc={toc}
     >
       <p>
@@ -130,26 +130,27 @@ export default function EditorialPolicyPage() {
         revised.
       </p>
       <p>
-        We assign each published article a review date based on how quickly the underlying information is likely to
-        change:
+        We plan review dates based on how quickly the underlying information is likely to change. Our target
+        intervals are:
       </p>
       <ul>
         <li>
-          Articles covering medication mechanisms and chronic disease biology are reviewed every 24 months
+          Stable health-literacy lessons: every 12 months
         </li>
         <li>
-          Articles covering medications, clinical outcomes, and patient guidance are reviewed every 12 months
+          General weight and health education: every 6 months
         </li>
         <li>
-          Articles covering drug access and regulatory developments are reviewed every 3 months
+          Medication evidence and patient guidance: every 3 months
         </li>
         <li>
-          Articles covering scam alerts, FDA actions, and regulatory developments are reviewed monthly
+          Rapidly changing drug access, regulatory developments, and investigational treatments: monthly
         </li>
       </ul>
       <p>
-        Review dates are shown in the article footer. Articles that have passed their review date are flagged
-        internally for update before continued promotion.
+        These are planning targets. A significant warning or correction takes priority over the schedule.
+        Editorial review dates record completed checks; publication dates are not refreshed simply to make a page
+        appear newer. The editor checks review due dates before renewed promotion.
       </p>
 
       <h2 id="independence">Independence Statement</h2>

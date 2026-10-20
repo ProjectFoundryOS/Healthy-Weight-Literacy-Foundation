@@ -28,8 +28,44 @@ describe("approved publication", () => {
     for (const field of ["title", "author"] as const) {
       assert.throws(() => exportArticle({ ...record, [field]: "Changed" }, entry.content, sources), /integrity/)
     }
-    record.approval.subject_approval.name = "Changed"
+    record.approval.editor_approval.name = "Changed"
     assert.throws(() => exportArticle(record, entry.content, sources), /integrity/)
+  })
+  it("allows editorial approval without a clinician or public process disclosures", () => {
+    const { record, entry, sources } = editorialFixture()
+    delete entry.metadata.disclosure
+    entry.metadata_sha256 = metadataDigest(entry.metadata)
+    const exported = exportArticle({
+      ...record, provenance: { ai_assisted: true, source_check: "Private method" },
+      public_disclosure: null, private_review_report: "Private findings",
+      approval: { ...record.approval, subject_approval: undefined, approved_metadata_sha256: entry.metadata_sha256 },
+    }, entry.content, sources)
+    assert.deepEqual(exported, entry)
+    assert.equal(exported.metadata.medical_review, undefined)
+    assert.equal(exported.metadata.disclosure, undefined)
+    assert.ok(!JSON.stringify(exported).match(/ai_assisted|provenance|Private method|Private findings/))
+    const article = readPublishedCatalog(catalog([exported]))[0]
+    assert.equal(article.medical_reviewer, null)
+    const schema = buildArticleSchema({ title: article.title, description: article.description, slug: article.slug,
+      publishedAt: article.published_at, category: article.category, reviewerName: article.editorial?.medical_review?.name,
+      reviewedAt: article.editorial?.medical_review?.reviewed_at }, { name: "Foundation", url: "https://example.com" })
+    assert.equal(schema.reviewedBy, undefined)
+    assert.equal(schema.lastReviewed, undefined)
+  })
+  it("retains an optional actual medical review with its own date and integrity checks", () => {
+    const { record, entry, sources } = editorialFixture()
+    const medical = { name: "Optional test reviewer", credentials: "Synthetic test credential", reviewed_at: "2026-09-30T00:00:00Z" }
+    entry.metadata.medical_review = medical
+    entry.metadata_sha256 = metadataDigest(entry.metadata)
+    const reviewedRecord = { ...record, approval: { ...record.approval, subject_approval: medical, approved_metadata_sha256: entry.metadata_sha256 } }
+    assert.deepEqual(exportArticle(reviewedRecord, entry.content, sources), entry)
+    assert.equal(readPublishedCatalog(catalog([entry]))[0].medical_reviewer, medical.name)
+    assert.throws(() => exportArticle({ ...reviewedRecord, approval: { ...reviewedRecord.approval,
+      subject_approval: { ...medical, name: "Changed" } } }, entry.content, sources), /integrity/)
+    entry.metadata.medical_review = { ...medical, reviewed_at: "2026-10-02T00:00:00Z" }
+    entry.metadata_sha256 = metadataDigest(entry.metadata)
+    assert.throws(() => validatePublishedEntry(entry), /must precede/)
+    assert.throws(() => exportArticle({ ...record, approval: { ...record.approval, subject_approval: {} } }, entry.content, sources))
   })
   it("requires registered sources to appear in the article", () => {
     const { record, entry, sources } = editorialFixture()

@@ -4,121 +4,71 @@ import { PolicyLayout } from "@/components/layout/policy-layout"
 import type { TocItem } from "@/components/layout/policy-layout"
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Medical Review Process | WeightLiteracy.org",
-  description:
-    "How WeightLiteracy.org reviews clinical content before publication and keeps it current — including what review covers, what it does not, and how review frequency is assigned.",
+  title: "Evidence & Editorial Standards | WeightLiteracy.org",
+  description: "How WeightLiteracy.org evaluates sources, checks health claims, and handles uncertainty and corrections.",
   path: "/medical-review",
 })
 
 const toc: TocItem[] = [
-  { id: "what-gets-reviewed", label: "What Gets Reviewed" },
-  { id: "what-review-covers", label: "What Review Covers" },
-  { id: "what-review-does-not-cover", label: "What Review Does Not Cover" },
-  { id: "review-frequency", label: "Review Frequency" },
-  { id: "our-standard", label: "Our Standard" },
+  { id: "sources", label: "Choosing Sources" },
+  { id: "claims", label: "Checking Claims" },
+  { id: "safety", label: "Safety and Context" },
+  { id: "updates", label: "Updates and Corrections" },
 ]
 
-export default function MedicalReviewPage() {
+export default function EvidenceStandardsPage() {
   return (
-    <PolicyLayout
-      title="Medical Review Process"
-      lastUpdated="June 2025"
-      toc={toc}
-    >
+    <PolicyLayout title="Evidence & Editorial Standards" lastUpdated="October 19, 2026" toc={toc}>
       <p>
-        The Healthy Weight Literacy Foundation publishes content that covers medications, metabolic conditions, and
-        other topics where accuracy has real consequences for readers. This page describes
-        how that content is reviewed before publication and how it is kept current after publication.
+        Health information should help readers understand their options and prepare for conversations with their
+        healthcare providers. These standards guide how we select sources, evaluate claims, and prepare articles
+        for publication.
       </p>
 
-      <h2 id="what-gets-reviewed">What Gets Reviewed</h2>
+      <h2 id="sources">Choosing Sources</h2>
       <p>
-        Not all content carries the same medical risk. We categorize our articles and apply review requirements
-        accordingly.
+        For medication approval, approved uses, and product warnings, we consult current FDA information and
+        prescribing information. For research findings, we examine the relevant study and consider its methods,
+        participants, results, and limitations. Systematic reviews, professional guidelines, and public health
+        resources provide additional context.
       </p>
       <p>
-        <strong>Clinical content</strong> — articles covering specific medications, dosing, side effects,
-        contraindications, or clinical outcomes — receives the most rigorous review process. This includes all GLP-1
-        medication articles, compound pharmacy guidance, metabolic health content, and any article making specific
-        claims about medication efficacy or safety.
-      </p>
-      <p>
-        <strong>Patient guidance content</strong> — articles covering what to ask a provider, how to interpret a
-        medical situation, or how to find reliable health information — is reviewed for accuracy, appropriate hedging,
-        and absence of content that could be read as individual medical advice.
-      </p>
-      <p>
-        <strong>Educational and consumer content</strong> — articles covering obesity as a chronic disease, nutrition
-        basics, exercise guidance, or scam awareness — is reviewed for factual accuracy and for the absence of harmful
-        claims or unsafe implications.
+        Early results announced by a manufacturer are identified as company-reported findings. A press release
+        cannot establish more than it reports, and a study listing does not establish that a treatment works.
+        Where full results are unavailable, we make that limitation clear.
       </p>
 
-      <h2 id="what-review-covers">What Review Covers</h2>
-      <p>Medical review for clinical content evaluates:</p>
+      <h2 id="claims">Checking Claims</h2>
       <p>
-        <strong>Claim accuracy</strong> — Are the specific claims made in the article consistent with current
-        published evidence? Are trial results cited correctly? Are mechanism descriptions accurate?
+        Our standard is to trace consequential health claims to supporting sources and check that the wording
+        matches the evidence. This includes numbers, units, timeframes, study populations, and the distinction
+        between an association and a cause.
       </p>
       <p>
-        <strong>Source quality</strong> — Are claims attributed to appropriate sources? Peer-reviewed trials, FDA
-        prescribing information, major health authority publications, and established clinical guidelines are acceptable
-        sources. Manufacturer press releases, non-peer-reviewed commentary, and secondary aggregators are not used as
-        primary sources.
-      </p>
-      <p>
-        <strong>Hedging appropriateness</strong> — Does the article correctly represent the certainty of the evidence?
-        Claims that are well-established are presented as such. Claims that are preliminary, debated, or
-        population-specific are qualified accordingly.
-      </p>
-      <p>
-        <strong>Safety and harm risk</strong> — Could any passage be misread in a way that leads a patient to delay
-        seeking care, make changes to their medication incorrectly, or make a clinical decision without appropriate
-        provider guidance? Review identifies and corrects these passages.
-      </p>
-      <p>
-        <strong>Contraindication completeness</strong> — For articles covering medications, review confirms that
-        relevant contraindications, precautions, and populations for whom the medication is not appropriate are
-        addressed.
-      </p>
-      <p>
-        <strong>Disclaimer placement</strong> — Are medical disclaimers present at appropriate points in the article?
-        Clinical content requires a disclaimer at both the top and bottom of the article at minimum.
+        Group averages do not predict an individual&apos;s outcome. Results from separate studies are not a direct
+        comparison between treatments. Charts follow the same sourcing and context requirements as the text.
+        Claims with unresolved evidence problems must be corrected, narrowed, or removed before publication.
       </p>
 
-      <h2 id="what-review-does-not-cover">What Review Does Not Cover</h2>
+      <h2 id="safety">Safety and Context</h2>
       <p>
-        Medical review is an accuracy and safety process. Our review process confirms that articles are factually
-        sound and do not contain harmful guidance. It does not constitute a recommendation of any specific medication
-        or approach for any specific person.
+        Medication articles should explain relevant risks alongside potential benefits, distinguish approved uses
+        from investigational uses, and avoid instructions that invite readers to diagnose themselves or change
+        treatment on their own. An educational article cannot replace the full prescribing information or a
+        discussion with a healthcare professional who knows the reader&apos;s circumstances.
       </p>
       <p>
-        Nothing published on WeightLiteracy.org is medical advice. Our content is educational. Readers should always
-        work with a qualified healthcare provider for decisions about their own health.
-      </p>
-
-      <h2 id="review-frequency">Review Frequency</h2>
-      <p>
-        Published articles are assigned a review schedule based on how quickly the relevant medical landscape is
-        likely to change. Articles covering FDA-approved medications and clinical trial evidence are reviewed on an
-        annual basis at minimum. Articles covering areas of active regulatory or policy change — including drug access
-        and compound pharmacy rules — are reviewed more frequently.
-      </p>
-      <p>
-        When a significant development occurs in a covered area — a new FDA warning, a major trial publication, a
-        guideline update — relevant articles are flagged for out-of-cycle review regardless of their scheduled date.
-      </p>
-      <p>
-        The review date shown in each article footer reflects the most recent medical review, distinct from any
-        editorial updates made to the article for clarity or accuracy.
+        Titles, summaries, illustrations, and related links must preserve the article&apos;s meaning. They should
+        not imply guaranteed results, product endorsement, or certainty that the evidence does not support.
       </p>
 
-      <h2 id="our-standard">Our Standard</h2>
+      <h2 id="updates">Updates and Corrections</h2>
       <p>
-        Our standard for publication is that a patient or caregiver who reads and follows the guidance in an article
-        should be better prepared for a conversation with their healthcare provider — not harmed, misled, or left with
-        false certainty about a complex clinical situation.
+        Publication and update dates reflect actual editorial activity. A new warning, regulatory decision, or
+        important research finding may require an earlier update. Our <a href="/editorial-policy">Editorial Policy</a>
+        {" "}describes how we handle corrections and review priorities. Readers can report a concern through our
+        {" "}<a href="/contact">contact page</a>.
       </p>
-      <p>When an article cannot meet that standard, it is revised or not published.</p>
     </PolicyLayout>
   )
 }

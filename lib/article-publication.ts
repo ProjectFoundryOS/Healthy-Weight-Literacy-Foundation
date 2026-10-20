@@ -1,21 +1,24 @@
 import { createHash } from "node:crypto"
 import { z } from "zod"
 import type { BlogPost } from "./article-types"
+import { articleVisualSetSchema, validateVisualPlacements } from "./article-visuals.ts"
 
 const text = z.string().trim().min(1)
 const date = z.string().datetime({ offset: true })
 const sha = z.string().regex(/^[a-f0-9]{64}$/)
 const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
 const citation = z.object({ title: text, url: z.string().url().startsWith("https://"), type: text }).strict()
+export const medicalReviewSchema = z.object({ name: text, credentials: text, reviewed_at: date }).strict()
 
 export const publicMetadataSchema = z.object({
   article_id: text, slug, title: text, description: text, author: text,
-  category: z.enum(["Nutrition Education", "Metabolic Health", "Weight Literacy", "Public Health Awareness"]),
+  category: z.enum(["Nutrition Education", "Metabolic Health", "Weight Literacy", "Public Health Awareness", "Weight-Loss Medicines", "Understanding Weight"]),
   tags: z.array(text).min(1), citations: z.array(citation).min(1),
   published_at: date, updated_at: date, next_review_date: date,
-  editor_name: text, reviewer_name: text, reviewer_credentials: text,
-  reviewed_at: date, approved_at: date, ai_assisted: z.boolean(),
-  disclosure: text,
+  editor_name: text, reviewed_at: date, approved_at: date,
+  medical_review: medicalReviewSchema.optional(),
+  disclosure: text.optional(),
+  visuals: articleVisualSetSchema.optional(),
 }).strict()
 
 export type PublicMetadata = z.infer<typeof publicMetadataSchema>
@@ -43,8 +46,9 @@ export function validatePublishedEntry(value: unknown, now = Date.now()): Publis
   if (digest(entry.content) !== entry.body_sha256 || metadataDigest(m) !== entry.metadata_sha256) {
     throw new Error(`Article integrity check failed: ${m.slug}`)
   }
-  if (/review draft|review pending/i.test(entry.content)) throw new Error(`Draft cannot be published: ${m.slug}`)
+  if (/review draft|review pending|^\*(?:Article draft|Editorial sample)\b/im.test(entry.content)) throw new Error(`Draft cannot be published: ${m.slug}`)
   if (/<\/?[a-z][^>]*>/i.test(entry.content)) throw new Error(`Use Markdown without raw HTML: ${m.slug}`)
+  validateVisualPlacements(entry.content, m.visuals)
   for (const key of ["published_at", "updated_at", "reviewed_at", "approved_at"] as const) {
     if (Date.parse(m[key]) > now) throw new Error(`Future ${key}: ${m.slug}`)
   }
@@ -53,6 +57,9 @@ export function validatePublishedEntry(value: unknown, now = Date.now()): Publis
       Date.parse(m.updated_at) < Date.parse(m.published_at) ||
       Date.parse(m.next_review_date) <= Date.parse(m.reviewed_at)) {
     throw new Error(`Inconsistent review/publication dates: ${m.slug}`)
+  }
+  if (m.medical_review && Date.parse(m.medical_review.reviewed_at) > Date.parse(m.approved_at)) {
+    throw new Error(`Medical review must precede editorial approval: ${m.slug}`)
   }
   return entry
 }
@@ -75,11 +82,12 @@ export function readPublishedCatalog(value: unknown, env: NodeJS.ProcessEnv = pr
     return {
       id: m.article_id, slug: m.slug, title: m.title, description: m.description,
       author: m.author, author_image: "", author_title: null, author_bio: null,
-      author_credentials: null, medical_reviewer: null, reviewer_credentials: null,
+      author_credentials: null, medical_reviewer: m.medical_review?.name ?? null,
+      reviewer_credentials: m.medical_review?.credentials ?? null,
       reviewed_at: m.reviewed_at, next_review_date: m.next_review_date,
       citations: m.citations, has_medical_disclaimer: false,
       published_at: m.published_at, updated_at: m.updated_at, created_at: m.published_at,
-      hero_image: "", tags: m.tags, category: m.category,
+      hero_image: m.visuals?.hero.src ?? "", visuals: m.visuals, tags: m.tags, category: m.category,
       reading_time: `${Math.max(1, Math.ceil(content.split(/\s+/).length / 200))} min read`,
       content, is_published: true, editorial: m,
     }

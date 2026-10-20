@@ -9,14 +9,16 @@ export interface ArticleSchemaProps {
   authorName?: string
   reviewerName?: string
   reviewedAt?: string
+  image?: string
 }
 
 export function buildArticleSchema(props: ArticleSchemaProps, site: { name: string; url: string }): Record<string, unknown> {
-  const medical = new Set(["Metabolic Health", "Medication Literacy", "Weight Literacy", "Education"])
+  const medical = new Set(["Metabolic Health", "Medication Literacy", "Weight Literacy", "Education", "Weight-Loss Medicines", "Understanding Weight"])
   return {
     "@context": "https://schema.org",
     "@type": medical.has(props.category) || props.hasMedicalDisclaimer ? "MedicalWebPage" : "Article",
     headline: props.title, description: props.description,
+    ...(props.image ? { image: new URL(props.image, site.url).href } : {}),
     url: `${site.url}/blog/${props.slug}`,
     datePublished: props.publishedAt, dateModified: props.updatedAt || props.publishedAt,
     ...(props.authorName ? { author: { "@type": props.authorName === site.name ? "Organization" : "Person", name: props.authorName } } : {}),

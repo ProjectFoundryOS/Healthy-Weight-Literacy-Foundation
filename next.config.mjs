@@ -1,5 +1,10 @@
+import { isEditorialPreview } from "./lib/editorial-preview-mode.mjs"
+
+const editorialPreview = isEditorialPreview()
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  distDir: editorialPreview ? ".next-editorial-preview" : ".next",
   typescript: {
     ignoreBuildErrors: false,
   },
@@ -47,6 +52,7 @@ const nextConfig = {
       {
         source: "/(.*)",
         headers: [
+          ...(editorialPreview ? [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }] : []),
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },

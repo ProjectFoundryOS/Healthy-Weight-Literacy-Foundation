@@ -31,16 +31,22 @@ export function generatePageMetadata({
   description,
   path,
   image,
+  imageAlt,
+  imageWidth,
+  imageHeight,
   noIndex = false,
 }: {
   title: string
   description: string
   path: string
   image?: string
+  imageAlt?: string
+  imageWidth?: number
+  imageHeight?: number
   noIndex?: boolean
 }): Metadata {
   const url = `${siteConfig.url}${path}`
-  const ogImage = image || siteConfig.ogImage
+  const ogImage = new URL(image || siteConfig.ogImage, siteConfig.url).href
 
   return {
     title,
@@ -56,9 +62,9 @@ export function generatePageMetadata({
       images: [
         {
           url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: title,
+          width: imageWidth ?? 1200,
+          height: imageHeight ?? 630,
+          alt: imageAlt ?? title,
         },
       ],
       locale: "en_US",

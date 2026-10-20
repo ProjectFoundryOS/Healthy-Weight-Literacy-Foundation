@@ -1,11 +1,12 @@
 import { z } from "zod"
-import { digest, metadataDigest, publicMetadataSchema, validatePublishedEntry } from "./article-publication.ts"
+import { digest, medicalReviewSchema, metadataDigest, publicMetadataSchema, validatePublishedEntry } from "./article-publication.ts"
+import { articleVisualSetSchema } from "./article-visuals.ts"
 
 const name = z.string().trim().min(1)
 const timestamp = z.string().datetime({ offset: true })
 const approvalSchema = z.object({
   editor_approval: z.object({ name, approved_at: timestamp }),
-  subject_approval: z.object({ name, credentials: name, reviewed_at: timestamp }),
+  subject_approval: medicalReviewSchema.nullable().optional(),
   approved_at: timestamp,
   approved_body_sha256: z.string(), approved_metadata_sha256: z.string(),
 })
@@ -14,7 +15,8 @@ export const recordSchema = z.object({
   category: name, tags: z.array(name), source_ids: z.array(name).min(1),
   body_path: name, published_at: timestamp, updated_at: timestamp, next_review_at: timestamp,
   status: z.literal("approved"), publish: z.literal(true),
-  provenance: z.object({ ai_assisted: z.boolean() }), public_disclosure: name,
+  provenance: z.object({ ai_assisted: z.boolean() }), public_disclosure: name.nullable().optional(),
+  visuals: articleVisualSetSchema.optional(),
   approval: approvalSchema,
 })
 const sourceSchema = z.object({ id: name, title: name, url: z.string().url().startsWith("https://") })
@@ -34,10 +36,11 @@ export function exportArticle(record: unknown, body: string, sources: unknown[])
       return { title: source.title, url: source.url, type: "reference" }
     }),
     published_at: r.published_at, updated_at: r.updated_at, next_review_date: r.next_review_at,
-    editor_name: r.approval.editor_approval.name, reviewer_name: r.approval.subject_approval.name,
-    reviewer_credentials: r.approval.subject_approval.credentials,
-    reviewed_at: r.approval.subject_approval.reviewed_at, approved_at: r.approval.approved_at,
-    ai_assisted: r.provenance.ai_assisted, disclosure: r.public_disclosure,
+    editor_name: r.approval.editor_approval.name,
+    reviewed_at: r.approval.editor_approval.approved_at, approved_at: r.approval.approved_at,
+    ...(r.approval.subject_approval ? { medical_review: r.approval.subject_approval } : {}),
+    ...(r.public_disclosure ? { disclosure: r.public_disclosure } : {}),
+    ...(r.visuals ? { visuals: r.visuals } : {}),
   })
   if (r.approval.editor_approval.approved_at !== r.approval.approved_at) throw new Error("Editor approval timestamp mismatch")
   return validatePublishedEntry({

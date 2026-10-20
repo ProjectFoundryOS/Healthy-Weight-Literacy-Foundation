@@ -2,7 +2,8 @@ import { readFile, writeFile } from "node:fs/promises"
 import { spawn } from "node:child_process"
 import { fileURLToPath } from "node:url"
 import path from "node:path"
-import { fixture } from "../__tests__/fixtures/publication.ts"
+import { visualFixture } from "../__tests__/fixtures/publication.ts"
+import { verifyArticleAssets } from "../lib/article-assets.ts"
 
 // A non-health fixture exercises full rendering without approving real drafts.
 // This script must never be a deployment build command.
@@ -11,9 +12,11 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const file = path.join(root, "content/articles/catalog.json")
 const original = await readFile(file)
 try {
-  await writeFile(file, JSON.stringify({ schema_version: 1, purpose: "local-test", articles: [fixture()] }, null, 2) + "\n")
+  const entry = visualFixture()
+  await verifyArticleAssets(entry.metadata.visuals, path.join(root, "public"))
+  await writeFile(file, JSON.stringify({ schema_version: 1, purpose: "local-test", articles: [entry] }, null, 2) + "\n")
   const code = await new Promise((resolve, reject) => {
-    const child = spawn(process.execPath, ["node_modules/next/dist/bin/next", "build", "--webpack"], {
+    const child = spawn("npm", ["run", "build", "--", "--webpack"], {
       cwd: root, stdio: "inherit",
       // Deliberately stale/invalid legacy settings prove they cannot select
       // the old reader. This build must work without any database connection.

@@ -1,3 +1,5 @@
+import type { ArticleVisualSet } from "./article-visuals"
+
 // Shared article display fields. Publishing reads approved repository files.
 export interface Citation {
   title: string
@@ -25,7 +27,7 @@ export interface BlogPost {
   medical_reviewer: string | null
   /** Reviewer's credentials, e.g. "MD, Obesity Medicine Specialist" */
   reviewer_credentials: string | null
-  /** Date of last medical review */
+  /** Date of last editorial review; this alone does not indicate clinical review. */
   reviewed_at: string | null
   /** Date when next review is due */
   next_review_date: string | null
@@ -45,5 +47,8 @@ export interface BlogPost {
   reading_time: string
   content: string
   is_published: boolean
+  /** Local development display only; never denotes publication or approval. */
+  draft_preview?: boolean
+  visuals?: ArticleVisualSet
 }
 

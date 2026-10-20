@@ -2,8 +2,10 @@ import type { MetadataRoute } from "next"
 import { siteConfig } from "@/lib/seo"
 import { getBlogPosts } from "@/lib/articles"
 import { ROUTES } from "@/lib/routes"
+import { isEditorialPreview } from "@/lib/editorial-preview-mode.mjs"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  if (isEditorialPreview()) return []
   const baseUrl = siteConfig.url
 
   // Core pages with assigned priorities

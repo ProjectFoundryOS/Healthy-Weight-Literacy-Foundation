@@ -15,7 +15,7 @@ const footerNavigation = {
     { name: "Privacy Policy", href: ROUTES.PRIVACY },
     { name: "Terms of Use", href: ROUTES.TERMS },
     { name: "Editorial Policy", href: ROUTES.EDITORIAL_POLICY },
-    { name: "Medical Review Process", href: ROUTES.MEDICAL_REVIEW },
+    { name: "Evidence & Editorial Standards", href: ROUTES.MEDICAL_REVIEW },
     { name: "How We Create Content", href: ROUTES.HOW_WE_CREATE_CONTENT },
     { name: "Medical Disclaimer", href: ROUTES.MEDICAL_DISCLAIMER },
     { name: "Transparency", href: ROUTES.TRANSPARENCY },

@@ -34,7 +34,7 @@ const categories = [
     icon: Brain,
     title: "Weight Literacy",
     description: "Science-based education on weight management and sustainable lifestyle decisions.",
-    matchCategories: ["Weight Literacy", "Medication Literacy"],
+    matchCategories: ["Weight Literacy", "Medication Literacy", "Weight-Loss Medicines", "Understanding Weight"],
   },
   {
     icon: Heart,

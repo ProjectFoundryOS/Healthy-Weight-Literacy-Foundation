@@ -1,5 +1,426 @@
 {
   "schema_version": 1,
   "purpose": "publication",
-  "articles": []
+  "articles": [
+    {
+      "metadata": {
+        "article_id": "M4",
+        "slug": "before-starting-glp-1-medicine",
+        "title": "What to Know Before Starting a GLP-1 Medicine",
+        "description": "A practical guide to the health history, pregnancy planning, side effects, nutrition, costs, and follow-up to discuss before starting GLP-1-based weight treatment.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight-Loss Medicines",
+        "tags": [
+          "GLP-1",
+          "starting treatment",
+          "weight-loss medication",
+          "patient preparation"
+        ],
+        "citations": [
+          {
+            "title": "Prescription Medications to Treat Overweight & Obesity",
+            "url": "https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity",
+            "type": "reference"
+          },
+          {
+            "title": "Wegovy prescribing information",
+            "url": "https://www.novo-pi.com/wegovy.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Zepbound prescribing information",
+            "url": "https://pi.lilly.com/us/zepbound-uspi.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Semaglutide Injection: patient information",
+            "url": "https://medlineplus.gov/druginfo/meds/a618008.html",
+            "type": "reference"
+          },
+          {
+            "title": "Nutritional Priorities to Support GLP-1 Therapy for Obesity: joint advisory announcement",
+            "url": "https://www.obesity.org/wp-content/uploads/2025/06/Joint_Nutritional-Priorities-to-Support-GLP-1-Therapy-for-Obesity.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "FDA concerns with unapproved GLP-1 drugs",
+            "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T01:05:05.080Z",
+        "updated_at": "2026-10-20T01:05:05.080Z",
+        "next_review_date": "2027-01-17T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T01:05:05.080Z",
+        "approved_at": "2026-10-20T01:05:05.080Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/starting-treatment.png",
+            "alt": "Illustration of a woman walking along a leafy garden path.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "3c0e23ffdbda0fc75403b2d0c13d02f62c89aa78759ce28cc56f2dfdd4cd8e8f"
+          },
+          "body": [
+            {
+              "src": "/images/editorial/everyday-meal.png",
+              "alt": "Illustration of a lunch plate with vegetables, chickpeas, grains and greens, beside yogurt and water.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "25929c1652e501c5f51a773408f5677344a94b39f90f9e9b70c44a7d7ab3d3dd",
+              "before_heading": "Less hunger still requires a plan for eating"
+            },
+            {
+              "src": "/images/editorial/care-conversation.png",
+              "alt": "Illustration of two women having a healthcare conversation at a table.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "4dc5755593417f42bf67ff7ce24e2e6da5510c63e5a53d25091a7230a0746322",
+              "before_heading": "Make a plan for the months after the first prescription"
+            }
+          ]
+        }
+      },
+      "content": "# What to Know Before Starting a GLP-1 Medicine\n\nDeciding to start a weight-loss medicine can bring relief, questions, and some nerves. You may have heard about someone else's results and wondered what the experience would be like for you. Before the first dose, it helps to understand how treatment will fit into your health and everyday life.\n\nThis article covers adult weight management, using semaglutide (Wegovy) and tirzepatide (Zepbound) as examples. Instructions depend on the product prescribed. [Wegovy prescribing information](https://www.novo-pi.com/wegovy.pdf), [Zepbound prescribing information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## Start with your health history and goals\n\nFor weight management, clinicians commonly consider prescription medicine for adults with a body mass index, or BMI, of 30 or higher, or 27 or higher with a weight-related condition such as high blood pressure. Meeting a threshold starts the assessment; your health history, other medicines, and treatment goals also matter. [NIDDK guidance](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity)\n\nBe specific about what you hope will change. Is weight affecting your ability to move comfortably? Are you hoping to improve a health condition? That conversation gives you and your clinician something meaningful to revisit as treatment progresses.\n\nBring a complete list of prescriptions, over-the-counter medicines, and supplements. Mention past pancreatitis, gallbladder or kidney problems, severe stomach-emptying problems, diabetes-related eye disease, and medication allergies. These details can change the assessment and monitoring plan. [Semaglutide patient information](https://medlineplus.gov/druginfo/meds/a618008.html)\n\nWegovy and Zepbound must not be used if you have a personal or family history of medullary thyroid carcinoma (a specific thyroid cancer), or if you have multiple endocrine neoplasia syndrome type 2 (MEN2). A previous serious allergic reaction to a medicine's active ingredient or other ingredients also rules that product out. Ask your clinician how any thyroid diagnosis or medication allergy affects treatment. [Wegovy contraindications](https://www.novo-pi.com/wegovy.pdf), [Zepbound contraindications](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nIf you take insulin or a sulfonylurea for diabetes, the clinician may need to adjust treatment to reduce the risk of low blood sugar. Ask what to watch for and how to respond. [Wegovy precautions](https://www.novo-pi.com/wegovy.pdf)\n\nCheck for overlapping medicines, too. Wegovy and Zepbound should not be combined with another product containing the same active ingredient or with another GLP-1 receptor agonist. Make sure the prescriber knows about any weight-loss or diabetes treatment you already use. [Wegovy limitations of use](https://www.novo-pi.com/wegovy.pdf), [Zepbound limitations of use](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## Discuss pregnancy plans before treatment starts\n\nDiscuss pregnancy plans and breastfeeding before starting. These medicines should not be used for weight loss during pregnancy. Breastfeeding advice depends on the product and formulation: Wegovy's label specifically advises against breastfeeding during treatment with its tablets. Discuss an appropriate treatment and feeding plan with your clinician. [Wegovy pregnancy and breastfeeding guidance](https://www.novo-pi.com/wegovy.pdf), [Zepbound pregnancy and breastfeeding guidance](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nFor planned pregnancy, Wegovy's prescribing information says to stop it at least two months beforehand. [Wegovy planning guidance](https://www.novo-pi.com/wegovy.pdf)\n\nZepbound can reduce the effectiveness of oral hormonal birth control. Its label advises switching to a nonoral method or adding a barrier method for **four weeks after starting and four weeks after each dose increase**. Discuss this with your clinician. [Zepbound contraception guidance](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## The first dose is the beginning of a process\n\nTreatment starts at a lower dose and increases gradually to help reduce gastrointestinal side effects. Discuss tolerability with your prescriber; do not speed up the increases yourself. [Wegovy dosing guidance](https://www.novo-pi.com/wegovy.pdf), [Zepbound dosing guidance](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nBefore leaving with the prescription, make sure you understand how to take or administer your exact product, how to store it, and what to do about a missed dose. Have the pharmacist walk you through anything unclear. Keep the product's instructions somewhere you can find them again.\n\nTell any surgery or anesthesia team that you use the medicine. Delayed stomach emptying can matter during anesthesia or deep sedation. [Zepbound procedure precautions](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## Less hunger still requires a plan for eating\n\nIf your appetite becomes smaller, the food you do eat still needs to provide enough nourishment. A joint advisory from four medical and nutrition organizations emphasizes assessing nutrition before treatment, preventing nutrient deficiencies, and combining adequate protein with strength training to help preserve muscle. [Joint nutrition advisory summary](https://www.obesity.org/wp-content/uploads/2025/06/Joint_Nutritional-Priorities-to-Support-GLP-1-Therapy-for-Obesity.pdf)\n\nAsk what that could look like with your food preferences, budget, and physical abilities. A dietitian can help tailor the plan if one is available to you. Tell the care team if eating becomes difficult or you are repeatedly skipping meals because you feel unwell.\n\n## Know which symptoms need help\n\nNausea, vomiting, diarrhea, and constipation are possible side effects. Contact your clinician if symptoms are severe or do not settle. Repeated vomiting, trouble keeping fluids down, or reduced urination need prompt attention because dehydration can become serious. [Patient information and precautions](https://medlineplus.gov/druginfo/meds/a618008.html)\n\nPersistent, severe abdominal pain—especially pain spreading to the back, with or without vomiting—needs urgent medical assessment. Trouble breathing or swelling of the tongue or throat calls for emergency help. These are examples, not a complete warning list; read the Medication Guide supplied with your prescription. [Serious symptoms](https://medlineplus.gov/druginfo/meds/a618008.html)\n\n## Make a plan for the months after the first prescription\n\nAsk when the first follow-up will happen, who handles questions between visits, and how you will assess progress together. Include the practical side: what insurance covers, the ongoing medicine cost, and whether appointments or tests add separate charges. Coverage varies, so check your own plan. [NIDDK treatment guidance](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity)\n\nKnow what product you are receiving and which pharmacy supplies it. FDA recommends a prescription from a doctor and a state-licensed pharmacy; compounded medicines do not undergo FDA approval for safety, effectiveness, and quality before marketing. [FDA guidance](https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)\n\nWeight-management medicine may be a long-term treatment, and some weight regain is likely after stopping. Discuss affordability and continuity early, including what you would do if treatment became unavailable. [NIDDK guidance on duration](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity)\n\nYou should leave the starting conversation knowing how to take the medicine, who to contact with a problem, and when you will check in again. Those arrangements make the first prescription part of an ongoing care plan.\n",
+      "body_sha256": "6c592041cab69a0c8cc6ddcdd2cdd32930b4a2297b280ea12d51382338ee7118",
+      "metadata_sha256": "3275e19d30ebc1cbf2c5f166021166485741f5993a6af23a8d761b99ae65787e"
+    },
+    {
+      "metadata": {
+        "article_id": "M1",
+        "slug": "how-glp-1-weight-loss-medicines-work",
+        "title": "How GLP-1 Weight-Loss Medicines Work",
+        "description": "How GLP-1 medicines affect appetite, how semaglutide and tirzepatide differ, and what their benefits and limitations mean for treatment.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight-Loss Medicines",
+        "tags": [
+          "GLP-1",
+          "semaglutide",
+          "tirzepatide",
+          "weight-loss medication"
+        ],
+        "citations": [
+          {
+            "title": "GLP-1 research history",
+            "url": "https://www.niddk.nih.gov/news/archive/2021/story-discovery-medications-diabetes-obesity-emerged-research-pancreatic-hormone",
+            "type": "reference"
+          },
+          {
+            "title": "Wegovy prescribing information",
+            "url": "https://www.novo-pi.com/wegovy.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Zepbound prescribing information",
+            "url": "https://pi.lilly.com/us/zepbound-uspi.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Semaglutide appetite trial (2021)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7898914/",
+            "type": "reference"
+          },
+          {
+            "title": "Once-Weekly Semaglutide in Adults with Overweight or Obesity",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33567185/",
+            "type": "reference"
+          },
+          {
+            "title": "FDA concerns with unapproved GLP-1 drugs",
+            "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss",
+            "type": "reference"
+          },
+          {
+            "title": "Prescription Medications to Treat Overweight & Obesity",
+            "url": "https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T01:05:05.080Z",
+        "updated_at": "2026-10-20T01:05:05.080Z",
+        "next_review_date": "2026-11-18T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T01:05:05.080Z",
+        "approved_at": "2026-10-20T01:05:05.080Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/everyday-meal.png",
+            "alt": "Illustration of a lunch plate with vegetables, chickpeas, grains and greens, beside yogurt and water.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "25929c1652e501c5f51a773408f5677344a94b39f90f9e9b70c44a7d7ab3d3dd"
+          },
+          "body": [
+            {
+              "src": "/images/editorial/starting-treatment.png",
+              "alt": "Illustration of a woman walking along a leafy garden path.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "3c0e23ffdbda0fc75403b2d0c13d02f62c89aa78759ce28cc56f2dfdd4cd8e8f",
+              "before_heading": "Treatment involves more than a prescription"
+            }
+          ]
+        }
+      },
+      "content": "# How GLP-1 Weight-Loss Medicines Work\n\nHunger can make a simple instruction—eat a little less—feel anything but simple. You may know what you intended to eat and still finish a meal wanting more.\n\nGLP-1 medicines act on signals involved in appetite. For some people, treatment can mean feeling less hungry and more satisfied after eating. That change helps explain how medication can make a difference when advice about food has not been enough. [Research on appetite and semaglutide](https://pmc.ncbi.nlm.nih.gov/articles/PMC7898914/)\n\n## Your body already makes GLP-1\n\nGLP-1 stands for glucagon-like peptide-1. It is a hormone your intestines release in response to food. Among its jobs, it helps the pancreas release insulin when blood sugar rises and influences how quickly food leaves the stomach. These effects helped make GLP-1 a target for diabetes treatment. [NIH explanation](https://www.niddk.nih.gov/news/archive/2021/story-discovery-medications-diabetes-obesity-emerged-research-pancreatic-hormone)\n\nThe hormone also influences appetite. Semaglutide activates GLP-1 receptors—the parts of cells that receive the signal. These receptors are found in brain regions involved in appetite regulation. Semaglutide reduces calorie intake, an effect thought to work through appetite. [Wegovy prescribing information](https://www.novo-pi.com/wegovy.pdf)\n\nThe body's own GLP-1 breaks down quickly. Medicines were developed to keep acting for longer, making sustained treatment possible. This is why the treatment can influence eating beyond the brief hormonal response to a single meal. [NIH explanation](https://www.niddk.nih.gov/news/archive/2021/story-discovery-medications-diabetes-obesity-emerged-research-pancreatic-hormone)\n\n## Why eating can feel different\n\nResearchers have studied appetite as well as weight. In a small, 20-week randomized trial involving 72 adults with obesity, people receiving weekly semaglutide injections, gradually increased to 2.4 mg, reported less hunger and greater fullness than those receiving placebo. They also reported fewer or weaker food cravings. The study was funded by the manufacturer, Novo Nordisk. [Read the study](https://pmc.ncbi.nlm.nih.gov/articles/PMC7898914/)\n\nFor someone who responds that way, stopping a meal can feel easier because the desire to keep eating has changed. That is a different experience from deciding to stop while still feeling hungry. The findings help explain a possible treatment experience; they do not mean everyone will feel the same change.\n\nThese medicines can also slow the movement of food out of the stomach. That is one part of their action, but it does not explain everything about weight loss. For example, tirzepatide's prescribing information says this slowing is greatest after the first dose and diminishes over time. [Zepbound prescribing information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## The names describe different medicines\n\nWegovy contains semaglutide, which activates GLP-1 receptors. Zepbound contains tirzepatide, which activates both GLP-1 and another hormone receptor called GIP. Their prescribing details differ. [Wegovy information](https://www.novo-pi.com/wegovy.pdf), [Zepbound information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nWegovy is available as injections and tablets. The formulation matters: the ingredient name alone does not tell you how a product is used. [Wegovy information](https://www.novo-pi.com/wegovy.pdf)\n\nRetatrutide also appears in discussions of weight-loss medicines. As of October 19, 2026, it remains investigational and is not FDA-approved. Research interest should not be confused with an approved treatment being available. [FDA guidance](https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)\n\n## What those changes can mean for weight\n\nIn the 68-week STEP 1 trial, 1,961 adults without diabetes who had obesity, or overweight with a weight-related health condition, received weekly semaglutide injections at a target dose of 2.4 mg or placebo. The estimated average weight loss was 14.9% with semaglutide and 2.4% with placebo. Both groups received lifestyle support. This manufacturer-funded trial tested a particular regimen; its average is not a forecast for an individual or for every GLP-1 product. [STEP 1 trial](https://pubmed.ncbi.nlm.nih.gov/33567185/)\n\nSide effects also matter. Nausea, vomiting, diarrhea, and constipation are common with semaglutide and tirzepatide. Serious risks include pancreatitis, gallbladder problems, and dehydration-related kidney injury. Certain histories rule them out, including a personal or family history of medullary thyroid cancer or having MEN 2, a rare inherited condition. A previous serious allergic reaction to a product's ingredients also rules that product out. [Wegovy information](https://www.novo-pi.com/wegovy.pdf), [Zepbound information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## Treatment involves more than a prescription\n\nA clinician needs to consider medical history, other medicines, pregnancy plans, likely benefits, and costs. Nutrition, physical activity, and follow-up remain part of care. Treatment may continue long term if it is helping and the risks remain acceptable; some weight regain is common after stopping. [NIDDK treatment guidance](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity)\n\nBefore starting, it is worth understanding what follow-up will look like: who will help with side effects, how progress will be assessed, and what happens if the treatment is difficult to tolerate or afford. Those conversations connect the science of appetite to the practical question of whether a medicine fits your life.\n",
+      "body_sha256": "c945427575c11312a65fabb115dc9558571b59a31bef140570edb5f5efee8fb4",
+      "metadata_sha256": "93375f68f4a7ec050cd2c63d19dd8accded828aa17f08f581f7aee994cfbf792"
+    },
+    {
+      "metadata": {
+        "article_id": "M2",
+        "slug": "semaglutide-vs-tirzepatide",
+        "title": "Semaglutide vs. Tirzepatide: What’s the Difference?",
+        "description": "Understand the brand names, direct comparison research, side effects, and practical differences between semaglutide and tirzepatide for weight management.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight-Loss Medicines",
+        "tags": [
+          "semaglutide",
+          "tirzepatide",
+          "Wegovy",
+          "Zepbound",
+          "weight-loss medication"
+        ],
+        "citations": [
+          {
+            "title": "Wegovy prescribing information",
+            "url": "https://www.novo-pi.com/wegovy.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Zepbound prescribing information",
+            "url": "https://pi.lilly.com/us/zepbound-uspi.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Ozempic prescribing information",
+            "url": "https://www.novo-pi.com/ozempic.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Mounjaro prescribing information",
+            "url": "https://pi.lilly.com/us/mounjaro-uspi.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Tirzepatide as Compared with Semaglutide for the Treatment of Obesity",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "type": "reference"
+          },
+          {
+            "title": "SURMOUNT-5 study details and results",
+            "url": "https://investor.lilly.com/node/52376",
+            "type": "reference"
+          },
+          {
+            "title": "Wegovy cardiovascular risk-reduction approval",
+            "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-reduce-risk-serious-heart-problems-specifically-adults-obesity-or",
+            "type": "reference"
+          },
+          {
+            "title": "Zepbound obstructive sleep apnea approval",
+            "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-medication-obstructive-sleep-apnea",
+            "type": "reference"
+          },
+          {
+            "title": "Prescription Medications to Treat Overweight & Obesity",
+            "url": "https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T01:05:05.080Z",
+        "updated_at": "2026-10-20T01:05:05.080Z",
+        "next_review_date": "2027-01-17T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T01:05:05.080Z",
+        "approved_at": "2026-10-20T01:05:05.080Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/care-conversation.png",
+            "alt": "Illustration of two women having a healthcare conversation at a table.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "4dc5755593417f42bf67ff7ce24e2e6da5510c63e5a53d25091a7230a0746322"
+          },
+          "body": [
+            {
+              "src": "/images/editorial/surmount-5-weight-change.png",
+              "alt": "SURMOUNT-5 chart: average weight loss at 72 weeks was 13.7 percent with semaglutide and 20.2 percent with tirzepatide. Error bars show 95 percent confidence intervals. Trial regimens and population are stated in the article.",
+              "width": 1600,
+              "height": 1100,
+              "sha256": "ac195e7e663f1f27a307c1647a8f7e1a8da2d9fb177022f4306af7406348e9d8",
+              "source": {
+                "title": "SURMOUNT-5 study",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/"
+              },
+              "before_heading": "Some differences show up in everyday treatment"
+            },
+            {
+              "src": "/images/editorial/starting-treatment.png",
+              "alt": "Illustration of a woman walking along a leafy garden path.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "3c0e23ffdbda0fc75403b2d0c13d02f62c89aa78759ce28cc56f2dfdd4cd8e8f",
+              "before_heading": "Choosing something you can continue"
+            }
+          ]
+        }
+      },
+      "content": "# Semaglutide vs. Tirzepatide: What’s the Difference?\n\nIf you have started reading about weight-loss medicines, you have probably encountered several names before getting a clear explanation of how they fit together. Semaglutide. Tirzepatide. Wegovy. Zepbound. Then someone mentions Ozempic or Mounjaro, and the list gets longer.\n\nThe names become easier to follow once you separate the active ingredient from the brand. From there, you can look at the questions that matter: how the medicines work, what researchers have found, and what could make one a better fit for your health and daily life.\n\n## Two ingredients, several brand names\n\nSemaglutide is the active ingredient in Wegovy. Tirzepatide is the active ingredient in Zepbound. Both brands have approved uses for weight management. [Wegovy information](https://www.novo-pi.com/wegovy.pdf), [Zepbound information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nThe same ingredients also appear in medicines approved for type 2 diabetes: semaglutide in Ozempic and tirzepatide in Mounjaro. Sharing an ingredient does not make every branded product's dose or approved uses interchangeable. [Ozempic information](https://www.novo-pi.com/ozempic.pdf), [Mounjaro information](https://pi.lilly.com/us/mounjaro-uspi.pdf)\n\nSemaglutide activates receptors for GLP-1, a hormone involved in blood sugar and appetite regulation. Tirzepatide activates GLP-1 receptors and receptors for another hormone, GIP. Both medicines can reduce food intake through effects on appetite. [Semaglutide mechanism](https://www.novo-pi.com/wegovy.pdf), [tirzepatide mechanism](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nThat gives researchers a reason to study the medicines separately. Counting hormone targets, by itself, cannot tell you how much weight someone will lose.\n\n## What happened when researchers compared them directly?\n\nThe SURMOUNT-5 trial randomly assigned 751 adults without type 2 diabetes to weekly injections of tirzepatide or semaglutide for 72 weeks. Treatment reached the highest dose each participant could tolerate within the study's selected doses. [Published study abstract](https://pubmed.ncbi.nlm.nih.gov/40353578/)\n\n| Treatment studied | Estimated average weight loss at 72 weeks (% of starting weight) |\n| --- | --- |\n| Semaglutide, 1.7 or 2.4 mg weekly | 13.7% |\n| Tirzepatide, 10 or 15 mg weekly | 20.2% |\n\nTirzepatide produced the larger average reduction: a difference of 6.5 percentage points. The analysis accounted for participants who stopped their assigned treatment; these are estimated group averages, not individual targets or promises. [SURMOUNT-5 results](https://pubmed.ncbi.nlm.nih.gov/40353578/), [analysis definition](https://investor.lilly.com/node/52376)\n\nParticipants had obesity, or overweight with a weight-related health condition, and both groups received diet and physical-activity counseling. Eli Lilly, which makes tirzepatide, funded the trial. It was open-label, meaning participants and investigators knew which treatment was being used. [Study details](https://investor.lilly.com/node/52376)\n\nThe doses matter when interpreting the result. This trial did not compare tirzepatide with oral semaglutide or the newer 7.2 mg Wegovy injection. Those are different regimens included in current Wegovy labeling. The result answers the comparison that was tested. [Trial methods](https://pubmed.ncbi.nlm.nih.gov/40353578/), [current Wegovy information](https://www.novo-pi.com/wegovy.pdf)\n\n## Some differences show up in everyday treatment\n\nWegovy comes as a weekly injection or a daily tablet. The tablet has specific instructions about taking it on an empty stomach and waiting before eating, drinking, or taking other oral medicines. Zepbound is a weekly injection. A preference for tablets is worth discussing alongside the routine they require. [Wegovy information](https://www.novo-pi.com/wegovy.pdf), [Zepbound information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nOther health conditions can influence the conversation, too. Wegovy has an FDA-approved use to reduce the risk of cardiovascular death, heart attack, and stroke in adults with established cardiovascular disease and either overweight or obesity. [FDA cardiovascular approval](https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-reduce-risk-serious-heart-problems-specifically-adults-obesity-or)\n\nZepbound has an approved use for moderate to severe obstructive sleep apnea in adults with obesity. [FDA sleep-apnea approval](https://www.fda.gov/news-events/press-announcements/fda-approves-first-medication-obstructive-sleep-apnea)\n\nThose are examples of why a clinician looks beyond the weight-loss percentage. An approval for a particular condition also does not prove that one medicine is better than the other for every related health outcome.\n\n## Side effects belong in the comparison\n\nBoth medicines commonly cause nausea, vomiting, diarrhea, and constipation. Serious risks include pancreatitis, gallbladder problems, and kidney injury related to dehydration. Neither should be used by someone with a personal or family history of medullary thyroid cancer or with MEN 2, a rare inherited condition. A previous serious allergic reaction to a product's ingredients also rules that product out. [Wegovy safety information](https://www.novo-pi.com/wegovy.pdf), [Zepbound safety information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nOne specific difference concerns birth-control pills. Tirzepatide can reduce the effectiveness of oral hormonal contraceptives. Its label advises switching to a non-oral method or adding a barrier method for four weeks after starting and four weeks after each dose increase. Discuss that plan with the prescriber before treatment. [Zepbound contraception guidance](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## Choosing something you can continue\n\nThe decision also involves other medicines, pregnancy plans, cost, and follow-up. Insurance coverage varies, so checking your own plan is more useful than assuming one brand will be affordable. Weight-management treatment may continue long term when it is helping and its risks remain acceptable. [NIDDK treatment guidance](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity)\n\nBefore starting, ask what improvement you and your clinician are aiming for, how side effects will be handled, and what happens if the medicine becomes difficult to obtain or afford. Those answers help turn a comparison between two drugs into a workable plan for your care.\n",
+      "body_sha256": "fb5e25feb7359f2a7eedc1a9e1b70c8cdabbfdd48688b18371059676099ce5c2",
+      "metadata_sha256": "ea8e478244db8e5073632c13c299dc6d5f101cfa840942bb056d74a2f6614459"
+    },
+    {
+      "metadata": {
+        "article_id": "M3",
+        "slug": "what-is-retatrutide",
+        "title": "What Is Retatrutide, and Why Is It Getting Attention?",
+        "description": "What retatrutide is, what Phase 3 research shows, why headline weight-loss numbers differ, and what remains unknown about this investigational medicine.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight-Loss Medicines",
+        "tags": [
+          "retatrutide",
+          "triple agonist",
+          "clinical trials",
+          "weight-loss medication"
+        ],
+        "citations": [
+          {
+            "title": "What to know about retatrutide",
+            "url": "https://www.lilly.com/news/stories/what-to-know-about-retatrutide",
+            "type": "reference"
+          },
+          {
+            "title": "FDA concerns with unapproved GLP-1 drugs",
+            "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss",
+            "type": "reference"
+          },
+          {
+            "title": "LY3437943: discovery to clinical proof of concept",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35985340/",
+            "type": "reference"
+          },
+          {
+            "title": "Retatrutide, a Triple Hormone Receptor Agonist, for Treatment of Obesity",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42814954/",
+            "type": "reference"
+          },
+          {
+            "title": "TRIUMPH-1 results announcement",
+            "url": "https://www.prnewswire.com/news-releases/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss-in-pivotal-phase-3-obesity-trial-302778859.html",
+            "type": "reference"
+          },
+          {
+            "title": "TRIUMPH-5 results status",
+            "url": "https://clinicaltrials.gov/study/NCT06662383?intr=retatrutide&tab=results",
+            "type": "reference"
+          },
+          {
+            "title": "TRIUMPH-5 trial summary",
+            "url": "https://trials.lilly.com/en-US/trial/549215",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T01:05:05.080Z",
+        "updated_at": "2026-10-20T01:05:05.080Z",
+        "next_review_date": "2026-11-18T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T01:05:05.080Z",
+        "approved_at": "2026-10-20T01:05:05.080Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/research.png",
+            "alt": "Illustration of glass laboratory vessels with a microscope in the background.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "aa916a1ec34a5f2db62284fca3186fb195f24c5daf2c0b9814cbfb4665c7de8d"
+          },
+          "body": [
+            {
+              "src": "/images/editorial/care-conversation.png",
+              "alt": "Illustration of two women having a healthcare conversation at a table.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "4dc5755593417f42bf67ff7ce24e2e6da5510c63e5a53d25091a7230a0746322",
+              "before_heading": "What about retatrutide offered online?"
+            }
+          ]
+        }
+      },
+      "content": "# What Is Retatrutide, and Why Is It Getting Attention?\n\nRetatrutide is an experimental medicine being studied for obesity and other conditions. It has attracted attention for the amount of weight participants have lost in clinical trials and for an approach that acts on three hormone receptors. Eli Lilly, its developer, is studying it as a weekly injection. [Retatrutide overview](https://www.lilly.com/news/stories/what-to-know-about-retatrutide)\n\n**As of October 19, 2026, retatrutide is not FDA-approved.** Its research results can help us understand a possible future treatment, but there is no approved retatrutide prescription available today. [FDA guidance](https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)\n\n## What does “triple agonist” mean?\n\nHormones send signals by attaching to receptors on cells. An agonist is a substance that activates a receptor. Retatrutide is one molecule designed to activate receptors for three hormones: GLP-1, GIP, and glucagon. That is why researchers call it a triple agonist. You may also encounter the nickname “GLP-3,” but that is not its scientific classification. [How retatrutide is described](https://www.lilly.com/news/stories/what-to-know-about-retatrutide)\n\nThe glucagon component is part of the scientific interest. In early experiments in mice, retatrutide's effects included eating less and using more energy, with glucagon-receptor activity contributing to the energy-use effect. These findings helped explain the rationale for developing the medicine. They do not establish how much extra energy a person would use or prove that three targets must work better than two. [Original development research](https://pubmed.ncbi.nlm.nih.gov/35985340/)\n\nFor that, researchers need human trials that measure benefits and risks together.\n\n## The weight-loss results behind the attention\n\nThe Phase 3 TRIUMPH-1 study randomly assigned 2,339 adults without diabetes to retatrutide or placebo for 80 weeks. Participants had obesity or overweight with a weight-related condition. The trial was funded by Lilly, and its main report was published in the *New England Journal of Medicine* in September 2026. [Published study abstract](https://pubmed.ncbi.nlm.nih.gov/42814954/), [study population](https://www.prnewswire.com/news-releases/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss-in-pivotal-phase-3-obesity-trial-302778859.html)\n\nIn the analysis that accounted for participants regardless of whether they stayed on treatment, the highest-dose group, assigned 12 mg weekly, lost an estimated average of **25.0% of starting body weight**, compared with **3.9% with placebo**. The lower-dose groups also lost weight, with smaller average reductions. These are study results, not recommended doses or predictions for an individual. [TRIUMPH-1 results](https://pubmed.ncbi.nlm.nih.gov/42814954/)\n\nLosing roughly a quarter of starting weight explains why this research has drawn interest. Understanding the result also means looking at who was studied, how long treatment lasted, and which analysis produced the number.\n\n## Why some headlines say 28.3%\n\nLilly also reported a 28.3% average reduction for the highest-dose group, versus 2.2% with placebo, using a different analysis. It estimates what would happen if participants stayed on the study treatment without starting prohibited weight-management treatments. The 25.0% estimate counts outcomes regardless of whether participants discontinued the study medicine or started other weight-management treatments. [Lilly's results and analysis definitions](https://www.prnewswire.com/news-releases/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss-in-pivotal-phase-3-obesity-trial-302778859.html)\n\nBoth analyses can be informative. The difference is a reason to read beyond the largest number in a headline. Neither tells you what your own result would be.\n\n## Side effects are part of the result\n\nLilly reported nausea, diarrhea, constipation, and vomiting among the common adverse events in TRIUMPH-1. It also reported dysesthesia—unusual or unpleasant sensations, such as altered skin sensitivity. In the highest-dose group, 11.3% stopped treatment because of adverse events, compared with 4.9% receiving placebo. [Reported safety findings](https://www.prnewswire.com/news-releases/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss-in-pivotal-phase-3-obesity-trial-302778859.html)\n\nThose experiences matter alongside the average weight loss. A treatment's usefulness depends partly on whether people can continue it, and an encouraging trial cannot rule out every uncommon or long-term risk. Retatrutide's safety is still being evaluated; there is no FDA-approved prescribing label that settles its uses, precautions, and dosing. [Current development status](https://www.lilly.com/news/stories/what-to-know-about-retatrutide)\n\n## Is it better than tirzepatide?\n\nTRIUMPH-1 compared retatrutide with placebo. It did not test retatrutide against tirzepatide or semaglutide. Putting percentages from separate trials next to each other does not create a direct comparison: the participants, duration, doses, and analysis can differ. [TRIUMPH-1 design](https://pubmed.ncbi.nlm.nih.gov/42814954/)\n\nA separate trial, TRIUMPH-5, is comparing retatrutide with tirzepatide. When checked on October 19, 2026, its registry listed it as active, with enrollment closed and no results posted. That comparison is one of the developments to watch as the evidence grows. [TRIUMPH-5 registry](https://clinicaltrials.gov/study/NCT06662383?intr=retatrutide&tab=results)\n\n## What about retatrutide offered online?\n\nA website offering retatrutide does not mean it has become an approved treatment. FDA states that retatrutide cannot be used in compounding under federal law and warns against products sold to consumers under labels such as “for research purposes.” Their quality is unknown. [FDA guidance](https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)\n\nLilly says access to its investigational medicine is through its clinical trials. Participation depends on a study's eligibility requirements and whether it is recruiting. [Developer's access information](https://www.lilly.com/news/stories/what-to-know-about-retatrutide), [example trial requirements](https://trials.lilly.com/en-US/trial/549215)\n\nIf you are considering weight treatment now, a clinician can help you discuss the options already available and what fits your health history. Retatrutide is worth following as research develops. A future treatment possibility does not have to put today's care conversation on hold.\n",
+      "body_sha256": "1980e539e5a161a72ddf6d713d696762c74a28526fca549b4c8a0286d8783bca",
+      "metadata_sha256": "64a5ffe450d9955ad30ea81018eaec85ff1c82f2633339997458f01a4a67d19f"
+    },
+    {
+      "metadata": {
+        "article_id": "W1",
+        "slug": "why-weight-changes-day-to-day",
+        "title": "Why Your Weight Changes From Day to Day",
+        "description": "Understand why daily weight readings change, what a scale can tell you, and how to put the number in context.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Understanding Weight",
+        "tags": [
+          "weight fluctuations",
+          "water retention",
+          "understanding weight"
+        ],
+        "citations": [
+          {
+            "title": "7 Possible Reasons Why Your Weight Fluctuates",
+            "url": "https://health.clevelandclinic.org/weight-fluctuations",
+            "type": "reference"
+          },
+          {
+            "title": "Quantification of the effect of energy imbalance on bodyweight: supplementary appendix",
+            "url": "https://www.niddk.nih.gov/-/media/Files/BWP/Hall_Lancet_Web_Appendix.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "How to Record Your Weight",
+            "url": "https://www.england.nhs.uk/wp-content/uploads/2021/06/PRN00916-how-to-record-your-weight.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "The Best Time To Weigh Yourself (and How Often You Should Step on the Scale)",
+            "url": "https://health.clevelandclinic.org/when-is-the-best-time-to-weigh-yourself",
+            "type": "reference"
+          },
+          {
+            "title": "Weight gain – unintentional",
+            "url": "https://medlineplus.gov/ency/article/003084.htm",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T01:05:05.080Z",
+        "updated_at": "2026-10-20T01:05:05.080Z",
+        "next_review_date": "2027-04-17T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T01:05:05.080Z",
+        "approved_at": "2026-10-20T01:05:05.080Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/daily-weight.png",
+            "alt": "Illustration of a bathroom scale with its display off beside a stool and folded towels.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "979f684e9e0813d1bc32f37dea72b5a7ce2ea8dbcfd0673b78507e92b364eb2b"
+          },
+          "body": [
+            {
+              "src": "/images/editorial/everyday-meal.png",
+              "alt": "Illustration of a lunch plate with vegetables, chickpeas, grains and greens, beside yogurt and water.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "25929c1652e501c5f51a773408f5677344a94b39f90f9e9b70c44a7d7ab3d3dd",
+              "before_heading": "Make the comparison useful"
+            }
+          ]
+        }
+      },
+      "content": "# Why Your Weight Changes From Day to Day\n\nYou step on the scale and the number is higher than yesterday. Nothing about your routine feels different, so you start looking for an explanation. Was it dinner? Did something change without you noticing?\n\nA bathroom scale gives you a total. It cannot tell you how much of a change came from body fat, fluid, or food still being digested. Small daily shifts are common, and water retention often helps explain them. Understanding that makes a surprising reading easier to put in context. [Cleveland Clinic](https://health.clevelandclinic.org/weight-fluctuations)\n\n## What changes between readings\n\nFood and drink have weight while they move through your body. A reading after dinner includes what you have eaten and drunk that day; a morning reading is taken under different conditions. Digestion and constipation can also influence the number. These changes do not tell you, by themselves, how much body fat you have gained or lost. [Cleveland Clinic](https://health.clevelandclinic.org/weight-fluctuations)\n\nFluid adds another layer. Your body can temporarily hold more water after a salty meal, and fluid retention can occur around menstruation. That means the scale may rise even when the explanation has little to do with a change in body fat. [MedlinePlus](https://medlineplus.gov/ency/article/003084.htm), [Cleveland Clinic](https://health.clevelandclinic.org/weight-fluctuations)\n\nCarbohydrates can affect the reading, too, through a process that is easy to overlook. Your body stores some carbohydrate as glycogen, and that stored fuel is accompanied by water. When glycogen stores change, the associated water can change with them. Researchers account for these shifts when modeling the early stages of weight change after a change in diet. [NIH-hosted research appendix](https://www.niddk.nih.gov/-/media/Files/BWP/Hall_Lancet_Web_Appendix.pdf)\n\nThis helps explain why a quick drop after changing how you eat cannot automatically be counted as fat loss. Equally, a rebound does not tell you that the same amount of fat has returned. Those are conclusions a weight reading alone cannot support.\n\n## Make the comparison useful\n\nIf you choose to track your weight, give yourself a fair comparison. Use the same scale on a hard, level surface, at a similar time of day, wearing similar clothing. The NHS recommends consistent conditions, preferably in the morning. Comparing an evening reading in jeans with a morning reading in pajamas adds differences that have little to do with the trend you are trying to understand. [NHS weighing guide](https://www.england.nhs.uk/wp-content/uploads/2021/06/PRN00916-how-to-record-your-weight.pdf)\n\nWith those differences reduced, a series of readings can help you see a pattern that a single reading cannot. You do not need to interpret every rise as a setback or every fall as progress. The number also leaves out other things that may matter to you, such as having more energy or finding everyday movement easier. [Cleveland Clinic](https://health.clevelandclinic.org/when-is-the-best-time-to-weigh-yourself)\n\nWeighing should serve a purpose that makes sense for you. If it causes anxiety or becomes difficult to step away from, discuss another approach with a healthcare professional. If your care team has prescribed weight monitoring, follow their plan. [Cleveland Clinic](https://health.clevelandclinic.org/when-is-the-best-time-to-weigh-yourself)\n\n## When a change deserves attention\n\nKnowing that weight fluctuates should not mean dismissing an unexplained change. Rapid weight gain can sometimes reflect a medical problem involving fluid retention. Contact a healthcare professional about unexplained rapid gain, especially with swelling or shortness of breath. Tell them when it started and what else you have noticed; that context is more useful than trying to diagnose the cause from the scale. [MedlinePlus](https://medlineplus.gov/ency/article/003084.htm)\n",
+      "body_sha256": "472cae6d4df31caf1d9cd94505a2d9cc8337b355918527f57aba55fb9ff1e147",
+      "metadata_sha256": "397eb1e3856418a80c6cc061176e80dcf4bea121af7d0bbc29257b1069b3a2f7"
+    }
+  ]
 }

@@ -3,6 +3,7 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { exportArticle } from "../lib/editorial-export.ts"
 import { readPublishedCatalog } from "../lib/article-publication.ts"
+import { verifyArticleAssets } from "../lib/article-assets.ts"
 
 // Local preparation only. No git push, API call, or deployment operation.
 const args = process.argv.slice(2)
@@ -21,7 +22,9 @@ for (const filename of (await readdir(path.join(root, "records"))).filter((f) =>
   const bodyPath = await realpath(path.resolve(root, record.body_path))
   const relative = path.relative(root, bodyPath)
   if (relative.startsWith("..") || path.isAbsolute(relative)) throw new Error("Article body must stay inside the editorial workspace")
-  articles.push(exportArticle(record, await readFile(bodyPath, "utf8"), sources))
+  const article = exportArticle(record, await readFile(bodyPath, "utf8"), sources)
+  await verifyArticleAssets(article.metadata.visuals, path.join(website, "public"))
+  articles.push(article)
 }
 const catalog = { schema_version: 1, purpose: "publication", articles }
 readPublishedCatalog(catalog)
