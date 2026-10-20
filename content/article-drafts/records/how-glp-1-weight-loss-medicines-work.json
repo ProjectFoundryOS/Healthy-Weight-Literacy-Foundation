@@ -1,0 +1,42 @@
+{
+  "article_id": "M1",
+  "slug": "how-glp-1-weight-loss-medicines-work",
+  "title": "How GLP-1 Weight-Loss Medicines Work",
+  "description": "How GLP-1 medicines affect appetite, how semaglutide and tirzepatide differ, and what their benefits and limitations mean for treatment.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Weight-Loss Medicines",
+  "tags": [
+    "GLP-1",
+    "semaglutide",
+    "tirzepatide",
+    "weight-loss medication"
+  ],
+  "body_path": "articles/how-glp-1-weight-loss-medicines-work.md",
+  "draft_sha256": "c945427575c11312a65fabb115dc9558571b59a31bef140570edb5f5efee8fb4",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-18",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/everyday-meal.png",
+      "alt": "Illustration of a lunch plate with vegetables, chickpeas, grains and greens, beside yogurt and water.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "25929c1652e501c5f51a773408f5677344a94b39f90f9e9b70c44a7d7ab3d3dd",
+      "overlay": {
+        "title": "How GLP-1 medicines work"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/walking-dog.png",
+        "alt": "A woman walking her dog on a path beside a lake.",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "a72043393e1604dc51dad329f93f1f46901c2a7e0a8c233e8afdc126be6772b1",
+        "before_heading": "Treatment involves more than a prescription"
+      }
+    ]
+  }
+}

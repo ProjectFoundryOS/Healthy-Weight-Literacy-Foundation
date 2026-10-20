@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { formatDate } from "@/lib/utils"
 import { Clock, ArrowRight } from "lucide-react"
 import type { BlogPost } from "@/lib/article-types"
+import { ArticleCoverOverlay } from "@/components/content/article-cover-overlay"
 
 interface BlogCardProps {
   post: BlogPost
@@ -14,7 +15,7 @@ export function BlogCard({ post, eager = false }: BlogCardProps) {
   return (
     <article className="group bg-surface rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all">
       <Link href={`/blog/${post.slug}`} className="flex h-full flex-col">
-        {post.hero_image ? <div className="relative h-48 overflow-hidden">
+        {post.hero_image ? <div className={`relative overflow-hidden ${post.visuals?.hero.overlay ? "h-56" : "h-48"}`}>
           <Image
             src={post.hero_image}
             alt={post.visuals?.hero.alt ?? post.title}
@@ -23,14 +24,14 @@ export function BlogCard({ post, eager = false }: BlogCardProps) {
             sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1023px) 50vw, 400px"
             className="object-cover object-top transition-transform group-hover:scale-105"
           />
-          <div className="absolute top-4 left-4">
+          {post.visuals?.hero.overlay ? <ArticleCoverOverlay overlay={post.visuals.hero.overlay} compact /> : <div className="absolute top-4 left-4">
             <Badge variant="secondary" className="bg-white text-[#222222] font-medium shadow-sm border-0">
               {post.category}
             </Badge>
-          </div>
+          </div>}
         </div> : null}
         <div className="p-6 flex flex-1 flex-col">
-          {!post.hero_image ? <Badge variant="secondary" className="mb-5 self-start">{post.category}</Badge> : null}
+          {!post.hero_image || post.visuals?.hero.overlay ? <Badge variant="secondary" className="mb-3 self-start">{post.category}</Badge> : null}
           <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
             <span>{post.draft_preview ? "Draft preview" : formatDate(post.published_at)}</span>
             <span className="flex items-center gap-1">

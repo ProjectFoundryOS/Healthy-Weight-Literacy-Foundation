@@ -1,0 +1,40 @@
+{
+  "article_id": "W2",
+  "slug": "why-weight-loss-slows-down",
+  "title": "Why Has My Weight Loss Slowed Down?",
+  "description": "Why weight loss can level off, what a plateau can and cannot tell you, and what to review with your care team.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Understanding Weight",
+  "tags": [
+    "weight plateau",
+    "weight management"
+  ],
+  "body_path": "articles/why-weight-loss-slows-down.md",
+  "draft_sha256": "0cad67661cc23614645603413ccd27422b38f672121c5e039131ca920953435a",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-19",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/measure-and-scale-cover.png",
+      "alt": "A loosely coiled measuring tape beside a bathroom scale with its display off.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e229e86ed64fef9757628b7999452af6c41fb4572ec1bab61e43ee8a58b71099",
+      "overlay": {
+        "title": "When weight loss slows"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/progress-notebook.png",
+        "alt": "A woman reflecting over a notebook at her kitchen table.",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "90eb1f35fe6b7d2850084f0b88718df6447b46c5c692f0992218e3af7979fe2f",
+        "before_heading": "Review what has changed in ordinary life"
+      }
+    ]
+  }
+}

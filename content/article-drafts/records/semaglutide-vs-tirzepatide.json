@@ -1,0 +1,48 @@
+{
+  "article_id": "M2",
+  "slug": "semaglutide-vs-tirzepatide",
+  "title": "Semaglutide vs. Tirzepatide: What’s the Difference?",
+  "description": "Understand the brand names, direct comparison research, side effects, and practical differences between semaglutide and tirzepatide for weight management.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Weight-Loss Medicines",
+  "tags": [
+    "semaglutide",
+    "tirzepatide",
+    "Wegovy",
+    "Zepbound",
+    "weight-loss medication"
+  ],
+  "body_path": "articles/semaglutide-vs-tirzepatide.md",
+  "draft_sha256": "fb5e25feb7359f2a7eedc1a9e1b70c8cdabbfdd48688b18371059676099ce5c2",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-18",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/care-conversation.png",
+      "alt": "Illustration of two women having a healthcare conversation at a table.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "4dc5755593417f42bf67ff7ce24e2e6da5510c63e5a53d25091a7230a0746322",
+      "overlay": {
+        "title": "Semaglutide vs. tirzepatide",
+        "subtitle": "Wegovy & Zepbound"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/surmount-5-weight-change.png",
+        "alt": "SURMOUNT-5 chart: average weight loss at 72 weeks was 13.7 percent with semaglutide and 20.2 percent with tirzepatide. Error bars show 95 percent confidence intervals. Trial regimens and population are stated in the article.",
+        "width": 1600,
+        "height": 1100,
+        "source": {
+          "title": "SURMOUNT-5 study",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/"
+        },
+        "before_heading": "Some differences show up in everyday treatment",
+        "sha256": "ac195e7e663f1f27a307c1647a8f7e1a8da2d9fb177022f4306af7406348e9d8"
+      }
+    ]
+  }
+}

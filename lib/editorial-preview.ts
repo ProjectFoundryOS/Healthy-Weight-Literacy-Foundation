@@ -31,11 +31,17 @@ export async function readDraftPreview(env: NodeJS.ProcessEnv = process.env): Pr
   const root = await realpath(env.HWLF_EDITORIAL_PREVIEW_DIR!)
   const manifest = z.object({
     article_slugs: z.array(slug).min(1),
+    record_paths: z.record(slug, z.string().regex(/^revisions\/[a-z0-9-]+\/[a-z0-9-]+\.json$/)).optional(),
   }).strict()
     .parse(JSON.parse(await readInside(root, "preview.json")))
   if (new Set(manifest.article_slugs).size !== manifest.article_slugs.length) throw new Error("Duplicate preview slug")
+  if (Object.keys(manifest.record_paths ?? {}).some((key) => !manifest.article_slugs.includes(key))) {
+    throw new Error("Preview revision must belong to the selected collection")
+  }
   return Promise.all(manifest.article_slugs.map(async (selectedSlug): Promise<Article> => {
-    const record = recordSchema.parse(JSON.parse(await readInside(root, `records/${selectedSlug}.json`)))
+    // A visual revision can be reviewed without altering an approved record.
+    const recordPath = manifest.record_paths?.[selectedSlug] ?? `records/${selectedSlug}.json`
+    const record = recordSchema.parse(JSON.parse(await readInside(root, recordPath)))
     if (record.slug !== selectedSlug || record.body_path !== `articles/${selectedSlug}.md`) {
       throw new Error(`Preview record does not match selection: ${selectedSlug}`)
     }

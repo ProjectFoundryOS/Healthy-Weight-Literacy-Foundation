@@ -1,0 +1,42 @@
+{
+  "article_id": "M11",
+  "slug": "glp-1-pills-vs-injections",
+  "title": "GLP-1 Pills vs. Injections: What’s Different?",
+  "description": "Compare the routines and precautions of oral and injectable GLP-1-based medicines, including Wegovy and Foundayo.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Weight-Loss Medicines",
+  "tags": [
+    "oral GLP-1",
+    "Wegovy",
+    "Foundayo",
+    "treatment options"
+  ],
+  "body_path": "articles/glp-1-pills-vs-injections.md",
+  "draft_sha256": "4f0afd65bef83a69718b8e4c6eea935f339cf5c5c0d784429f9ecd7b31d5657e",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-19",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/medicine-options.png",
+      "alt": "An unbranded tablet blister pack and capped injection pen on a tabletop.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "79893b6b7d71981234f389994b8c7ed61068101c7a5946ae1d83fc4d5121ab2a",
+      "overlay": {
+        "title": "GLP-1 pills vs. injections"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/morning-water.png",
+        "alt": "A glass of water beside an analog clock in morning light.",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "8b4d13ea1e65b66e6431f372182505fda48c4e3408a81e1fc4ebe732f767988c",
+        "before_heading": "A morning routine can become part of treatment"
+      }
+    ]
+  }
+}

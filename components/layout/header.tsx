@@ -16,6 +16,7 @@ const navigation = [
   { name: "About", href: ROUTES.ABOUT },
   { name: "Programs", href: ROUTES.PROGRAMS },
   { name: "Education", href: ROUTES.EDUCATION },
+  { name: "Articles", href: ROUTES.BLOG },
   { name: "City Resources", href: ROUTES.CITY_RESOURCES },
   { name: "Contact", href: ROUTES.CONTACT },
 ]
@@ -57,11 +58,12 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex lg:items-center lg:gap-x-6">
+        <div className="hidden lg:flex lg:items-center lg:gap-x-3 xl:gap-x-6">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
+              aria-current={pathname === item.href ? "page" : undefined}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded px-2 py-1",
                 pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href + "/"))
@@ -120,9 +122,12 @@ export function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
+                      aria-current={pathname === item.href ? "page" : undefined}
                       className={cn(
                         "block text-lg font-medium transition-colors hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded px-2 py-1",
-                        pathname === item.href ? "text-primary" : "text-secondary",
+                        pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href + "/"))
+                          ? "text-primary"
+                          : "text-secondary",
                       )}
                       onClick={() => setIsOpen(false)}
                     >

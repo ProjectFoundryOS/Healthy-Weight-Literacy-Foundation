@@ -1,0 +1,41 @@
+{
+  "article_id": "W4",
+  "slug": "insulin-resistance-explained",
+  "title": "Insulin Resistance, Explained Without the Jargon",
+  "description": "A plain-language explanation of insulin resistance, prediabetes, A1C testing, and conversations about prevention.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Metabolic Health",
+  "tags": [
+    "insulin resistance",
+    "prediabetes",
+    "blood glucose"
+  ],
+  "body_path": "articles/insulin-resistance-explained.md",
+  "draft_sha256": "b05f0edd8c0988d22028d255dabd7826504c751c1c2026e5b027b059dd2e9a58",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-19",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/metabolic-lab.png",
+      "alt": "A laboratory worker handling a capped blood sample tube beside a rack.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "33107cd03d724baa9beb08b279cd45e118ab5b9a71f423b5bd63385453c6cf45",
+      "overlay": {
+        "title": "Insulin resistance"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/neighborhood-walk.png",
+        "alt": "Two friends talking while walking along a tree-lined neighborhood sidewalk.",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "71031a1bd7d882b150b92a2948983f054f9c1f822036417032e2429af919d574",
+        "before_heading": "A useful response is broader than cutting out sugar"
+      }
+    ]
+  }
+}

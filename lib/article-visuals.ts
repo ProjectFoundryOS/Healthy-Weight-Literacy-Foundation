@@ -9,16 +9,26 @@ export const articleVisualSchema = z.object({
   source: z.object({ title: z.string().min(1), url: z.string().url().startsWith("https://") }).optional(),
 }).strict()
 
+export const articleCoverOverlaySchema = z.object({
+  title: z.string().min(1).max(64),
+  subtitle: z.string().min(1).max(80).optional(),
+  attribution: z.object({
+    label: z.string().min(1).max(40),
+    logo: articleVisualSchema,
+  }).strict().optional(),
+}).strict()
+
 export const articleVisualSetSchema = z.object({
-  hero: articleVisualSchema,
+  hero: articleVisualSchema.extend({ overlay: articleCoverOverlaySchema.optional() }),
   body: z.array(articleVisualSchema.extend({ before_heading: z.string().min(1) })),
 }).strict()
 
 export type ArticleVisual = z.infer<typeof articleVisualSchema>
+export type ArticleCoverOverlay = z.infer<typeof articleCoverOverlaySchema>
 export type ArticleVisualSet = z.infer<typeof articleVisualSetSchema>
 
 export function articleImages(visuals?: ArticleVisualSet): ArticleVisual[] {
-  return visuals ? [visuals.hero, ...visuals.body] : []
+  return visuals ? [visuals.hero, ...visuals.body, ...(visuals.hero.overlay?.attribution ? [visuals.hero.overlay.attribution.logo] : [])] : []
 }
 
 /** A renamed or ambiguous section must not silently lose an approved image. */

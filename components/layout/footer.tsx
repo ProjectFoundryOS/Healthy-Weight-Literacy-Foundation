@@ -9,6 +9,7 @@ const footerNavigation = {
     { name: "About", href: ROUTES.ABOUT },
     { name: "Programs", href: ROUTES.PROGRAMS },
     { name: "Education", href: ROUTES.EDUCATION },
+    { name: "Articles", href: ROUTES.BLOG },
     { name: "City Resources", href: ROUTES.CITY_RESOURCES },
   ],
   legal: [

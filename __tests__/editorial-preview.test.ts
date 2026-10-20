@@ -8,6 +8,39 @@ import { isEditorialPreview } from "../lib/editorial-preview-mode.mjs"
 import { readDraftPreview } from "../lib/editorial-preview.ts"
 import { resolveArticleCatalog } from "../lib/article-publication.ts"
 
+it("previews a draft revision without changing the approved record and rejects invalid revision paths", async () => {
+  const root = await mkdtemp(join(tmpdir(), "hwlf-revision-"))
+  try {
+    await mkdir(join(root, "records")); await mkdir(join(root, "articles"))
+    await mkdir(join(root, "revisions/visuals"), { recursive: true })
+    const content = "# Sample\n\nExisting article text.\n"
+    const record = {
+      article_id: "SAMPLE", slug: "sample", title: "Sample", description: "Visual revision",
+      body_path: "articles/sample.md", draft_sha256: createHash("sha256").update(content).digest("hex"),
+      status: "draft", publish: false, created_on: "2026-10-19", updated_on: "2026-10-20",
+      category: "Test", tags: [], private_notes: "PRIVATE VISUAL REVIEW",
+    }
+    await writeFile(join(root, "records/sample.json"), JSON.stringify({ ...record, status: "approved", publish: true }))
+    await writeFile(join(root, "articles/sample.md"), content)
+    await writeFile(join(root, "revisions/visuals/sample.json"), JSON.stringify(record))
+    const manifest = { article_slugs: ["sample"], record_paths: { sample: "revisions/visuals/sample.json" } }
+    await writeFile(join(root, "preview.json"), JSON.stringify(manifest))
+    const env = { NODE_ENV: "development", HWLF_EDITORIAL_PREVIEW_DIR: root }
+    const [post] = await readDraftPreview(env)
+    assert.equal(post.content, content)
+    assert.equal(post.is_published, false)
+    assert.ok(!JSON.stringify(post).includes("PRIVATE VISUAL REVIEW"))
+    await writeFile(join(root, "revisions/visuals/sample.json"), JSON.stringify({ ...record, slug: "other" }))
+    await assert.rejects(readDraftPreview(env), /does not match/)
+    await writeFile(join(root, "preview.json"), JSON.stringify({ ...manifest, record_paths: { sample: "../outside.json" } }))
+    await assert.rejects(readDraftPreview(env))
+    await writeFile(join(root, "preview.json"), JSON.stringify({ ...manifest, record_paths: { other: "revisions/visuals/sample.json" } }))
+    await assert.rejects(readDraftPreview(env), /selected collection/)
+  } finally {
+    await rm(root, { recursive: true, force: true })
+  }
+})
+
 it("keeps drafts unavailable by default and refuses hosted or production preview settings", async () => {
   assert.equal(isEditorialPreview({}), false)
   for (const overrides of [{ NODE_ENV: "production" }, { VERCEL: "1" }, { CI: "true" }]) {

@@ -118,8 +118,8 @@ export default function RootLayout({
         <Header />
         {editorialPreview ? (
           <div className="border-b border-amber-200 bg-amber-50 px-4 py-3 text-center text-sm text-amber-950">
-            <strong>Article preview</strong> · Unpublished drafts
-            <Link href="/blog" className="ml-3 font-semibold underline underline-offset-4">Browse all five articles</Link>
+            <strong>Local article preview</strong> · Drafts are marked below
+            <Link href="/blog" className="ml-3 font-semibold underline underline-offset-4">Browse all articles</Link>
           </div>
         ) : null}
         <main id="main-content" className="flex-1">

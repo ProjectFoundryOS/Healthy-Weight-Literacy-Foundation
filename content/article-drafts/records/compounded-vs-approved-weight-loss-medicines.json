@@ -1,0 +1,41 @@
+{
+  "article_id": "M10",
+  "slug": "compounded-vs-approved-weight-loss-medicines",
+  "title": "Compounded vs. FDA-Approved Weight-Loss Medicines",
+  "description": "Understand compounding, FDA approval, pharmacy checks, dosing concerns, and retatrutide’s current status.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Weight-Loss Medicines",
+  "tags": [
+    "compounded medicines",
+    "FDA approval",
+    "medication safety"
+  ],
+  "body_path": "articles/compounded-vs-approved-weight-loss-medicines.md",
+  "draft_sha256": "01438ef77e6a6873aa7a0e03704a9c92ad5b1c5ae69752c84ef11a4c65721edf",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-19",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/pharmacy-care.png",
+      "alt": "A pharmacist and customer talking across a pharmacy counter with a plain paper bag.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "036a026981ef500b1f326832d3e546a94f86fcad55f7329d54f2dd9689487f3f",
+      "overlay": {
+        "title": "Compounded vs. approved"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/pharmacy-package-check.png",
+        "alt": "A woman holding a plain pharmacy bag and reading a leaflet.",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "24f6a1fdb56bf8a422e43653c5174689c110e94bcf49a4e44901f809459a3020",
+        "before_heading": "Check who actually prepared and dispensed it"
+      }
+    ]
+  }
+}

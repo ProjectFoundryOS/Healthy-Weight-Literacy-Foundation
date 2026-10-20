@@ -1,0 +1,46 @@
+{
+  "article_id": "M4",
+  "slug": "before-starting-glp-1-medicine",
+  "title": "What to Know Before Starting a GLP-1 Medicine",
+  "description": "A practical guide to the health history, pregnancy planning, side effects, nutrition, costs, and follow-up to discuss before starting GLP-1-based weight treatment.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Weight-Loss Medicines",
+  "tags": [
+    "GLP-1",
+    "starting treatment",
+    "weight-loss medication",
+    "patient preparation"
+  ],
+  "body_path": "articles/before-starting-glp-1-medicine.md",
+  "draft_sha256": "6c592041cab69a0c8cc6ddcdd2cdd32930b4a2297b280ea12d51382338ee7118",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-19",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/appointment-planner-cover.png",
+      "alt": "An open notebook, pen, reading glasses, and water arranged for appointment preparation.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "ffd642899fb68618eeb1896ebe5d1576caeb9b356617efec63cf44556b471f6c",
+      "overlay": {
+        "title": "Before your first GLP-1"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/glp-1-appointment-guide.png",
+        "alt": "Appointment guide: discuss health history and pregnancy plans, medicines and supplements, how to use and store the exact product, side effects, contacts, follow-up, and cost.",
+        "width": 1000,
+        "height": 1060,
+        "sha256": "a046c3b910f6d275bb323f0e2f584e6f193f1d1ab532a07cf4b069d089fd63c0",
+        "before_heading": "The first dose is the beginning of a process",
+        "source": {
+          "title": "NIDDK: prescription weight-management medicines",
+          "url": "https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity"
+        }
+      }
+    ]
+  }
+}
