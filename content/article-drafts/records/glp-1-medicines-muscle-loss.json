@@ -1,0 +1,45 @@
+{
+  "article_id": "M6",
+  "slug": "glp-1-medicines-muscle-loss",
+  "title": "Do GLP-1 Medicines Cause Muscle Loss?",
+  "description": "What lean-mass findings do and do not tell us about muscle, plus food, strength, and follow-up during weight treatment.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Weight-Loss Medicines",
+  "tags": [
+    "GLP-1",
+    "muscle",
+    "strength"
+  ],
+  "body_path": "articles/glp-1-medicines-muscle-loss.md",
+  "draft_sha256": "938b5dfcbc5c125fe84e4b8b40a0613f583873338870bbc198642a3795b12af8",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-19",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/strength-tools-cover.png",
+      "alt": "Two teal dumbbells, a sage resistance band, and a folded exercise towel.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "3bd5c12608fb722eb30fe45dec27d33b881d0cfaab4fd8fe95397cd08d830b42",
+      "overlay": {
+        "title": "GLP-1 & muscle"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/lean-mass-explained.png",
+        "alt": "A DXA scan separates fat mass, lean soft tissue, and bone mineral. Lean tissue includes muscle, water, and other nonfat soft tissues. A scan does not directly measure strength changes.",
+        "width": 1000,
+        "height": 1015,
+        "sha256": "4d7c78fe5f0b6c72bff3513505c3e8b90a47d72f6745262de8379a35c9e65dd6",
+        "before_heading": "What one tirzepatide study found",
+        "source": {
+          "title": "SURMOUNT-1 body-composition study",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11965027/"
+        }
+      }
+    ]
+  }
+}

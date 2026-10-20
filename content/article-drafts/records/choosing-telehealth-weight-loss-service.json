@@ -1,0 +1,41 @@
+{
+  "article_id": "M9",
+  "slug": "choosing-telehealth-weight-loss-service",
+  "title": "How to Choose a Telehealth Weight-Loss Service",
+  "description": "How to assess a telehealth service’s clinician, pharmacy, medicine, total cost, and ongoing care before signing up.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Weight-Loss Medicines",
+  "tags": [
+    "telehealth",
+    "patient questions",
+    "access to care"
+  ],
+  "body_path": "articles/choosing-telehealth-weight-loss-service.md",
+  "draft_sha256": "4917bed6ed020dead1299e7a70e1d5820798d29626a5e4845082d63db94e86c3",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-19",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/telehealth-conversation.png",
+      "alt": "A woman speaking with a clinician through a laptop video appointment.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "5e44df88425c492e9a28f7dad2e6d7cf206b88cb8f02751582b90e8d977ac2b5",
+      "overlay": {
+        "title": "Choosing telehealth care"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/telehealth-followup.png",
+        "alt": "A closed laptop, headset, notebook, and water on a desk.",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "0367aa1c78b47e361e006fb89a3b40feb883f4e91b565e5508224e4717767604",
+        "before_heading": "Follow-up should be easy to describe"
+      }
+    ]
+  }
+}

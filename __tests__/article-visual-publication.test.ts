@@ -4,7 +4,7 @@ import { createHash } from "node:crypto"
 import { mkdtemp, mkdir, writeFile, rm, symlink } from "node:fs/promises"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
-import { articleSections, articleVisualSetSchema } from "../lib/article-visuals.ts"
+import { articleSections, articleVisualSetSchema, articleImages } from "../lib/article-visuals.ts"
 import { verifyArticleAssets } from "../lib/article-assets.ts"
 import { digest, metadataDigest, readPublishedCatalog, validatePublishedEntry } from "../lib/article-publication.ts"
 import { exportArticle } from "../lib/editorial-export.ts"
@@ -15,6 +15,35 @@ import { editorialFixture } from "./fixtures/publication.ts"
 const bytes = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl2n0kAAAAASUVORK5CYII=", "base64")
 const image = { src: "/images/editorial/test.png", alt: "Test image", width: 1, height: 1, sha256: createHash("sha256").update(bytes).digest("hex") }
 const visuals = { hero: image, body: [{ ...image, before_heading: "Image placement check" }] }
+
+it("binds cover wording and attributed logo bytes to publication approval", async () => {
+  const logo = { ...image, src: "/images/editorial/brand.png", alt: "Brand" }
+  const cover = { ...visuals, hero: { ...image, overlay: { title: "A useful cover", subtitle: "Context", attribution: { label: "Developer", logo } } } }
+  const { entry, record, sources } = editorialFixture(cover)
+  const exported = exportArticle(record, entry.content, sources)
+  assert.deepEqual(exported.metadata.visuals?.hero.overlay, cover.hero.overlay)
+  for (const field of ["title", "subtitle", "label", "logo"] as const) {
+    const changed = structuredClone(record)
+    const overlay = changed.visuals!.hero.overlay!
+    if (field === "title" || field === "subtitle") overlay[field] = "Changed wording"
+    else if (field === "label") overlay.attribution!.label = "Changed attribution"
+    else overlay.attribution!.logo.sha256 = "a".repeat(64)
+    assert.throws(() => exportArticle(changed, entry.content, sources), /integrity/)
+  }
+  assert.deepEqual(articleImages(cover).map(v => v.src), [image.src, image.src, logo.src])
+  const root = await mkdtemp(join(tmpdir(), "hwlf-cover-"))
+  try {
+    await mkdir(join(root, "images/editorial"), { recursive: true })
+    await writeFile(join(root, "images/editorial/test.png"), bytes)
+    await assert.rejects(verifyArticleAssets(cover, root), /ENOENT/)
+    await writeFile(join(root, "images/editorial/brand.png"), bytes)
+    await verifyArticleAssets(cover, root)
+    await writeFile(join(root, "images/editorial/brand.png"), "changed logo")
+    await assert.rejects(verifyArticleAssets(cover, root), /Image integrity/)
+  } finally { await rm(root, { recursive: true, force: true }) }
+  assert.equal(articleVisualSetSchema.safeParse({ ...cover, body: [{ ...cover.hero, before_heading: "Image placement check" }] }).success, false)
+  assert.equal(articleVisualSetSchema.safeParse({ ...cover, hero: { ...cover.hero, overlay: { title: "x".repeat(65) } } }).success, false)
+})
 
 it("carries approved images from the editorial record through the public catalog and section renderer", () => {
   const { entry, record, sources } = editorialFixture(visuals)

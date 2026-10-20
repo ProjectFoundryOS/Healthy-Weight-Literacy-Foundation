@@ -1,0 +1,45 @@
+{
+  "article_id": "W1",
+  "slug": "why-weight-changes-day-to-day",
+  "title": "Why Your Weight Changes From Day to Day",
+  "description": "Understand why daily weight readings change, what a scale can tell you, and how to put the number in context.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Understanding Weight",
+  "tags": [
+    "weight fluctuations",
+    "water retention",
+    "understanding weight"
+  ],
+  "body_path": "articles/why-weight-changes-day-to-day.md",
+  "draft_sha256": "472cae6d4df31caf1d9cd94505a2d9cc8337b355918527f57aba55fb9ff1e147",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-18",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/daily-weight.png",
+      "alt": "Illustration of a bathroom scale with its display off beside a stool and folded towels.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "979f684e9e0813d1bc32f37dea72b5a7ce2ea8dbcfd0673b78507e92b364eb2b",
+      "overlay": {
+        "title": "Why weight fluctuates"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/weight-reading-pattern.png",
+        "alt": "Invented teaching example, not patient or trial data: seven readings are 180.0, 181.0, 179.8, 180.6, 179.7, 180.4, and 180.1 pounds. It illustrates fluctuation, not an expected range, target, or weighing schedule.",
+        "width": 1200,
+        "height": 1050,
+        "sha256": "50c9a5486d49b0d71a6c140003073f877e8c6255f292676d93f29f5e7266b1e6",
+        "before_heading": "Make the comparison useful",
+        "source": {
+          "title": "NHS: consistent conditions for recording weight",
+          "url": "https://www.england.nhs.uk/wp-content/uploads/2021/06/PRN00916-how-to-record-your-weight.pdf"
+        }
+      }
+    ]
+  }
+}

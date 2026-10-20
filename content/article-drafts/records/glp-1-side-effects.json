@@ -1,0 +1,41 @@
+{
+  "article_id": "M8",
+  "slug": "glp-1-side-effects",
+  "title": "GLP-1 Side Effects: What’s Common and When to Get Help",
+  "description": "How to distinguish common digestive symptoms from warning signs that call for prompt or emergency medical help.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Weight-Loss Medicines",
+  "tags": [
+    "GLP-1",
+    "side effects",
+    "treatment safety"
+  ],
+  "body_path": "articles/glp-1-side-effects.md",
+  "draft_sha256": "b8a3198d711316584cdb3130a40138ff0318ab6879b7aed0cd65d5baeae6109a",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-19",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/side-effects-rest.png",
+      "alt": "A woman in a blue cardigan resting on a sofa with water nearby.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e5550aec4c11cdb2c36cde9721e4112fbb3f0871ba40394bf1dc4b2b8f5005c8",
+      "overlay": {
+        "title": "GLP-1 side effects"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/hydration-pause.png",
+        "alt": "A glass of water and two crackers on a bedside table.",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "d8416521ef79e50474bcc149de6d33cb868f3c22f85e54ae352341e920ba6033",
+        "before_heading": "Symptoms that need prompt medical attention"
+      }
+    ]
+  }
+}

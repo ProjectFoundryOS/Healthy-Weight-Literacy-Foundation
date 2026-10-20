@@ -104,7 +104,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px]">
             {/* Main Content */}
             <div className="min-w-0">
-              {post.visuals ? <ArticleFigure visual={post.visuals.hero} priority /> : post.hero_image ? (
+              {post.visuals ? <ArticleFigure visual={post.visuals.hero} overlay={post.visuals.hero.overlay} priority /> : post.hero_image ? (
                 <Image src={post.hero_image} alt={post.title} width={1200} height={600} className="rounded-2xl shadow-card mb-8 w-full h-auto" priority />
               ) : null}
 

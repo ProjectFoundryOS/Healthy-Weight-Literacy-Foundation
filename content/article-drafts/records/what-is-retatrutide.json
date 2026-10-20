@@ -1,0 +1,61 @@
+{
+  "article_id": "M3",
+  "slug": "what-is-retatrutide",
+  "title": "What Is Retatrutide, and Why Is It Getting Attention?",
+  "description": "What retatrutide is, what Phase 3 research shows, why headline weight-loss numbers differ, and what remains unknown about this investigational medicine.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Weight-Loss Medicines",
+  "tags": [
+    "retatrutide",
+    "triple agonist",
+    "clinical trials",
+    "weight-loss medication"
+  ],
+  "body_path": "articles/what-is-retatrutide.md",
+  "draft_sha256": "1980e539e5a161a72ddf6d713d696762c74a28526fca549b4c8a0286d8783bca",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-18",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/research.png",
+      "alt": "Illustration of glass laboratory vessels with a microscope in the background.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "aa916a1ec34a5f2db62284fca3186fb195f24c5daf2c0b9814cbfb4665c7de8d",
+      "overlay": {
+        "title": "Retatrutide explained",
+        "subtitle": "Research & the triple agonist",
+        "attribution": {
+          "label": "Developer",
+          "logo": {
+            "src": "/images/editorial/lilly-logo-official.png",
+            "alt": "Lilly",
+            "width": 360,
+            "height": 193,
+            "sha256": "3dcc414fe0a4cdb093b9780ad7564e67cdf1ab1e1e0d0fe7f74d189201db5999",
+            "source": {
+              "title": "Official Lilly website logo",
+              "url": "https://www.lilly.com/"
+            }
+          }
+        }
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/retatrutide-receptor-map.png",
+        "alt": "Retatrutide is one investigational molecule activating GLP-1, GIP, and glucagon receptors. The diagram describes its targets; clinical trials assess benefits and risks.",
+        "width": 1000,
+        "height": 985,
+        "sha256": "6508a556fa07a4966fde9c805e7ce396833ad08e38f4bd49338c5b0d83048e43",
+        "before_heading": "The weight-loss results behind the attention",
+        "source": {
+          "title": "Lilly: What to know about retatrutide",
+          "url": "https://www.lilly.com/news/stories/what-to-know-about-retatrutide"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "article_id": "M5",
+  "slug": "what-to-eat-on-glp-1",
+  "title": "What Should You Eat When a GLP-1 Makes You Less Hungry?",
+  "description": "Practical ways to eat well with a smaller appetite, manage meals and fluids, and recognize when low intake needs support.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Nutrition Education",
+  "tags": [
+    "GLP-1",
+    "nutrition",
+    "appetite"
+  ],
+  "body_path": "articles/what-to-eat-on-glp-1.md",
+  "draft_sha256": "2e2402e5862465070aa3862f578eabca4c21053b094f0cbc370fe621f6cc6f8d",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-19",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/small-meal.png",
+      "alt": "Lentil soup, bread, yogurt, fruit, and water arranged on a kitchen table.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "214cf72096a4ef7d4762f6ed19e538ca94d1b9b337c7d001289a0029e40efe04",
+      "overlay": {
+        "title": "GLP-1 & everyday eating"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/simple-meal-prep.png",
+        "alt": "Containers of chicken, beans, rice, and vegetables on a kitchen worktop.",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "705d32060cd0ff26ee92548be99e7ef692cb08faa961aa2da4f1b7a9c410946a",
+        "before_heading": "Give protein a place without making it the whole meal"
+      }
+    ]
+  }
+}

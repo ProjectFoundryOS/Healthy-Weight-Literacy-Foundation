@@ -1,0 +1,41 @@
+{
+  "article_id": "W3",
+  "slug": "what-is-food-noise",
+  "title": "What Is “Food Noise,” and Why Do People Talk About It?",
+  "description": "What people mean by food noise, what researchers are studying, and why hunger, distress, and binge eating differ.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Understanding Weight",
+  "tags": [
+    "food noise",
+    "appetite",
+    "eating behavior"
+  ],
+  "body_path": "articles/what-is-food-noise.md",
+  "draft_sha256": "a5601305a9b577ca7a551c38ca4b29592ba8003f2683b5d91a02c7bd9879108b",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-19",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/food-thoughts-cover.png",
+      "alt": "A paper-cut illustration of a plate surrounded by speech bubbles and flowing ribbons.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "911e46973558f08a79416e2aa57f21e0e152b7872925cfbf3d85ee67830e8138",
+      "overlay": {
+        "title": "What is food noise?"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/food-market.png",
+        "alt": "A man choosing a pear at an outdoor produce market.",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "ad14155b42df335edae88938ae03dd20509102e7d709fa9adfee8bb9356c6905",
+        "before_heading": "Hunger, enjoyment, and distress are different"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "article_id": "M7",
+  "slug": "stopping-glp-1-medicine",
+  "title": "What Happens When You Stop a GLP-1 Medicine?",
+  "description": "What semaglutide and tirzepatide withdrawal studies show about regain, and how to plan a treatment transition.",
+  "author": "Healthy Weight Literacy Foundation",
+  "category": "Weight-Loss Medicines",
+  "tags": [
+    "GLP-1",
+    "weight maintenance",
+    "weight regain"
+  ],
+  "body_path": "articles/stopping-glp-1-medicine.md",
+  "draft_sha256": "7417871cafb9b5a7298edc72569aa8db67111df5c5d087273774dc58bedb0fe4",
+  "status": "draft",
+  "publish": false,
+  "created_on": "2026-10-19",
+  "updated_on": "2026-10-20",
+  "visuals": {
+    "hero": {
+      "src": "/images/editorial/transition-walk.png",
+      "alt": "A woman in a rust-colored jacket walking beside a river in autumn.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "ac6420b0dfa5b72507e817344d7c2343f4bdd5cac90e695609e1bb2ee47ade50",
+      "overlay": {
+        "title": "Stopping a GLP-1"
+      }
+    },
+    "body": [
+      {
+        "src": "/images/editorial/surmount-4-withdrawal.png",
+        "alt": "SURMOUNT-4: over weeks 36 to 88, mean weight change was minus 5.5% continuing tirzepatide and plus 14.0% switching to placebo, relative to week-36 weight. Whiskers show 95% confidence intervals.",
+        "width": 1600,
+        "height": 1100,
+        "sha256": "20ced4af3b56b45e24e72af3c25d6201d96f28b08e052778054138f1cc92d2d9",
+        "before_heading": "Regain is not a measure of character",
+        "source": {
+          "title": "SURMOUNT-4, JAMA Table 2",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10714284/"
+        }
+      }
+    ]
+  }
+}
