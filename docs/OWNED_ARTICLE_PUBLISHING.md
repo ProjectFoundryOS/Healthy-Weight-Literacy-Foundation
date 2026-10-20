@@ -1,12 +1,12 @@
 # Owned article publishing: local implementation
 
-Status: repository-only publishing implemented on `codex/owned-article-publishing`, based on main `e919066f9e3748c83f537d783f8adea411a71fd7`. See the pull request for current remote status; no production release is included. No new paid services or AI API calls. This is an agent-assisted editorial workflow, not an unattended content generator.
+Status: repository-owned publishing is active. The October 20, 2026 release includes fifteen owner-approved articles with their selected imagery. The original five publication dates are preserved; the other ten receive their first publication dates. Articles are linked in desktop/mobile navigation and the footer. No new paid services or AI API calls. This is an agent-assisted editorial workflow, not an unattended content generator.
 
 ## Content flow
 
 Private Markdown drafts and JSON review records, including image placement → evidence checks and genuine editorial approval → local approved-content export → reviewed Git change with image files → existing deployment → live verification.
 
-`content/articles/catalog.json` is the public inventory. It starts empty. The private editorial workspace stays outside this website checkout; do not commit drafts or private reviewer details here. Adding random Markdown files does not publish them. The old private `publish-manifest.json` is an obsolete planning example, not a second publication switch.
+`content/articles/catalog.json` is the public inventory. It contains the approved release inventory. The private editorial workspace stays outside this website checkout; do not commit private reviewer details here. Historical display-only review snapshots in `content/article-drafts/` are not used by production. Adding random Markdown files does not publish them. The old private `publish-manifest.json` is an obsolete planning example, not a second publication switch.
 
 The adapter in `lib/articles.ts` supplies the homepage, education page, blog index, article pages, related articles, search, and sitemap. Only public search summaries reach the search component. The stale `public/sitemap.xml` was removed because it shadowed the generated sitemap at the same URL. Existing HTML sanitation remains in place; the file format accepts plain Markdown without embedded HTML.
 
@@ -29,7 +29,7 @@ The user chose on October 18, 2026 to retire the unfinished external article pip
 
 The former `lib/supabase-blog.ts` reader and unused write helpers were removed; display types now live in `lib/article-types.ts`. Historical SQL and the standalone database migration script remain for recovery/reference and are never invoked by the site build or this publishing workflow. No external database or infrastructure was deleted or modified.
 
-A normal release still requires at least one genuinely approved article. The catalog is currently empty, so a normal build deliberately fails with `No approved articles available; refusing an empty publication`. The five current preview articles remain unpublished. Do not merge this branch with an empty catalog or use test content to make a hosted build pass.
+A normal release still requires at least one genuinely approved article. An empty catalog deliberately fails with `No approved articles available; refusing an empty publication`. Do not use test content to make a hosted build pass.
 
 Preserve the URL of any existing article selected for migration; recover its content and obtain truthful review before exporting it. An empty public listing does not prove the old database is empty. Record the current public URL checks and outstanding preservation decisions in `docs/ARTICLE_SOURCE_CUTOVER.md`. PR #32's database/snapshot implementation is superseded by this source choice; do not merge it into the active reader. The PR itself and existing infrastructure are left intact.
 
@@ -49,7 +49,7 @@ Missing or modified image files stop export and the release preflight. Missing o
 
 ### Local editorial preview
 
-To inspect the real drafts in the website's layout, run `npm run preview:articles` from this checkout. It starts Next.js development on `http://127.0.0.1:3100/blog`, bound to this Mac. An optional absolute editorial folder may be passed as the script argument. The private folder's `preview.json` explicitly selects the articles to display; the current selection is the five new articles.
+To inspect the real drafts in the website's layout, run `npm run preview:articles` from this checkout. It starts Next.js development on `http://127.0.0.1:3100/blog`, bound to this Mac. An optional absolute editorial folder may be passed as the script argument. The private folder's `preview.json` explicitly selects the articles to display; the selection is controlled by the private workspace. The committed historical snapshots contain fifteen draft display versions; production uses the approved catalog.
 
 This preview reads local drafts and their visual metadata directly and checks their recorded body hashes and image placement headings. It does not write the publication catalog, alter approval records, or invent a reviewer. The pages carry a draft banner, omit article publication structured data, suppress analytics, send no-index headers, and return an empty sitemap. Drafts remain `is_published: false`, with no publication date, and cannot pass the existing publication resolver. Only display fields leave the server.
 

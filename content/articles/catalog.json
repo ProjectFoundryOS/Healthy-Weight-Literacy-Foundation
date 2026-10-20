@@ -49,42 +49,381 @@
           }
         ],
         "published_at": "2026-10-20T01:05:05.080Z",
-        "updated_at": "2026-10-20T01:05:05.080Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
         "next_review_date": "2027-01-17T23:59:59-07:00",
         "editor_name": "Tony Lewis",
-        "reviewed_at": "2026-10-20T01:05:05.080Z",
-        "approved_at": "2026-10-20T01:05:05.080Z",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
         "visuals": {
           "hero": {
-            "src": "/images/editorial/starting-treatment.png",
-            "alt": "Illustration of a woman walking along a leafy garden path.",
+            "src": "/images/editorial/appointment-planner-cover.png",
+            "alt": "An open notebook, pen, reading glasses, and water arranged for appointment preparation.",
             "width": 1536,
             "height": 1024,
-            "sha256": "3c0e23ffdbda0fc75403b2d0c13d02f62c89aa78759ce28cc56f2dfdd4cd8e8f"
+            "sha256": "ffd642899fb68618eeb1896ebe5d1576caeb9b356617efec63cf44556b471f6c",
+            "overlay": {
+              "title": "Before your first GLP-1"
+            }
           },
           "body": [
             {
-              "src": "/images/editorial/everyday-meal.png",
-              "alt": "Illustration of a lunch plate with vegetables, chickpeas, grains and greens, beside yogurt and water.",
-              "width": 1536,
-              "height": 1024,
-              "sha256": "25929c1652e501c5f51a773408f5677344a94b39f90f9e9b70c44a7d7ab3d3dd",
-              "before_heading": "Less hunger still requires a plan for eating"
-            },
-            {
-              "src": "/images/editorial/care-conversation.png",
-              "alt": "Illustration of two women having a healthcare conversation at a table.",
-              "width": 1536,
-              "height": 1024,
-              "sha256": "4dc5755593417f42bf67ff7ce24e2e6da5510c63e5a53d25091a7230a0746322",
-              "before_heading": "Make a plan for the months after the first prescription"
+              "src": "/images/editorial/glp-1-appointment-guide.png",
+              "alt": "Appointment guide: discuss health history and pregnancy plans, medicines and supplements, how to use and store the exact product, side effects, contacts, follow-up, and cost.",
+              "width": 1000,
+              "height": 1060,
+              "sha256": "a046c3b910f6d275bb323f0e2f584e6f193f1d1ab532a07cf4b069d089fd63c0",
+              "source": {
+                "title": "NIDDK: prescription weight-management medicines",
+                "url": "https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity"
+              },
+              "before_heading": "The first dose is the beginning of a process"
             }
           ]
         }
       },
       "content": "# What to Know Before Starting a GLP-1 Medicine\n\nDeciding to start a weight-loss medicine can bring relief, questions, and some nerves. You may have heard about someone else's results and wondered what the experience would be like for you. Before the first dose, it helps to understand how treatment will fit into your health and everyday life.\n\nThis article covers adult weight management, using semaglutide (Wegovy) and tirzepatide (Zepbound) as examples. Instructions depend on the product prescribed. [Wegovy prescribing information](https://www.novo-pi.com/wegovy.pdf), [Zepbound prescribing information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## Start with your health history and goals\n\nFor weight management, clinicians commonly consider prescription medicine for adults with a body mass index, or BMI, of 30 or higher, or 27 or higher with a weight-related condition such as high blood pressure. Meeting a threshold starts the assessment; your health history, other medicines, and treatment goals also matter. [NIDDK guidance](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity)\n\nBe specific about what you hope will change. Is weight affecting your ability to move comfortably? Are you hoping to improve a health condition? That conversation gives you and your clinician something meaningful to revisit as treatment progresses.\n\nBring a complete list of prescriptions, over-the-counter medicines, and supplements. Mention past pancreatitis, gallbladder or kidney problems, severe stomach-emptying problems, diabetes-related eye disease, and medication allergies. These details can change the assessment and monitoring plan. [Semaglutide patient information](https://medlineplus.gov/druginfo/meds/a618008.html)\n\nWegovy and Zepbound must not be used if you have a personal or family history of medullary thyroid carcinoma (a specific thyroid cancer), or if you have multiple endocrine neoplasia syndrome type 2 (MEN2). A previous serious allergic reaction to a medicine's active ingredient or other ingredients also rules that product out. Ask your clinician how any thyroid diagnosis or medication allergy affects treatment. [Wegovy contraindications](https://www.novo-pi.com/wegovy.pdf), [Zepbound contraindications](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nIf you take insulin or a sulfonylurea for diabetes, the clinician may need to adjust treatment to reduce the risk of low blood sugar. Ask what to watch for and how to respond. [Wegovy precautions](https://www.novo-pi.com/wegovy.pdf)\n\nCheck for overlapping medicines, too. Wegovy and Zepbound should not be combined with another product containing the same active ingredient or with another GLP-1 receptor agonist. Make sure the prescriber knows about any weight-loss or diabetes treatment you already use. [Wegovy limitations of use](https://www.novo-pi.com/wegovy.pdf), [Zepbound limitations of use](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## Discuss pregnancy plans before treatment starts\n\nDiscuss pregnancy plans and breastfeeding before starting. These medicines should not be used for weight loss during pregnancy. Breastfeeding advice depends on the product and formulation: Wegovy's label specifically advises against breastfeeding during treatment with its tablets. Discuss an appropriate treatment and feeding plan with your clinician. [Wegovy pregnancy and breastfeeding guidance](https://www.novo-pi.com/wegovy.pdf), [Zepbound pregnancy and breastfeeding guidance](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nFor planned pregnancy, Wegovy's prescribing information says to stop it at least two months beforehand. [Wegovy planning guidance](https://www.novo-pi.com/wegovy.pdf)\n\nZepbound can reduce the effectiveness of oral hormonal birth control. Its label advises switching to a nonoral method or adding a barrier method for **four weeks after starting and four weeks after each dose increase**. Discuss this with your clinician. [Zepbound contraception guidance](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## The first dose is the beginning of a process\n\nTreatment starts at a lower dose and increases gradually to help reduce gastrointestinal side effects. Discuss tolerability with your prescriber; do not speed up the increases yourself. [Wegovy dosing guidance](https://www.novo-pi.com/wegovy.pdf), [Zepbound dosing guidance](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nBefore leaving with the prescription, make sure you understand how to take or administer your exact product, how to store it, and what to do about a missed dose. Have the pharmacist walk you through anything unclear. Keep the product's instructions somewhere you can find them again.\n\nTell any surgery or anesthesia team that you use the medicine. Delayed stomach emptying can matter during anesthesia or deep sedation. [Zepbound procedure precautions](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## Less hunger still requires a plan for eating\n\nIf your appetite becomes smaller, the food you do eat still needs to provide enough nourishment. A joint advisory from four medical and nutrition organizations emphasizes assessing nutrition before treatment, preventing nutrient deficiencies, and combining adequate protein with strength training to help preserve muscle. [Joint nutrition advisory summary](https://www.obesity.org/wp-content/uploads/2025/06/Joint_Nutritional-Priorities-to-Support-GLP-1-Therapy-for-Obesity.pdf)\n\nAsk what that could look like with your food preferences, budget, and physical abilities. A dietitian can help tailor the plan if one is available to you. Tell the care team if eating becomes difficult or you are repeatedly skipping meals because you feel unwell.\n\n## Know which symptoms need help\n\nNausea, vomiting, diarrhea, and constipation are possible side effects. Contact your clinician if symptoms are severe or do not settle. Repeated vomiting, trouble keeping fluids down, or reduced urination need prompt attention because dehydration can become serious. [Patient information and precautions](https://medlineplus.gov/druginfo/meds/a618008.html)\n\nPersistent, severe abdominal pain—especially pain spreading to the back, with or without vomiting—needs urgent medical assessment. Trouble breathing or swelling of the tongue or throat calls for emergency help. These are examples, not a complete warning list; read the Medication Guide supplied with your prescription. [Serious symptoms](https://medlineplus.gov/druginfo/meds/a618008.html)\n\n## Make a plan for the months after the first prescription\n\nAsk when the first follow-up will happen, who handles questions between visits, and how you will assess progress together. Include the practical side: what insurance covers, the ongoing medicine cost, and whether appointments or tests add separate charges. Coverage varies, so check your own plan. [NIDDK treatment guidance](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity)\n\nKnow what product you are receiving and which pharmacy supplies it. FDA recommends a prescription from a doctor and a state-licensed pharmacy; compounded medicines do not undergo FDA approval for safety, effectiveness, and quality before marketing. [FDA guidance](https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)\n\nWeight-management medicine may be a long-term treatment, and some weight regain is likely after stopping. Discuss affordability and continuity early, including what you would do if treatment became unavailable. [NIDDK guidance on duration](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity)\n\nYou should leave the starting conversation knowing how to take the medicine, who to contact with a problem, and when you will check in again. Those arrangements make the first prescription part of an ongoing care plan.\n",
       "body_sha256": "6c592041cab69a0c8cc6ddcdd2cdd32930b4a2297b280ea12d51382338ee7118",
-      "metadata_sha256": "3275e19d30ebc1cbf2c5f166021166485741f5993a6af23a8d761b99ae65787e"
+      "metadata_sha256": "6125c9d52cd27168d0bcfddafd0255a45511beb3f5d6584b308f7e14c2f4fe52"
+    },
+    {
+      "metadata": {
+        "article_id": "M9",
+        "slug": "choosing-telehealth-weight-loss-service",
+        "title": "How to Choose a Telehealth Weight-Loss Service",
+        "description": "How to assess a telehealth service’s clinician, pharmacy, medicine, total cost, and ongoing care before signing up.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight-Loss Medicines",
+        "tags": [
+          "telehealth",
+          "patient questions",
+          "access to care"
+        ],
+        "citations": [
+          {
+            "title": "Licensing across state lines",
+            "url": "https://telehealth.hhs.gov/licensure/licensing-across-state-lines",
+            "type": "reference"
+          },
+          {
+            "title": "FDA concerns with unapproved GLP-1 drugs",
+            "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss",
+            "type": "reference"
+          },
+          {
+            "title": "How to Buy Medicines Safely From an Online Pharmacy",
+            "url": "https://www.fda.gov/consumers/consumer-updates/how-buy-medicines-safely-online-pharmacy",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T23:53:28.500Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
+        "next_review_date": "2027-01-17T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/telehealth-conversation.png",
+            "alt": "A woman speaking with a clinician through a laptop video appointment.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "5e44df88425c492e9a28f7dad2e6d7cf206b88cb8f02751582b90e8d977ac2b5",
+            "overlay": {
+              "title": "Choosing telehealth care"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/telehealth-followup.png",
+              "alt": "A closed laptop, headset, notebook, and water on a desk.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "0367aa1c78b47e361e006fb89a3b40feb883f4e91b565e5508224e4717767604",
+              "before_heading": "Follow-up should be easy to describe"
+            }
+          ]
+        }
+      },
+      "content": "# How to Choose a Telehealth Weight-Loss Service\n\nA polished website can make several weight-loss services look almost identical: a quick intake, a monthly price, medication delivered to your door.\n\nThe differences become clearer when you ask what happens after the first order. Who is responsible for your care? Who answers when side effects appear? What exactly is being prescribed, and which pharmacy supplies it?\n\nThose questions are more useful than comparing promises about how quickly you can start. This guide is a way to assess a service, rather than a ranking of providers.\n\n## Find the clinician behind the platform\n\nA company’s brand name is not the name of the professional treating you. Look for an identifiable clinician, credentials you can verify, and a clear explanation of the clinical practice providing care.\n\nThe clinician must be authorized to treat you where you are located. State rules differ, and authorization can involve a state license, a compact, or another recognized pathway. The [HHS guide to telehealth licensure](https://telehealth.hhs.gov/licensure/licensing-across-state-lines) explains those distinctions.\n\nAsk how to verify that authorization through the relevant professional licensing board. If you travel or move, tell the service; location can affect how care is provided.\n\nAn impressive biography or a picture of a person in a white coat is not the same as a verifiable treating professional.\n\n## Look for an assessment that can lead to “no”\n\nA prescribing evaluation should establish whether treatment is appropriate. Be cautious if a medicine appears guaranteed before your health history has been considered.\n\nAsk how the service reviews your current medicines, relevant conditions, previous treatment, and pregnancy plans when applicable. Also ask when it recommends an in-person examination or testing. The appropriate assessment depends on the person; a particular number of laboratory tests is not a universal quality score.\n\nThe [FDA’s guidance on telehealth red flags](https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss) warns about companies supplying medication without appropriate screening and a prescription, or without a clinician available afterward.\n\nBefore signing up, you should be able to understand how an actual clinical decision gets made.\n\n## Identify both the medicine and the pharmacy\n\nAsk for the medicine’s name, ingredient, formulation, and whether it is FDA-approved or compounded. “GLP-1 program” is too vague to tell you what you would receive.\n\nA compounded medicine is not an FDA-approved generic. If compounding is proposed, ask which individual medical need it addresses and which pharmacy prepares it. Our guide to [compounded and FDA-approved medicines](/blog/compounded-vs-approved-weight-loss-medicines) explains the distinction.\n\nVerify the pharmacy using the state board’s own records. The [FDA’s online-pharmacy guidance](https://www.fda.gov/consumers/consumer-updates/how-buy-medicines-safely-online-pharmacy) identifies prescription requirements, licensing, and access to a pharmacist as important checks. A badge displayed on a seller’s website is not a substitute for checking the underlying record.\n\n## Read the price as a treatment budget\n\nA headline monthly fee may describe membership rather than the complete cost of care. Ask for the total you could owe, including consultations, medicine, shipping, testing when needed, and follow-up.\n\nThen ask what happens if you are not prescribed a medicine, insurance declines coverage, a shipment is delayed, or you cancel. Get the terms in writing before paying.\n\nFor a concrete comparison, imagine three ordinary months of care and one month with a problem. Would you pay extra for a clinician to discuss persistent nausea? Does a replacement shipment cost more? Is there a continuing membership charge while medication is unavailable?\n\nThese are planning questions, not predictions that a particular company will charge those fees. They help make an offer understandable before you commit.\n\n## Follow-up should be easy to describe\n\nAsk how you reach the care team, who answers clinical messages, and what response time the service promises. Find out what happens outside office hours and how urgent symptoms should be handled locally.\n\nRoutine messaging is not an emergency service. A good plan makes that boundary clear and tells you where to turn when waiting for an online reply would be inappropriate.\n\nAlso ask how records can be shared with your regular clinician, how medication changes are documented, and what happens if you leave the service. Read the privacy notice before sending sensitive information; look for clear explanations of how your data is used and whom to contact with concerns.\n\n## Choose a care relationship you can understand\n\nYou do not need to become an expert in every telehealth business model. You do need clear answers about the clinician, medicine, pharmacy, cost, and ongoing support.\n\nIf those answers remain vague while the sales process stays effortless, pause before paying. The service should be able to explain the care as clearly as it explains how to subscribe.\n",
+      "body_sha256": "4917bed6ed020dead1299e7a70e1d5820798d29626a5e4845082d63db94e86c3",
+      "metadata_sha256": "d4750648ebc8e600d9aa3c10261eefa270a9e3049538270e9249fdc587bb9c3f"
+    },
+    {
+      "metadata": {
+        "article_id": "M10",
+        "slug": "compounded-vs-approved-weight-loss-medicines",
+        "title": "Compounded vs. FDA-Approved Weight-Loss Medicines",
+        "description": "Understand compounding, FDA approval, pharmacy checks, dosing concerns, and retatrutide’s current status.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight-Loss Medicines",
+        "tags": [
+          "compounded medicines",
+          "FDA approval",
+          "medication safety"
+        ],
+        "citations": [
+          {
+            "title": "Compounding and the FDA: Questions and Answers",
+            "url": "https://www.fda.gov/drugs/human-drug-compounding/compounding-and-fda-questions-and-answers",
+            "type": "reference"
+          },
+          {
+            "title": "FDA concerns with unapproved GLP-1 drugs",
+            "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss",
+            "type": "reference"
+          },
+          {
+            "title": "How to Buy Medicines Safely From an Online Pharmacy",
+            "url": "https://www.fda.gov/consumers/consumer-updates/how-buy-medicines-safely-online-pharmacy",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T23:53:28.500Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
+        "next_review_date": "2026-11-18T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/pharmacy-care.png",
+            "alt": "A pharmacist and customer talking across a pharmacy counter with a plain paper bag.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "036a026981ef500b1f326832d3e546a94f86fcad55f7329d54f2dd9689487f3f",
+            "overlay": {
+              "title": "Compounded vs. approved"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/pharmacy-package-check.png",
+              "alt": "A woman holding a plain pharmacy bag and reading a leaflet.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "24f6a1fdb56bf8a422e43653c5174689c110e94bcf49a4e44901f809459a3020",
+              "before_heading": "Check who actually prepared and dispensed it"
+            }
+          ]
+        }
+      },
+      "content": "# Compounded vs. FDA-Approved Weight-Loss Medicines\n\nTwo websites may advertise semaglutide at very different prices. One names an FDA-approved product. The other describes a compounded version, perhaps using phrases such as “personalized” or “same active ingredient.”\n\nThose descriptions can sound interchangeable. They are not equivalent regulatory categories, and the distinction matters when you are deciding what would be prescribed and dispensed.\n\nCompounding has legitimate medical uses. Understanding those uses also means understanding what FDA approval does—and does not—tell you about a particular product.\n\n## Start with the finished medicine\n\nFDA approval applies to a specific drug product and its approved uses. A compounded preparation does not become an FDA-approved product simply because an approved medicine contains the same named ingredient.\n\nThe FDA does not review compounded drugs for safety, effectiveness, and quality before they are marketed. That does not mean every compounded medicine is harmful. It means the assurance provided by the drug approval process is absent. [FDA compounding questions and answers](https://www.fda.gov/drugs/human-drug-compounding/compounding-and-fda-questions-and-answers).\n\nAn FDA-approved generic is different again: it has gone through the applicable FDA approval pathway. Calling a compounded product a “generic” can obscure this distinction.\n\n## Why compounding exists\n\nA person may need a formulation an approved product cannot provide—for example, one without an ingredient they are allergic to. In appropriate circumstances, compounding can meet an individual medical need.\n\nBut the reason needs to be specific. The FDA recommends using compounded drugs when a patient’s medical needs cannot be met by an approved drug. There are also rules affecting compounding during drug shortages; an old shortage-related advertisement does not establish that a product can lawfully be compounded today.\n\nAsk the prescriber what need the proposed preparation addresses, whether an approved option can meet it, and what evidence supports the choice. The answer should describe your care, rather than relying only on the word “custom.”\n\n## The label needs to explain what you are getting\n\nFor compounded GLP-1 products, the FDA has reported concerns involving dosing mistakes, products with misleading pharmacy information, and forms of semaglutide that differ from the ingredient used in approved products. In particular, semaglutide sodium and semaglutide acetate are different active ingredients from the base form used in approved medicines. [FDA concerns about unapproved GLP-1 drugs](https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss).\n\nIf a prescription comes in a vial, understand that milligrams, milliliters, and syringe “units” are different measurements. A volume instruction cannot be carried from one concentration to another as if the amount of medicine stayed the same.\n\nHave the dispensing pharmacist explain the exact preparation and demonstrate how its instructions match the supplied device. Do not borrow a dosing chart from a social-media group or reuse instructions from a different product.\n\n## Check who actually prepared and dispensed it\n\nThe name on the marketing website may differ from the pharmacy name. Ask for the dispensing pharmacy and, when relevant, the compounder. Verify the pharmacy through the state board rather than relying solely on a logo or seal.\n\nThe [FDA’s online-pharmacy guidance](https://www.fda.gov/consumers/consumer-updates/how-buy-medicines-safely-online-pharmacy) also recommends checking for a valid prescription requirement and a pharmacist who can answer questions.\n\nWhen medication arrives, unresolved problems with the label, instructions, packaging, or storage conditions should be addressed before use. The FDA specifically advises against using injectable GLP-1 drugs that arrive warm or without adequate refrigeration. Contact the pharmacy and prescribing team rather than guessing that a questionable shipment is fine.\n\n## Retatrutide is a separate issue\n\nAs of October 19, 2026, the FDA states that retatrutide is not a component of an FDA-approved drug and cannot be used in compounding under federal law. An online seller calling it “compounded” or “research use only” does not turn it into an approved treatment.\n\nClinical research and retail availability are different things. Our [retatrutide explainer](/blog/what-is-retatrutide) discusses the compound’s research status and why that distinction matters.\n\n## Make the comparison before making the purchase\n\nPrice can be a real barrier, and wanting an affordable option is reasonable. A useful conversation still needs the full medicine name, approval status, pharmacy identity, clinical reason for the prescription, and a way to get help.\n\nIf you are already receiving a compounded medicine, bring those details to your prescriber or pharmacist. This article cannot determine the quality or appropriateness of your individual preparation.\n\nThe immediate goal is a clear account of what you are taking and why. You should not have to infer that from advertising language.\n",
+      "body_sha256": "01438ef77e6a6873aa7a0e03704a9c92ad5b1c5ae69752c84ef11a4c65721edf",
+      "metadata_sha256": "9cbbd3126d250832f9e46dba29602086d84c11cb6aa584f4ebadea21f099ca5f"
+    },
+    {
+      "metadata": {
+        "article_id": "M6",
+        "slug": "glp-1-medicines-muscle-loss",
+        "title": "Do GLP-1 Medicines Cause Muscle Loss?",
+        "description": "What lean-mass findings do and do not tell us about muscle, plus food, strength, and follow-up during weight treatment.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight-Loss Medicines",
+        "tags": [
+          "GLP-1",
+          "muscle",
+          "strength"
+        ],
+        "citations": [
+          {
+            "title": "Body composition changes during weight reduction with tirzepatide in SURMOUNT-1",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11965027/",
+            "type": "reference"
+          },
+          {
+            "title": "Correction to SURMOUNT-1 body-composition paper",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12710557/",
+            "type": "reference"
+          },
+          {
+            "title": "Nutritional priorities to support GLP-1 therapy for obesity",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12304835/",
+            "type": "reference"
+          },
+          {
+            "title": "Adult Activity: An Overview",
+            "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T23:53:28.500Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
+        "next_review_date": "2027-01-17T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/strength-tools-cover.png",
+            "alt": "Two teal dumbbells, a sage resistance band, and a folded exercise towel.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "3bd5c12608fb722eb30fe45dec27d33b881d0cfaab4fd8fe95397cd08d830b42",
+            "overlay": {
+              "title": "GLP-1 & muscle"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/lean-mass-explained.png",
+              "alt": "A DXA scan separates fat mass, lean soft tissue, and bone mineral. Lean tissue includes muscle, water, and other nonfat soft tissues. A scan does not directly measure strength changes.",
+              "width": 1000,
+              "height": 1015,
+              "sha256": "4d7c78fe5f0b6c72bff3513505c3e8b90a47d72f6745262de8379a35c9e65dd6",
+              "source": {
+                "title": "SURMOUNT-1 body-composition study",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11965027/"
+              },
+              "before_heading": "What one tirzepatide study found"
+            }
+          ]
+        }
+      },
+      "content": "# Do GLP-1 Medicines Cause Muscle Loss?\n\nA falling number on the scale does not tell you exactly what you have lost. That is why headlines about muscle loss during GLP-1 treatment can be both worrying and confusing.\n\nSome lean tissue can be lost as body weight falls. The important questions are how much, what the measurement actually represents, and whether your strength and everyday function are being protected.\n\nIt helps to separate three things often treated as interchangeable: weight, lean mass, and muscle.\n\n## What “lean mass” actually means\n\nA body-composition scan divides the body into categories. In a DXA scan, lean soft tissue includes more than skeletal muscle; it also includes water and other nonfat soft tissues. Bone mineral is measured separately.\n\nSo a study reporting a reduction in lean mass has not directly measured the same percentage loss of muscle. Nor has it necessarily measured a loss of strength. Those are related questions that require different assessments. The [SURMOUNT-1 body-composition study](https://pmc.ncbi.nlm.nih.gov/articles/PMC11965027/) defines these measures and discusses their limitations.\n\nThis distinction matters when a dramatic headline turns a scan result into a prediction about what will happen to your body.\n\n## What one tirzepatide study found\n\nIn a substudy of SURMOUNT-1, researchers analyzed body-composition scans from 160 adults with obesity or overweight, without type 2 diabetes. They compared pooled tirzepatide doses with placebo over 72 weeks.\n\nAbout three-quarters of the weight lost in the tirzepatide group was fat mass and about one-quarter was lean mass. The proportions were similar in the placebo group, although the tirzepatide group lost substantially more weight overall.\n\nThat does **not** mean participants lost one-quarter of their starting muscle. It describes how the lost weight was divided between measurement categories.\n\nThe study was funded by Eli Lilly, tirzepatide’s manufacturer. It involved a relatively small subset of the larger trial and did not directly test muscle strength. Its [published correction](https://pmc.ncbi.nlm.nih.gov/articles/PMC12710557/) fixes the units on a subgroup graph; the overall fat-versus-lean proportions above are reported in the study’s results.\n\nThese findings help explain what happened in that group. They cannot predict an individual’s muscle changes or establish that all GLP-1 medicines have identical effects.\n\n## Strength is part of the treatment conversation\n\nThe ability to carry groceries, rise from a chair, climb stairs, or move comfortably matters alongside weight. A smaller body is not the only goal.\n\nThe [joint nutrition advisory on GLP-1 treatment](https://pmc.ncbi.nlm.nih.gov/articles/PMC12304835/) recommends attention to food intake, resistance exercise, and physical function. Older adults and people who already have low strength or difficulty eating may need particular support.\n\nThis does not mean every person needs a scan or an expensive gym membership. It means your care team should hear about changes in what you can do. New difficulty with stairs or getting out of a chair is useful information, even if you are pleased with the scale.\n\n## Food and movement work together\n\nWhen appetite drops, it can take planning to get enough food and protein. A pattern of skipping meals and relying on a few bites at dinner is worth discussing. Our guide to [eating with a smaller appetite](/blog/what-to-eat-on-glp-1) offers practical starting points.\n\nResistance exercise asks muscles to work against a load. Depending on your ability, that might involve bands, weights, machines, or modified body-weight movements. The CDC recommends muscle-strengthening activity on at least two days a week for adults, alongside aerobic activity; people with health limitations can adapt activity with professional guidance. [CDC adult activity guidance](https://www.cdc.gov/physical-activity-basics/guidelines/adults.html).\n\nThere is no need to begin with an ambitious routine. Ask what is safe and realistic for your joints, balance, experience, and health. A physical therapist or qualified exercise professional can help when movement is difficult.\n\nNeither a protein target nor an exercise program guarantees that no lean tissue will be lost. The purpose is to support strength and function while treatment is adjusted to your needs.\n\n## Bring changes in function to follow-up\n\nIf you feel progressively weaker, unusually exhausted, or unable to eat enough, tell your clinician. Do not assume that weakness proves muscle loss—or that it is an unavoidable price of treatment. Symptoms need their own assessment.\n\nA useful follow-up conversation can include weight, eating, activity, and one or two everyday tasks that matter to you. “I can walk farther, but lifting the shopping bags has become harder” tells a clinician more than the scale alone.\n\nYou deserve a treatment plan that pays attention to the person moving through daily life, as well as the number being recorded.\n",
+      "body_sha256": "938b5dfcbc5c125fe84e4b8b40a0613f583873338870bbc198642a3795b12af8",
+      "metadata_sha256": "35968c8a0526b5983c1bca472f7804f560eb6f95ac1fd798a4e3f7c48dce48f4"
+    },
+    {
+      "metadata": {
+        "article_id": "M11",
+        "slug": "glp-1-pills-vs-injections",
+        "title": "GLP-1 Pills vs. Injections: What’s Different?",
+        "description": "Compare the routines and precautions of oral and injectable GLP-1-based medicines, including Wegovy and Foundayo.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight-Loss Medicines",
+        "tags": [
+          "oral GLP-1",
+          "Wegovy",
+          "Foundayo",
+          "treatment options"
+        ],
+        "citations": [
+          {
+            "title": "FDA Approves First New Molecular Entity Under National Priority Voucher Program",
+            "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program",
+            "type": "reference"
+          },
+          {
+            "title": "Wegovy prescribing information",
+            "url": "https://www.novo-pi.com/wegovy.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Foundayo prescribing information",
+            "url": "https://pi.lilly.com/us/foundayo-uspi.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Zepbound prescribing information",
+            "url": "https://pi.lilly.com/us/zepbound-uspi.pdf",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T23:53:28.500Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
+        "next_review_date": "2026-11-18T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/medicine-options.png",
+            "alt": "An unbranded tablet blister pack and capped injection pen on a tabletop.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "79893b6b7d71981234f389994b8c7ed61068101c7a5946ae1d83fc4d5121ab2a",
+            "overlay": {
+              "title": "GLP-1 pills vs. injections"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/morning-water.png",
+              "alt": "A glass of water beside an analog clock in morning light.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "8b4d13ea1e65b66e6431f372182505fda48c4e3408a81e1fc4ebe732f767988c",
+              "before_heading": "A morning routine can become part of treatment"
+            }
+          ]
+        }
+      },
+      "content": "# GLP-1 Pills vs. Injections: What’s Different?\n\nIf a weight-loss medicine comes as a pill, does that make the decision simple? For someone who dislikes needles, it may seem that way.\n\nThe route matters, but so do the ingredient, approved use, daily routine, other medicines, and side effects. Two pills can have more practical differences than a pill and an injection.\n\nThe options have also changed. This overview reflects US product information checked on October 19, 2026.\n\n## There is more than one kind of pill\n\nWegovy contains semaglutide and is available in tablet and injection formulations. Foundayo contains orforglipron, a different GLP-1 receptor agonist. The FDA approved Foundayo in April 2026 for long-term weight management in eligible adults, alongside diet and physical activity. [FDA Foundayo approval announcement](https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program).\n\nZepbound contains tirzepatide, which acts at both GIP and GLP-1 receptors. It is an injectable medicine. Grouping these treatments under “GLP-1s” can be convenient, but it should not hide their differences.\n\nHere is how the routine differs for these examples:\n\n| Product | Ingredient and route | Basic schedule |\n| --- | --- | --- |\n| Wegovy tablets | Oral semaglutide | Once daily; specific fasting and water instructions |\n| Foundayo | Oral orforglipron | Once daily, with or without food |\n| Wegovy injection | Injected semaglutide | Once weekly |\n| Zepbound | Injected tirzepatide | Once weekly |\n\nSources: [Wegovy prescribing information](https://www.novo-pi.com/wegovy.pdf), [Foundayo prescribing information](https://pi.lilly.com/us/foundayo-uspi.pdf), and [Zepbound prescribing information](https://pi.lilly.com/us/zepbound-uspi.pdf). This table describes routines, not dose equivalence or a complete list of treatments.\n\n## A morning routine can become part of treatment\n\nWegovy tablets must be taken in the morning on an empty stomach with no more than four ounces of plain water. The instructions require waiting at least 30 minutes before food, other drinks, or other oral medicines.\n\nFoundayo does not have that fasting requirement. It can be taken with or without food.\n\nImagine someone who takes several medicines with breakfast and leaves for work early. The difference could matter more than simply preferring a tablet. It is worth asking the pharmacist to fit the actual instructions into your routine before assuming that any oral option will be easy.\n\nA weekly injection has a different set of practical tasks: learning the device, following storage instructions, and remembering the scheduled day.\n\n## Milligrams are not a strength ranking\n\nThe number printed on one product cannot be used to calculate an equivalent amount of another. Different ingredients and formulations reach and act in the body differently.\n\nEven when two products contain semaglutide, switching routes requires the product-specific prescribing plan. Do not substitute tablets for injections, combine them, or adjust amounts using an online conversion.\n\nIf you are considering a change because of travel, needle discomfort, side effects, or access, explain that reason. The prescriber can assess whether the proposed alternative is suitable and how a transition should work.\n\n## A pill can still have substantial precautions\n\nAvoiding an injection does not remove the possibility of gastrointestinal or other serious adverse effects. The FDA’s Foundayo announcement, for example, includes warnings about pancreatitis, dehydration-related kidney injury, severe digestive reactions, and other risks.\n\nFoundayo also has specific interactions with other drugs, and its label advises additional or non-oral contraception for 30 days after starting and after each dose increase for people using oral contraceptives. Do not apply that interval to another product: the instructions differ.\n\nAll four examples in the table have important contraindications and warnings, including restrictions involving a personal or family history of medullary thyroid carcinoma, a particular thyroid cancer, or multiple endocrine neoplasia type 2 (MEN 2). Pregnancy plans, breastfeeding, other medicines, and digestive conditions need a prescribing discussion.\n\nOur [side-effects guide](/blog/glp-1-side-effects) explains symptoms that should prompt help. It does not replace your specific Medication Guide.\n\n## Compare the treatment that fits your situation\n\nThe easiest option to take is not necessarily the most appropriate one for your health, and a trial percentage from one study cannot establish which product would work best for you.\n\nAsk what benefit is expected for your circumstances, what evidence supports that expectation, what follow-up is included, and what the complete cost will be. Check the exact product and formulation covered by any insurance or access arrangement.\n\nYou can have a strong preference about pills or injections. The best conversation starts with that preference and then checks whether the treatment behind it fits.\n",
+      "body_sha256": "4f0afd65bef83a69718b8e4c6eea935f339cf5c5c0d784429f9ecd7b31d5657e",
+      "metadata_sha256": "34d0dc7acdb9d5601508b6c611ab9fdd377dd82649bf19abae98a33a1e4b2e72"
+    },
+    {
+      "metadata": {
+        "article_id": "M8",
+        "slug": "glp-1-side-effects",
+        "title": "GLP-1 Side Effects: What’s Common and When to Get Help",
+        "description": "How to distinguish common digestive symptoms from warning signs that call for prompt or emergency medical help.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight-Loss Medicines",
+        "tags": [
+          "GLP-1",
+          "side effects",
+          "treatment safety"
+        ],
+        "citations": [
+          {
+            "title": "Wegovy prescribing information",
+            "url": "https://www.novo-pi.com/wegovy.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Zepbound prescribing information",
+            "url": "https://pi.lilly.com/us/zepbound-uspi.pdf",
+            "type": "reference"
+          },
+          {
+            "title": "Nutritional priorities to support GLP-1 therapy for obesity",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12304835/",
+            "type": "reference"
+          },
+          {
+            "title": "Semaglutide Injection: patient information",
+            "url": "https://medlineplus.gov/druginfo/meds/a618008.html",
+            "type": "reference"
+          },
+          {
+            "title": "Low Blood Glucose (Hypoglycemia)",
+            "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/low-blood-glucose-hypoglycemia",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T23:53:28.500Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
+        "next_review_date": "2027-01-17T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/side-effects-rest.png",
+            "alt": "A woman in a blue cardigan resting on a sofa with water nearby.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "e5550aec4c11cdb2c36cde9721e4112fbb3f0871ba40394bf1dc4b2b8f5005c8",
+            "overlay": {
+              "title": "GLP-1 side effects"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/hydration-pause.png",
+              "alt": "A glass of water and two crackers on a bedside table.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "d8416521ef79e50474bcc149de6d33cb868f3c22f85e54ae352341e920ba6033",
+              "before_heading": "Symptoms that need prompt medical attention"
+            }
+          ]
+        }
+      },
+      "content": "# GLP-1 Side Effects: What’s Common and When to Get Help\n\nWhen you start a medicine, “some stomach upset is common” can be a frustratingly vague instruction. Does that mean a little nausea after breakfast, or a day when you cannot keep water down?\n\nThose situations need different responses.\n\nGLP-1-based medicines can cause digestive symptoms, particularly around starting treatment or increasing a dose. Some symptoms are manageable; others need prompt assessment. This guide focuses on recognizing the difference, with examples from semaglutide and tirzepatide. Your own product’s Medication Guide remains the reference for its specific risks.\n\n## Common does not mean you have to put up with it\n\nNausea, vomiting, diarrhea, constipation, and abdominal discomfort appear in the prescribing information for both Wegovy and Zepbound. Frequency and severity differ between people and products. [Wegovy information](https://www.novo-pi.com/wegovy.pdf); [Zepbound information](https://pi.lilly.com/us/zepbound-uspi.pdf).\n\nTell your care team if symptoms interfere with eating, drinking, sleep, or ordinary activities. You do not need to wait until something becomes an emergency to ask for help.\n\nA brief description is useful: when the symptom started, whether a dose changed recently, how often it happens, and whether you can eat and drink. “Nausea” alone gives less information than “I have felt sick after every meal since the increase and have barely managed fluids today.”\n\n## Smaller meals may help mild symptoms\n\nWhen nausea is mild, smaller portions and eating more slowly may be easier than a large meal. Rich or fatty foods may be harder to tolerate. For constipation, fluids and a gradual increase in fiber can be useful, depending on your health and symptoms.\n\nThe [joint nutrition advisory for GLP-1 treatment](https://pmc.ncbi.nlm.nih.gov/articles/PMC12304835/) discusses these approaches, while emphasizing early contact with the prescribing team when symptoms develop. They are supportive measures, not a substitute for assessing severe or persistent symptoms.\n\nAsk before adding laxatives, anti-nausea medicines, or supplements. Your medical history and other medicines affect what is appropriate. Do not accelerate a dose increase or change the schedule yourself.\n\n## Symptoms that need prompt medical attention\n\n**Severe abdominal pain that does not go away**, especially if it spreads toward the back, needs urgent assessment. Wegovy and Zepbound Medication Guides advise stopping the medicine and calling the healthcare provider right away for this pattern because it can indicate pancreatitis.\n\n**Upper abdominal pain with fever, yellowing of the skin or eyes, or pale stools** can signal a gallbladder problem. Contact a healthcare professional promptly.\n\n**Repeated vomiting or diarrhea, inability to keep fluids down, much less urination, or marked dizziness** should not be dismissed as routine adjustment. Fluid loss can become serious. Seek urgent care if symptoms are severe or you cannot reach your clinician.\n\nThese patterns are described in the product information linked above and in [MedlinePlus’s semaglutide patient guidance](https://medlineplus.gov/druginfo/meds/a618008.html). You do not need to diagnose the cause before seeking help.\n\n## When to seek emergency help\n\nTrouble breathing, swelling of the tongue or throat, collapse, or a severe allergic reaction requires emergency help. In the United States, call 911.\n\nLow blood glucose is another concern, especially when a GLP-1-based medicine is used with insulin or a sulfonylurea. Ask your diabetes team for a plan before symptoms occur. Shakiness, sweating, confusion, or unusual weakness may be warning signs. Seizure or loss of consciousness needs emergency treatment. If a prescribed glucagon rescue medicine is available, someone trained to use it should follow your emergency plan and call 911. [NIDDK guidance on low blood glucose](https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/low-blood-glucose-hypoglycemia).\n\n## A few symptoms and situations deserve their own conversation\n\nReport new vision changes, a neck lump, persistent hoarseness, or swallowing difficulty promptly. These are among the concerns addressed in the product guides; they should not be explained away as ordinary stomach side effects.\n\nTell a surgery or procedure team that you take the medicine, including before anesthesia or deep sedation. Do not choose your own stopping interval. The team needs to plan around your treatment and procedure.\n\nFor Wegovy or Zepbound being used for weight management, the labels instruct patients to stop treatment when pregnancy is recognized and contact the healthcare provider. A future pregnancy plan belongs in the conversation before treatment as well.\n\n## Leave follow-up with a usable plan\n\nBefore the next dose change, know how to reach the clinical team and what to do outside office hours. Ask which symptoms should trigger a call and which should send you directly for urgent help.\n\nFor mild symptoms, the plan might include food changes and closer follow-up. For more serious problems, it may involve a different treatment decision. The goal is care you can safely live with—not proving how much discomfort you can tolerate.\n",
+      "body_sha256": "b8a3198d711316584cdb3130a40138ff0318ab6879b7aed0cd65d5baeae6109a",
+      "metadata_sha256": "13f315e10be4ec0f54631bcfe7308f4cfbc2c97d80ba9afa3897702b0047649a"
     },
     {
       "metadata": {
@@ -138,26 +477,29 @@
           }
         ],
         "published_at": "2026-10-20T01:05:05.080Z",
-        "updated_at": "2026-10-20T01:05:05.080Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
         "next_review_date": "2026-11-18T23:59:59-07:00",
         "editor_name": "Tony Lewis",
-        "reviewed_at": "2026-10-20T01:05:05.080Z",
-        "approved_at": "2026-10-20T01:05:05.080Z",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
         "visuals": {
           "hero": {
             "src": "/images/editorial/everyday-meal.png",
             "alt": "Illustration of a lunch plate with vegetables, chickpeas, grains and greens, beside yogurt and water.",
             "width": 1536,
             "height": 1024,
-            "sha256": "25929c1652e501c5f51a773408f5677344a94b39f90f9e9b70c44a7d7ab3d3dd"
+            "sha256": "25929c1652e501c5f51a773408f5677344a94b39f90f9e9b70c44a7d7ab3d3dd",
+            "overlay": {
+              "title": "How GLP-1 medicines work"
+            }
           },
           "body": [
             {
-              "src": "/images/editorial/starting-treatment.png",
-              "alt": "Illustration of a woman walking along a leafy garden path.",
+              "src": "/images/editorial/walking-dog.png",
+              "alt": "A woman walking her dog on a path beside a lake.",
               "width": 1536,
               "height": 1024,
-              "sha256": "3c0e23ffdbda0fc75403b2d0c13d02f62c89aa78759ce28cc56f2dfdd4cd8e8f",
+              "sha256": "a72043393e1604dc51dad329f93f1f46901c2a7e0a8c233e8afdc126be6772b1",
               "before_heading": "Treatment involves more than a prescription"
             }
           ]
@@ -165,7 +507,70 @@
       },
       "content": "# How GLP-1 Weight-Loss Medicines Work\n\nHunger can make a simple instruction—eat a little less—feel anything but simple. You may know what you intended to eat and still finish a meal wanting more.\n\nGLP-1 medicines act on signals involved in appetite. For some people, treatment can mean feeling less hungry and more satisfied after eating. That change helps explain how medication can make a difference when advice about food has not been enough. [Research on appetite and semaglutide](https://pmc.ncbi.nlm.nih.gov/articles/PMC7898914/)\n\n## Your body already makes GLP-1\n\nGLP-1 stands for glucagon-like peptide-1. It is a hormone your intestines release in response to food. Among its jobs, it helps the pancreas release insulin when blood sugar rises and influences how quickly food leaves the stomach. These effects helped make GLP-1 a target for diabetes treatment. [NIH explanation](https://www.niddk.nih.gov/news/archive/2021/story-discovery-medications-diabetes-obesity-emerged-research-pancreatic-hormone)\n\nThe hormone also influences appetite. Semaglutide activates GLP-1 receptors—the parts of cells that receive the signal. These receptors are found in brain regions involved in appetite regulation. Semaglutide reduces calorie intake, an effect thought to work through appetite. [Wegovy prescribing information](https://www.novo-pi.com/wegovy.pdf)\n\nThe body's own GLP-1 breaks down quickly. Medicines were developed to keep acting for longer, making sustained treatment possible. This is why the treatment can influence eating beyond the brief hormonal response to a single meal. [NIH explanation](https://www.niddk.nih.gov/news/archive/2021/story-discovery-medications-diabetes-obesity-emerged-research-pancreatic-hormone)\n\n## Why eating can feel different\n\nResearchers have studied appetite as well as weight. In a small, 20-week randomized trial involving 72 adults with obesity, people receiving weekly semaglutide injections, gradually increased to 2.4 mg, reported less hunger and greater fullness than those receiving placebo. They also reported fewer or weaker food cravings. The study was funded by the manufacturer, Novo Nordisk. [Read the study](https://pmc.ncbi.nlm.nih.gov/articles/PMC7898914/)\n\nFor someone who responds that way, stopping a meal can feel easier because the desire to keep eating has changed. That is a different experience from deciding to stop while still feeling hungry. The findings help explain a possible treatment experience; they do not mean everyone will feel the same change.\n\nThese medicines can also slow the movement of food out of the stomach. That is one part of their action, but it does not explain everything about weight loss. For example, tirzepatide's prescribing information says this slowing is greatest after the first dose and diminishes over time. [Zepbound prescribing information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## The names describe different medicines\n\nWegovy contains semaglutide, which activates GLP-1 receptors. Zepbound contains tirzepatide, which activates both GLP-1 and another hormone receptor called GIP. Their prescribing details differ. [Wegovy information](https://www.novo-pi.com/wegovy.pdf), [Zepbound information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nWegovy is available as injections and tablets. The formulation matters: the ingredient name alone does not tell you how a product is used. [Wegovy information](https://www.novo-pi.com/wegovy.pdf)\n\nRetatrutide also appears in discussions of weight-loss medicines. As of October 19, 2026, it remains investigational and is not FDA-approved. Research interest should not be confused with an approved treatment being available. [FDA guidance](https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)\n\n## What those changes can mean for weight\n\nIn the 68-week STEP 1 trial, 1,961 adults without diabetes who had obesity, or overweight with a weight-related health condition, received weekly semaglutide injections at a target dose of 2.4 mg or placebo. The estimated average weight loss was 14.9% with semaglutide and 2.4% with placebo. Both groups received lifestyle support. This manufacturer-funded trial tested a particular regimen; its average is not a forecast for an individual or for every GLP-1 product. [STEP 1 trial](https://pubmed.ncbi.nlm.nih.gov/33567185/)\n\nSide effects also matter. Nausea, vomiting, diarrhea, and constipation are common with semaglutide and tirzepatide. Serious risks include pancreatitis, gallbladder problems, and dehydration-related kidney injury. Certain histories rule them out, including a personal or family history of medullary thyroid cancer or having MEN 2, a rare inherited condition. A previous serious allergic reaction to a product's ingredients also rules that product out. [Wegovy information](https://www.novo-pi.com/wegovy.pdf), [Zepbound information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## Treatment involves more than a prescription\n\nA clinician needs to consider medical history, other medicines, pregnancy plans, likely benefits, and costs. Nutrition, physical activity, and follow-up remain part of care. Treatment may continue long term if it is helping and the risks remain acceptable; some weight regain is common after stopping. [NIDDK treatment guidance](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity)\n\nBefore starting, it is worth understanding what follow-up will look like: who will help with side effects, how progress will be assessed, and what happens if the treatment is difficult to tolerate or afford. Those conversations connect the science of appetite to the practical question of whether a medicine fits your life.\n",
       "body_sha256": "c945427575c11312a65fabb115dc9558571b59a31bef140570edb5f5efee8fb4",
-      "metadata_sha256": "93375f68f4a7ec050cd2c63d19dd8accded828aa17f08f581f7aee994cfbf792"
+      "metadata_sha256": "c80c8be16e6a215470a62d3141984f796729339f51e668a4c3d509516dc34393"
+    },
+    {
+      "metadata": {
+        "article_id": "W4",
+        "slug": "insulin-resistance-explained",
+        "title": "Insulin Resistance, Explained Without the Jargon",
+        "description": "A plain-language explanation of insulin resistance, prediabetes, A1C testing, and conversations about prevention.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Metabolic Health",
+        "tags": [
+          "insulin resistance",
+          "prediabetes",
+          "blood glucose"
+        ],
+        "citations": [
+          {
+            "title": "Insulin Resistance and Prediabetes",
+            "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/prediabetes-insulin-resistance",
+            "type": "reference"
+          },
+          {
+            "title": "The A1C Test and Diabetes",
+            "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+            "type": "reference"
+          },
+          {
+            "title": "Diabetes Prevention Program",
+            "url": "https://www.niddk.nih.gov/about-niddk/research-areas/diabetes/diabetes-prevention-program-dpp",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T23:53:28.500Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
+        "next_review_date": "2027-04-17T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/metabolic-lab.png",
+            "alt": "A laboratory worker handling a capped blood sample tube beside a rack.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "33107cd03d724baa9beb08b279cd45e118ab5b9a71f423b5bd63385453c6cf45",
+            "overlay": {
+              "title": "Insulin resistance"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/neighborhood-walk.png",
+              "alt": "Two friends talking while walking along a tree-lined neighborhood sidewalk.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "71031a1bd7d882b150b92a2948983f054f9c1f822036417032e2429af919d574",
+              "before_heading": "A useful response is broader than cutting out sugar"
+            }
+          ]
+        }
+      },
+      "content": "# Insulin Resistance, Explained Without the Jargon\n\n“Insulin resistance” turns up in conversations about weight, blood sugar, and metabolism so often that it can begin to sound like an explanation for everything.\n\nIt describes something specific: the body is not responding to insulin as well as it should. It can increase the risk of prediabetes and type 2 diabetes, but those terms are not interchangeable.\n\nUnderstanding the difference helps you make sense of a test result—and avoid diagnosing yourself from a symptom list online.\n\n## What insulin normally does\n\nInsulin is a hormone made by the pancreas. Among its jobs, it helps glucose move from the bloodstream into cells where it can be used for energy.\n\nWith insulin resistance, cells in tissues such as muscle, fat, and liver respond less effectively to the insulin signal. The pancreas may compensate by making more insulin. Blood glucose can remain within its usual range for a time; if the system cannot keep up, glucose levels rise.\n\nThat is why insulin resistance does not automatically mean a person already has diabetes. The [NIDDK’s insulin resistance guide](https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/prediabetes-insulin-resistance) explains the relationship between the underlying process and higher blood glucose.\n\n## Prediabetes describes blood glucose, not a body type\n\nPrediabetes means blood glucose is above the normal range but below the range used to diagnose diabetes. It signals increased risk, rather than a certainty that diabetes will develop.\n\nBody weight and waist size can be part of a risk assessment, but appearance cannot tell you a blood glucose result. Family history, age, physical activity, a history of gestational diabetes, some health conditions, and certain medicines can also matter.\n\nPeople with insulin resistance or prediabetes often have no symptoms. That makes claims that a particular craving, body shape, or tired afternoon proves insulin resistance unreliable.\n\nIf you are concerned, ask about your risk and whether testing is appropriate. You do not need to identify a visible sign before having that conversation.\n\n## What the usual tests actually measure\n\nClinicians commonly assess blood glucose using tests such as A1C or fasting plasma glucose. An oral glucose tolerance test is another option in some circumstances.\n\nA1C reflects average blood glucose over roughly the previous three months. Fasting glucose measures the level at the time the sample is taken after the required fast. Neither is a direct measurement of how much insulin resistance a person has.\n\nFor many nonpregnant adults, an A1C from **5.7% to 6.4%** falls in the prediabetes range. A result of **6.5% or above** is in the diabetes range, but diagnosis generally needs confirmation when clear symptoms are absent. Conditions affecting red blood cells or hemoglobin can make A1C misleading, so a clinician needs to interpret the result in context. [NIDDK A1C guidance](https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test).\n\nSpecialized testing of insulin resistance is used mainly in research. An online “optimal insulin” target should not replace an assessment of your overall health.\n\n## A useful response is broader than cutting out sugar\n\nFood matters, but the conversation should not end with a single forbidden ingredient. Activity, sleep, weight management when appropriate, and treatment of related conditions can all be part of care.\n\nYou might begin by asking which change would be most useful and manageable for you. That could mean working on a regular eating pattern, replacing a usual sugary drink, finding an activity you can sustain, or getting help with a sleep problem. These are examples to discuss, not a prescription for every reader.\n\nThe NIDDK describes lifestyle support and, for some people, medicines such as metformin as ways to reduce diabetes risk. Its [Diabetes Prevention Program overview](https://www.niddk.nih.gov/about-niddk/research-areas/diabetes/diabetes-prevention-program-dpp) explains the research behind prevention efforts.\n\nYou do not need to achieve an idealized routine before beginning. A plan is more useful when it accounts for your work, food access, mobility, and preferences.\n\n## Where weight-loss medicines fit\n\nA concern about insulin resistance alone does not tell you which medicine you need. Eligibility and treatment choice depend on the diagnosis, weight-related health concerns, other medicines, and individual risks.\n\nIf GLP-1-based treatment comes up, ask what condition the clinician is treating and what improvement will be measured. Is the goal blood glucose management, weight management, or another approved use? The ingredient and brand name are not enough to answer that question.\n\nFor background, our guide to [how GLP-1 weight-loss medicines work](/blog/how-glp-1-weight-loss-medicines-work) explains the treatment family.\n\n## Leave with a result you understand\n\nIf a test is abnormal, ask what it means, whether it needs confirmation, and when it should be repeated. Also ask what you can reasonably work on before the next visit.\n\nA laboratory number is information for making a plan. It is not a verdict on your effort, and it does not tell the whole story of your health.\n",
+      "body_sha256": "b05f0edd8c0988d22028d255dabd7826504c751c1c2026e5b027b059dd2e9a58",
+      "metadata_sha256": "5cbeac51f3d8c282db754d60cbefdf8194f4d06fe3fb4198ae100fd7972c758e"
     },
     {
       "metadata": {
@@ -230,18 +635,22 @@
           }
         ],
         "published_at": "2026-10-20T01:05:05.080Z",
-        "updated_at": "2026-10-20T01:05:05.080Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
         "next_review_date": "2027-01-17T23:59:59-07:00",
         "editor_name": "Tony Lewis",
-        "reviewed_at": "2026-10-20T01:05:05.080Z",
-        "approved_at": "2026-10-20T01:05:05.080Z",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
         "visuals": {
           "hero": {
             "src": "/images/editorial/care-conversation.png",
             "alt": "Illustration of two women having a healthcare conversation at a table.",
             "width": 1536,
             "height": 1024,
-            "sha256": "4dc5755593417f42bf67ff7ce24e2e6da5510c63e5a53d25091a7230a0746322"
+            "sha256": "4dc5755593417f42bf67ff7ce24e2e6da5510c63e5a53d25091a7230a0746322",
+            "overlay": {
+              "title": "Semaglutide vs. tirzepatide",
+              "subtitle": "Wegovy & Zepbound"
+            }
           },
           "body": [
             {
@@ -255,21 +664,158 @@
                 "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/"
               },
               "before_heading": "Some differences show up in everyday treatment"
-            },
-            {
-              "src": "/images/editorial/starting-treatment.png",
-              "alt": "Illustration of a woman walking along a leafy garden path.",
-              "width": 1536,
-              "height": 1024,
-              "sha256": "3c0e23ffdbda0fc75403b2d0c13d02f62c89aa78759ce28cc56f2dfdd4cd8e8f",
-              "before_heading": "Choosing something you can continue"
             }
           ]
         }
       },
       "content": "# Semaglutide vs. Tirzepatide: What’s the Difference?\n\nIf you have started reading about weight-loss medicines, you have probably encountered several names before getting a clear explanation of how they fit together. Semaglutide. Tirzepatide. Wegovy. Zepbound. Then someone mentions Ozempic or Mounjaro, and the list gets longer.\n\nThe names become easier to follow once you separate the active ingredient from the brand. From there, you can look at the questions that matter: how the medicines work, what researchers have found, and what could make one a better fit for your health and daily life.\n\n## Two ingredients, several brand names\n\nSemaglutide is the active ingredient in Wegovy. Tirzepatide is the active ingredient in Zepbound. Both brands have approved uses for weight management. [Wegovy information](https://www.novo-pi.com/wegovy.pdf), [Zepbound information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nThe same ingredients also appear in medicines approved for type 2 diabetes: semaglutide in Ozempic and tirzepatide in Mounjaro. Sharing an ingredient does not make every branded product's dose or approved uses interchangeable. [Ozempic information](https://www.novo-pi.com/ozempic.pdf), [Mounjaro information](https://pi.lilly.com/us/mounjaro-uspi.pdf)\n\nSemaglutide activates receptors for GLP-1, a hormone involved in blood sugar and appetite regulation. Tirzepatide activates GLP-1 receptors and receptors for another hormone, GIP. Both medicines can reduce food intake through effects on appetite. [Semaglutide mechanism](https://www.novo-pi.com/wegovy.pdf), [tirzepatide mechanism](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nThat gives researchers a reason to study the medicines separately. Counting hormone targets, by itself, cannot tell you how much weight someone will lose.\n\n## What happened when researchers compared them directly?\n\nThe SURMOUNT-5 trial randomly assigned 751 adults without type 2 diabetes to weekly injections of tirzepatide or semaglutide for 72 weeks. Treatment reached the highest dose each participant could tolerate within the study's selected doses. [Published study abstract](https://pubmed.ncbi.nlm.nih.gov/40353578/)\n\n| Treatment studied | Estimated average weight loss at 72 weeks (% of starting weight) |\n| --- | --- |\n| Semaglutide, 1.7 or 2.4 mg weekly | 13.7% |\n| Tirzepatide, 10 or 15 mg weekly | 20.2% |\n\nTirzepatide produced the larger average reduction: a difference of 6.5 percentage points. The analysis accounted for participants who stopped their assigned treatment; these are estimated group averages, not individual targets or promises. [SURMOUNT-5 results](https://pubmed.ncbi.nlm.nih.gov/40353578/), [analysis definition](https://investor.lilly.com/node/52376)\n\nParticipants had obesity, or overweight with a weight-related health condition, and both groups received diet and physical-activity counseling. Eli Lilly, which makes tirzepatide, funded the trial. It was open-label, meaning participants and investigators knew which treatment was being used. [Study details](https://investor.lilly.com/node/52376)\n\nThe doses matter when interpreting the result. This trial did not compare tirzepatide with oral semaglutide or the newer 7.2 mg Wegovy injection. Those are different regimens included in current Wegovy labeling. The result answers the comparison that was tested. [Trial methods](https://pubmed.ncbi.nlm.nih.gov/40353578/), [current Wegovy information](https://www.novo-pi.com/wegovy.pdf)\n\n## Some differences show up in everyday treatment\n\nWegovy comes as a weekly injection or a daily tablet. The tablet has specific instructions about taking it on an empty stomach and waiting before eating, drinking, or taking other oral medicines. Zepbound is a weekly injection. A preference for tablets is worth discussing alongside the routine they require. [Wegovy information](https://www.novo-pi.com/wegovy.pdf), [Zepbound information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nOther health conditions can influence the conversation, too. Wegovy has an FDA-approved use to reduce the risk of cardiovascular death, heart attack, and stroke in adults with established cardiovascular disease and either overweight or obesity. [FDA cardiovascular approval](https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-reduce-risk-serious-heart-problems-specifically-adults-obesity-or)\n\nZepbound has an approved use for moderate to severe obstructive sleep apnea in adults with obesity. [FDA sleep-apnea approval](https://www.fda.gov/news-events/press-announcements/fda-approves-first-medication-obstructive-sleep-apnea)\n\nThose are examples of why a clinician looks beyond the weight-loss percentage. An approval for a particular condition also does not prove that one medicine is better than the other for every related health outcome.\n\n## Side effects belong in the comparison\n\nBoth medicines commonly cause nausea, vomiting, diarrhea, and constipation. Serious risks include pancreatitis, gallbladder problems, and kidney injury related to dehydration. Neither should be used by someone with a personal or family history of medullary thyroid cancer or with MEN 2, a rare inherited condition. A previous serious allergic reaction to a product's ingredients also rules that product out. [Wegovy safety information](https://www.novo-pi.com/wegovy.pdf), [Zepbound safety information](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\nOne specific difference concerns birth-control pills. Tirzepatide can reduce the effectiveness of oral hormonal contraceptives. Its label advises switching to a non-oral method or adding a barrier method for four weeks after starting and four weeks after each dose increase. Discuss that plan with the prescriber before treatment. [Zepbound contraception guidance](https://pi.lilly.com/us/zepbound-uspi.pdf)\n\n## Choosing something you can continue\n\nThe decision also involves other medicines, pregnancy plans, cost, and follow-up. Insurance coverage varies, so checking your own plan is more useful than assuming one brand will be affordable. Weight-management treatment may continue long term when it is helping and its risks remain acceptable. [NIDDK treatment guidance](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity)\n\nBefore starting, ask what improvement you and your clinician are aiming for, how side effects will be handled, and what happens if the medicine becomes difficult to obtain or afford. Those answers help turn a comparison between two drugs into a workable plan for your care.\n",
       "body_sha256": "fb5e25feb7359f2a7eedc1a9e1b70c8cdabbfdd48688b18371059676099ce5c2",
-      "metadata_sha256": "ea8e478244db8e5073632c13c299dc6d5f101cfa840942bb056d74a2f6614459"
+      "metadata_sha256": "29d8c4f93e7190b9580513ca77322a5396669d630f144f61a94267c44edb9542"
+    },
+    {
+      "metadata": {
+        "article_id": "M7",
+        "slug": "stopping-glp-1-medicine",
+        "title": "What Happens When You Stop a GLP-1 Medicine?",
+        "description": "What semaglutide and tirzepatide withdrawal studies show about regain, and how to plan a treatment transition.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight-Loss Medicines",
+        "tags": [
+          "GLP-1",
+          "weight maintenance",
+          "weight regain"
+        ],
+        "citations": [
+          {
+            "title": "Prescription Medications to Treat Overweight & Obesity",
+            "url": "https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity",
+            "type": "reference"
+          },
+          {
+            "title": "Weight regain and cardiometabolic effects after withdrawal of semaglutide: STEP 1 extension",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35441470/",
+            "type": "reference"
+          },
+          {
+            "title": "Continued Treatment With Tirzepatide for Maintenance of Weight Reduction",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10714284/",
+            "type": "reference"
+          },
+          {
+            "title": "Physiology of the weight-loss plateau in response to diet restriction, GLP-1 receptor agonism, and bariatric surgery",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38644683/",
+            "type": "reference"
+          },
+          {
+            "title": "Wegovy prescribing information",
+            "url": "https://www.novo-pi.com/wegovy.pdf",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T23:53:28.500Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
+        "next_review_date": "2027-01-17T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/transition-walk.png",
+            "alt": "A woman in a rust-colored jacket walking beside a river in autumn.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "ac6420b0dfa5b72507e817344d7c2343f4bdd5cac90e695609e1bb2ee47ade50",
+            "overlay": {
+              "title": "Stopping a GLP-1"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/surmount-4-withdrawal.png",
+              "alt": "SURMOUNT-4: over weeks 36 to 88, mean weight change was minus 5.5% continuing tirzepatide and plus 14.0% switching to placebo, relative to week-36 weight. Whiskers show 95% confidence intervals.",
+              "width": 1600,
+              "height": 1100,
+              "sha256": "20ced4af3b56b45e24e72af3c25d6201d96f28b08e052778054138f1cc92d2d9",
+              "source": {
+                "title": "SURMOUNT-4, JAMA Table 2",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10714284/"
+              },
+              "before_heading": "Regain is not a measure of character"
+            }
+          ]
+        }
+      },
+      "content": "# What Happens When You Stop a GLP-1 Medicine?\n\nPeople stop weight-loss medicines for many reasons. The cost changes. Side effects become difficult. Pregnancy plans arise. Or they reach a point where they want to know whether the medicine is still necessary.\n\nThe question is reasonable. So is wanting a clear answer about what may happen afterward.\n\nWeight regain is common after treatment stops, but studies describe averages, not a fixed outcome for every person. Planning the transition with your prescriber gives you a chance to address the reason for stopping and decide what support comes next. The [NIDDK’s overview of weight-management medicines](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity) describes treatment as potentially long term when benefits continue and side effects are acceptable.\n\n## What withdrawal studies tell us\n\nIn an extension of the STEP 1 trial, 327 participants were followed after the trial’s semaglutide or placebo treatment ended. One year after stopping semaglutide, the group had regained roughly two-thirds of its earlier weight loss on average. Some weight loss remained. The structured lifestyle intervention also ended, so the study cannot isolate stopping the medicine from stopping that support. Novo Nordisk funded the research. [STEP 1 extension](https://pubmed.ncbi.nlm.nih.gov/35441470/).\n\nSURMOUNT-4 asked a related question using tirzepatide. After 36 weeks taking the medicine, 670 adults without diabetes were randomly assigned either to continue it or to switch to placebo. Diet and activity support continued.\n\nOver the following 52 weeks, average body weight fell another 5.5% in the continued-treatment group and rose 14.0% in the placebo group. Those percentages use weight at the point of randomization as the starting point—not the amount of weight previously lost.\n\nThis Eli Lilly-funded trial included people who had completed the initial treatment period, so its results do not describe everyone who starts tirzepatide. [SURMOUNT-4 trial](https://pmc.ncbi.nlm.nih.gov/articles/PMC10714284/).\n\n## Regain is not a measure of character\n\nIf appetite becomes harder to manage after a medicine is withdrawn, it can feel as though something you learned has vanished. It may be more helpful to recognize that the support provided by treatment has changed.\n\nWeight management is influenced by biology as well as circumstances and behavior. Research on weight regulation describes increased appetite and changes in energy expenditure after weight loss. These pressures help explain why maintaining a lower weight can require ongoing support. [Research on the physiology of weight-loss plateaus](https://pubmed.ncbi.nlm.nih.gov/38644683/).\n\nThat is different from saying regain is inevitable or that daily habits do not matter. It means a plan should account for the difficulty rather than treating any upward movement as a personal failure.\n\n## The reason for stopping shapes the next step\n\nSomeone stopping because of a serious reaction needs a different plan from someone whose insurance coverage is ending. Tell your clinician which problem you are trying to solve.\n\nIf the issue is access, ask about appropriate treatment alternatives and continuity of care before the supply runs out. If eating or side effects have become difficult, describe those problems directly. A discussion about tolerability should not be reduced to whether you can endure another month.\n\nPregnancy planning and significant adverse effects require product-specific advice. Follow urgent instructions in your medicine’s Medication Guide when they apply; do not wait for a routine appointment to report a serious reaction.\n\n## Make room for a maintenance plan\n\nA useful plan covers follow-up, nourishment, activity, and what changes should prompt contact. If the medicine is also helping manage diabetes, ask how blood glucose will be monitored and how the rest of your treatment may need to change.\n\nIt can help to agree on a manageable way to watch the trend without turning every weigh-in into a judgment. Also track things that matter to you: energy, strength, eating patterns, and the health measures your clinician is following.\n\nDo not improvise a taper, stretch injections, share medication, or restart an old dose after a break. Instructions vary by product and by the length of the interruption. Ask the prescriber or pharmacist for a specific plan; for example, the [Wegovy Medication Guide](https://www.novo-pi.com/wegovy.pdf) includes specific guidance on restarting after missed weeks.\n\n## Does this mean treatment has to be forever?\n\nThe studies support taking long-term treatment seriously. They do not decide what every individual must do for the rest of their life.\n\nBenefits, side effects, access, preferences, and health circumstances can change. Reassessment is part of care. A decision to continue should have a reason; a decision to stop should have a plan.\n\nIf you do regain weight, you can return to that conversation. There is no requirement to wait until all progress has been lost before asking for help.\n",
+      "body_sha256": "7417871cafb9b5a7298edc72569aa8db67111df5c5d087273774dc58bedb0fe4",
+      "metadata_sha256": "317a6819f0bb839713922c63670ba4f13b15ab4a920569427a002ac4e1ba9d44"
+    },
+    {
+      "metadata": {
+        "article_id": "W3",
+        "slug": "what-is-food-noise",
+        "title": "What Is “Food Noise,” and Why Do People Talk About It?",
+        "description": "What people mean by food noise, what researchers are studying, and why hunger, distress, and binge eating differ.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Understanding Weight",
+        "tags": [
+          "food noise",
+          "appetite",
+          "eating behavior"
+        ],
+        "citations": [
+          {
+            "title": "Food noise: definition and measurement",
+            "url": "https://www.nature.com/articles/s41387-025-00382-x",
+            "type": "reference"
+          },
+          {
+            "title": "Food noise: A theoretical review",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42772688/",
+            "type": "reference"
+          },
+          {
+            "title": "Retrospective Assessment of Food Noise Changes After Initiation of Injectable Semaglutide: INFORM Survey",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42217114/",
+            "type": "reference"
+          },
+          {
+            "title": "Definition and Facts for Binge Eating Disorder",
+            "url": "https://www.niddk.nih.gov/health-information/weight-management/binge-eating-disorder/definition-facts",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T23:53:28.500Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
+        "next_review_date": "2027-01-17T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/food-thoughts-cover.png",
+            "alt": "A paper-cut illustration of a plate surrounded by speech bubbles and flowing ribbons.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "911e46973558f08a79416e2aa57f21e0e152b7872925cfbf3d85ee67830e8138",
+            "overlay": {
+              "title": "What is food noise?"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/food-market.png",
+              "alt": "A man choosing a pear at an outdoor produce market.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "ad14155b42df335edae88938ae03dd20509102e7d709fa9adfee8bb9356c6905",
+              "before_heading": "Hunger, enjoyment, and distress are different"
+            }
+          ]
+        }
+      },
+      "content": "# What Is “Food Noise,” and Why Do People Talk About It?\n\nPlanning dinner is ordinary. So is looking forward to a favorite meal. But some people describe thoughts about food that keep interrupting the rest of the day: what to eat next, whether to eat, how to resist eating, or what they wish they had not eaten.\n\n“Food noise” has become a popular name for that experience. It can give people language for something they struggled to explain. It can also become confusing when every craving or hungry afternoon gets placed under the same label.\n\nResearchers are still working out how to define and measure it.\n\n## A useful description, with boundaries still being studied\n\nA 2025 expert paper proposed describing food noise in terms of unwanted, persistent food-related thoughts that interfere with everyday life. The work, funded by the telehealth company Ro, also explored ways to measure the experience. [The food-noise definition paper](https://www.nature.com/articles/s41387-025-00382-x).\n\nA later theoretical review emphasized how much remains uncertain, including the causes of food noise and how treatments might change it. The review considered several possible explanations rather than identifying a single established mechanism. [Food noise: a theoretical review](https://pubmed.ncbi.nlm.nih.gov/42772688/).\n\nIt is therefore better understood as an emerging research concept and a description of experience than as a diagnosis you can confirm from a social-media quiz.\n\n## Hunger, enjoyment, and distress are different\n\nYou can be hungry without spending hours preoccupied with food. You can enjoy cooking, plan a celebration meal, or notice a bakery without that experience being a problem.\n\nThe useful questions concern how intrusive the thoughts feel and what they interfere with. Can you return your attention to work or a conversation? Do food decisions take up time you wish you could spend elsewhere? Does the experience feel distressing?\n\nThese questions can help describe the issue to a professional. They are not a diagnostic test or a score that determines whether you should receive medication.\n\nIt is also worth describing the circumstances. Thoughts that become intense after a day of missed meals are a different starting point for a conversation from thoughts that feel relentless even when you are eating regularly. The label alone does not explain either experience.\n\n## Why GLP-1 medicines entered the conversation\n\nPeople taking GLP-1 medicines have reported changes in hunger, cravings, and the mental attention given to food. Researchers are studying those reports, but different studies measure different things.\n\nIn the 2026 INFORM survey, 550 US adults taking injectable semaglutide recalled their food-related thoughts before treatment and reported their current experience. Responses suggested less food noise after starting treatment. Because the comparison relied on recollection and had no randomized control group, it cannot prove that medication caused all of the reported change. Novo Nordisk employees were among the authors, and the company paid for the analysis. [INFORM survey](https://pubmed.ncbi.nlm.nih.gov/42217114/).\n\nThat distinction does not invalidate someone’s relief. It matters when moving from “this is what I experienced” to “this will happen for everyone.”\n\nThe presence or absence of that feeling is also not a stand-alone way to judge whether a treatment is appropriate or working. Medication decisions need the broader health picture.\n\n## Food noise is not another name for binge eating disorder\n\nBinge eating disorder involves recurring episodes of eating unusually large amounts with a sense of losing control. Food-related preoccupation and binge eating can be part of the same person’s experience, but the terms do not mean the same thing.\n\nThe [NIDDK’s explanation of binge eating disorder](https://www.niddk.nih.gov/health-information/weight-management/binge-eating-disorder/definition-facts) describes it as a condition that warrants assessment. It can affect people across body sizes, and most people with obesity do not have it.\n\nIf your concerns include loss-of-control eating, purging, severe restriction, or substantial distress, describe those directly to a healthcare professional. Calling everything food noise can make it harder to identify the help you actually need.\n\n## You do not need the perfect term to ask for help\n\nA brief account of an ordinary day may be more useful than adopting a label. Explain when the thoughts appear, how they feel, whether you have been able to eat regularly, and what they prevent you from doing.\n\nYou might say, “I spend much of the afternoon thinking about what I will eat, and it is hard to focus,” or “I am constantly negotiating with myself about food.” These are examples of ways to describe an experience, not patient quotations.\n\nThe aim is to make the problem understandable. You do not have to prove that your thoughts meet an internet definition before they deserve attention.\n",
+      "body_sha256": "a5601305a9b577ca7a551c38ca4b29592ba8003f2683b5d91a02c7bd9879108b",
+      "metadata_sha256": "a0485081da0a10e23f58b378c56df577270c89abbf21212ae12888b9a3202fa5"
     },
     {
       "metadata": {
@@ -323,34 +869,119 @@
           }
         ],
         "published_at": "2026-10-20T01:05:05.080Z",
-        "updated_at": "2026-10-20T01:05:05.080Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
         "next_review_date": "2026-11-18T23:59:59-07:00",
         "editor_name": "Tony Lewis",
-        "reviewed_at": "2026-10-20T01:05:05.080Z",
-        "approved_at": "2026-10-20T01:05:05.080Z",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
         "visuals": {
           "hero": {
             "src": "/images/editorial/research.png",
             "alt": "Illustration of glass laboratory vessels with a microscope in the background.",
             "width": 1536,
             "height": 1024,
-            "sha256": "aa916a1ec34a5f2db62284fca3186fb195f24c5daf2c0b9814cbfb4665c7de8d"
+            "sha256": "aa916a1ec34a5f2db62284fca3186fb195f24c5daf2c0b9814cbfb4665c7de8d",
+            "overlay": {
+              "title": "Retatrutide explained",
+              "subtitle": "Research & the triple agonist",
+              "attribution": {
+                "label": "Developer",
+                "logo": {
+                  "src": "/images/editorial/lilly-logo-official.png",
+                  "alt": "Lilly",
+                  "width": 360,
+                  "height": 193,
+                  "sha256": "3dcc414fe0a4cdb093b9780ad7564e67cdf1ab1e1e0d0fe7f74d189201db5999",
+                  "source": {
+                    "title": "Official Lilly website logo",
+                    "url": "https://www.lilly.com/"
+                  }
+                }
+              }
+            }
           },
           "body": [
             {
-              "src": "/images/editorial/care-conversation.png",
-              "alt": "Illustration of two women having a healthcare conversation at a table.",
-              "width": 1536,
-              "height": 1024,
-              "sha256": "4dc5755593417f42bf67ff7ce24e2e6da5510c63e5a53d25091a7230a0746322",
-              "before_heading": "What about retatrutide offered online?"
+              "src": "/images/editorial/retatrutide-receptor-map.png",
+              "alt": "Retatrutide is one investigational molecule activating GLP-1, GIP, and glucagon receptors. The diagram describes its targets; clinical trials assess benefits and risks.",
+              "width": 1000,
+              "height": 985,
+              "sha256": "6508a556fa07a4966fde9c805e7ce396833ad08e38f4bd49338c5b0d83048e43",
+              "source": {
+                "title": "Lilly: What to know about retatrutide",
+                "url": "https://www.lilly.com/news/stories/what-to-know-about-retatrutide"
+              },
+              "before_heading": "The weight-loss results behind the attention"
             }
           ]
         }
       },
       "content": "# What Is Retatrutide, and Why Is It Getting Attention?\n\nRetatrutide is an experimental medicine being studied for obesity and other conditions. It has attracted attention for the amount of weight participants have lost in clinical trials and for an approach that acts on three hormone receptors. Eli Lilly, its developer, is studying it as a weekly injection. [Retatrutide overview](https://www.lilly.com/news/stories/what-to-know-about-retatrutide)\n\n**As of October 19, 2026, retatrutide is not FDA-approved.** Its research results can help us understand a possible future treatment, but there is no approved retatrutide prescription available today. [FDA guidance](https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)\n\n## What does “triple agonist” mean?\n\nHormones send signals by attaching to receptors on cells. An agonist is a substance that activates a receptor. Retatrutide is one molecule designed to activate receptors for three hormones: GLP-1, GIP, and glucagon. That is why researchers call it a triple agonist. You may also encounter the nickname “GLP-3,” but that is not its scientific classification. [How retatrutide is described](https://www.lilly.com/news/stories/what-to-know-about-retatrutide)\n\nThe glucagon component is part of the scientific interest. In early experiments in mice, retatrutide's effects included eating less and using more energy, with glucagon-receptor activity contributing to the energy-use effect. These findings helped explain the rationale for developing the medicine. They do not establish how much extra energy a person would use or prove that three targets must work better than two. [Original development research](https://pubmed.ncbi.nlm.nih.gov/35985340/)\n\nFor that, researchers need human trials that measure benefits and risks together.\n\n## The weight-loss results behind the attention\n\nThe Phase 3 TRIUMPH-1 study randomly assigned 2,339 adults without diabetes to retatrutide or placebo for 80 weeks. Participants had obesity or overweight with a weight-related condition. The trial was funded by Lilly, and its main report was published in the *New England Journal of Medicine* in September 2026. [Published study abstract](https://pubmed.ncbi.nlm.nih.gov/42814954/), [study population](https://www.prnewswire.com/news-releases/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss-in-pivotal-phase-3-obesity-trial-302778859.html)\n\nIn the analysis that accounted for participants regardless of whether they stayed on treatment, the highest-dose group, assigned 12 mg weekly, lost an estimated average of **25.0% of starting body weight**, compared with **3.9% with placebo**. The lower-dose groups also lost weight, with smaller average reductions. These are study results, not recommended doses or predictions for an individual. [TRIUMPH-1 results](https://pubmed.ncbi.nlm.nih.gov/42814954/)\n\nLosing roughly a quarter of starting weight explains why this research has drawn interest. Understanding the result also means looking at who was studied, how long treatment lasted, and which analysis produced the number.\n\n## Why some headlines say 28.3%\n\nLilly also reported a 28.3% average reduction for the highest-dose group, versus 2.2% with placebo, using a different analysis. It estimates what would happen if participants stayed on the study treatment without starting prohibited weight-management treatments. The 25.0% estimate counts outcomes regardless of whether participants discontinued the study medicine or started other weight-management treatments. [Lilly's results and analysis definitions](https://www.prnewswire.com/news-releases/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss-in-pivotal-phase-3-obesity-trial-302778859.html)\n\nBoth analyses can be informative. The difference is a reason to read beyond the largest number in a headline. Neither tells you what your own result would be.\n\n## Side effects are part of the result\n\nLilly reported nausea, diarrhea, constipation, and vomiting among the common adverse events in TRIUMPH-1. It also reported dysesthesia—unusual or unpleasant sensations, such as altered skin sensitivity. In the highest-dose group, 11.3% stopped treatment because of adverse events, compared with 4.9% receiving placebo. [Reported safety findings](https://www.prnewswire.com/news-releases/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss-in-pivotal-phase-3-obesity-trial-302778859.html)\n\nThose experiences matter alongside the average weight loss. A treatment's usefulness depends partly on whether people can continue it, and an encouraging trial cannot rule out every uncommon or long-term risk. Retatrutide's safety is still being evaluated; there is no FDA-approved prescribing label that settles its uses, precautions, and dosing. [Current development status](https://www.lilly.com/news/stories/what-to-know-about-retatrutide)\n\n## Is it better than tirzepatide?\n\nTRIUMPH-1 compared retatrutide with placebo. It did not test retatrutide against tirzepatide or semaglutide. Putting percentages from separate trials next to each other does not create a direct comparison: the participants, duration, doses, and analysis can differ. [TRIUMPH-1 design](https://pubmed.ncbi.nlm.nih.gov/42814954/)\n\nA separate trial, TRIUMPH-5, is comparing retatrutide with tirzepatide. When checked on October 19, 2026, its registry listed it as active, with enrollment closed and no results posted. That comparison is one of the developments to watch as the evidence grows. [TRIUMPH-5 registry](https://clinicaltrials.gov/study/NCT06662383?intr=retatrutide&tab=results)\n\n## What about retatrutide offered online?\n\nA website offering retatrutide does not mean it has become an approved treatment. FDA states that retatrutide cannot be used in compounding under federal law and warns against products sold to consumers under labels such as “for research purposes.” Their quality is unknown. [FDA guidance](https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss)\n\nLilly says access to its investigational medicine is through its clinical trials. Participation depends on a study's eligibility requirements and whether it is recruiting. [Developer's access information](https://www.lilly.com/news/stories/what-to-know-about-retatrutide), [example trial requirements](https://trials.lilly.com/en-US/trial/549215)\n\nIf you are considering weight treatment now, a clinician can help you discuss the options already available and what fits your health history. Retatrutide is worth following as research develops. A future treatment possibility does not have to put today's care conversation on hold.\n",
       "body_sha256": "1980e539e5a161a72ddf6d713d696762c74a28526fca549b4c8a0286d8783bca",
-      "metadata_sha256": "64a5ffe450d9955ad30ea81018eaec85ff1c82f2633339997458f01a4a67d19f"
+      "metadata_sha256": "667d9fd10d9c6c912b15c124ce952a0c4dbad41ef6b59178001831a481aab0b4"
+    },
+    {
+      "metadata": {
+        "article_id": "M5",
+        "slug": "what-to-eat-on-glp-1",
+        "title": "What Should You Eat When a GLP-1 Makes You Less Hungry?",
+        "description": "Practical ways to eat well with a smaller appetite, manage meals and fluids, and recognize when low intake needs support.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Nutrition Education",
+        "tags": [
+          "GLP-1",
+          "nutrition",
+          "appetite"
+        ],
+        "citations": [
+          {
+            "title": "Nutritional priorities to support GLP-1 therapy for obesity",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12304835/",
+            "type": "reference"
+          },
+          {
+            "title": "Healthy Eating for Adults with Chronic Kidney Disease",
+            "url": "https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/eating-nutrition",
+            "type": "reference"
+          },
+          {
+            "title": "Wegovy prescribing information",
+            "url": "https://www.novo-pi.com/wegovy.pdf",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T23:53:28.500Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
+        "next_review_date": "2027-01-17T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/small-meal.png",
+            "alt": "Lentil soup, bread, yogurt, fruit, and water arranged on a kitchen table.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "214cf72096a4ef7d4762f6ed19e538ca94d1b9b337c7d001289a0029e40efe04",
+            "overlay": {
+              "title": "GLP-1 & everyday eating"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/simple-meal-prep.png",
+              "alt": "Containers of chicken, beans, rice, and vegetables on a kitchen worktop.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "705d32060cd0ff26ee92548be99e7ef692cb08faa961aa2da4f1b7a9c410946a",
+              "before_heading": "Give protein a place without making it the whole meal"
+            }
+          ]
+        }
+      },
+      "content": "# What Should You Eat When a GLP-1 Makes You Less Hungry?\n\nYou sit down with a meal you used to finish easily. Halfway through, you are done. Later, dinner sounds less appealing than a cup of tea.\n\nThat change can feel welcome if hunger once occupied much of your day. It can also leave you wondering how to eat well when eating itself takes more effort.\n\nThe aim is to make the food you can comfortably eat count. A smaller appetite does not remove your need for nourishment. The 2025 joint nutrition advisory from four professional organizations makes adequate nutrition a central part of GLP-1 treatment, alongside managing symptoms and supporting strength. [Read the joint advisory](https://pmc.ncbi.nlm.nih.gov/articles/PMC12304835/).\n\n## Begin with food you can actually manage\n\nAn elaborate meal plan is not much help when the thought of a large plate puts you off. Start with a few familiar options that are easy to prepare and comfortable to eat.\n\nFor example, breakfast might be yogurt with fruit, or an egg with toast. Lunch could be a small bowl of lentil soup, with more saved for later. Dinner might be fish or tofu alongside rice and cooked vegetables. These are starting ideas, not a required menu. Your allergies, preferences, budget, and medical needs still matter.\n\nYou do not have to force a full meal after you feel comfortably satisfied. Smaller eating opportunities can be more manageable than expecting three large meals to supply everything. If you repeatedly forget to eat, a gentle reminder may be more useful than waiting for strong hunger to arrive. These approaches are consistent with the advisory’s guidance for low appetite.\n\n## Give protein a place without making it the whole meal\n\nProtein deserves attention during weight loss because maintaining muscle is part of maintaining health. But protein needs are individual, and a universal number copied from social media may not suit your body or medical history.\n\nThink first about including a protein-containing food when you eat: eggs, beans, lentils, fish, poultry, tofu, milk, or yogurt, depending on what you enjoy and tolerate. Then leave room for other foods. Fruit, vegetables, grains, and fats contribute nutrients and variety that a protein shake alone cannot provide.\n\nA registered dietitian can help translate this into portions that work for you, particularly if kidney disease or another condition affects your dietary needs. The [NIDDK’s kidney nutrition guidance](https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/eating-nutrition) explains why protein advice changes with kidney health and treatment.\n\nFor more on the strength side of this conversation, see [GLP-1 medicines and muscle loss](/blog/glp-1-medicines-muscle-loss).\n\n## Adjust to symptoms rather than building a permanent forbidden-food list\n\nReduced hunger and nausea are different experiences. If food feels unappealing because you feel sick, that deserves attention rather than a congratulations for eating less.\n\nSmaller portions and less rich or fatty food may be easier during nausea. With constipation, gradually adding fiber and keeping up with fluids may help. A sudden large increase in fiber can be uncomfortable, so the response to one symptom should not become an inflexible rule for every meal.\n\nNotice what happens for you. A short note about the food, symptom, and timing can make a conversation with your care team more useful. It does not need to become a detailed calorie diary.\n\n## Keep fluids in the picture\n\nIt is easy to focus on the plate and overlook the glass beside it. Vomiting or diarrhea can lead to dehydration; kidney injury related to fluid loss is included in GLP-1 medicine warnings. Contact your care team promptly if symptoms persist, you cannot keep fluids down, or you are urinating much less than usual. Severe symptoms need urgent assessment. [Wegovy prescribing information](https://www.novo-pi.com/wegovy.pdf).\n\nFor everyday planning, keep drinks accessible and spread them through the day as tolerated. If you have been given a fluid restriction for a heart or kidney condition, follow that plan and ask how to manage illness within it.\n\n## Convenience can be part of eating well\n\nThere is no requirement to cook everything from scratch. Frozen vegetables, canned beans, plain yogurt, ready-to-eat eggs, and leftovers can make nourishment easier on a busy or low-appetite day. Choose options that fit any individual dietary restrictions.\n\nA supplement can sometimes fill a specific gap, but buying a stack of products marketed for GLP-1 users is not the starting point. Bring persistent low intake, weakness, or difficulty managing meals to your clinician or dietitian. They can assess whether food changes, testing, supplements, or a treatment adjustment are appropriate.\n\nThe useful question at the end of the day is whether you managed enough nourishment to feel and function well. If eating has become a daily struggle, the plan needs support—not more determination to tolerate it.\n",
+      "body_sha256": "2e2402e5862465070aa3862f578eabca4c21053b094f0cbc370fe621f6cc6f8d",
+      "metadata_sha256": "602344d569bbb91424601c0855bacfd6ccdc010c8eb041c4c4d38d2dd046276e"
     },
     {
       "metadata": {
@@ -393,26 +1024,33 @@
           }
         ],
         "published_at": "2026-10-20T01:05:05.080Z",
-        "updated_at": "2026-10-20T01:05:05.080Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
         "next_review_date": "2027-04-17T23:59:59-07:00",
         "editor_name": "Tony Lewis",
-        "reviewed_at": "2026-10-20T01:05:05.080Z",
-        "approved_at": "2026-10-20T01:05:05.080Z",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
         "visuals": {
           "hero": {
             "src": "/images/editorial/daily-weight.png",
             "alt": "Illustration of a bathroom scale with its display off beside a stool and folded towels.",
             "width": 1536,
             "height": 1024,
-            "sha256": "979f684e9e0813d1bc32f37dea72b5a7ce2ea8dbcfd0673b78507e92b364eb2b"
+            "sha256": "979f684e9e0813d1bc32f37dea72b5a7ce2ea8dbcfd0673b78507e92b364eb2b",
+            "overlay": {
+              "title": "Why weight fluctuates"
+            }
           },
           "body": [
             {
-              "src": "/images/editorial/everyday-meal.png",
-              "alt": "Illustration of a lunch plate with vegetables, chickpeas, grains and greens, beside yogurt and water.",
-              "width": 1536,
-              "height": 1024,
-              "sha256": "25929c1652e501c5f51a773408f5677344a94b39f90f9e9b70c44a7d7ab3d3dd",
+              "src": "/images/editorial/weight-reading-pattern.png",
+              "alt": "Invented teaching example, not patient or trial data: seven readings are 180.0, 181.0, 179.8, 180.6, 179.7, 180.4, and 180.1 pounds. It illustrates fluctuation, not an expected range, target, or weighing schedule.",
+              "width": 1200,
+              "height": 1050,
+              "sha256": "50c9a5486d49b0d71a6c140003073f877e8c6255f292676d93f29f5e7266b1e6",
+              "source": {
+                "title": "NHS: consistent conditions for recording weight",
+                "url": "https://www.england.nhs.uk/wp-content/uploads/2021/06/PRN00916-how-to-record-your-weight.pdf"
+              },
               "before_heading": "Make the comparison useful"
             }
           ]
@@ -420,7 +1058,69 @@
       },
       "content": "# Why Your Weight Changes From Day to Day\n\nYou step on the scale and the number is higher than yesterday. Nothing about your routine feels different, so you start looking for an explanation. Was it dinner? Did something change without you noticing?\n\nA bathroom scale gives you a total. It cannot tell you how much of a change came from body fat, fluid, or food still being digested. Small daily shifts are common, and water retention often helps explain them. Understanding that makes a surprising reading easier to put in context. [Cleveland Clinic](https://health.clevelandclinic.org/weight-fluctuations)\n\n## What changes between readings\n\nFood and drink have weight while they move through your body. A reading after dinner includes what you have eaten and drunk that day; a morning reading is taken under different conditions. Digestion and constipation can also influence the number. These changes do not tell you, by themselves, how much body fat you have gained or lost. [Cleveland Clinic](https://health.clevelandclinic.org/weight-fluctuations)\n\nFluid adds another layer. Your body can temporarily hold more water after a salty meal, and fluid retention can occur around menstruation. That means the scale may rise even when the explanation has little to do with a change in body fat. [MedlinePlus](https://medlineplus.gov/ency/article/003084.htm), [Cleveland Clinic](https://health.clevelandclinic.org/weight-fluctuations)\n\nCarbohydrates can affect the reading, too, through a process that is easy to overlook. Your body stores some carbohydrate as glycogen, and that stored fuel is accompanied by water. When glycogen stores change, the associated water can change with them. Researchers account for these shifts when modeling the early stages of weight change after a change in diet. [NIH-hosted research appendix](https://www.niddk.nih.gov/-/media/Files/BWP/Hall_Lancet_Web_Appendix.pdf)\n\nThis helps explain why a quick drop after changing how you eat cannot automatically be counted as fat loss. Equally, a rebound does not tell you that the same amount of fat has returned. Those are conclusions a weight reading alone cannot support.\n\n## Make the comparison useful\n\nIf you choose to track your weight, give yourself a fair comparison. Use the same scale on a hard, level surface, at a similar time of day, wearing similar clothing. The NHS recommends consistent conditions, preferably in the morning. Comparing an evening reading in jeans with a morning reading in pajamas adds differences that have little to do with the trend you are trying to understand. [NHS weighing guide](https://www.england.nhs.uk/wp-content/uploads/2021/06/PRN00916-how-to-record-your-weight.pdf)\n\nWith those differences reduced, a series of readings can help you see a pattern that a single reading cannot. You do not need to interpret every rise as a setback or every fall as progress. The number also leaves out other things that may matter to you, such as having more energy or finding everyday movement easier. [Cleveland Clinic](https://health.clevelandclinic.org/when-is-the-best-time-to-weigh-yourself)\n\nWeighing should serve a purpose that makes sense for you. If it causes anxiety or becomes difficult to step away from, discuss another approach with a healthcare professional. If your care team has prescribed weight monitoring, follow their plan. [Cleveland Clinic](https://health.clevelandclinic.org/when-is-the-best-time-to-weigh-yourself)\n\n## When a change deserves attention\n\nKnowing that weight fluctuates should not mean dismissing an unexplained change. Rapid weight gain can sometimes reflect a medical problem involving fluid retention. Contact a healthcare professional about unexplained rapid gain, especially with swelling or shortness of breath. Tell them when it started and what else you have noticed; that context is more useful than trying to diagnose the cause from the scale. [MedlinePlus](https://medlineplus.gov/ency/article/003084.htm)\n",
       "body_sha256": "472cae6d4df31caf1d9cd94505a2d9cc8337b355918527f57aba55fb9ff1e147",
-      "metadata_sha256": "397eb1e3856418a80c6cc061176e80dcf4bea121af7d0bbc29257b1069b3a2f7"
+      "metadata_sha256": "e3be0ca8654e0eb0570e16e243c567140a85dfd0f0093f7451eb2e821ef81ee3"
+    },
+    {
+      "metadata": {
+        "article_id": "W2",
+        "slug": "why-weight-loss-slows-down",
+        "title": "Why Has My Weight Loss Slowed Down?",
+        "description": "Why weight loss can level off, what a plateau can and cannot tell you, and what to review with your care team.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Understanding Weight",
+        "tags": [
+          "weight plateau",
+          "weight management"
+        ],
+        "citations": [
+          {
+            "title": "Physiology of the weight-loss plateau in response to diet restriction, GLP-1 receptor agonism, and bariatric surgery",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38644683/",
+            "type": "reference"
+          },
+          {
+            "title": "Prescription Medications to Treat Overweight & Obesity",
+            "url": "https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity",
+            "type": "reference"
+          },
+          {
+            "title": "Nutritional priorities to support GLP-1 therapy for obesity",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12304835/",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-20T23:53:28.500Z",
+        "updated_at": "2026-10-20T23:53:28.500Z",
+        "next_review_date": "2027-04-17T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-20T23:53:28.500Z",
+        "approved_at": "2026-10-20T23:53:28.500Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/measure-and-scale-cover.png",
+            "alt": "A loosely coiled measuring tape beside a bathroom scale with its display off.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "e229e86ed64fef9757628b7999452af6c41fb4572ec1bab61e43ee8a58b71099",
+            "overlay": {
+              "title": "When weight loss slows"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/progress-notebook.png",
+              "alt": "A woman reflecting over a notebook at her kitchen table.",
+              "width": 1536,
+              "height": 1024,
+              "sha256": "90eb1f35fe6b7d2850084f0b88718df6447b46c5c692f0992218e3af7979fe2f",
+              "before_heading": "Review what has changed in ordinary life"
+            }
+          ]
+        }
+      },
+      "content": "# Why Has My Weight Loss Slowed Down?\n\nAt first, the number moved regularly. Then the changes became smaller. Now several weigh-ins look almost identical, and it is tempting to conclude that the whole plan has stopped working.\n\nA slower stretch deserves a closer look, but it does not tell the whole story by itself. Weight loss often changes pace. The useful next step is to understand the trend and review the treatment, rather than making a drastic adjustment after a frustrating morning.\n\n## First, make sure you are looking at a trend\n\nA few days of scale readings are different from a sustained leveling off over weeks or months. Water, bowel contents, and measurement conditions can obscure smaller changes in body weight. If that is the pattern you are seeing, start with our guide to [why weight changes from day to day](/blog/why-weight-changes-day-to-day).\n\nWhen comparing readings, use similar conditions and a time span that is useful to you and your care team. If weighing frequently makes you anxious or leads to restrictive behavior, discuss another way to monitor progress. More data is not automatically better if collecting it makes care harder.\n\nThere is no single number of unchanged weigh-ins that can diagnose why your progress has slowed.\n\n## Your body’s energy needs change\n\nMaintaining a smaller body generally requires less energy. Weight loss can also bring changes in appetite and energy expenditure that make further loss harder.\n\nA 2024 analysis used a mathematical model to explore how these responses contribute to plateaus during different treatments, including semaglutide and tirzepatide. It highlighted appetite feedback as an important part of weight regulation. Because this was modeling of average trajectories, it should not be used to predict the month when a particular person will plateau. [The physiology of the weight-loss plateau](https://pubmed.ncbi.nlm.nih.gov/38644683/).\n\nThis helps explain why the same routine may produce a different rate of change later. It does not mean your metabolism is “broken,” and it does not identify the cause of your own slowdown without an assessment.\n\n## Review what has changed in ordinary life\n\nA treatment plan has to function through travel, work schedules, illness, food costs, and changing routines. Look back without turning the exercise into a search for blame.\n\nHave you been able to take the medicine as prescribed? Have supply problems interrupted treatment? Are side effects limiting food or activity? Has a different medicine been started? Are you getting the follow-up that was part of the original plan?\n\nWrite down the changes that seem relevant and bring them to the appointment. Their purpose is to give the clinician a more accurate picture, not to prove that you followed every instruction perfectly.\n\nWeight-management medicines differ in their expected response, dose schedules, and suitability. The [NIDDK’s medication overview](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity) recommends regular review of benefits and side effects with a healthcare professional.\n\n## Do not try to force the next drop\n\nWhen progress feels slow, skipping more meals or exercising through exhaustion can feel like taking control. But if appetite is already low, further restriction can make adequate nourishment harder.\n\nThe [joint nutrition advisory for GLP-1 treatment](https://pmc.ncbi.nlm.nih.gov/articles/PMC12304835/) emphasizes nutrient intake, strength, and function during weight reduction. Those priorities still apply when the scale is holding steady.\n\nLikewise, a plateau is not a reason to add extra doses, shorten the time between injections, or combine products on your own. The next treatment decision should reflect benefit, tolerability, and your medical circumstances.\n\nIf you are struggling to eat or feel progressively weaker, bring that up directly. Those problems matter even when weight loss is the reason you started treatment.\n\n## Revisit the goal, not just the graph\n\nAsk your clinician what the treatment is accomplishing now. Depending on your health, the review might include blood glucose, blood pressure, mobility, sleep-related symptoms, or another condition being treated. Improvements should be measured where possible, rather than assumed from a lower weight.\n\nHolding a reduction can itself be meaningful. It is also reasonable to ask whether the current result is enough for your health goals or whether another approach should be considered.\n\nA useful appointment ends with an agreed next step and a time to reassess. That might mean continuing, addressing an obstacle, or changing treatment. The scale does not have to keep dropping every week for the conversation to be worthwhile.\n\nIf your main concern is what happens when treatment ends, read [what studies show after stopping a GLP-1 medicine](/blog/stopping-glp-1-medicine).\n",
+      "body_sha256": "0cad67661cc23614645603413ccd27422b38f672121c5e039131ca920953435a",
+      "metadata_sha256": "700979b325f61a540881eacf877e5e80b522420414270e1f165f4fd8a3a5e0b9"
     }
   ]
 }
