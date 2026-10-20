@@ -26,7 +26,7 @@ export default function HowWeCreateContentPage() {
   return (
     <PolicyLayout
       title="How We Create Content"
-      lastUpdated="June 2025"
+      lastUpdated="October 19, 2026"
       toc={toc}
     >
       <p>
@@ -65,27 +65,25 @@ export default function HowWeCreateContentPage() {
       </p>
 
       <h2 id="sourcing-standards">Sourcing Standards</h2>
-      <p>Every factual claim in a published article is either:</p>
+      <p>Consequential health claims need identifiable supporting evidence. We use:</p>
       <ul>
         <li>
-          Attributed to a named published source inline — a clinical trial, FDA document, peer-reviewed journal
-          article, or major health authority publication — or
+          Current prescribing information and FDA documents for product-specific approval, uses, and warnings
         </li>
-        <li>Stated as general medical consensus and qualified accordingly</li>
+        <li>Relevant research, systematic reviews, professional guidelines, and public health resources for other health claims</li>
       </ul>
       <p>
         We do not publish specific statistics, outcome figures, or mechanistic claims without inline attribution. If a
-        claim cannot be sourced, it is generalized or removed.
+        claim cannot be supported, it is removed or rewritten to match evidence we can verify.
       </p>
       <p>
-        Sources are listed at the end of every clinical article. Source selection follows a
-        hierarchy: peer-reviewed primary research, systematic reviews, FDA prescribing information and regulatory
-        documents, major health authority publications. Manufacturer materials, press releases, and secondary
-        aggregators are not used as primary sources.
+        Sources are linked alongside relevant claims. Company announcements may be used to explain newly reported
+        research, with their origin and limitations made clear. They do not substitute for complete study results
+        or establish regulatory approval.
       </p>
 
       <h2 id="the-review-process">The Review Process</h2>
-      <p>Every article passes through multiple review stages before publication.</p>
+      <p>Our publication standard combines evidence checks, safety checks, and editorial approval.</p>
       <p>
         <strong>Editorial review</strong> covers structure, clarity, tone, and adherence to the brief. Reviewers
         check that the article does not overstate evidence, does not present uncertain findings as established fact,
@@ -93,18 +91,17 @@ export default function HowWeCreateContentPage() {
         decision.
       </p>
       <p>
-        <strong>Medical review</strong> for clinical content covers claim accuracy, source quality, contraindication
-        completeness, harm risk, and appropriate hedging. The specific scope of medical review is described on our{" "}
-        <a href="/medical-review">Medical Review Process</a> page.
+        <strong>Evidence checks</strong> examine whether the sources support the claims, whether numbers and
+        comparisons are accurate, and whether important limitations are explained. Our{" "}
+        <a href="/medical-review">Evidence &amp; Editorial Standards</a> describe this approach.
       </p>
       <p>
-        <strong>Compliance review</strong> checks for absolute claims that should be hedged, statistics without
+        <strong>Safety checks</strong> look for absolute claims that should be qualified, statistics without
         attribution, language that could constitute individual medical advice, and omissions that could mislead
         readers about risk or appropriate use.
       </p>
       <p>
-        An article that does not pass all three stages is revised. It is not published with known problems and
-        corrected afterward.
+        Unresolved problems must be corrected before an article is approved for publication.
       </p>
 
       <h2 id="pre-publish-checklist">What We Check Before Publishing</h2>

@@ -1,4 +1,6 @@
-import { blogPosts, programs, resources } from "./mdx"
+interface SearchDocument {
+  slug: string; title: string; description: string; tags: string[]; category: string
+}
 
 export interface SearchItem {
   type: "blog" | "program" | "resource"
@@ -18,7 +20,7 @@ export interface SearchResult {
   tags: string[]
 }
 
-export function getSearchIndex(): SearchItem[] {
+export function getSearchIndex(blogPosts: SearchDocument[], programs: SearchDocument[], resources: SearchDocument[]): SearchItem[] {
   const blogItems: SearchItem[] = blogPosts.map((post) => ({
     type: "blog",
     slug: post.slug,
@@ -52,9 +54,9 @@ export function getSearchIndex(): SearchItem[] {
   return [...blogItems, ...programItems, ...resourceItems]
 }
 
-export function searchContent(query: string): SearchResult[] {
-  const searchIndex = getSearchIndex()
-  const lowerQuery = query.toLowerCase()
+export function searchContent(query: string, searchIndex: SearchItem[]): SearchResult[] {
+  const lowerQuery = query.trim().toLowerCase()
+  if (lowerQuery.length < 2) return []
 
   const results = searchIndex.filter((item) => {
     const titleMatch = item.title.toLowerCase().includes(lowerQuery)

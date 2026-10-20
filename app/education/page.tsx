@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { generatePageMetadata } from "@/lib/seo"
 import { BookOpen, Heart, Activity, Brain, ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { getBlogPosts } from "@/lib/supabase-blog"
+import { getBlogPosts } from "@/lib/articles"
 import { ROUTES, dynamicRoutes } from "@/lib/routes"
 
 export const metadata: Metadata = generatePageMetadata({
@@ -34,7 +34,7 @@ const categories = [
     icon: Brain,
     title: "Weight Literacy",
     description: "Science-based education on weight management and sustainable lifestyle decisions.",
-    matchCategories: ["Weight Literacy", "Medication Literacy"],
+    matchCategories: ["Weight Literacy", "Medication Literacy", "Weight-Loss Medicines", "Understanding Weight"],
   },
   {
     icon: Heart,

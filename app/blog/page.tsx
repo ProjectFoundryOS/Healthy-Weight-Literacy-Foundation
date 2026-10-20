@@ -4,7 +4,7 @@ import { Section } from "@/components/layout/section"
 import { Container } from "@/components/layout/container"
 import { BlogCard } from "@/components/blocks/blog-card"
 import { generatePageMetadata } from "@/lib/seo"
-import { getBlogPosts } from "@/lib/supabase-blog"
+import { getBlogPosts } from "@/lib/articles"
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Educational Articles",
@@ -28,8 +28,8 @@ export default async function BlogPage() {
         <Container>
           {posts.length > 0 ? (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {posts.map((post) => (
-                <BlogCard key={post.slug} post={post} />
+              {posts.map((post, index) => (
+                <BlogCard key={post.slug} post={post} eager={index < 6} />
               ))}
             </div>
           ) : (

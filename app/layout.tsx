@@ -10,6 +10,8 @@ import { organizationJsonLd } from "@/lib/seo"
 import { GA4Provider } from "@/components/analytics/ga4-provider"
 import { CookieConsent } from "@/components/layout/cookie-consent"
 import { checkRequiredEnvVars } from "@/lib/check-env"
+import { isEditorialPreview } from "@/lib/editorial-preview-mode.mjs"
+import Link from "next/link"
 
 if (process.env.NODE_ENV === "development") {
   checkRequiredEnvVars()
@@ -103,6 +105,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const editorialPreview = isEditorialPreview()
   return (
     <html lang="en">
       <head>
@@ -113,14 +116,18 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Header />
+        {editorialPreview ? (
+          <div className="border-b border-amber-200 bg-amber-50 px-4 py-3 text-center text-sm text-amber-950">
+            <strong>Article preview</strong> · Unpublished drafts
+            <Link href="/blog" className="ml-3 font-semibold underline underline-offset-4">Browse all five articles</Link>
+          </div>
+        ) : null}
         <main id="main-content" className="flex-1">
           {children}
         </main>
         <Footer />
         <Toaster />
-        <Analytics />
-        <GA4Provider />
-        <CookieConsent />
+        {!editorialPreview ? <><Analytics /><GA4Provider /><CookieConsent /></> : null}
 
       </body>
     </html>
