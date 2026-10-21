@@ -27,12 +27,12 @@ const nextConfig = {
       },
       {
         source: "/resources",
-        destination: "/city-resources",
+        destination: "/education",
         permanent: true,
       },
       {
         source: "/articles",
-        destination: "/education",
+        destination: "/blog",
         permanent: true,
       },
       {
@@ -42,7 +42,7 @@ const nextConfig = {
       },
       {
         source: "/telehealth",
-        destination: "/telehealth-intake",
+        destination: "/blog/choosing-telehealth-weight-loss-service",
         permanent: true,
       },
     ]
@@ -52,7 +52,9 @@ const nextConfig = {
       {
         source: "/(.*)",
         headers: [
-          ...(editorialPreview ? [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }] : []),
+          ...(editorialPreview
+            ? [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }]
+            : []),
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },

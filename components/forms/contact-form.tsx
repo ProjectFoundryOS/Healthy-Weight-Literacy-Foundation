@@ -13,7 +13,9 @@ import { contactFormSchema, type ContactFormData } from "@/lib/validators"
 import { trackContactFormSubmit } from "@/lib/analytics-events"
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle")
   const [message, setMessage] = useState("")
 
   const {
@@ -44,9 +46,11 @@ export function ContactForm() {
         body: JSON.stringify(data),
       })
       const result = await response.json()
-      if (result.ok) {
+      if (response.ok && result.ok) {
         setStatus("success")
-        setMessage("Thank you for your message! We'll get back to you within 2 business days.")
+        setMessage(
+          "Thank you for your message! We'll get back to you as soon as we can.",
+        )
         trackContactFormSubmit("contact_page")
         reset()
       } else {
@@ -54,7 +58,9 @@ export function ContactForm() {
       }
     } catch {
       setStatus("error")
-      setMessage("Message delivery is being configured. Please email us directly at info@weightliteracy.org for now.")
+      setMessage(
+        "Your message was not sent. Please try again or email info@weightliteracy.org.",
+      )
     }
   }
 
@@ -80,6 +86,7 @@ export function ContactForm() {
           </Label>
           <Input
             id="name"
+            autoComplete="name"
             {...register("name")}
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? "name-error" : undefined}
@@ -98,6 +105,7 @@ export function ContactForm() {
           </Label>
           <Input
             id="email"
+            autoComplete="email"
             type="email"
             {...register("email")}
             aria-invalid={!!errors.email}
@@ -114,7 +122,12 @@ export function ContactForm() {
 
       <div className="space-y-2">
         <Label htmlFor="phone">Phone (optional)</Label>
-        <Input id="phone" type="tel" {...register("phone")} />
+        <Input
+          id="phone"
+          autoComplete="tel"
+          type="tel"
+          {...register("phone")}
+        />
       </div>
 
       <div className="space-y-2">
@@ -154,7 +167,11 @@ export function ContactForm() {
         )}
       </div>
 
-      <Button type="submit" disabled={status === "loading"} className="w-full sm:w-auto">
+      <Button
+        type="submit"
+        disabled={status === "loading"}
+        className="w-full sm:w-auto"
+      >
         {status === "loading" ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
@@ -164,8 +181,6 @@ export function ContactForm() {
           "Send Message"
         )}
       </Button>
-
-
     </form>
   )
 }

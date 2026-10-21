@@ -1,20 +1,31 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { SearchIcon } from "lucide-react"
 import { Section } from "@/components/layout/section"
 import { Container } from "@/components/layout/container"
 import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { searchContent, type SearchResult, type SearchItem } from "@/lib/search-index"
+import {
+  searchContent,
+  type SearchResult,
+  type SearchItem,
+} from "@/lib/search-index"
 
 export function SearchContent({ index }: { index: SearchItem[] }) {
   const searchParams = useSearchParams()
   const initialQuery = searchParams.get("q") || ""
   const [query, setQuery] = useState(initialQuery)
+  useEffect(() => setQuery(initialQuery), [initialQuery])
   const results = query.trim().length >= 2 ? searchContent(query, index) : []
 
   const groupedResults = results.reduce(
@@ -33,9 +44,13 @@ export function SearchContent({ index }: { index: SearchItem[] }) {
       {/* Search Input */}
       <Section>
         <Container size="sm">
+          <label htmlFor="library-search" className="mb-3 block font-medium">
+            Search articles and news
+          </label>
           <div className="relative">
             <SearchIcon className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
             <Input
+              id="library-search"
               type="search"
               aria-label="Search educational content"
               placeholder="Search educational resources and articles..."
@@ -46,8 +61,13 @@ export function SearchContent({ index }: { index: SearchItem[] }) {
             />
           </div>
           {query.length >= 2 && (
-            <p className="mt-4 text-sm text-muted-foreground text-center">
-              {results.length} result{results.length !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
+            <p
+              role="status"
+              aria-live="polite"
+              className="mt-4 text-sm text-muted-foreground text-center"
+            >
+              {results.length} result{results.length !== 1 ? "s" : ""} for
+              &ldquo;{query}&rdquo;
             </p>
           )}
         </Container>
@@ -59,18 +79,25 @@ export function SearchContent({ index }: { index: SearchItem[] }) {
           {query.length < 2 ? (
             <div className="text-center py-12">
               <SearchIcon className="h-12 w-12 mx-auto text-muted-foreground/50 mb-4" />
-              <p className="text-muted-foreground">Enter at least 2 characters to search educational content</p>
+              <p className="text-muted-foreground">
+                Enter at least 2 characters to search educational content
+              </p>
             </div>
           ) : results.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-muted-foreground mb-4">No results found for &ldquo;{query}&rdquo;</p>
+              <p className="text-muted-foreground mb-4">
+                No results found for &ldquo;{query}&rdquo;
+              </p>
               <p className="text-sm text-muted-foreground">
                 Try different keywords or browse our{" "}
-                <Link href="/programs" className="text-primary hover:underline">
-                  programs
+                <Link href="/blog" className="text-primary hover:underline">
+                  articles
                 </Link>{" "}
                 and{" "}
-                <Link href="/education" className="text-primary hover:underline">
+                <Link
+                  href="/education"
+                  className="text-primary hover:underline"
+                >
                   education
                 </Link>{" "}
                 sections.
@@ -80,25 +107,46 @@ export function SearchContent({ index }: { index: SearchItem[] }) {
             <div className="space-y-8">
               {Object.entries(groupedResults).map(([type, items]) => (
                 <div key={type}>
-                  <h2 className="text-xl font-bold text-secondary mb-4 capitalize">{type}</h2>
+                  <h2 className="text-xl font-bold text-secondary mb-4 capitalize">
+                    {type === "blog"
+                      ? "Articles"
+                      : type === "news"
+                        ? "News & Research"
+                        : type}
+                  </h2>
                   <div className="grid gap-4">
                     {items.map((result) => (
                       <Link key={result.slug} href={result.url}>
                         <Card className="hover:shadow-md transition-shadow">
                           <CardHeader className="pb-2">
                             <div className="flex items-start justify-between gap-4">
-                              <CardTitle className="text-lg">{result.title}</CardTitle>
-                              <Badge variant="outline" className="capitalize shrink-0">
-                                {result.type}
+                              <CardTitle className="text-lg">
+                                {result.title}
+                              </CardTitle>
+                              <Badge
+                                variant="outline"
+                                className="capitalize shrink-0"
+                              >
+                                {result.type === "blog"
+                                  ? "Article"
+                                  : result.type === "news"
+                                    ? "News"
+                                    : result.type}
                               </Badge>
                             </div>
                           </CardHeader>
                           <CardContent>
-                            <CardDescription className="line-clamp-2">{result.excerpt}</CardDescription>
+                            <CardDescription className="line-clamp-2">
+                              {result.excerpt}
+                            </CardDescription>
                             {result.tags.length > 0 && (
                               <div className="flex flex-wrap gap-1 mt-2">
                                 {result.tags.slice(0, 3).map((tag) => (
-                                  <Badge key={tag} variant="secondary" className="text-xs">
+                                  <Badge
+                                    key={tag}
+                                    variant="secondary"
+                                    className="text-xs"
+                                  >
                                     {tag}
                                   </Badge>
                                 ))}
@@ -118,4 +166,3 @@ export function SearchContent({ index }: { index: SearchItem[] }) {
     </>
   )
 }
-

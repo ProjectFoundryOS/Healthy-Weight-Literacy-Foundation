@@ -1,14 +1,31 @@
 "use client"
 
 import Script from "next/script"
+import { useState, useEffect } from "react"
+import { Analytics } from "@vercel/analytics/next"
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 
 export function GA4Provider() {
-  if (!GA_MEASUREMENT_ID) return null
+  const [allowed, setAllowed] = useState(false)
+  useEffect(() => {
+    const update = () => {
+      try {
+        setAllowed(localStorage.getItem("hwlf-cookie-consent") === "accepted")
+      } catch {
+        setAllowed(false)
+      }
+    }
+    update()
+    window.addEventListener("weightliteracy-consent", update)
+    return () => window.removeEventListener("weightliteracy-consent", update)
+  }, [])
+  if (!allowed) return null
+  if (!GA_MEASUREMENT_ID) return <Analytics />
 
   return (
     <>
+      <Analytics />
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
@@ -20,6 +37,9 @@ export function GA4Provider() {
           gtag('js', new Date());
           gtag('config', '${GA_MEASUREMENT_ID}', {
             page_path: window.location.pathname,
+            page_location: window.location.origin + window.location.pathname,
+            allow_google_signals: false,
+            allow_ad_personalization_signals: false,
           });
         `}
       </Script>
@@ -27,12 +47,26 @@ export function GA4Provider() {
   )
 }
 
-export function trackEvent(action: string, category: string, label?: string, value?: number) {
+export function trackEvent(
+  action: string,
+  category: string,
+  label?: string,
+  value?: number,
+) {
   if (typeof window !== "undefined" && "gtag" in window) {
-    ;(window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", action, {
-      event_category: category,
-      event_label: label,
-      value: value,
-    })
+    try {
+      if (localStorage.getItem("hwlf-cookie-consent") !== "accepted") return
+    } catch {
+      return
+    }
+    ;(window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
+      "event",
+      action,
+      {
+        event_category: category,
+        event_label: label,
+        value: value,
+      },
+    )
   }
 }
