@@ -5,12 +5,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Section } from "@/components/layout/section"
 import { Container } from "@/components/layout/container"
 import { BookOpen, Users, GraduationCap, ArrowRight } from "lucide-react"
+import { NewsCard } from "@/components/content/news-card"
+import { getNewsUpdates } from "@/lib/news"
 import { getBlogPosts } from "@/lib/articles"
 import { ROUTES, dynamicRoutes } from "@/lib/routes"
 
 export default async function HomePage() {
   const allPosts = await getBlogPosts()
   const recentPosts = allPosts.slice(0, 3)
+  const news = getNewsUpdates().slice(0, 3)
 
   return (
     <>
@@ -216,7 +219,7 @@ export default async function HomePage() {
               ))}
             </div>
             <div className="text-center mt-8">
-              <Link href={ROUTES.EDUCATION}>
+              <Link href={ROUTES.BLOG}>
                 <Button variant="outline">
                   View All Articles
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -226,6 +229,19 @@ export default async function HomePage() {
           </Container>
         </Section>
       )}
+
+      <Section>
+        <Container>
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">News &amp; Research</h2>
+              <p className="mt-3 text-lg text-muted-foreground">Selected updates, with the context behind the headlines.</p>
+            </div>
+            <Link href={ROUTES.NEWS} className="inline-flex min-h-11 shrink-0 items-center gap-2 font-semibold text-primary underline underline-offset-4">View all news <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3">{news.map((item) => <NewsCard key={item.id} item={item} compact />)}</div>
+        </Container>
+      </Section>
 
       {/* CTA Section */}
       <Section background="muted">

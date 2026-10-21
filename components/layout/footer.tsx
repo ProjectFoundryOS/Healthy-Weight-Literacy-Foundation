@@ -10,6 +10,7 @@ const footerNavigation = {
     { name: "Programs", href: ROUTES.PROGRAMS },
     { name: "Education", href: ROUTES.EDUCATION },
     { name: "Articles", href: ROUTES.BLOG },
+    { name: "News & Research", href: ROUTES.NEWS },
     { name: "City Resources", href: ROUTES.CITY_RESOURCES },
   ],
   legal: [

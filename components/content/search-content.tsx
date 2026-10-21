@@ -83,7 +83,7 @@ export function SearchContent({ index }: { index: SearchItem[] }) {
                   <h2 className="text-xl font-bold text-secondary mb-4 capitalize">{type}</h2>
                   <div className="grid gap-4">
                     {items.map((result) => (
-                      <Link key={result.slug} href={`/${result.type}/${result.slug}`}>
+                      <Link key={result.slug} href={result.url}>
                         <Card className="hover:shadow-md transition-shadow">
                           <CardHeader className="pb-2">
                             <div className="flex items-start justify-between gap-4">

@@ -1,0 +1,53 @@
+[
+  {
+    "id": "brown-fat-losartan-research",
+    "category": "Metabolic research",
+    "evidenceType": "Human observations + animal research",
+    "title": "Brown-fat research points to questions, not a new weight-loss treatment",
+    "summary": "NIH reports that researchers linked blood-pressure medicines called ARBs with greater brown-fat activity in medical records from more than 100,000 people who underwent cancer imaging. Follow-up experiments found that losartan increased brown-fat activity in cells and mice. The treated mice maintained a steady body weight.",
+    "context": "Brown fat uses energy to produce heat. Studying it may help explain metabolism, but a change in its activity does not by itself establish a useful weight-loss treatment.",
+    "limitation": "The human findings are observational, and the treatment experiments were not a human weight-loss trial. This is not a reason to start or change blood-pressure medicine.",
+    "source": {
+      "name": "National Institutes of Health",
+      "title": "A blood-pressure drug may activate health-promoting brown fat",
+      "url": "https://www.nih.gov/news-events/news-releases/blood-pressure-drug-may-activate-health-promoting-brown-fat",
+      "publishedOn": "2026-10-14"
+    },
+    "checkedOn": "2026-10-20",
+    "relatedSlug": "insulin-resistance-explained"
+  },
+  {
+    "id": "ada-treatment-cost-survey-2026",
+    "category": "Access & affordability",
+    "evidenceType": "Survey findings",
+    "title": "Treatment costs deserve a place in the care conversation",
+    "summary": "An American Diabetes Association survey highlights the financial pressure of diabetes and obesity care. Nearly one in four surveyed households reported spending at least $200 a month on obesity medicines. The online survey gathered responses in June and July 2026 from ADA advocates and market-research panel participants.",
+    "context": "Before choosing a service, ask about the combined cost of medicine, appointments, tests, and follow-up, and what happens if coverage changes. A low advertised starting price may not describe the full plan.",
+    "limitation": "These are self-reported experiences from participating households, not a price quote or a guarantee of what any individual will pay. The announcement does not establish that its percentages represent every US household.",
+    "source": {
+      "name": "American Diabetes Association",
+      "title": "2026 National Access and Affordability Survey",
+      "url": "https://diabetes.org/newsroom/press-releases/american-diabetes-associations-2026-national-access-and-affordability",
+      "publishedOn": "2026-10-02"
+    },
+    "checkedOn": "2026-10-20",
+    "relatedSlug": "choosing-telehealth-weight-loss-service"
+  },
+  {
+    "id": "fda-glp-1-mood-warning-update",
+    "category": "Medication safety",
+    "evidenceType": "FDA safety communication",
+    "title": "FDA review changes guidance on GLP-1 mood warnings",
+    "summary": "In January 2026, FDA requested removal of the suicidal-thoughts-and-behavior warning from Saxenda, Wegovy, and Zepbound labeling after its review found no increased risk associated with GLP-1 medicines. Its analysis included 91 placebo-controlled trials with 107,910 participants, alongside other evidence.",
+    "context": "Older articles may still describe the previous warning. Check the current information for your exact medicine and discuss concerns with your prescriber.",
+    "limitation": "This finding addresses a specific safety question; it does not mean these medicines have no risks. New or worsening depression or unusual mood changes still warrant prompt professional attention.",
+    "source": {
+      "name": "US Food and Drug Administration",
+      "title": "FDA requests removal of suicidal behavior and ideation warning from GLP-1 RA medications",
+      "url": "https://www.fda.gov/drugs/drug-safety-communications/fda-requests-removal-suicidal-behavior-and-ideation-warning-glucagon-peptide-1-receptor-agonist-glp",
+      "publishedOn": "2026-01-13"
+    },
+    "checkedOn": "2026-10-20",
+    "relatedSlug": "glp-1-side-effects"
+  }
+]

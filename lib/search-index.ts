@@ -3,7 +3,7 @@ interface SearchDocument {
 }
 
 export interface SearchItem {
-  type: "blog" | "program" | "resource"
+  type: "blog" | "program" | "resource" | "news"
   slug: string
   title: string
   description: string
@@ -13,14 +13,15 @@ export interface SearchItem {
 }
 
 export interface SearchResult {
-  type: "blog" | "programs" | "resources"
+  type: "blog" | "programs" | "resources" | "news"
+  url: string
   slug: string
   title: string
   excerpt: string
   tags: string[]
 }
 
-export function getSearchIndex(blogPosts: SearchDocument[], programs: SearchDocument[], resources: SearchDocument[]): SearchItem[] {
+export function getSearchIndex(blogPosts: SearchDocument[], programs: SearchDocument[], resources: SearchDocument[], news: SearchItem[] = []): SearchItem[] {
   const blogItems: SearchItem[] = blogPosts.map((post) => ({
     type: "blog",
     slug: post.slug,
@@ -51,7 +52,7 @@ export function getSearchIndex(blogPosts: SearchDocument[], programs: SearchDocu
     url: `/resources/${resource.slug}`,
   }))
 
-  return [...blogItems, ...programItems, ...resourceItems]
+  return [...blogItems, ...programItems, ...resourceItems, ...news]
 }
 
 export function searchContent(query: string, searchIndex: SearchItem[]): SearchResult[] {
@@ -66,7 +67,8 @@ export function searchContent(query: string, searchIndex: SearchItem[]): SearchR
   })
 
   return results.map((item) => ({
-    type: item.type === "blog" ? "blog" : item.type === "program" ? "programs" : "resources",
+    type: item.type === "blog" ? "blog" : item.type === "program" ? "programs" : item.type === "news" ? "news" : "resources",
+    url: item.url,
     slug: item.slug,
     title: item.title,
     excerpt: item.description,
