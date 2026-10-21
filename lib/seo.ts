@@ -2,11 +2,11 @@ import type { Metadata } from "next"
 
 export const siteConfig = {
   name: "Healthy Weight Literacy Foundation",
-  shortName: "HWLF",
+  shortName: "WeightLiteracy",
   description:
     "Healthy Weight Literacy Foundation exists to improve public health by providing clear, evidence-based education on nutrition, weight management, and metabolic health so individuals and communities can make informed, sustainable lifestyle decisions.",
   url: "https://weightliteracy.org",
-  ogImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=630&fit=crop",
+  ogImage: "https://www.weightliteracy.org/opengraph-image",
   email: "info@weightliteracy.org",
   phone: "",
   address: {
@@ -76,7 +76,9 @@ export function generatePageMetadata({
       description,
       images: [ogImage],
     },
-    robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
+    robots: noIndex
+      ? { index: false, follow: false }
+      : { index: true, follow: true },
   }
 }
 
@@ -89,7 +91,6 @@ export const organizationJsonLd = {
   logo: `${siteConfig.url}/icon.svg`,
   description: siteConfig.description,
   email: siteConfig.email,
-  telephone: siteConfig.phone,
   address: {
     "@type": "PostalAddress",
     streetAddress: siteConfig.address.street,
@@ -98,7 +99,6 @@ export const organizationJsonLd = {
     postalCode: siteConfig.address.zip,
     addressCountry: siteConfig.address.country,
   },
-  sameAs: Object.values(siteConfig.social).filter(Boolean),
   nonprofitStatus: "Nonprofit501c3",
 }
 
@@ -146,7 +146,9 @@ export function generateArticleJsonLd({
   }
 }
 
-export function generateFAQJsonLd(faqs: { question: string; answer: string }[]) {
+export function generateFAQJsonLd(
+  faqs: { question: string; answer: string }[],
+) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",

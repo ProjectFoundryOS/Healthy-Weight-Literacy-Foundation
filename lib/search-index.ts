@@ -1,5 +1,9 @@
 interface SearchDocument {
-  slug: string; title: string; description: string; tags: string[]; category: string
+  slug: string
+  title: string
+  description: string
+  tags: string[]
+  category: string
 }
 
 export interface SearchItem {
@@ -21,7 +25,12 @@ export interface SearchResult {
   tags: string[]
 }
 
-export function getSearchIndex(blogPosts: SearchDocument[], programs: SearchDocument[], resources: SearchDocument[], news: SearchItem[] = []): SearchItem[] {
+export function getSearchIndex(
+  blogPosts: SearchDocument[],
+  programs: SearchDocument[],
+  resources: SearchDocument[],
+  news: SearchItem[] = [],
+): SearchItem[] {
   const blogItems: SearchItem[] = blogPosts.map((post) => ({
     type: "blog",
     slug: post.slug,
@@ -55,23 +64,57 @@ export function getSearchIndex(blogPosts: SearchDocument[], programs: SearchDocu
   return [...blogItems, ...programItems, ...resourceItems, ...news]
 }
 
-export function searchContent(query: string, searchIndex: SearchItem[]): SearchResult[] {
-  const lowerQuery = query.trim().toLowerCase()
-  if (lowerQuery.length < 2) return []
-
-  const results = searchIndex.filter((item) => {
-    const titleMatch = item.title.toLowerCase().includes(lowerQuery)
-    const descriptionMatch = item.description.toLowerCase().includes(lowerQuery)
-    const tagMatch = item.tags.some((tag) => tag.toLowerCase().includes(lowerQuery))
-    return titleMatch || descriptionMatch || tagMatch
-  })
-
-  return results.map((item) => ({
-    type: item.type === "blog" ? "blog" : item.type === "program" ? "programs" : item.type === "news" ? "news" : "resources",
-    url: item.url,
-    slug: item.slug,
-    title: item.title,
-    excerpt: item.description,
-    tags: item.tags,
-  }))
+// Aliases improve discovery; they do not imply identical indications or dosing.
+export function normalizeSearch(value: string) {
+  return value
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/glp[\s-]*1/g, "glp 1")
+    .replace(/\b(ozempic|wegovy|rybelsus)\b/g, "semaglutide")
+    .replace(/\b(mounjaro|zepbound)\b/g, "tirzepatide")
+    .replace(/\bretratrutide\b/g, "retatrutide")
+    .replace(/\bversus\b/g, "vs")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+}
+export function searchContent(
+  query: string,
+  searchIndex: SearchItem[],
+): SearchResult[] {
+  const normalized = normalizeSearch(query)
+  if (normalized.length < 2) return []
+  const words = normalized.split(/\s+/)
+  return searchIndex
+    .map((item) => {
+      const title = normalizeSearch(item.title)
+      const text = normalizeSearch(
+        `${item.title} ${item.description} ${item.category} ${item.tags.join(" ")}`,
+      )
+      return {
+        item,
+        match: words.every((word) => text.includes(word)),
+        score: title.includes(normalized)
+          ? 2
+          : words.every((word) => title.includes(word))
+            ? 1
+            : 0,
+      }
+    })
+    .filter((result) => result.match)
+    .sort((a, b) => b.score - a.score)
+    .map(({ item }) => ({
+      type:
+        item.type === "blog"
+          ? "blog"
+          : item.type === "program"
+            ? "programs"
+            : item.type === "news"
+              ? "news"
+              : "resources",
+      url: item.url,
+      slug: item.slug,
+      title: item.title,
+      excerpt: item.description,
+      tags: item.tags,
+    }))
 }

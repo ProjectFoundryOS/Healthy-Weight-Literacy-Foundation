@@ -1,153 +1,136 @@
 "use client"
-
 import { useState } from "react"
 import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import { Menu, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet"
-import { Heart } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { cn } from "@/lib/utils"
-import { ROUTES } from "@/lib/routes"
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+  SheetDescription,
+} from "@/components/ui/sheet"
+import { Brand } from "./brand"
 
 const navigation = [
-  { name: "Home", href: ROUTES.HOME },
-  { name: "About", href: ROUTES.ABOUT },
-  { name: "Programs", href: ROUTES.PROGRAMS },
-  { name: "Education", href: ROUTES.EDUCATION },
-  { name: "Articles", href: ROUTES.BLOG },
-  { name: "News & Research", href: ROUTES.NEWS },
-  { name: "City Resources", href: ROUTES.CITY_RESOURCES },
-  { name: "Contact", href: ROUTES.CONTACT },
+  { name: "Learn", href: "/education" },
+  { name: "Articles", href: "/blog" },
+  { name: "News & Research", href: "/news" },
+  { name: "Ohio Resources", href: "/city-resources" },
+  { name: "About", href: "/about" },
 ]
-
 export function Header() {
   const pathname = usePathname()
-  const router = useRouter()
-  const [isOpen, setIsOpen] = useState(false)
-  const [searchQuery, setSearchQuery] = useState("")
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (searchQuery.trim()) {
-      router.push(`${ROUTES.SEARCH}?q=${encodeURIComponent(searchQuery.trim())}`)
-      setIsOpen(false)
-      setSearchQuery("")
-    }
-  }
-
+  const [open, setOpen] = useState(false)
+  const active = (href: string) =>
+    pathname === href || pathname.startsWith(href + "/")
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/60">
-      <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-4 py-0 sm:px-6 lg:px-8"
-        aria-label="Main navigation"
-      >
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
-          aria-label="Healthy Weight Literacy Foundation - Home"
-        >
-          <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary">
-            <Heart className="h-5 w-5 text-primary-foreground" aria-hidden="true" />
-          </div>
-          <div className="hidden sm:block">
-            <span className="text-lg font-bold text-secondary">HWLF</span>
-            <span className="sr-only">Healthy Weight Literacy Foundation</span>
-          </div>
+    <header className="sticky top-0 z-40 border-b border-primary/10 bg-background/95 backdrop-blur-md print:static">
+      <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
+        <Link href="/" aria-label="WeightLiteracy home" className="rounded-md">
+          <Brand />
         </Link>
-
-        {/* Desktop Navigation */}
-        <div className="hidden xl:flex xl:items-center xl:gap-x-3">
+        <nav
+          aria-label="Main navigation"
+          className="hidden lg:flex items-center gap-1"
+        >
           {navigation.map((item) => (
             <Link
-              key={item.name}
+              key={item.href}
               href={item.href}
-              aria-current={pathname === item.href ? "page" : undefined}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded px-2 py-1",
-                pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href + "/"))
-                  ? "text-primary"
-                  : "text-secondary",
-              )}
+              aria-current={active(item.href) ? "page" : undefined}
+              className={`inline-flex min-h-11 items-center rounded-md px-3 text-sm font-medium transition-colors hover:bg-primary-soft ${active(item.href) ? "text-primary bg-primary-soft" : "text-secondary"}`}
             >
               {item.name}
             </Link>
           ))}
-        </div>
-
-        {/* Desktop Actions */}
-        <div className="hidden xl:flex xl:items-center xl:gap-x-4">
-          <Link href={ROUTES.DONATE}>
-            <Button className="font-semibold">
-              <Heart className="mr-2 h-4 w-4" />
-              Donate
-            </Button>
+        </nav>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <Link
+            href="/search"
+            aria-label="Search WeightLiteracy"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full hover:bg-primary-soft"
+          >
+            <Search className="h-5 w-5" aria-hidden="true" />
           </Link>
-        </div>
-
-        {/* Mobile Navigation */}
-        <div className="flex items-center gap-2 xl:hidden">
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu" aria-expanded={isOpen}>
-                <Menu className="h-6 w-6" aria-hidden="true" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-auto overflow-y-auto">
-              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <SheetDescription className="sr-only">Access navigation links and search functionality</SheetDescription>
-              <div className="flex flex-col gap-6 pt-6 px-6">
-                <Link href={ROUTES.HOME} className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary">
-                    <Heart className="h-5 w-5 text-primary-foreground" aria-hidden="true" />
+          <Button asChild variant="outline" className="hidden xl:inline-flex">
+            <Link href="/donate">Support us</Link>
+          </Button>
+          <div className="lg:hidden">
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" aria-label="Open menu">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="w-[min(100vw,390px)] overflow-y-auto px-6 pb-8 pt-16"
+              >
+                <SheetTitle>
+                  <Brand />
+                </SheetTitle>
+                <SheetDescription>
+                  Explore clear answers for weight health.
+                </SheetDescription>
+                <form
+                  action="/search"
+                  onSubmit={() => setOpen(false)}
+                  className="mt-4"
+                >
+                  <label
+                    htmlFor="menu-search"
+                    className="mb-2 block text-sm font-medium"
+                  >
+                    Search articles and news
+                  </label>
+                  <div className="flex gap-2">
+                    <input
+                      id="menu-search"
+                      name="q"
+                      type="search"
+                      placeholder="Try GLP-1 or nutrition"
+                      className="min-w-0 flex-1 rounded-md border border-input bg-white px-3 py-3"
+                    />
+                    <Button type="submit" size="icon" aria-label="Search">
+                      <Search className="h-5 w-5" />
+                    </Button>
                   </div>
-                  <span className="text-lg font-bold text-secondary">Healthy Weight Literacy Foundation</span>
-                </Link>
-
-                {/* Search Bar */}
-                <form onSubmit={handleSearch} className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    type="search"
-                    placeholder="Search..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-9"
-                  />
                 </form>
-
-                <nav className="flex flex-col gap-4" aria-label="Mobile navigation">
+                <nav
+                  aria-label="Mobile navigation"
+                  className="mt-2 divide-y divide-border"
+                >
                   {navigation.map((item) => (
                     <Link
-                      key={item.name}
+                      key={item.href}
                       href={item.href}
-                      aria-current={pathname === item.href ? "page" : undefined}
-                      className={cn(
-                        "block text-lg font-medium transition-colors hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded px-2 py-1",
-                        pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href + "/"))
-                          ? "text-primary"
-                          : "text-secondary",
-                      )}
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => setOpen(false)}
+                      aria-current={active(item.href) ? "page" : undefined}
+                      className={`block rounded-sm py-4 text-lg ${active(item.href) ? "font-semibold text-primary" : "text-secondary"}`}
                     >
                       {item.name}
                     </Link>
                   ))}
+                  <Link
+                    href="/contact"
+                    onClick={() => setOpen(false)}
+                    className="block py-4 text-lg"
+                  >
+                    Contact
+                  </Link>
                 </nav>
-
-                <Link href={ROUTES.DONATE} onClick={() => setIsOpen(false)}>
-                  <Button className="font-semibold w-fit">
-                    <Heart className="mr-2 h-4 w-4" />
-                    Donate
-                  </Button>
-                </Link>
-              </div>
-            </SheetContent>
-          </Sheet>
+                <Button asChild>
+                  <Link href="/donate" onClick={() => setOpen(false)}>
+                    Support free education
+                  </Link>
+                </Button>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-      </nav>
+      </div>
     </header>
   )
 }

@@ -1,57 +1,35 @@
-import { NextResponse } from "next/server"
 import { newsletterFormSchema } from "@/lib/validators"
-import { sendAdminNotification, sendUserConfirmation, escapeHtml } from "@/lib/resend"
+import { handleForm } from "@/lib/form-handler"
+import {
+  sendAdminNotification,
+  sendUserConfirmation,
+  escapeHtml,
+} from "@/lib/resend"
 
 export async function POST(request: Request) {
-  try {
-    const body = await request.json()
-
-    const validatedData = newsletterFormSchema.parse(body)
-    const { email } = validatedData
-
-    // Send admin notification (non-critical - Resend free tier may restrict recipients)
-    try {
+  return handleForm(
+    request,
+    newsletterFormSchema,
+    async (data) => {
+      const email = String(data.email)
+      // Preserve the existing email-based signup workflow. Admin acceptance is required.
       await sendAdminNotification({
-        subject: "[HWLF Newsletter] New Subscriber",
-        html: `
-          <h2>New Newsletter Subscriber</h2>
-          <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-          <p><em>Subscribed on ${new Date().toLocaleDateString("en-US", { timeZone: "America/New_York" })}</em></p>
-        `,
+        subject: "[WeightLiteracy Newsletter] Signup request",
+        replyTo: email,
+        html: `<h2>Newsletter signup request</h2><p>Email: ${escapeHtml(email)}</p><p>Explicit newsletter consent: yes</p><p>Received: ${new Date().toISOString()}</p><p>Add this request to the newsletter list through your existing workflow. This notification does not itself create a list contact.</p>`,
       })
-    } catch (adminError) {
-      console.error("Admin notification failed (non-critical):", adminError)
-    }
-
-    // Send user confirmation (non-critical - may fail if domain not verified in Resend)
-    try {
-      await sendUserConfirmation({
-        to: email,
-        subject: "Welcome to the HWLF Newsletter!",
-        html: `
-          <h2>Welcome to the Healthy Weight Literacy Foundation Newsletter!</h2>
-          <p>Thank you for subscribing. You will receive updates on:</p>
-          <ul>
-            <li>Educational resources and articles</li>
-            <li>Upcoming community events</li>
-            <li>New programs and services</li>
-            <li>Health tips and wellness information</li>
-          </ul>
-          <p>Visit our website at <a href="https://weightliteracy.org">weightliteracy.org</a> for the latest resources.</p>
-          <br />
-          <p>Best regards,<br />Healthy Weight Literacy Foundation</p>
-        `,
-      })
-    } catch (confirmError) {
-      console.error("User confirmation email failed (non-critical):", confirmError)
-    }
-
-    return NextResponse.json({ ok: true, message: "Successfully subscribed to newsletter" })
-  } catch (error) {
-    console.error("Newsletter signup error:", error)
-    return NextResponse.json(
-      { ok: false, message: "Something went wrong. Please try again later." },
-      { status: 400 },
-    )
-  }
+      try {
+        await sendUserConfirmation({
+          to: email,
+          subject: "Your WeightLiteracy newsletter signup request",
+          html: `<h2>Thank you for your interest in WeightLiteracy.</h2><p>Your newsletter signup request has been sent to our team.</p><p>In the meantime, explore our <a href="https://www.weightliteracy.org/blog">free articles</a> and <a href="https://www.weightliteracy.org/news">News &amp; Research</a>.</p><p>To withdraw your request or unsubscribe, email <a href="mailto:info@weightliteracy.org?subject=Unsubscribe">info@weightliteracy.org</a>.</p>`,
+        })
+      } catch {
+        console.error(
+          "Newsletter receipt email unavailable; signup notification accepted",
+        )
+      }
+    },
+    "Thank you. Your newsletter signup request has been sent.",
+  )
 }

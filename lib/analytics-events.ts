@@ -1,11 +1,19 @@
 import { trackEvent } from "@/components/analytics/ga4-provider"
 
 export const trackNewsletterSignup = (method: string = "footer") => {
-  trackEvent("newsletter_signup", "engagement", `Newsletter Subscription - ${method}`)
+  trackEvent(
+    "newsletter_signup_request",
+    "engagement",
+    `Newsletter Subscription - ${method}`,
+  )
 }
 
 export const trackContactFormSubmit = (source: string = "contact_page") => {
-  trackEvent("contact_form_submit", "lead_generation", `Contact Form - ${source}`)
+  trackEvent(
+    "contact_form_submit",
+    "lead_generation",
+    `Contact Form - ${source}`,
+  )
 }
 
 export const trackVolunteerFormSubmit = () => {

@@ -17,6 +17,12 @@ import { prepareArticleContent } from "@/lib/article-content"
 import { Clock } from "lucide-react"
 import { BlogCard } from "@/components/blocks/blog-card"
 import { ArticleFigure } from "@/components/content/article-figure"
+import { Breadcrumbs } from "@/components/layout/breadcrumbs"
+import {
+  articleOutline,
+  relatedArticleSlugs,
+  topicForArticle,
+} from "@/lib/article-topics"
 import { articleSections } from "@/lib/article-visuals"
 
 interface BlogPostPageProps {
@@ -28,7 +34,9 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }))
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: BlogPostPageProps): Promise<Metadata> {
   const resolvedParams = await params
   const post = await getBlogPost(resolvedParams.slug)
   if (!post) return {}
@@ -46,152 +54,208 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const resolvedParams = await params
-  const post = await getBlogPost(resolvedParams.slug)
-
-  if (!post) {
-    notFound()
-  }
-
+  const { slug } = await params
+  const post = await getBlogPost(slug)
+  if (!post) notFound()
   const allPosts = await getBlogPosts()
-  const relatedPosts = allPosts.filter((p) => p.slug !== post.slug && p.category === post.category).slice(0, 2)
-  let body = post.editorial || post.draft_preview ? post.content.replace(/^# [^\n]+\n+/, "") : post.content
-  // The preview banner presents draft status without duplicating the document heading.
-  if (post.draft_preview) body = body.replace(/^\*(?:Article draft|Editorial sample)[^\n]+\*\n+/, "")
+  const relatedPosts = relatedArticleSlugs(post.slug)
+    .map((slug) => allPosts.find((post) => post.slug === slug))
+    .filter((post) => !!post)
+  let body =
+    post.editorial || post.draft_preview
+      ? post.content.replace(/^# [^\n]+\n+/, "")
+      : post.content
+  if (post.draft_preview)
+    body = body.replace(/^\*(?:Article draft|Editorial sample)[^\n]+\*\n+/, "")
   const { content, isHtml } = prepareArticleContent(body, post.slug)
-
+  const outline = isHtml ? [] : articleOutline(content)
+  let sectionIndex = 0
+  const topic = topicForArticle(post.slug)
+  const toc = (
+    <ol className="mt-3 space-y-1">
+      {outline.map((item) => (
+        <li key={item.id}>
+          <a
+            href={`#${item.id}`}
+            className="block rounded-sm py-2 text-sm leading-snug text-[#455953] hover:text-primary hover:underline"
+          >
+            {item.text}
+          </a>
+        </li>
+      ))}
+    </ol>
+  )
   return (
     <>
-      {!post.draft_preview ? <ArticleSchema
-        title={post.title}
-        description={post.description}
-        slug={post.slug}
-        publishedAt={post.published_at}
-        updatedAt={post.updated_at ?? undefined}
-        category={post.category}
-        image={post.hero_image}
-        authorName={post.author}
-        reviewerName={post.editorial?.medical_review?.name}
-        reviewedAt={post.editorial?.medical_review?.reviewed_at}
-      /> : null}
-
-      <PageHeader title={post.title} breadcrumbs={[{ label: "Blog", href: "/blog" }, { label: post.title }]}>
-        <div className="flex flex-wrap items-center gap-4 mt-4">
-          <div className="flex items-center gap-3">
-            {post.author_image ? <Image src={post.author_image} alt="" width={40} height={40} className="rounded-full" /> : null}
-            <div>
-              <p className="font-medium text-secondary">{post.draft_preview ? "Draft for review" : post.author}</p>
-              <p className="text-sm text-muted-foreground">{post.draft_preview ? `Draft updated ${formatDate(post.updated_at)}` : formatDate(post.published_at)}</p>
-            </div>
+      {!post.draft_preview ? (
+        <ArticleSchema
+          title={post.title}
+          description={post.description}
+          slug={post.slug}
+          publishedAt={post.published_at}
+          updatedAt={post.updated_at ?? undefined}
+          category={post.category}
+          image={post.hero_image}
+          authorName={post.author}
+          reviewerName={post.editorial?.medical_review?.name}
+          reviewedAt={post.editorial?.medical_review?.reviewed_at}
+        />
+      ) : null}
+      <div className="border-b bg-[#F1F4ED] py-7 sm:py-10">
+        <Container className="max-w-6xl">
+          <Breadcrumbs items={[{ label: "Articles", href: "/blog" }]} />
+          {topic ? (
+            <Link
+              href={`/blog?topic=${topic.id}`}
+              className="mt-5 inline-flex min-h-10 items-center text-sm font-semibold text-primary underline underline-offset-4"
+            >
+              {topic.title}
+            </Link>
+          ) : null}
+          <h1 className="mt-3 max-w-4xl text-[clamp(2rem,3.8vw,3.25rem)] font-semibold leading-[1.12] tracking-[-0.035em]">
+            {post.title}
+          </h1>
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#455953]">
+            {post.description}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+            <p>{post.draft_preview ? "Draft for review" : post.author}</p>
+            <p>
+              {post.draft_preview ? "Draft updated" : "Published"}{" "}
+              {formatDate(post.published_at)}
+            </p>
+            <p>{post.reading_time}</p>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Clock className="h-4 w-4" aria-hidden="true" />
-            {post.reading_time}
-          </div>
-        </div>
-        <div className="flex flex-wrap gap-2 mt-4">
-          <Badge variant="secondary">{post.category}</Badge>
-          {post.tags.map((tag) => (
-            <Badge key={tag} variant="outline">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-      </PageHeader>
-
-      <Section>
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px]">
-            {/* Main Content */}
-            <div className="min-w-0">
-              {post.visuals ? <ArticleFigure visual={post.visuals.hero} overlay={post.visuals.hero.overlay} priority /> : post.hero_image ? (
-                <Image src={post.hero_image} alt={post.title} width={1200} height={600} className="rounded-2xl shadow-card mb-8 w-full h-auto" priority />
+        </Container>
+      </div>
+      <Section className="pt-8 sm:pt-10">
+        <Container className="max-w-6xl">
+          <div className="article-layout grid items-start gap-10 lg:grid-cols-[minmax(0,740px)_240px] lg:gap-12">
+            <article className="min-w-0 max-w-[740px]">
+              {outline.length ? (
+                <details className="mb-6 rounded-xl border bg-white p-4 lg:hidden">
+                  <summary className="cursor-pointer py-1 font-semibold">
+                    In this guide
+                  </summary>
+                  <nav aria-label="Article sections">{toc}</nav>
+                </details>
               ) : null}
-
-              {/* Article Content */}
-              {post.visuals && !isHtml ? articleSections(content, post.visuals).map((section, index) => (
-                <div key={index}>
-                  {section.figures.map((visual) => <ArticleFigure key={visual.src} visual={visual} />)}
-                  <ArticleRenderer content={section.markdown} className="text-[17px] sm:text-lg break-words" />
-                </div>
-              )) : <ArticleRenderer content={content} isHtml={isHtml} className="text-[17px] sm:text-lg break-words" />}
-
+              {post.visuals ? (
+                <ArticleFigure
+                  visual={post.visuals.hero}
+                  overlay={post.visuals.hero.overlay}
+                  priority
+                />
+              ) : post.hero_image ? (
+                <Image
+                  src={post.hero_image}
+                  alt={post.title}
+                  width={1200}
+                  height={600}
+                  className="mb-8 h-auto w-full rounded-2xl"
+                  priority
+                />
+              ) : null}
+              {post.visuals && !isHtml ? (
+                articleSections(content, post.visuals).map((section, index) => {
+                  const id = /^## /m.test(section.markdown)
+                    ? `section-${++sectionIndex}`
+                    : undefined
+                  return (
+                    <div key={index} id={id} className="article-section">
+                      {section.figures.map((visual) => (
+                        <ArticleFigure key={visual.src} visual={visual} />
+                      ))}
+                      <ArticleRenderer
+                        content={section.markdown}
+                        className="text-[17px] sm:text-lg"
+                      />
+                    </div>
+                  )
+                })
+              ) : (
+                <ArticleRenderer
+                  content={content}
+                  isHtml={isHtml}
+                  className="text-[17px] sm:text-lg"
+                />
+              )}
               {post.editorial ? (
-                <section aria-label="Editorial information" className="mt-10 border-t pt-6 text-sm text-muted-foreground space-y-2">
-                  <h2 className="font-semibold text-secondary">About this article</h2>
-                  <p>Edited by {post.editorial.editor_name}. Editorial review: {formatDate(post.editorial.reviewed_at)}.</p>
-                  {post.editorial.medical_review ? <p>Medical review: {post.editorial.medical_review.name}, {post.editorial.medical_review.credentials}, {formatDate(post.editorial.medical_review.reviewed_at)}.</p> : null}
-                  {post.editorial.disclosure ? <p>{post.editorial.disclosure}</p> : null}
+                <section
+                  aria-label="Editorial information"
+                  className="mt-10 space-y-3 border-t pt-6 text-sm leading-relaxed text-muted-foreground"
+                >
+                  <h2 className="font-semibold text-secondary">
+                    About this article
+                  </h2>
+                  <p>
+                    Edited by {post.editorial.editor_name}. Editorial review:{" "}
+                    {formatDate(post.editorial.reviewed_at)}.
+                  </p>
+                  {post.editorial.medical_review ? (
+                    <p>
+                      Medical review: {post.editorial.medical_review.name},{" "}
+                      {post.editorial.medical_review.credentials},{" "}
+                      {formatDate(post.editorial.medical_review.reviewed_at)}.
+                    </p>
+                  ) : null}
+                  {post.editorial.disclosure ? (
+                    <p>{post.editorial.disclosure}</p>
+                  ) : null}
+                  <p>
+                    <Link
+                      href="/editorial-policy"
+                      className="underline underline-offset-4"
+                    >
+                      Our editorial standards
+                    </Link>{" "}
+                    ·{" "}
+                    <Link
+                      href="/contact"
+                      className="underline underline-offset-4"
+                    >
+                      Suggest a correction
+                    </Link>
+                  </p>
                 </section>
               ) : null}
-
-              {/* Related Posts */}
-              {relatedPosts.length > 0 && (
-                <div className="mt-16">
-                  <h2 className="text-2xl font-bold text-secondary mb-6">Related Articles</h2>
-                  <div className="grid gap-6 md:grid-cols-2">
-                    {relatedPosts.map((relatedPost) => <BlogCard key={relatedPost.slug} post={relatedPost} />)}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Sidebar */}
-            <aside className="space-y-8">
-              {/* Author Bio */}
-              {post.draft_preview ? <Card>
-                <CardContent className="p-6">
-                  <h2 className="font-bold text-secondary mb-3">In this collection</h2>
-                  <nav aria-label="Article collection" className="space-y-4">
-                    {allPosts.map((article) => (
-                      <Link key={article.slug} href={`/blog/${article.slug}`} aria-current={article.slug === post.slug ? "page" : undefined}
-                        className={`block text-sm leading-relaxed hover:underline ${article.slug === post.slug ? "font-semibold text-primary" : "text-secondary"}`}>
-                        {article.title}
-                      </Link>
-                    ))}
-                  </nav>
-                </CardContent>
-              </Card> : <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-secondary mb-4">About the Author</h3>
-                  <div className="flex items-center gap-3 mb-3">
-                    {post.author_image ? <Image src={post.author_image} alt="" width={60} height={60} className="rounded-full" /> : null}
-                    <div>
-                      <p className="font-medium text-secondary">{post.author}</p>
-                      {post.author_title && (
-                        <p className="text-sm text-muted-foreground">{post.author_title}</p>
-                      )}
-                    </div>
-                  </div>
-                  {post.author_bio && (
-                    <p className="text-sm text-muted-foreground">{post.author_bio}</p>
-                  )}
-                </CardContent>
-              </Card>}
-
-              {/* Newsletter CTA */}
-              <Card className="bg-gradient-to-br from-primary/10 to-primary/5">
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-secondary mb-2">Stay Informed</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Get the latest health insights delivered to your inbox.
-                  </p>
-                  <Button className="w-full" asChild>
-                    <Link href="/#newsletter">Subscribe</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Popular Tags */}
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-secondary mb-4">Popular Tags</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {post.tags.map((tag) => <Badge key={tag} variant="outline">{tag}</Badge>)}
-                  </div>
-                </CardContent>
-              </Card>
+            </article>
+            <aside className="article-aside hidden lg:block lg:sticky lg:top-24">
+              <nav
+                aria-label="In this guide"
+                className="max-h-[calc(100dvh-140px)] overflow-y-auto border-l-2 border-primary/20 pl-5"
+              >
+                <h2 className="text-sm font-semibold uppercase tracking-wider text-primary">
+                  In this guide
+                </h2>
+                {toc}
+              </nav>
             </aside>
+          </div>
+          {relatedPosts.length ? (
+            <section className="related-articles mt-14 border-t pt-10">
+              <h2 className="mb-6 text-2xl font-semibold tracking-tight">
+                Keep exploring
+              </h2>
+              <div className="grid gap-6 md:grid-cols-3">
+                {relatedPosts.map((relatedPost) => (
+                  <BlogCard key={relatedPost.slug} post={relatedPost} />
+                ))}
+              </div>
+            </section>
+          ) : null}
+          <div className="article-newsletter mt-10 flex flex-wrap items-center justify-between gap-5 rounded-xl bg-primary-soft p-6">
+            <div>
+              <h2 className="text-xl font-semibold">
+                A clearer view, in your inbox.
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                New guides and selected updates from WeightLiteracy.
+              </p>
+            </div>
+            <Button asChild>
+              <Link href="/#newsletter">Join the newsletter</Link>
+            </Button>
           </div>
         </Container>
       </Section>

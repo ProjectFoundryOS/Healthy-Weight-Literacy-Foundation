@@ -1,263 +1,260 @@
 import Link from "next/link"
 import Image from "next/image"
+import { ArrowRight, ArrowUpRight, BookOpen, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Section } from "@/components/layout/section"
 import { Container } from "@/components/layout/container"
-import { BookOpen, Users, GraduationCap, ArrowRight } from "lucide-react"
+import { Section } from "@/components/layout/section"
+import { BlogCard } from "@/components/blocks/blog-card"
 import { NewsCard } from "@/components/content/news-card"
-import { getNewsUpdates } from "@/lib/news"
+import { ArticleCoverOverlay } from "@/components/content/article-cover-overlay"
+import { SiteSearch } from "@/components/content/site-search"
+import { NewsletterForm } from "@/components/forms/newsletter-form"
 import { getBlogPosts } from "@/lib/articles"
-import { ROUTES, dynamicRoutes } from "@/lib/routes"
+import { getNewsUpdates } from "@/lib/news"
 
 export default async function HomePage() {
-  const allPosts = await getBlogPosts()
-  const recentPosts = allPosts.slice(0, 3)
+  const posts = await getBlogPosts()
+  const featured =
+    posts.find((post) => post.slug === "before-starting-glp-1-medicine") ??
+    posts[0]
+  const latest = posts
+    .filter((post) => post.slug !== featured?.slug)
+    .slice(0, 3)
   const news = getNewsUpdates().slice(0, 3)
-
+  const paths = [
+    {
+      title: "Making sense of GLP-1 medicines",
+      text: "Understand the options and the science behind them.",
+      href: "/blog?topic=basics",
+      color: "bg-[#E4EEE7]",
+    },
+    {
+      title: "Considering your next step",
+      text: "Prepare questions about treatment, side effects, and care.",
+      href: "/blog?topic=treatment",
+      color: "bg-[#F7E5D7]",
+    },
+    {
+      title: "Looking at the bigger picture",
+      text: "Explore appetite, nutrition, weight changes, and metabolism.",
+      href: "/education#weight",
+      color: "bg-[#EEE9F3]",
+    },
+  ]
   return (
     <>
-      {/* Hero Section */}
-      <Section className="relative bg-primary text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600&h=900&fit=crop"
-            alt="Healthcare professional providing education to diverse community members"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <Container className="relative z-10">
-          <div className="py-20 text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-balance text-white">
-              Building Health Literacy for Better Lives
-            </h1>
-            <p className="mt-6 text-xl text-white/90 leading-relaxed text-pretty max-w-3xl mx-auto">
-              Clear, evidence-based education on nutrition, weight management, and metabolic health so individuals and
-              communities can make informed, sustainable lifestyle decisions.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href={ROUTES.EDUCATION}>
-                <Button size="lg" variant="secondary" className="font-semibold">
-                  Explore Education
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href={ROUTES.CONTACT}>
-                <Button
-                  size="lg"
-                  className="bg-accent text-accent-foreground hover:bg-accent-hover font-semibold"
-                  aria-label="Contact us about our mission"
-                >
-                  Get in Touch
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Mission Section */}
-      <Section>
+      <section className="relative overflow-hidden bg-[#F5F1E8] py-10 sm:py-14 lg:py-16">
         <Container>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">Our Mission</h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Healthy Weight Literacy Foundation exists to improve public health by providing clear, evidence-based
-              education on nutrition, weight management, and metabolic health so individuals and communities can make
-              informed, sustainable lifestyle decisions.
-            </p>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Our Programs Section */}
-      <Section background="muted">
-        <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">Our Programs</h2>
-            <p className="mt-3 text-lg text-muted-foreground">
-              Evidence-based educational programs to improve health literacy
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {[
-              {
-                icon: BookOpen,
-                title: "Health Literacy Education",
-                description: "Evidence-based education on nutrition, weight management, and metabolic health.",
-                href: ROUTES.PROGRAMS,
-                image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=800&h=500&fit=crop",
-                imageAlt: "Health education workshop with diverse participants",
-              },
-              {
-                icon: GraduationCap,
-                title: "Public Resources & Guides",
-                description: "Free, accessible educational materials designed for everyday understanding.",
-                href: ROUTES.PROGRAMS,
-                image: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=800&h=500&fit=crop",
-                imageAlt: "Educational resources and materials for health literacy",
-              },
-              {
-                icon: Users,
-                title: "Community Awareness",
-                description: "Educational outreach focused on underserved and low-access communities.",
-                href: ROUTES.PROGRAMS,
-                image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=500&fit=crop",
-                imageAlt: "Community health outreach program in action",
-              },
-            ].map((item) => (
-              <Link key={item.title} href={item.href}>
-                <Card className="hover:shadow-card-hover transition-shadow h-full overflow-hidden">
-                  <div className="relative h-48 w-full">
-                    <Image 
-                      src={item.image || "/placeholder.svg"} 
-                      alt={item.imageAlt} 
-                      fill 
-                      className="object-cover"
-                      loading="eager"
-                      priority
-                    />
-                  </div>
-                  <CardContent className="pt-6">
-                    <div className="h-12 w-12 rounded-lg bg-primary-soft flex items-center justify-center mb-4">
-                      <item.icon className="h-6 w-6 text-primary" aria-hidden="true" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-secondary mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* Focus Areas */}
-      <Section>
-        <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">Our Focus</h2>
-            <p className="mt-3 text-lg text-muted-foreground">
-              Evidence-based education for everyone seeking credible health information
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                icon: BookOpen,
-                title: "Evidence-Based Education",
-                description:
-                  "Clear, scientifically-grounded information on nutrition, weight management, and metabolic health accessible to all.",
-              },
-              {
-                icon: Users,
-                title: "Community Support",
-                description:
-                  "Serving underserved and low-income communities with limited access to credible health education resources.",
-              },
-              {
-                icon: GraduationCap,
-                title: "Public Health Literacy",
-                description:
-                  "Empowering individuals to make informed decisions about their health through comprehensive educational resources.",
-              },
-            ].map((item) => (
-              <Card key={item.title} className="hover:shadow-card-hover transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="h-12 w-12 rounded-lg bg-primary-soft flex items-center justify-center mb-4">
-                    <item.icon className="h-6 w-6 text-primary" aria-hidden="true" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-secondary">{item.title}</h3>
-                  <p className="mt-2 text-muted-foreground leading-relaxed">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* Latest from Our Blog Section */}
-      {recentPosts.length > 0 && (
-        <Section background="muted">
-          <Container>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-                Latest Educational Articles
-              </h2>
-              <p className="mt-3 text-lg text-muted-foreground">
-                Evidence-based content to support your health literacy journey
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+            <div>
+              <p className="eyebrow">
+                <span className="inline-block h-2 w-2 rounded-full bg-[#BD6749]" />{" "}
+                A little clarity goes a long way
+              </p>
+              <h1 className="mt-5 max-w-xl text-[clamp(2.5rem,4.5vw,4.25rem)] font-semibold leading-[1.06] tracking-[-0.045em] text-secondary">
+                Weight health.
+                <br />
+                <span className="font-editorial italic text-primary">
+                  Better understood.
+                </span>
+              </h1>
+              <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#455953]">
+                Clear answers about medicines, food, and metabolic health—so you
+                can understand the evidence and ask the questions that matter to
+                you.
+              </p>
+              <div className="mt-7">
+                <SiteSearch id="home-search" />
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Free to explore. Grounded in sources. Made for real life.
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              {recentPosts.map((post) => (
-                <Link key={post.slug} href={dynamicRoutes.blogPost(post.slug)}>
-                  <Card className="hover:shadow-card-hover transition-shadow h-full overflow-hidden">
-                    {post.hero_image && (
-                      <div className="relative h-48 w-full">
-                        <Image
-                          src={post.hero_image || "/placeholder.svg"}
-                          alt={post.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    )}
-                    <CardContent className="pt-6">
-                      <div className="mb-4">
-                        <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary-soft text-primary">
-                          {post.category}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-semibold text-secondary mb-3 leading-tight">{post.title}</h3>
-                      <p className="text-sm text-muted-foreground">{post.reading_time}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-            <div className="text-center mt-8">
-              <Link href={ROUTES.BLOG}>
-                <Button variant="outline">
-                  View All Articles
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+            {featured ? (
+              <Link
+                href={`/blog/${featured.slug}`}
+                className="group overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-[0_15px_45px_-25px_#173e3955]"
+              >
+                <div className="relative aspect-[4/3] w-full max-h-[360px] overflow-hidden">
+                  <Image
+                    src={featured.hero_image}
+                    alt={featured.visuals?.hero.alt ?? featured.title}
+                    fill
+                    priority
+                    sizes="(max-width: 1023px) calc(100vw - 32px), 520px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                  />
+                  {featured.visuals?.hero.overlay ? (
+                    <ArticleCoverOverlay
+                      overlay={featured.visuals.hero.overlay}
+                      compact
+                    />
+                  ) : null}
+                </div>
+                <div className="flex items-start justify-between gap-4 p-5 sm:p-6">
+                  <div>
+                    <p className="eyebrow">A good place to start</p>
+                    <h2 className="mt-2 text-xl font-semibold leading-snug tracking-tight">
+                      {featured.title}
+                    </h2>
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      {featured.reading_time} · Practical guide
+                    </p>
+                  </div>
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="mt-6 h-6 w-6 shrink-0 text-primary"
+                  />
+                </div>
               </Link>
-            </div>
-          </Container>
-        </Section>
-      )}
-
-      <Section>
-        <Container>
-          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">News &amp; Research</h2>
-              <p className="mt-3 text-lg text-muted-foreground">Selected updates, with the context behind the headlines.</p>
-            </div>
-            <Link href={ROUTES.NEWS} className="inline-flex min-h-11 shrink-0 items-center gap-2 font-semibold text-primary underline underline-offset-4">View all news <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+            ) : null}
           </div>
-          <div className="grid gap-6 lg:grid-cols-3">{news.map((item) => <NewsCard key={item.id} item={item} compact />)}</div>
+        </Container>
+      </section>
+      <Section className="py-10 sm:py-12">
+        <Container>
+          <div className="mb-6 flex items-end justify-between gap-4">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              Start with what’s on your mind
+            </h2>
+            <Link
+              href="/education"
+              className="hidden min-h-11 items-center gap-2 text-sm font-semibold text-primary sm:inline-flex"
+            >
+              Explore all topics <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {paths.map((path, i) => (
+              <Link
+                key={path.href}
+                href={path.href}
+                className={`group rounded-xl p-6 transition-transform hover:-translate-y-1 ${path.color}`}
+              >
+                <div className="flex items-center justify-between text-primary">
+                  <span className="font-mono text-sm">0{i + 1}</span>
+                  <ArrowUpRight className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 max-w-[23ch] text-xl font-semibold leading-snug">
+                  {path.title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-[#455953]">
+                  {path.text}
+                </p>
+              </Link>
+            ))}
+          </div>
+          <Link
+            href="/education"
+            className="mt-4 inline-flex min-h-11 items-center font-semibold text-primary sm:hidden"
+          >
+            Explore all topics →
+          </Link>
         </Container>
       </Section>
-
-      {/* CTA Section */}
+      <Section className="border-t border-primary/10">
+        <Container>
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">The reading room</p>
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight">
+                Worth understanding.
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                Thoughtful guides for the questions behind the headlines.
+              </p>
+            </div>
+            <Button variant="outline" asChild>
+              <Link href="/blog">
+                All articles <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {latest.map((post) => (
+              <BlogCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </Container>
+      </Section>
       <Section background="muted">
         <Container>
-          <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 md:p-12 text-center text-primary-foreground">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Support Evidence-Based Health Education</h2>
-            <p className="mt-4 text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-              Your support helps us provide free, accessible health literacy resources to individuals and communities
-              that need them most.
-            </p>
-            <div className="mt-8">
-              <Link href={ROUTES.DONATE}>
-                <Button size="lg" variant="secondary" className="font-semibold">
-                  Learn About Supporting Our Mission
-                </Button>
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Stay curious</p>
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight">
+                News &amp; Research
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                What’s new, what it means, and what’s still uncertain.
+              </p>
+            </div>
+            <Button variant="outline" asChild>
+              <Link href="/news">
+                Explore the updates <ArrowRight className="h-4 w-4" />
               </Link>
+            </Button>
+          </div>
+          <div className="grid gap-5 lg:grid-cols-3">
+            {news.map((item) => (
+              <NewsCard key={item.id} item={item} compact />
+            ))}
+          </div>
+        </Container>
+      </Section>
+      <Section id="newsletter">
+        <Container>
+          <div className="grid gap-8 rounded-2xl bg-[#E4EEE7] p-6 sm:p-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <Sparkles className="h-7 w-7 text-primary" aria-hidden="true" />
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight">
+                A clearer view, in your inbox.
+              </h2>
+              <p className="mt-3 max-w-md leading-relaxed text-[#455953]">
+                Join our newsletter for new guides and selected updates on
+                weight and metabolic health.
+              </p>
+            </div>
+            <div className="self-center">
+              <NewsletterForm />
+              <p className="mt-4 text-sm text-muted-foreground">
+                We respect your inbox.{" "}
+                <Link href="/privacy" className="underline underline-offset-4">
+                  Privacy policy
+                </Link>
+              </p>
+            </div>
+          </div>
+        </Container>
+      </Section>
+      <Section className="border-t border-primary/10 bg-[#FAF7F1]">
+        <Container>
+          <div className="grid gap-7 md:grid-cols-[1fr_1.6fr] md:gap-16">
+            <div>
+              <BookOpen className="h-7 w-7 text-primary" aria-hidden="true" />
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight">
+                Knowledge should
+                <br />
+                feel within reach.
+              </h2>
+            </div>
+            <div>
+              <p className="text-lg leading-relaxed text-[#455953]">
+                WeightLiteracy is a project of Healthy Weight Literacy
+                Foundation. We make health information easier to understand,
+                with free education, clear sources, and respect for the person
+                behind every question.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Button asChild variant="outline">
+                  <Link href="/about">Meet the Foundation</Link>
+                </Button>
+                <Button asChild variant="link">
+                  <Link href="/donate">
+                    Support free education <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </Container>

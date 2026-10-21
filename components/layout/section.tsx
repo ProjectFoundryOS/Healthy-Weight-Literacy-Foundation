@@ -8,12 +8,17 @@ interface SectionProps {
   background?: "default" | "muted" | "primary" | "gradient"
 }
 
-export function Section({ children, className, id, background = "default" }: SectionProps) {
+export function Section({
+  children,
+  className,
+  id,
+  background = "default",
+}: SectionProps) {
   return (
     <section
       id={id}
       className={cn(
-        "py-16 sm:py-20 lg:py-24",
+        "py-12 sm:py-16",
         background === "muted" && "bg-muted",
         background === "primary" && "bg-primary-soft",
         background === "gradient" && "hero-gradient text-white",

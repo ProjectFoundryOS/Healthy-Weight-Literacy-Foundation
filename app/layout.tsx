@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
@@ -17,14 +16,17 @@ if (process.env.NODE_ENV === "development") {
   checkRequiredEnvVars()
 }
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
+const _geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://weightliteracy.org"),
   title: {
-    default: "Healthy Weight Literacy Foundation | Evidence-Based Health Education",
-    template: "%s | Healthy Weight Literacy Foundation",
+    default: "WeightLiteracy | Clear answers for weight health",
+    template: "%s | WeightLiteracy",
   },
   description:
     "Improving public health through clear, evidence-based education on nutrition, weight management, and metabolic health. Empowering individuals and communities to make informed, sustainable lifestyle decisions.",
@@ -51,12 +53,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://weightliteracy.org",
     siteName: "Healthy Weight Literacy Foundation",
-    title: "Healthy Weight Literacy Foundation | Evidence-Based Health Education",
+    title: "WeightLiteracy | Clear answers for weight health",
     description:
       "Improving public health through clear, evidence-based education on nutrition, weight management, and metabolic health.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=630&fit=crop",
+        url: "https://www.weightliteracy.org/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Healthy Weight Literacy Foundation",
@@ -68,8 +70,7 @@ export const metadata: Metadata = {
     title: "Healthy Weight Literacy Foundation",
     description:
       "Improving public health through clear, evidence-based education on nutrition, weight management, and metabolic health.",
-    images: ["https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=630&fit=crop"],
-    creator: "@hwlfoundation",
+    images: ["https://www.weightliteracy.org/opengraph-image"],
   },
   robots: {
     index: true,
@@ -90,11 +91,10 @@ export const metadata: Metadata = {
   verification: {
     google: "leBIqjXCkqYmnfmaruVk0B9tuMCsE6Pj2rZT16_9rWA",
   },
-  generator: "v0.app",
 }
 
 export const viewport: Viewport = {
-  themeColor: "#059669",
+  themeColor: "#21645E",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -109,9 +109,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
       </head>
-      <body className="font-sans antialiased min-h-screen flex flex-col">
+      <body
+        className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased min-h-screen flex flex-col`}
+      >
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
@@ -119,16 +126,25 @@ export default function RootLayout({
         {editorialPreview ? (
           <div className="border-b border-amber-200 bg-amber-50 px-4 py-3 text-center text-sm text-amber-950">
             <strong>Local article preview</strong> · Drafts are marked below
-            <Link href="/blog" className="ml-3 font-semibold underline underline-offset-4">Browse all articles</Link>
+            <Link
+              href="/blog"
+              className="ml-3 font-semibold underline underline-offset-4"
+            >
+              Browse all articles
+            </Link>
           </div>
         ) : null}
-        <main id="main-content" className="flex-1">
+        <main id="main-content" tabIndex={-1} className="flex-1">
           {children}
         </main>
         <Footer />
         <Toaster />
-        {!editorialPreview ? <><Analytics /><GA4Provider /><CookieConsent /></> : null}
-
+        {!editorialPreview ? (
+          <>
+            <GA4Provider />
+            <CookieConsent />
+          </>
+        ) : null}
       </body>
     </html>
   )

@@ -8,35 +8,142 @@ import { isEditorialPreview } from "@/lib/editorial-preview-mode.mjs"
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (isEditorialPreview()) return []
   const baseUrl = siteConfig.url
-  const newsCheckedOn = getNewsUpdates().map((item) => item.checkedOn).sort().at(-1)
+  const newsCheckedOn = getNewsUpdates()
+    .map((item) => item.checkedOn)
+    .sort()
+    .at(-1)
 
   // Core pages with assigned priorities
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${baseUrl}${ROUTES.ABOUT}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}${ROUTES.PROGRAMS}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}${ROUTES.EDUCATION}`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}${ROUTES.BLOG}`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}${ROUTES.NEWS}`, lastModified: newsCheckedOn ? new Date(`${newsCheckedOn}T00:00:00Z`) : undefined, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${baseUrl}${ROUTES.CITY_RESOURCES}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}${ROUTES.DONATE}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}${ROUTES.CONTACT}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}${ROUTES.VOLUNTEER}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}${ROUTES.PARTNER}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}${ROUTES.EVENTS}`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
-    { url: `${baseUrl}${ROUTES.IMPACT}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}${ROUTES.FAQ}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}${ROUTES.CAREERS}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}${ROUTES.FINANCIALS}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.5 },
-    { url: `${baseUrl}${ROUTES.PRESS}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${baseUrl}${ROUTES.TRANSPARENCY}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.4 },
-    { url: `${baseUrl}${ROUTES.EDITORIAL_POLICY}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.4 },
-    { url: `${baseUrl}${ROUTES.MEDICAL_REVIEW}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.4 },
-    { url: `${baseUrl}${ROUTES.HOW_WE_CREATE_CONTENT}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.4 },
-    { url: `${baseUrl}${ROUTES.PRIVACY}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-    { url: `${baseUrl}${ROUTES.COOKIES}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-    { url: `${baseUrl}${ROUTES.ACCESSIBILITY}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-    { url: `${baseUrl}${ROUTES.TERMS}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
+    { url: baseUrl, changeFrequency: "weekly", priority: 1 },
+    {
+      url: `${baseUrl}${ROUTES.ABOUT}`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}${ROUTES.PROGRAMS}`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}${ROUTES.EDUCATION}`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}${ROUTES.BLOG}`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}${ROUTES.NEWS}`,
+      lastModified: newsCheckedOn
+        ? new Date(`${newsCheckedOn}T00:00:00Z`)
+        : undefined,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}${ROUTES.CITY_RESOURCES}`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}${ROUTES.DONATE}`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}${ROUTES.CONTACT}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}${ROUTES.VOLUNTEER}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}${ROUTES.PARTNER}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}${ROUTES.EVENTS}`,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}${ROUTES.IMPACT}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}${ROUTES.FAQ}`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}${ROUTES.CAREERS}`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}${ROUTES.FINANCIALS}`,
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}${ROUTES.PRESS}`,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}${ROUTES.TRANSPARENCY}`,
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}${ROUTES.EDITORIAL_POLICY}`,
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}${ROUTES.MEDICAL_REVIEW}`,
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}${ROUTES.HOW_WE_CREATE_CONTENT}`,
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}${ROUTES.PRIVACY}`,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}${ROUTES.COOKIES}`,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}${ROUTES.ACCESSIBILITY}`,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/medical-disclaimer`,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}${ROUTES.TERMS}`,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ]
 
   // A missing content source is a build error, not a successful empty sitemap.

@@ -13,15 +13,53 @@ import sanitizeHtml from "sanitize-html"
 export const HTML_PATTERN = /<\/?[a-z][^>]*>/i
 
 export const ALLOWED_TAGS = [
-  "p", "br", "strong", "em", "b", "i", "u", "s",
-  "h1", "h2", "h3", "h4", "h5", "h6",
-  "ul", "ol", "li", "blockquote", "pre", "code",
-  "a", "img", "figure", "figcaption",
-  "table", "thead", "tbody", "tr", "th", "td",
-  "hr", "sup", "sub", "span", "div",
+  "p",
+  "br",
+  "strong",
+  "em",
+  "b",
+  "i",
+  "u",
+  "s",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "ul",
+  "ol",
+  "li",
+  "blockquote",
+  "pre",
+  "code",
+  "a",
+  "img",
+  "figure",
+  "figcaption",
+  "table",
+  "thead",
+  "tbody",
+  "tr",
+  "th",
+  "td",
+  "hr",
+  "sup",
+  "sub",
+  "span",
+  "div",
 ]
 
-export const ALLOWED_ATTR = ["href", "src", "alt", "title", "class", "id", "target", "rel"]
+export const ALLOWED_ATTR = [
+  "href",
+  "src",
+  "alt",
+  "title",
+  "class",
+  "id",
+  "target",
+  "rel",
+]
 
 export interface PreparedArticleContent {
   content: string
@@ -47,7 +85,10 @@ function sanitizePermissiveFallback(raw: string): string {
   return sanitizeHtml(raw)
 }
 
-export function prepareArticleContent(raw: string, slug: string): PreparedArticleContent {
+export function prepareArticleContent(
+  raw: string,
+  slug: string,
+): PreparedArticleContent {
   if (!raw) {
     console.error(`[v0] Article ${slug}: empty content`)
     return { content: "", isHtml: false }
@@ -55,7 +96,6 @@ export function prepareArticleContent(raw: string, slug: string): PreparedArticl
 
   const isHtml = HTML_PATTERN.test(raw)
   const preview = raw.slice(0, 100).replace(/\n/g, " ")
-  console.log(`[v0] Article ${slug}: format=${isHtml ? "HTML" : "Markdown"}, length=${raw.length}, preview="${preview}..."`)
 
   if (!isHtml) {
     return { content: raw, isHtml: false }
@@ -65,13 +105,14 @@ export function prepareArticleContent(raw: string, slug: string): PreparedArticl
     const sanitized = sanitizeStrict(raw)
 
     if (sanitized.length === 0 && raw.length > 0) {
-      console.error(`[v0] Article ${slug}: strict sanitize stripped all content; retrying with safe defaults.`)
+      console.error(
+        `[v0] Article ${slug}: strict sanitize stripped all content; retrying with safe defaults.`,
+      )
       const fallback = sanitizePermissiveFallback(raw)
-      console.log(`[v0] Article ${slug}: fallback-sanitized HTML length=${fallback.length} (original=${raw.length})`)
+
       return { content: fallback, isHtml: true }
     }
 
-    console.log(`[v0] Article ${slug}: sanitized HTML length=${sanitized.length} (original=${raw.length})`)
     return { content: sanitized, isHtml: true }
   } catch (err) {
     console.error(`[v0] Article ${slug}: sanitize-html error:`, err)

@@ -9,30 +9,38 @@ export default function NotFound() {
     <Section className="min-h-[60vh] flex items-center">
       <Container size="sm" className="text-center">
         <div className="mb-8">
-          <span className="text-8xl font-bold text-primary/20" aria-hidden="true">
+          <span
+            className="text-8xl font-bold text-primary/20"
+            aria-hidden="true"
+          >
             404
           </span>
         </div>
-        <h1 className="text-3xl font-bold text-secondary mb-4">Page Not Found</h1>
+        <h1 className="text-3xl font-bold text-secondary mb-4">
+          Page Not Found
+        </h1>
         <p className="text-muted-foreground mb-8 leading-relaxed">
-          Sorry, we couldn&apos;t find the page you&apos;re looking for. It may have been moved or no longer exists.
+          Sorry, we couldn&apos;t find the page you&apos;re looking for. It may
+          have been moved or no longer exists.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/">
-            <Button size="lg">
+          <Button size="lg" asChild>
+            <Link href="/">
               <Home className="mr-2 h-4 w-4" />
               Return Home
-            </Button>
-          </Link>
-          <Link href="/search">
-            <Button variant="outline" size="lg">
+            </Link>
+          </Button>
+          <Button variant="outline" size="lg" asChild>
+            <Link href="/search">
               <Search className="mr-2 h-4 w-4" />
               Search Our Site
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
         <div className="mt-12 pt-8 border-t">
-          <p className="text-sm text-muted-foreground mb-4">Looking for something specific?</p>
+          <p className="text-sm text-muted-foreground mb-4">
+            Looking for something specific?
+          </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
             <Link
               href="/programs"
