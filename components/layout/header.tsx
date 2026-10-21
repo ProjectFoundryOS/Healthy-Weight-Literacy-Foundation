@@ -17,6 +17,7 @@ const navigation = [
   { name: "Programs", href: ROUTES.PROGRAMS },
   { name: "Education", href: ROUTES.EDUCATION },
   { name: "Articles", href: ROUTES.BLOG },
+  { name: "News & Research", href: ROUTES.NEWS },
   { name: "City Resources", href: ROUTES.CITY_RESOURCES },
   { name: "Contact", href: ROUTES.CONTACT },
 ]
@@ -58,7 +59,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex lg:items-center lg:gap-x-3 xl:gap-x-6">
+        <div className="hidden xl:flex xl:items-center xl:gap-x-3">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -77,7 +78,7 @@ export function Header() {
         </div>
 
         {/* Desktop Actions */}
-        <div className="hidden lg:flex lg:items-center lg:gap-x-4">
+        <div className="hidden xl:flex xl:items-center xl:gap-x-4">
           <Link href={ROUTES.DONATE}>
             <Button className="font-semibold">
               <Heart className="mr-2 h-4 w-4" />
@@ -87,14 +88,14 @@ export function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open menu" aria-expanded={isOpen}>
                 <Menu className="h-6 w-6" aria-hidden="true" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-auto">
+            <SheetContent side="right" className="w-auto overflow-y-auto">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <SheetDescription className="sr-only">Access navigation links and search functionality</SheetDescription>
               <div className="flex flex-col gap-6 pt-6 px-6">

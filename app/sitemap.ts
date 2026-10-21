@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { siteConfig } from "@/lib/seo"
+import { getNewsUpdates } from "@/lib/news"
 import { getBlogPosts } from "@/lib/articles"
 import { ROUTES } from "@/lib/routes"
 import { isEditorialPreview } from "@/lib/editorial-preview-mode.mjs"
@@ -7,6 +8,7 @@ import { isEditorialPreview } from "@/lib/editorial-preview-mode.mjs"
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (isEditorialPreview()) return []
   const baseUrl = siteConfig.url
+  const newsCheckedOn = getNewsUpdates().map((item) => item.checkedOn).sort().at(-1)
 
   // Core pages with assigned priorities
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -15,6 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}${ROUTES.PROGRAMS}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}${ROUTES.EDUCATION}`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}${ROUTES.BLOG}`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}${ROUTES.NEWS}`, lastModified: newsCheckedOn ? new Date(`${newsCheckedOn}T00:00:00Z`) : undefined, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}${ROUTES.CITY_RESOURCES}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}${ROUTES.DONATE}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}${ROUTES.CONTACT}`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
