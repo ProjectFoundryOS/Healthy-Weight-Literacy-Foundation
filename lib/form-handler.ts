@@ -7,6 +7,7 @@ export async function handleForm(
   schema: z.ZodTypeAny,
   deliver: Delivery,
   successMessage = "Your message has been sent. Thank you for getting in touch.",
+  failureMessage = "Your message was not sent. Please email info@weightliteracy.org instead.",
 ) {
   const origin = request.headers.get("origin")
   if (origin && origin !== new URL(request.url).origin)
@@ -34,12 +35,11 @@ export async function handleForm(
     return Response.json({ ok: true, message: successMessage })
   } catch {
     // Do not log form contents, email addresses, or provider credentials.
-    console.error("Contact delivery unavailable")
+    console.error("Form submission unavailable")
     return Response.json(
       {
         ok: false,
-        message:
-          "Your message was not sent. Please email info@weightliteracy.org instead.",
+        message: failureMessage,
       },
       { status: 503 },
     )
