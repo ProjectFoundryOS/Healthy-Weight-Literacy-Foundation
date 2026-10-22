@@ -3,6 +3,7 @@
 import Script from "next/script"
 import { useState, useEffect } from "react"
 import { Analytics } from "@vercel/analytics/next"
+import { analyticsPageLocation } from "@/lib/analytics-location"
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 
@@ -37,7 +38,7 @@ export function GA4Provider() {
           gtag('js', new Date());
           gtag('config', '${GA_MEASUREMENT_ID}', {
             page_path: window.location.pathname,
-            page_location: window.location.origin + window.location.pathname,
+            page_location: ${JSON.stringify(analyticsPageLocation(window.location.href))},
             allow_google_signals: false,
             allow_ad_personalization_signals: false,
           });
