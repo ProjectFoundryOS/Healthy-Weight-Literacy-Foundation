@@ -63,6 +63,11 @@ export function topicForArticle(slug: string) {
   )
 }
 const related: Record<string, string[]> = {
+  "how-glp-1-weight-loss-medicines-work": [
+    "semaglutide-vs-tirzepatide",
+    "before-starting-glp-1-medicine",
+    "glp-1-side-effects",
+  ],
   "what-bmi-can-and-cannot-tell-you": [
     "why-weight-changes-day-to-day",
     "insulin-resistance-explained",
