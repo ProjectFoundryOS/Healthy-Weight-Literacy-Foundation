@@ -69,7 +69,7 @@ export function NewsletterForm({ variant = "default" }: NewsletterFormProps) {
         )}
       >
         <CheckCircle2 className="h-5 w-5" />
-        <span>Thank you. Your newsletter signup request has been sent.</span>
+        <span>Thank you. Your newsletter signup has been saved.</span>
       </div>
     )
   }
@@ -131,7 +131,7 @@ export function NewsletterForm({ variant = "default" }: NewsletterFormProps) {
           )}
           role="alert"
         >
-          Your signup request was not sent. Please try again or email
+          Your signup could not be saved. Please try again or email
           info@weightliteracy.org.
         </p>
       )}
