@@ -123,7 +123,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <p>{post.draft_preview ? "Draft for review" : post.author}</p>
             <p>
               {post.draft_preview ? "Draft updated" : "Published"}{" "}
-              {formatDate(post.published_at)}
+              {formatDate(post.draft_preview ? (post.updated_at || post.created_at) : post.published_at)}
             </p>
             <p>{post.reading_time}</p>
           </div>

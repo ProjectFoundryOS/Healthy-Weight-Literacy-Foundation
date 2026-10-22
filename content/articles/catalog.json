@@ -674,6 +674,79 @@
     },
     {
       "metadata": {
+        "article_id": "D6",
+        "slug": "sleep-appetite-and-weight",
+        "title": "Why Sleep Belongs in the Conversation About Appetite and Weight",
+        "description": "How sleep relates to appetite, what the research does and does not show, and when to bring sleep concerns to a clinician.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight Literacy",
+        "tags": [
+          "sleep",
+          "appetite",
+          "weight health"
+        ],
+        "citations": [
+          {
+            "title": "How Sleep Affects Your Health",
+            "url": "https://www.nhlbi.nih.gov/health/sleep-deprivation/health-effects",
+            "type": "reference"
+          },
+          {
+            "title": "Healthy Sleep Habits",
+            "url": "https://www.nhlbi.nih.gov/health/sleep-deprivation/healthy-sleep-habits",
+            "type": "reference"
+          },
+          {
+            "title": "How Much Sleep Is Enough?",
+            "url": "https://www.nhlbi.nih.gov/health/sleep/how-much-sleep",
+            "type": "reference"
+          },
+          {
+            "title": "Sleep Apnea Symptoms",
+            "url": "https://www.nhlbi.nih.gov/health/sleep-apnea/symptoms",
+            "type": "reference"
+          },
+          {
+            "title": "The Effect of Behavioral Sleep Interventions on Measures of Obesity, Dietary Intake and Physical Activity in Adults With Poor Sleep Health",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42044907/",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-22T19:46:29.038Z",
+        "updated_at": "2026-10-22T19:46:29.038Z",
+        "next_review_date": "2027-04-22T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-22T19:46:29.038Z",
+        "approved_at": "2026-10-22T19:46:29.038Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/sleep-evening-cover.png",
+            "alt": "A softly lit bedside lamp, closed book, and alarm clock beside dark blue bedding.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "542e592c8ddaecb6fafd67f280eb6b79c0ee63659de5100584b9b6298523456f",
+            "overlay": {
+              "title": "Sleep & appetite"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/sleep-observation-note.png",
+              "alt": "An optional private note with spaces for sleep timing, interruptions, restedness, and useful observations about hunger.",
+              "width": 900,
+              "height": 1210,
+              "sha256": "688bf46627a8b8741c90393abfdd8a3d1f93a4868d3d2ea0bfd3c188f0035ed5",
+              "before_heading": "When the issue may be more than a short night"
+            }
+          ]
+        }
+      },
+      "content": "# Why Sleep Belongs in the Conversation About Appetite and Weight\n\nAfter a short night, even an ordinary day can feel harder to manage. If food seems more distracting or satisfying meals feel harder to plan, the conversation does not have to begin and end with willpower.\n\nSleep is involved in appetite regulation, and too little sleep can leave people feeling hungrier. That makes sleep worth discussing when you are trying to understand eating patterns. It does not make an extra hour in bed a guaranteed weight-loss treatment. [NIH: How sleep affects health](https://www.nhlbi.nih.gov/health/sleep-deprivation/health-effects)\n\n## Appetite does not operate separately from sleep\n\nSleep helps regulate hormones involved in hunger and fullness. Inadequate sleep can also affect attention and decision-making. Those are different parts of the same practical problem: getting through a day while tired. [NIH: How sleep affects health](https://www.nhlbi.nih.gov/health/sleep-deprivation/health-effects)\n\nIt can be useful to notice the setting around a difficult eating day. Was there an early shift, a child awake overnight, or a long stretch of interrupted sleep? That observation is a starting point for a conversation. It cannot tell you that sleep caused a particular weight change or explain every craving.\n\n## Better sleep is a health goal, not a weight-loss promise\n\nResearchers are studying whether improving sleep can support weight management. A 2026 systematic review included different approaches, including sleep extension and approaches involving insomnia therapy or sleep hygiene. Its findings varied by intervention: the pooled BMI change for sleep-extension studies was not statistically significant. The studies excluded people with obstructive sleep apnea. [Read the review abstract](https://pubmed.ncbi.nlm.nih.gov/42044907/)\n\nThat distinction matters. Evidence about one sleep intervention in one group should not become a promise that everyone will lose weight by sleeping longer. Nor should it turn into a reason to ignore a persistent sleep problem if your weight stays the same.\n\nThe NIH describes 7–9 hours a night as the usual recommendation for adults. Individual needs and circumstances vary, and more than nine hours is not automatically a problem—for example, during recovery from sleep loss or illness. [NIH: How much sleep is enough?](https://www.nhlbi.nih.gov/health/sleep/how-much-sleep)\n\n## Start with a change your life can accommodate\n\nGeneral sleep guidance includes keeping a reasonably consistent schedule, making the bedroom quiet and dark, and allowing a calmer period before bed. Caffeine can interfere with sleep for hours after you consume it. These are possible places to look, not a demand for a perfect evening routine. [NIH: Healthy sleep habits](https://www.nhlbi.nih.gov/health/sleep-deprivation/healthy-sleep-habits)\n\nFor a shift worker, “go to bed earlier” may be meaningless. The NIH's guidance for shift work includes protecting daytime sleep from light and noise and limiting caffeine to the earlier part of a shift. Persistent difficulty sleeping deserves a conversation with a clinician. [NIH: Healthy sleep habits](https://www.nhlbi.nih.gov/health/sleep-deprivation/healthy-sleep-habits)\n\nAn original one-week note can help organize that conversation. Record roughly when you tried to sleep, when you woke, whether sleep was interrupted, and how rested you felt. Add a short note about daytime hunger only if it is useful to you. This is an observation aid, not a diagnostic test or another score to chase. Keep the note private and bring it to your care team if needed.\n\n## When the issue may be more than a short night\n\nLoud, frequent snoring, pauses in breathing, gasping during sleep, and daytime sleepiness can be signs of sleep apnea. Sometimes another person notices the nighttime symptoms first. Tell a healthcare professional about them; a symptom list alone cannot establish the diagnosis. [NIH: Sleep apnea symptoms](https://www.nhlbi.nih.gov/health/sleep-apnea/symptoms)\n\nIf sleep has become a persistent struggle, it belongs in your healthcare conversation now. You do not need to prove that it changed your weight before asking for help with it.\n",
+      "body_sha256": "bab7fd1545157a8b41d7109130db1ca28390904255938ec617211c04b29d3030",
+      "metadata_sha256": "71221d30b1fe6982632fbfd1ea1ebac26caba5ba39f217ed0dac7e5ea24a4a15"
+    },
+    {
+      "metadata": {
         "article_id": "M7",
         "slug": "stopping-glp-1-medicine",
         "title": "What Happens When You Stop a GLP-1 Medicine?",
@@ -748,6 +821,69 @@
       "content": "# What Happens When You Stop a GLP-1 Medicine?\n\nPeople stop weight-loss medicines for many reasons. The cost changes. Side effects become difficult. Pregnancy plans arise. Or they reach a point where they want to know whether the medicine is still necessary.\n\nThe question is reasonable. So is wanting a clear answer about what may happen afterward.\n\nWeight regain is common after treatment stops, but studies describe averages, not a fixed outcome for every person. Planning the transition with your prescriber gives you a chance to address the reason for stopping and decide what support comes next. The [NIDDK’s overview of weight-management medicines](https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity) describes treatment as potentially long term when benefits continue and side effects are acceptable.\n\n## What withdrawal studies tell us\n\nIn an extension of the STEP 1 trial, 327 participants were followed after the trial’s semaglutide or placebo treatment ended. One year after stopping semaglutide, the group had regained roughly two-thirds of its earlier weight loss on average. Some weight loss remained. The structured lifestyle intervention also ended, so the study cannot isolate stopping the medicine from stopping that support. Novo Nordisk funded the research. [STEP 1 extension](https://pubmed.ncbi.nlm.nih.gov/35441470/).\n\nSURMOUNT-4 asked a related question using tirzepatide. After 36 weeks taking the medicine, 670 adults without diabetes were randomly assigned either to continue it or to switch to placebo. Diet and activity support continued.\n\nOver the following 52 weeks, average body weight fell another 5.5% in the continued-treatment group and rose 14.0% in the placebo group. Those percentages use weight at the point of randomization as the starting point—not the amount of weight previously lost.\n\nThis Eli Lilly-funded trial included people who had completed the initial treatment period, so its results do not describe everyone who starts tirzepatide. [SURMOUNT-4 trial](https://pmc.ncbi.nlm.nih.gov/articles/PMC10714284/).\n\n## Regain is not a measure of character\n\nIf appetite becomes harder to manage after a medicine is withdrawn, it can feel as though something you learned has vanished. It may be more helpful to recognize that the support provided by treatment has changed.\n\nWeight management is influenced by biology as well as circumstances and behavior. Research on weight regulation describes increased appetite and changes in energy expenditure after weight loss. These pressures help explain why maintaining a lower weight can require ongoing support. [Research on the physiology of weight-loss plateaus](https://pubmed.ncbi.nlm.nih.gov/38644683/).\n\nThat is different from saying regain is inevitable or that daily habits do not matter. It means a plan should account for the difficulty rather than treating any upward movement as a personal failure.\n\n## The reason for stopping shapes the next step\n\nSomeone stopping because of a serious reaction needs a different plan from someone whose insurance coverage is ending. Tell your clinician which problem you are trying to solve.\n\nIf the issue is access, ask about appropriate treatment alternatives and continuity of care before the supply runs out. If eating or side effects have become difficult, describe those problems directly. A discussion about tolerability should not be reduced to whether you can endure another month.\n\nPregnancy planning and significant adverse effects require product-specific advice. Follow urgent instructions in your medicine’s Medication Guide when they apply; do not wait for a routine appointment to report a serious reaction.\n\n## Make room for a maintenance plan\n\nA useful plan covers follow-up, nourishment, activity, and what changes should prompt contact. If the medicine is also helping manage diabetes, ask how blood glucose will be monitored and how the rest of your treatment may need to change.\n\nIt can help to agree on a manageable way to watch the trend without turning every weigh-in into a judgment. Also track things that matter to you: energy, strength, eating patterns, and the health measures your clinician is following.\n\nDo not improvise a taper, stretch injections, share medication, or restart an old dose after a break. Instructions vary by product and by the length of the interruption. Ask the prescriber or pharmacist for a specific plan; for example, the [Wegovy Medication Guide](https://www.novo-pi.com/wegovy.pdf) includes specific guidance on restarting after missed weeks.\n\n## Does this mean treatment has to be forever?\n\nThe studies support taking long-term treatment seriously. They do not decide what every individual must do for the rest of their life.\n\nBenefits, side effects, access, preferences, and health circumstances can change. Reassessment is part of care. A decision to continue should have a reason; a decision to stop should have a plan.\n\nIf you do regain weight, you can return to that conversation. There is no requirement to wait until all progress has been lost before asking for help.\n",
       "body_sha256": "7417871cafb9b5a7298edc72569aa8db67111df5c5d087273774dc58bedb0fe4",
       "metadata_sha256": "317a6819f0bb839713922c63670ba4f13b15ab4a920569427a002ac4e1ba9d44"
+    },
+    {
+      "metadata": {
+        "article_id": "D1",
+        "slug": "what-bmi-can-and-cannot-tell-you",
+        "title": "What BMI Can—and Cannot—Tell You",
+        "description": "Understand what BMI measures, why it is used, and which questions help put the number in context.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight Literacy",
+        "tags": [
+          "BMI",
+          "health literacy",
+          "metabolic health"
+        ],
+        "citations": [
+          {
+            "title": "About Body Mass Index",
+            "url": "https://www.cdc.gov/bmi/about/index.html",
+            "type": "reference"
+          },
+          {
+            "title": "Adult BMI Categories",
+            "url": "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html",
+            "type": "reference"
+          },
+          {
+            "title": "BMI Frequently Asked Questions",
+            "url": "https://www.cdc.gov/bmi/faq/index.html",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-10-22T19:46:29.038Z",
+        "updated_at": "2026-10-22T19:46:29.038Z",
+        "next_review_date": "2027-04-22T23:59:59-07:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-10-22T19:46:29.038Z",
+        "approved_at": "2026-10-22T19:46:29.038Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/bmi-context-cover.png",
+            "alt": "Paper letters spelling BMI inside a teal frame, with colored layers extending beyond it.",
+            "width": 1536,
+            "height": 1024,
+            "sha256": "b7de6f23b32eba1ce4a18f936e185e8a41a0429595e859ad2f9e3f84633eed54",
+            "overlay": {
+              "title": "BMI, in context"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/bmi-same-number-context.png",
+              "alt": "Two illustrative adults are each 1.70 meters tall and weigh 80 kilograms, giving a BMI of 27.7. BMI alone does not measure muscle mass, blood pressure, or medical history.",
+              "width": 900,
+              "height": 1210,
+              "sha256": "4de0ea3b200cf7cece8869dd7e2c4f6438286176d0dfcaa5e3a846bdff6c108b",
+              "before_heading": "Why clinicians still use it"
+            }
+          ]
+        }
+      },
+      "content": "# What BMI Can—and Cannot—Tell You\n\nYou open an appointment summary and see a number beside “BMI.” Underneath it is a category that sounds like a verdict. Before deciding what that label means about your health, it helps to understand what went into it.\n\nBody mass index uses two measurements: height and weight. It can flag something worth discussing, but it cannot describe everything happening in your body. The useful next question is what other information belongs beside it. [CDC: About BMI](https://www.cdc.gov/bmi/about/index.html)\n\n## What the calculation actually measures\n\nBMI divides weight in kilograms by height in meters squared. It is a way to express weight relative to height. It does not directly measure body fat, distinguish fat from muscle and bone, or show where fat is carried. [CDC: About BMI](https://www.cdc.gov/bmi/about/index.html)\n\nHere is a fictional example. Two adults are each 1.70 meters tall and weigh 80 kilograms. Both have a BMI of about 27.7: 80 divided by 1.70 squared. The calculation produces the same answer even if their muscle mass, blood pressure, medical histories, and daily lives differ. Those differences do not enter the formula.\n\nThat is why a BMI result cannot answer a question such as “How much of my weight is muscle?” The measurement simply does not contain that information.\n\n## Why clinicians still use it\n\nBMI is quick and inexpensive to obtain, and it helps identify weight categories associated with health risks. It is also useful for following population trends. Those uses give it a place in healthcare even though it is incomplete as an individual assessment. [CDC: About BMI](https://www.cdc.gov/bmi/about/index.html)\n\nFor adults age 20 and older, the CDC uses these categories:\n\n| BMI | Category |\n| --- | --- |\n| Below 18.5 | Underweight |\n| 18.5 to below 25 | Healthy weight |\n| 25 to below 30 | Overweight |\n| 30 or higher | Obesity |\n\nThese are screening categories. The words “healthy weight” describe the category; they do not establish that every aspect of a person's health is healthy. Children and teenagers need a different interpretation using age and sex, so this adult table should not be applied to them. [CDC: Adult BMI categories](https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html)\n\n## Put the number beside the rest of the picture\n\nA clinician may consider medical history, health behaviors, examination findings, and laboratory results alongside BMI. Blood pressure and cholesterol are examples of information that the BMI calculation itself cannot provide. Someone with substantial muscle may fall into a higher BMI category without the calculation being able to explain why. [CDC: BMI questions](https://www.cdc.gov/bmi/faq/index.html)\n\nYou do not have to decide whether BMI is entirely useful or entirely useless before asking for a better explanation. A productive conversation can start with: “What does this result suggest in my situation, and what else are you considering?”\n\n## Three questions to bring to a visit\n\nTry writing down the question that matters most to you:\n\n- “Are you concerned about my BMI itself, a change over time, or another finding?”\n- “What additional information would help us understand my health?”\n- “What are we trying to improve, and how will we know whether the plan is helping?”\n\nThese are conversation prompts, not a test you have to pass. You can also ask your clinician to explain an unfamiliar category in plain language.\n\nThe number in your chart deserves context. Ask for the explanation that connects it to your actual health, your concerns, and the decisions you are making together.\n",
+      "body_sha256": "f2e5c4dcf4ab49fbb1431bf9629c9c1f7e86477dd7cf2c83c52d7029f5c69595",
+      "metadata_sha256": "38ff9b1b89972eff82732164359b20ecc73e2431fb40cabd41ffc540df120ceb"
     },
     {
       "metadata": {

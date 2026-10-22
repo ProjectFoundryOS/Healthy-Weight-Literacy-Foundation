@@ -31,6 +31,7 @@ export const articleTopics = [
       "what-to-eat-on-glp-1",
       "what-is-food-noise",
       "glp-1-medicines-muscle-loss",
+      "sleep-appetite-and-weight",
     ],
   },
   {
@@ -52,6 +53,7 @@ export const articleTopics = [
       "why-weight-changes-day-to-day",
       "why-weight-loss-slows-down",
       "insulin-resistance-explained",
+      "what-bmi-can-and-cannot-tell-you",
     ],
   },
 ] as const
@@ -61,6 +63,16 @@ export function topicForArticle(slug: string) {
   )
 }
 const related: Record<string, string[]> = {
+  "what-bmi-can-and-cannot-tell-you": [
+    "why-weight-changes-day-to-day",
+    "insulin-resistance-explained",
+    "why-weight-loss-slows-down",
+  ],
+  "sleep-appetite-and-weight": [
+    "what-is-food-noise",
+    "why-weight-changes-day-to-day",
+    "insulin-resistance-explained",
+  ],
   "before-starting-glp-1-medicine": [
     "glp-1-side-effects",
     "what-to-eat-on-glp-1",
