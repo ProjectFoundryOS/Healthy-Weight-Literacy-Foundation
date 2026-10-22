@@ -24,6 +24,7 @@ import {
   topicForArticle,
 } from "@/lib/article-topics"
 import { articleSections } from "@/lib/article-visuals"
+import { ArticleReadingTracker } from "@/components/analytics/article-reading-tracker"
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -156,6 +157,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   priority
                 />
               ) : null}
+              <div id="article-reading-content">
+              {!post.draft_preview ? <ArticleReadingTracker key={post.slug} /> : null}
               {post.visuals && !isHtml ? (
                 articleSections(content, post.visuals).map((section, index) => {
                   const id = /^## /m.test(section.markdown)
@@ -180,6 +183,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   className="text-[17px] sm:text-lg"
                 />
               )}
+              </div>
               {post.editorial ? (
                 <section
                   aria-label="Editorial information"
