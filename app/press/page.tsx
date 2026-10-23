@@ -1,11 +1,11 @@
-import Link from "next/link"
-import { InfoPage } from "@/components/layout/info-page"
-import { generatePageMetadata } from "@/lib/seo"
+import Link from "next/link";
+import { InfoPage } from "@/components/layout/info-page";
+import { generatePageMetadata } from "@/lib/seo";
 export const metadata = generatePageMetadata({
   title: "Press & media",
   description: "Information and inquiries about WeightLiteracy.",
   path: "/press",
-})
+});
 export default function Page() {
   return (
     <InfoPage
@@ -15,8 +15,9 @@ export default function Page() {
       <h2>About the Foundation</h2>
       <p>
         WeightLiteracy is the educational website of Healthy Weight Literacy
-        Foundation, a nonprofit based in Dayton, Ohio. Our focus is clear
-        information about weight health, nutrition, and metabolic health.
+        Foundation, a nonprofit providing education across the United States.
+        Our focus is clear information about weight health, nutrition, and
+        metabolic health.
       </p>
       <h2>Media inquiries</h2>
       <p>
@@ -31,5 +32,5 @@ export default function Page() {
         <Link href="/editorial-policy">Editorial policy</Link>
       </p>
     </InfoPage>
-  )
+  );
 }

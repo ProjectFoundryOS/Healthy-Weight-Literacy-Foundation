@@ -1,19 +1,20 @@
-import { Suspense } from "react"
-import { PageHeader } from "@/components/layout/page-header"
-import { SearchContent } from "@/components/content/search-content"
-import { getBlogPosts } from "@/lib/articles"
-import { generatePageMetadata } from "@/lib/seo"
+import { Suspense } from "react";
+import { PageHeader } from "@/components/layout/page-header";
+import { SearchContent } from "@/components/content/search-content";
+import { getBlogPosts } from "@/lib/articles";
+import { generatePageMetadata } from "@/lib/seo";
 export const metadata = generatePageMetadata({
   title: "Search WeightLiteracy",
-  description: "Find articles and research updates on weight health.",
+  description: "Find articles, tools and research updates on weight health.",
   path: "/search",
   noIndex: true,
-})
-import { getNewsUpdates } from "@/lib/news"
-import { getSearchIndex } from "@/lib/search-index"
+});
+import { getNewsUpdates } from "@/lib/news";
+import { experiences, lessons } from "@/lib/learning/content";
+import { getSearchIndex } from "@/lib/search-index";
 
 export default async function SearchPage() {
-  const posts = await getBlogPosts()
+  const posts = await getBlogPosts();
   const news = getNewsUpdates().map((item) => ({
     type: "news" as const,
     slug: item.id,
@@ -22,13 +23,44 @@ export default async function SearchPage() {
     tags: [item.category, item.evidenceType, item.source.name],
     category: "News & Research",
     url: `/news#${item.id}`,
-  }))
-  const index = getSearchIndex(posts, [], [], news)
+  }));
+  const toolItems = [
+    ...experiences.map((x) => ({
+      slug: x.slug,
+      title: x.short,
+      description: x.description,
+      url: x.url,
+    })),
+    ...lessons.map((x) => ({
+      slug: x.slug,
+      title: x.title,
+      description: x.intro,
+      url: `/education/lessons/${x.slug}`,
+    })),
+    {
+      slug: "start-here",
+      title: "Start here",
+      description: "Guided paths to understand weight health",
+      url: "/start-here",
+    },
+    {
+      slug: "find-support",
+      title: "Find support nationwide",
+      description: "Healthcare food assistance insurance and everyday support",
+      url: "/find-support",
+    },
+  ].map((x) => ({
+    ...x,
+    type: "resource" as const,
+    tags: ["tools", "learning"],
+    category: "Tools & activities",
+  }));
+  const index = [...getSearchIndex(posts, [], [], news), ...toolItems];
   return (
     <>
       <PageHeader
         title="Search"
-        description="Find clear answers in our articles and selected research updates."
+        description="Find clear answers in our articles, tools and selected research updates."
         breadcrumbs={[{ label: "Search" }]}
       />
       <Suspense
@@ -41,5 +73,5 @@ export default async function SearchPage() {
         <SearchContent index={index} />
       </Suspense>
     </>
-  )
+  );
 }

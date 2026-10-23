@@ -1,7 +1,7 @@
-import Link from "next/link"
-import { siteConfig } from "@/lib/seo"
-import { Brand } from "./brand"
-import { CookiePreferences } from "./cookie-consent"
+import Link from "next/link";
+import { siteConfig } from "@/lib/seo";
+import { Brand } from "./brand";
+import { CookiePreferences } from "./cookie-consent";
 const groups = [
   {
     title: "Explore",
@@ -9,7 +9,8 @@ const groups = [
       ["Learn by topic", "/education"],
       ["All articles", "/blog"],
       ["News & Research", "/news"],
-      ["Ohio resources", "/city-resources"],
+      ["Tools & activities", "/tools"],
+      ["Find support", "/find-support"],
       ["Common questions", "/faq"],
     ],
   },
@@ -35,7 +36,7 @@ const groups = [
       ["Accessibility", "/accessibility"],
     ],
   },
-]
+];
 export function Footer() {
   return (
     <footer className="bg-[#173E39] text-white">
@@ -82,9 +83,7 @@ export function Footer() {
         <div className="mt-10 border-t border-white/20 pt-7 text-sm text-white/80">
           <p className="font-semibold text-white">{siteConfig.name}</p>
           <p className="mt-2">
-            {siteConfig.address.street}, {siteConfig.address.city},{" "}
-            {siteConfig.address.state} {siteConfig.address.zip} · EIN{" "}
-            {siteConfig.ein}
+            Serving readers across the United States · EIN {siteConfig.ein}
           </p>
           <a
             href={`mailto:${siteConfig.email}`}
@@ -119,5 +118,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

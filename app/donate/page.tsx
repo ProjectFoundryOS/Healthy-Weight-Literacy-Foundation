@@ -1,5 +1,5 @@
-import type { Metadata } from "next"
-import Link from "next/link"
+import type { Metadata } from "next";
+import Link from "next/link";
 import {
   Heart,
   CheckCircle,
@@ -9,20 +9,20 @@ import {
   GraduationCap,
   Phone,
   Building,
-} from "lucide-react"
-import { Section } from "@/components/layout/section"
-import { Container } from "@/components/layout/container"
-import { PageHeader } from "@/components/layout/page-header"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { generatePageMetadata, siteConfig } from "@/lib/seo"
+} from "lucide-react";
+import { Section } from "@/components/layout/section";
+import { Container } from "@/components/layout/container";
+import { PageHeader } from "@/components/layout/page-header";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Donate - Support Evidence-Based Health Education",
   description:
     "Your tax-deductible donation to HWLF supports free, evidence-based health literacy resources for communities in need.",
   path: "/donate",
-})
+});
 
 const impactAreas = [
   {
@@ -42,7 +42,7 @@ const impactAreas = [
     description:
       "Support development and maintenance of accessible educational materials",
   },
-]
+];
 
 export default function DonatePage() {
   return (
@@ -151,7 +151,7 @@ export default function DonatePage() {
                       <strong>Organization:</strong> {siteConfig.name}
                     </span>
                     <span>
-                      <strong>Location:</strong> Dayton, Ohio
+                      <strong>Reach:</strong> Education across the United States
                     </span>
                   </div>
                 </div>
@@ -184,5 +184,5 @@ export default function DonatePage() {
         </Container>
       </Section>
     </>
-  )
+  );
 }
