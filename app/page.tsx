@@ -1,26 +1,26 @@
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight, ArrowUpRight, BookOpen, Sparkles } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Container } from "@/components/layout/container"
-import { Section } from "@/components/layout/section"
-import { BlogCard } from "@/components/blocks/blog-card"
-import { NewsCard } from "@/components/content/news-card"
-import { ArticleCoverOverlay } from "@/components/content/article-cover-overlay"
-import { SiteSearch } from "@/components/content/site-search"
-import { NewsletterForm } from "@/components/forms/newsletter-form"
-import { getBlogPosts } from "@/lib/articles"
-import { getNewsUpdates } from "@/lib/news"
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight, ArrowUpRight, BookOpen, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/layout/container";
+import { Section } from "@/components/layout/section";
+import { BlogCard } from "@/components/blocks/blog-card";
+import { NewsCard } from "@/components/content/news-card";
+import { ArticleCoverOverlay } from "@/components/content/article-cover-overlay";
+import { SiteSearch } from "@/components/content/site-search";
+import { NewsletterForm } from "@/components/forms/newsletter-form";
+import { getBlogPosts } from "@/lib/articles";
+import { getNewsUpdates } from "@/lib/news";
 
 export default async function HomePage() {
-  const posts = await getBlogPosts()
+  const posts = await getBlogPosts();
   const featured =
     posts.find((post) => post.slug === "before-starting-glp-1-medicine") ??
-    posts[0]
+    posts[0];
   const latest = posts
     .filter((post) => post.slug !== featured?.slug)
-    .slice(0, 3)
-  const news = getNewsUpdates().slice(0, 3)
+    .slice(0, 3);
+  const news = getNewsUpdates().slice(0, 3);
   const paths = [
     {
       title: "Making sense of GLP-1 medicines",
@@ -40,7 +40,7 @@ export default async function HomePage() {
       href: "/education#weight",
       color: "bg-[#EEE9F3]",
     },
-  ]
+  ];
   return (
     <>
       <section className="relative overflow-hidden bg-[#F5F1E8] py-10 sm:py-14 lg:py-16">
@@ -202,6 +202,41 @@ export default async function HomePage() {
           </div>
         </Container>
       </Section>
+      <Section className="border-t border-primary/10">
+        <Container>
+          <div className="grid items-center gap-8 md:grid-cols-2">
+            <div>
+              <p className="eyebrow">A little understanding goes a long way</p>
+              <h2 className="font-editorial mt-4 text-4xl">
+                Make it useful.
+                <br />
+                Make it yours.
+              </h2>
+              <p className="mt-5 max-w-xl text-lg text-muted-foreground">
+                Build an appointment question list, explore the medicine names
+                or try a short lesson. Free tools to help you take your next
+                step.
+              </p>
+              <Link href="/tools" className="tool-button mt-6">
+                Explore tools & activities →
+              </Link>
+            </div>
+            <div className="learning-card">
+              <p className="eyebrow">Start with your question</p>
+              <h3 className="mt-5 text-2xl font-semibold">
+                You do not have to figure it all out at once.
+              </h3>
+              <p className="mt-4 text-muted-foreground">
+                Choose a starting point, then follow a few clear steps at your
+                own pace.
+              </p>
+              <Link href="/start-here" className="text-link mt-6">
+                Find my starting point →
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </Section>
       <Section id="newsletter">
         <Container>
           <div className="grid gap-8 rounded-2xl bg-[#E4EEE7] p-6 sm:p-10 lg:grid-cols-2 lg:gap-16">
@@ -260,5 +295,5 @@ export default async function HomePage() {
         </Container>
       </Section>
     </>
-  )
+  );
 }

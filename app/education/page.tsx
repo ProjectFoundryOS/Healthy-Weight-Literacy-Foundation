@@ -1,20 +1,20 @@
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
-import { PageHeader } from "@/components/layout/page-header"
-import { Section } from "@/components/layout/section"
-import { Container } from "@/components/layout/container"
-import { SiteSearch } from "@/components/content/site-search"
-import { articleTopics } from "@/lib/article-topics"
-import { getBlogPosts } from "@/lib/articles"
-import { generatePageMetadata } from "@/lib/seo"
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { PageHeader } from "@/components/layout/page-header";
+import { Section } from "@/components/layout/section";
+import { Container } from "@/components/layout/container";
+import { SiteSearch } from "@/components/content/site-search";
+import { articleTopics } from "@/lib/article-topics";
+import { getBlogPosts } from "@/lib/articles";
+import { generatePageMetadata } from "@/lib/seo";
 export const metadata = generatePageMetadata({
   title: "Learn about weight health",
   description:
     "Choose a starting point: GLP-1 medicines, treatment, food and appetite, finding care, or metabolism.",
   path: "/education",
-})
+});
 export default async function EducationPage() {
-  const posts = await getBlogPosts()
+  const posts = await getBlogPosts();
   return (
     <>
       <PageHeader
@@ -28,6 +28,22 @@ export default async function EducationPage() {
       </PageHeader>
       <Section>
         <Container>
+          <div className="mb-10 grid gap-5 sm:grid-cols-2">
+            <Link href="/start-here" className="learning-note">
+              <h2 className="text-2xl font-semibold">
+                Find your starting point
+              </h2>
+              <p className="mt-3">
+                A guided path through the questions that matter to you →
+              </p>
+            </Link>
+            <Link href="/tools" className="learning-note">
+              <h2 className="text-2xl font-semibold">Learn by doing</h2>
+              <p className="mt-3">
+                Try a lesson, build a question list or explore the medicines →
+              </p>
+            </Link>
+          </div>
           <div className="grid gap-6 md:grid-cols-2">
             {articleTopics.map((topic, i) => (
               <section
@@ -86,5 +102,5 @@ export default async function EducationPage() {
         </Container>
       </Section>
     </>
-  )
+  );
 }

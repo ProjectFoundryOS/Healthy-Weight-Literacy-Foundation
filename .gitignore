@@ -5,6 +5,8 @@ __v0_jsx-dev-runtime.ts
 
 # Common ignores
 node_modules/
+/node_modules
+supabase/.temp/
 .next/
 .next-editorial-preview/
 .env*.local

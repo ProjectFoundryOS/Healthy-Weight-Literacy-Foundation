@@ -9,7 +9,10 @@ export const ROUTES = {
   ABOUT: "/about",
   PROGRAMS: "/programs",
   EDUCATION: "/education",
-  CITY_RESOURCES: "/city-resources",
+  CITY_RESOURCES: "/city-resources", // Legacy redirect
+  FIND_SUPPORT: "/find-support",
+  START_HERE: "/start-here",
+  TOOLS: "/tools",
   CONTACT: "/contact",
   DONATE: "/donate",
   SEARCH: "/search",

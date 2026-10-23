@@ -4,6 +4,7 @@ const editorialPreview = isEditorialPreview()
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  allowedDevOrigins: ["127.0.0.1", "localhost"],
   distDir: editorialPreview ? ".next-editorial-preview" : ".next",
   typescript: {
     ignoreBuildErrors: false,
@@ -19,10 +20,12 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Keep old directory links useful without a geographic service-area claim.
+      { source: "/city-resources", destination: "/find-support", permanent: true },
       // Common slug variations
       {
         source: "/cityresources",
-        destination: "/city-resources",
+        destination: "/find-support",
         permanent: true,
       },
       {

@@ -1,30 +1,30 @@
-"use client"
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Menu, Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetTitle,
   SheetDescription,
-} from "@/components/ui/sheet"
-import { Brand } from "./brand"
+} from "@/components/ui/sheet";
+import { Brand } from "./brand";
 
 const navigation = [
   { name: "Learn", href: "/education" },
   { name: "Articles", href: "/blog" },
   { name: "News & Research", href: "/news" },
-  { name: "Ohio Resources", href: "/city-resources" },
+  { name: "Tools", href: "/tools" },
   { name: "About", href: "/about" },
-]
+];
 export function Header() {
-  const pathname = usePathname()
-  const [open, setOpen] = useState(false)
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
   const active = (href: string) =>
-    pathname === href || pathname.startsWith(href + "/")
+    pathname === href || pathname.startsWith(href + "/");
   return (
     <header className="sticky top-0 z-40 border-b border-primary/10 bg-background/95 backdrop-blur-md print:static">
       <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
@@ -132,5 +132,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

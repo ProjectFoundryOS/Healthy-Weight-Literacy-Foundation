@@ -1,12 +1,12 @@
-import Link from "next/link"
-import { InfoPage } from "@/components/layout/info-page"
-import { generatePageMetadata } from "@/lib/seo"
+import Link from "next/link";
+import { InfoPage } from "@/components/layout/info-page";
+import { generatePageMetadata } from "@/lib/seo";
 export const metadata = generatePageMetadata({
   title: "Health information you can use",
   description:
     "A clearer starting point for understanding weight and metabolic health.",
   path: "/about",
-})
+});
 export default function Page() {
   return (
     <InfoPage
@@ -24,17 +24,17 @@ export default function Page() {
       </p>
       <p>
         WeightLiteracy is the educational website of Healthy Weight Literacy
-        Foundation, based in Dayton, Ohio. Our mission is to make clear
-        information about nutrition, weight management, and metabolic health
-        more accessible.
+        Foundation, serving readers across the United States. Our mission is to
+        make clear information about nutrition, weight management, and metabolic
+        health more accessible.
       </p>
       <h2>What you will find here</h2>
       <p>
         Our <Link href="/blog">articles</Link> explain common questions in
         everyday language, with links to the sources behind the claims.{" "}
         <Link href="/news">News &amp; Research</Link> adds context to selected
-        developments. Our <Link href="/city-resources">Ohio directory</Link>{" "}
-        points readers to local organizations.
+        developments. Our <Link href="/find-support">support directory</Link>{" "}
+        helps readers find care and practical support nationwide.
       </p>
       <h2>How we approach the work</h2>
       <p>
@@ -55,5 +55,5 @@ export default function Page() {
         <Link href="/contact">Contact</Link>
       </p>
     </InfoPage>
-  )
+  );
 }

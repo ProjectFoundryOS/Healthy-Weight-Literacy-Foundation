@@ -1,11 +1,11 @@
-import Link from "next/link"
-import { InfoPage } from "@/components/layout/info-page"
-import { generatePageMetadata } from "@/lib/seo"
+import Link from "next/link";
+import { InfoPage } from "@/components/layout/info-page";
+import { generatePageMetadata } from "@/lib/seo";
 export const metadata = generatePageMetadata({
   title: "Our educational work",
   description: "Free resources you can use today.",
   path: "/programs",
-})
+});
 export default function Page() {
   return (
     <InfoPage
@@ -24,7 +24,7 @@ export default function Page() {
       </p>
       <h2>Find local resources</h2>
       <p>
-        Our <Link href="/city-resources">Ohio resource directory</Link> points
+        Our <Link href="/find-support">national support directory</Link> points
         to independent organizations offering food assistance, health services,
         and education. Contact each organization directly for availability and
         eligibility.
@@ -36,5 +36,5 @@ export default function Page() {
         individual medical care through this website.
       </p>
     </InfoPage>
-  )
+  );
 }

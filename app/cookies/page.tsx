@@ -1,16 +1,16 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { Section } from "@/components/layout/section"
-import { Container } from "@/components/layout/container"
-import { PageHeader } from "@/components/layout/page-header"
-import { generatePageMetadata, siteConfig } from "@/lib/seo"
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Section } from "@/components/layout/section";
+import { Container } from "@/components/layout/container";
+import { PageHeader } from "@/components/layout/page-header";
+import { generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Cookie Policy",
   description:
     "Learn about how Healthy Weight Literacy Foundation uses cookies and similar technologies.",
   path: "/cookies",
-})
+});
 
 export default function CookiesPage() {
   return (
@@ -47,7 +47,7 @@ export default function CookiesPage() {
               footer to change your choice.
             </p>
 
-            <h3>Analytics Cookies</h3>
+            <h3>Reader voting</h3><p>The reader-vote tool uses the functional cookie <code>wl_reader_vote</code> to recognize one vote per browser in a voting round. It lasts up to 180 days and is restricted to the voting endpoint. It is not used for advertising or health profiling. Clearing it removes this browser’s voting receipt but does not remove an already submitted vote.</p><h3>Analytics Cookies</h3>
             <p>
               With your consent, we use analytics to understand how visitors
               interact with our website. This information helps us improve the
@@ -162,5 +162,5 @@ export default function CookiesPage() {
         </Container>
       </Section>
     </>
-  )
+  );
 }
