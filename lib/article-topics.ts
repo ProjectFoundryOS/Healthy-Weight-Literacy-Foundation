@@ -54,6 +54,7 @@ export const articleTopics = [
       "why-weight-loss-slows-down",
       "insulin-resistance-explained",
       "what-bmi-can-and-cannot-tell-you",
+      "metabolic-health-beyond-weight",
     ],
   },
 ] as const
@@ -63,6 +64,11 @@ export function topicForArticle(slug: string) {
   )
 }
 const related: Record<string, string[]> = {
+  "metabolic-health-beyond-weight": [
+    "what-bmi-can-and-cannot-tell-you",
+    "insulin-resistance-explained",
+    "why-weight-changes-day-to-day",
+  ],
   "how-glp-1-weight-loss-medicines-work": [
     "semaglutide-vs-tirzepatide",
     "before-starting-glp-1-medicine",
