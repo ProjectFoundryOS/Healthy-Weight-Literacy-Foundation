@@ -6,6 +6,14 @@ export const sources = {
     name: "CDC · BMI explained",
     url: "https://www.cdc.gov/bmi/faq/index.html",
   },
+  bmiCategories: {
+    name: "CDC · Adult BMI categories",
+    url: "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html",
+  },
+  bmiContext: {
+    name: "CDC · BMI and individual health",
+    url: "https://www.cdc.gov/bmi/about/index.html",
+  },
   sleep: {
     name: "NHLBI · Sleep and health",
     url: "https://www.nhlbi.nih.gov/health/sleep-deprivation/health-effects",
@@ -192,11 +200,21 @@ export type Lesson = {
   takeaway: string;
   source: keyof typeof sources;
   article: string;
+  workedExample?: {
+    title: string;
+    context: string;
+    steps: { label: string; detail: string }[];
+    conclusion: string;
+    scenario: string;
+    questionToTake: string;
+    sources: (keyof typeof sources)[];
+  };
   questions: {
     prompt: string;
     answers: string[];
     correct: number;
     explanation: string;
+    answerFeedback?: string[];
   }[];
 };
 export const lessons: Lesson[] = [
@@ -210,6 +228,19 @@ export const lessons: Lesson[] = [
       "BMI does not directly measure body fat or separate fat from muscle and bone. Medical history, an examination and other findings add context.",
     source: "bmi",
     article: "what-bmi-can-and-cannot-tell-you",
+    workedExample: {
+      title: "Follow the number, then ask what is missing",
+      context: "Fictional example: Alex and Sam are adults over 20. Each is 1.75 metres tall and weighs 70 kilograms.",
+      steps: [
+        { label: "Square the height", detail: "1.75 × 1.75 = 3.0625 m²" },
+        { label: "Divide weight by that result", detail: "70 ÷ 3.0625 = 22.9 kg/m², rounded" },
+        { label: "Keep the result in context", detail: "Both have a BMI of 22.9. The calculation contains no measurement of muscle, body fat or blood pressure." },
+      ],
+      conclusion: "For adults, 22.9 is in the standard “healthy weight” BMI category. That category alone cannot establish someone’s overall health. Children and teens need a different interpretation.",
+      scenario: "At an appointment, Alex asks whether sharing Sam’s BMI means they have the same health risks. Think about what their height and weight can tell you—and what a clinician would still need to learn.",
+      questionToTake: "What do my history, examination and other findings add to the picture beyond BMI?",
+      sources: ["bmiCategories", "bmiContext"],
+    },
     questions: [
       {
         prompt: "What information goes into BMI?",
@@ -220,9 +251,14 @@ export const lessons: Lesson[] = [
         ],
         correct: 0,
         explanation: "BMI is calculated from weight relative to height.",
+        answerFeedback: [
+          "Height and weight supply the calculation. In the example, 70 is divided by 1.75 squared.",
+          "Blood pressure and sleep can inform a health conversation, but neither is an input in the BMI formula. Look back at the two measurements in the example.",
+          "BMI does not directly measure fat or muscle. The formula uses total weight and height, so it cannot separate those tissues.",
+        ],
       },
       {
-        prompt: "Two adults have the same BMI. What can we conclude?",
+        prompt: "Alex and Sam both have a BMI of 22.9. What can Alex conclude?",
         answers: [
           "They have identical health risks",
           "They have the same amount of muscle",
@@ -231,16 +267,26 @@ export const lessons: Lesson[] = [
         correct: 2,
         explanation:
           "The same BMI does not establish the same body composition or overall health.",
+        answerFeedback: [
+          "A shared BMI is not enough to establish identical risks. Their histories, examinations and other findings can differ.",
+          "The same height and weight do not tell us how much muscle either person has. BMI does not separate muscle from fat and bone.",
+          "Their BMI matches; a fuller health assessment still needs information about each person.",
+        ],
       },
       {
-        prompt: "What is a useful next question?",
+        prompt: "Which question would help Alex make the appointment useful?",
         answers: [
-          "Can this number tell me everything?",
+          "Does this category mean no other assessment matters?",
           "What other information helps put this in context?",
-          "Should I ignore all other measures?",
+          "Since BMI is incomplete, should we ignore it entirely?",
         ],
         correct: 1,
         explanation: "BMI belongs alongside a broader health assessment.",
+        answerFeedback: [
+          "A BMI category is a screening result, not an all-clear for every aspect of health. Ask what else matters for Alex.",
+          "This opens a conversation about history, examination and other findings, without asking one number to answer everything.",
+          "A limited measure can still be useful. The next step is to place BMI alongside other information, rather than discard it automatically.",
+        ],
       },
     ],
   },

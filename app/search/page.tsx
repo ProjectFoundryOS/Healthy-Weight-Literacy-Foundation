@@ -25,6 +25,7 @@ export default async function SearchPage() {
     url: `/news#${item.id}`,
   }));
   const toolItems = [
+    { slug: "bmi-calculator", title: "Adult BMI calculator", description: "Calculate body mass index in US or metric units and understand its limits. No signup.", url: "/tools/bmi-calculator" },
     ...experiences.map((x) => ({
       slug: x.slug,
       title: x.short,

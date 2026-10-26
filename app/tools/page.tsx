@@ -13,6 +13,10 @@ export default function Page() {
       title="A little clarity. Something you can use."
       description="Explore, make a plan or try a new way of looking at a question. These tools are yours to use—no account required."
     >
+      <Link href="/tools/bmi-calculator" className="learning-note mb-6 flex flex-wrap items-center justify-between gap-4">
+        <div><p className="eyebrow">Calculate & understand</p><h2 className="mt-2 text-2xl font-semibold">Your BMI, with the context.</h2><p className="mt-2">A free adult calculator, clear limits and a useful next step. No signup.</p></div>
+        <span className="font-semibold">Open the BMI calculator →</span>
+      </Link>
       <ToolCards />
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
         <Link className="learning-note" href="/start-here">
