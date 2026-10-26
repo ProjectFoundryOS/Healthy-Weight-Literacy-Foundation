@@ -641,3 +641,7 @@ a.learning-card:hover {
     height: 3.3rem;
   }
 }
+
+/* Keep the calculator inputs close to the explanation on small screens. */
+.bmi-page .learning-card { padding: 1.25rem; }
+@media (min-width: 640px) { .bmi-page .learning-card { padding: 1.75rem; } }

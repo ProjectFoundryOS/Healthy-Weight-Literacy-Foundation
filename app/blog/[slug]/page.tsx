@@ -131,6 +131,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
       <Section className="pt-8 sm:pt-10">
         <Container className="max-w-6xl">
+          {post.slug === "what-bmi-can-and-cannot-tell-you" && <div className="learning-note mb-8 flex flex-wrap items-center justify-between gap-4">
+            <div><h2 className="text-xl font-semibold">Want to calculate BMI?</h2><p className="mt-2">Try the free adult calculator, then explore what the result means.</p></div>
+            <Link className="tool-button" href="/tools/bmi-calculator">Calculate & understand →</Link>
+          </div>}
           <div className="article-layout grid items-start gap-10 lg:grid-cols-[minmax(0,740px)_240px] lg:gap-12">
             <article className="min-w-0 max-w-[740px]">
               {outline.length ? (

@@ -162,6 +162,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...[
       "/start-here",
       "/tools",
+      "/tools/bmi-calculator",
       ...experiences.map((x) => x.url),
       ...lessons.map((x) => `/education/lessons/${x.slug}`),
     ].map((path) => ({
