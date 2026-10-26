@@ -643,5 +643,30 @@ a.learning-card:hover {
 }
 
 /* Keep the calculator inputs close to the explanation on small screens. */
+.article-companion { border: 1px solid #b9cec5; border-radius: 1.25rem; overflow: hidden; background: #fff; color: #193d34; }
+.companion-heading { padding: 1.5rem; background: #edf4ef; }
+.companion-body { padding: 1.5rem; }
+.companion-choices { display: flex; flex-wrap: wrap; gap: .5rem; }
+.companion-choices button { border: 1px solid #aac1b6; border-radius: .6rem; min-height: 44px; padding: .6rem 1rem; text-align: left; font-weight: 600; }
+.companion-choices button[aria-pressed="true"] { background: #194d40; color: white; border-color: #194d40; }
+.article-companion button:focus-visible, .article-companion summary:focus-visible, .article-companion a:focus-visible, .article-companion input:focus-visible { outline: 3px solid #b56a19; outline-offset: 3px; }
+.companion-explanation { margin: 1rem 0 1.25rem; padding: 1.25rem; background: #f8faf7; border-radius: .75rem; }
+.companion-detail { border-top: 1px solid #d4dfd8; padding: .85rem 0; }
+.companion-detail summary { cursor: pointer; min-height: 44px; align-content: center; font-weight: 600; }
+.companion-safety { margin: 1.5rem 1.5rem 0; padding: 1rem 1.25rem; background: #fff4e5; border-left: 4px solid #8c4f11; line-height: 1.6; color: #57330e; }
+.companion-print { display: none; }
+@media (max-width: 500px) { .companion-heading, .companion-body { padding: 1.1rem; } .companion-safety { margin: 1.1rem 1.1rem 0; } .companion-choices { display: grid; grid-template-columns: 1fr; } }
+@media print {
+  .companion-screen { display: none !important; }
+  html[data-print-companion="true"] body *:not(:has(.companion-print)):not(.companion-print):not(.companion-print *) { display: none !important; }
+  html[data-print-companion="true"] body *:has(.companion-print) { padding: 0 !important; margin: 0 !important; max-width: none !important; border: 0 !important; overflow: visible !important; }
+  html[data-print-companion="true"] .companion-print { display: block; width: 100%; padding: 1cm; color: black; background: white; font-size: 12pt; }
+  .companion-print h2 { font-size: 22pt; margin: .4cm 0; }
+  .companion-print h3 { font-size: 14pt; margin-top: .6cm; }
+  .companion-print ol { list-style: decimal; padding-left: .6cm; margin: .5cm 0; }
+  .companion-print li { margin: .35cm 0; break-inside: avoid; }
+  .companion-print p { margin: .4cm 0; overflow-wrap: anywhere; }
+  .article-companion { border: 0; }
+}
 .bmi-page .learning-card { padding: 1.25rem; }
 @media (min-width: 640px) { .bmi-page .learning-card { padding: 1.75rem; } }

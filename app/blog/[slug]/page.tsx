@@ -25,6 +25,8 @@ import {
 } from "@/lib/article-topics"
 import { articleSections } from "@/lib/article-visuals"
 import { ArticleReadingTracker } from "@/components/analytics/article-reading-tracker"
+import { ArticleCompanion } from "@/components/learning/article-companion"
+import { companionForArticle } from "@/lib/learning/article-companions"
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -58,6 +60,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
   const post = await getBlogPost(slug)
   if (!post) notFound()
+  const companion = companionForArticle(slug)
   const allPosts = await getBlogPosts()
   const relatedPosts = relatedArticleSlugs(post.slug)
     .map((slug) => allPosts.find((post) => post.slug === slug))
@@ -131,6 +134,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
       <Section className="pt-8 sm:pt-10">
         <Container className="max-w-6xl">
+          {companion && <ArticleCompanion key={slug} companion={companion} />}
           {post.slug === "what-bmi-can-and-cannot-tell-you" && <div className="learning-note mb-8 flex flex-wrap items-center justify-between gap-4">
             <div><h2 className="text-xl font-semibold">Want to calculate BMI?</h2><p className="mt-2">Try the free adult calculator, then explore what the result means.</p></div>
             <Link className="tool-button" href="/tools/bmi-calculator">Calculate & understand →</Link>
