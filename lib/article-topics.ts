@@ -28,6 +28,7 @@ export const articleTopics = [
     description:
       "Make sense of appetite changes, eating well, and protecting muscle.",
     slugs: [
+      "compare-food-labels-serving-sizes",
       "what-to-eat-on-glp-1",
       "what-is-food-noise",
       "glp-1-medicines-muscle-loss",
@@ -64,6 +65,11 @@ export function topicForArticle(slug: string) {
   )
 }
 const related: Record<string, string[]> = {
+  "compare-food-labels-serving-sizes": [
+    "what-to-eat-on-glp-1",
+    "what-is-food-noise",
+    "sleep-appetite-and-weight",
+  ],
   "metabolic-health-beyond-weight": [
     "what-bmi-can-and-cannot-tell-you",
     "insulin-resistance-explained",
