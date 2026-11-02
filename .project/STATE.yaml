@@ -1,0 +1,15 @@
+version: 1
+project_id: weight-literacy
+project: weight-literacy
+repo: ProjectFoundryOS/Healthy-Weight-Literacy-Foundation
+status: ACTIVE
+default_branch: main
+work_queue: .project/WORK_QUEUE.yaml
+benchmark_id: WL-B1
+benchmark: Production content builds fail closed on content retrieval failure, use a validated snapshot when appropriate, render non-zero article slugs, and pass the project build/test gates.
+benchmark_state: IN_PROGRESS
+verified_completion: null
+completion_basis: "unknown"
+current_mission: null
+human_gates: [no-content-publish-without-review]
+last_verified_at: null
