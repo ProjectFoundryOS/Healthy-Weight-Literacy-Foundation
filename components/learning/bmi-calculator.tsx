@@ -96,7 +96,6 @@ export function BmiCalculator() {
           <summary className="cursor-pointer py-2 font-semibold">See the calculation</summary>
           <p className="mt-2 break-words leading-relaxed">{result.calculation} = {result.display} kg/m² (rounded). Categories use the unrounded calculation.</p>
         </details>
-        <Link className="tool-button mt-5" href="/education/lessons/bmi-in-context">Make sense of BMI: try the lesson →</Link>
       </> : <>
         <p className="eyebrow">A number. Then a clearer picture.</p>
         <h2 className="font-editorial mt-5 text-3xl">What will the result tell me?</h2>
@@ -104,6 +103,7 @@ export function BmiCalculator() {
         <p className="mt-4 leading-relaxed">BMI compares weight with height. It cannot separate muscle, fat and bone, or show where body fat is carried.</p>
         <p className="mt-4 leading-relaxed">You can use the fictional example if you would rather explore without entering your own measurements.</p>
       </>}
+      <Link className="tool-button mt-5" href="/education/lessons/bmi-in-context">Make sense of BMI: try the lesson →</Link>
       <div className="mt-7 border-t border-[#c5cfc7] pt-5">
         <h3 className="font-semibold">A useful question for your next visit</h3>
         <p className="mt-2 leading-relaxed">“How does BMI fit with my blood pressure, lab results, medical history and what matters to me?”</p>
