@@ -21,7 +21,7 @@ test("all eight companions have valid published destinations and usable scenario
     else if (!companion.next.href.startsWith("/education/lessons/")) assert.ok(existsSync(new URL(`../app${companion.next.href}/page.tsx`, import.meta.url)));
   }
 });
-test("companion inputs do not introduce storage, network requests or conversion events", () => {
+test("companion selections stay private and cannot create lesson or reading events", () => {
   const component = readFileSync(new URL("../components/learning/article-companion.tsx", import.meta.url), "utf8");
   assert.doesNotMatch(component, /localStorage|sessionStorage|fetch\(|sendBeacon|gtag|education_lesson_completed|article_read_qualified|supabase/i);
   assert.ok(component.includes('disabled={!questions.length}'));
