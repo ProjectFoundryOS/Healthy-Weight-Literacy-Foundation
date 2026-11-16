@@ -1,29 +1,26 @@
 {
   "mission_id": "PFORG-MIG-WEIGHT-003",
-  "lease_id": null,
-  "lease_note": "Control-plane mission record showed assigned_worker: null, lease: null, state: READY at start of this attempt (preferred_workers: claude-seat-1). This worker cannot mutate control-plane mission state (root CLAUDE.md rule 25) and proceeded at direct operator instruction; no lease_id was minted.",
+  "lease_id": "55d30c46-b1d9-4840-8f30-b042cf8b6c93",
   "worker": "claude-seat-1",
   "result_contract_version": 3,
-  "target_repo": "TheRealSynth/Healthy-Weight-Literacy-Foundation",
+  "target_repo": "ProjectFoundryOS/Healthy-Weight-Literacy-Foundation",
+  "notes": "Checkout origin is TheRealSynth/Healthy-Weight-Literacy-Foundation (pre-transfer alias of the canonical mission repo). Re-drive attempt 1 of lease 55d30c46; prior attempt's result (null lease) was not inherited, only re-verified.",
   "target_branch": "claude/claude-seat-1/pforg-mig-weight-003",
-  "base_sha": "fd31e2bee29661cb63d3a16567e1e43819c2475e",
-  "final_sha": "df069b9d4a1acc4b076fdc061dde37ad0b2d6b61",
-  "state": "DONE_PENDING_MERGE",
-  "benchmark_id": "PFORG-MIG-TOP5",
-  "benchmark_progress": "Healthy-Weight-Literacy-Foundation is the fourth of the five-repository ProjectFoundryOS migration cohort to reach a documented readiness verdict (READY_AFTER_OWNER_ACTION), following ideabin-ai (PFORG-MIG-IDEABIN-001) and v0-growlocalhub-new-motion-site (PFORG-MIG-GLH-PROD-002). This repository had zero hardcoded-ownership hazards (a first among the cohort so far) but a genuinely broken pnpm build (Turbopack panic + missing type declarations), which this mission root-caused, fixed with two minimal reversible dependency edits, and verified green -- distinguishing that pre-existing defect class from actual migration risk per the mission's acceptance requirements.",
+  "base_sha": "b3fa6d60da18d7b4ea478fa33231b9a38cc72e92",
+  "final_sha": "b3fa6d60da18d7b4ea478fa33231b9a38cc72e92",
+  "final_sha_note": "Implementation head equals base: migration fixes and readiness doc already merged to main; this commit only adds the lease-bound result file.",
+  "state": "FAILED_WITH_EVIDENCE",
   "objective_readiness_verdict": "READY_AFTER_OWNER_ACTION",
   "readiness_doc": "docs/PROJECTFOUNDRYOS_MIGRATION_READINESS.md",
+  "benchmark_id": "PFORG-MIG-TOP5",
+  "benchmark_progress": "Readiness verdict READY_AFTER_OWNER_ACTION re-verified on current main; build green. Acceptance command pnpm lint still fails (no ESLint config), so the mission is not fully green.",
   "tests": {
-    "pnpm_lint": "FAIL (pre-existing, unrelated to migration) - ESLint couldn't find an eslint.config.(js|mjs|cjs) file; ESLint is not even declared as a project dependency. Not fixed: eslint.config.js is outside this mission's owns_paths and adding a lint toolchain from scratch is a nontrivial scope decision beyond migration-readiness. Recorded as follow-up WEIGHT-003-D3.",
-    "pnpm_build": "PASS - 40 routes generated (Turbopack), after bumping next to 16.2.6 and adding @types/turndown",
-    "additional_tests": "__tests__/routes.test.ts exists but no test runner is installed or wired to a package.json script (pre-existing, unrelated to migration); attempting an ad hoc vitest run failed for unrelated npx/environment reasons. Not fixed here: the already-open PR #29 (claude/claude-seat-2/wl-build-001) adds vitest.config.mts and new tests -- test-runner setup belongs there, not duplicated in this mission.",
-    "method": "Ran the repository's own mission-specified acceptance commands (pnpm install; pnpm lint; pnpm build) directly on the mission branch. No CI workflow exists on main to compare against (no .github/workflows at all)."
+    "pnpm_lint": "FAIL exit 2 - no eslint.config.*, eslint not declared; pre-existing, not migration-related",
+    "pnpm_build": "PASS exit 0",
+    "pnpm_install_frozen": "PASS"
   },
   "builds": {
-    "install": "PASS (pnpm install)",
-    "lint": "FAIL (pre-existing tooling gap, see tests.pnpm_lint)",
-    "typecheck_within_build": "PASS (after adding @types/turndown)",
-    "production_build": "PASS (next build, 40 routes generated, verified twice including a clean .next removal)"
+    "production_build": "PASS"
   },
   "defects_found": [
     {
@@ -69,11 +66,13 @@
       "summary": "Added @types/turndown@^5.0.6 as a devDependency, resolving the missing-declaration-file typecheck failure (D2) in scripts/migrate-html-to-markdown.ts."
     }
   ],
-  "blockers": [],
+  "blockers": [
+    "pnpm lint acceptance command fails: eslint.config.* absent and eslint undeclared; adding a lint toolchain is outside mission owns_paths (root eslint.config.* not owned) and is a scope decision."
+  ],
+  "blocker_evidence": "pnpm lint output this run: ESLint couldn't find an eslint.config.(js|mjs|cjs) file; exit code 2. ls eslint.config.* -> no such file. package.json has lint script 'eslint .' but no eslint dependency.",
+  "alternative_paths_exhausted": true,
+  "alternative_paths_note": "Alternatives considered: add eslint.config.mjs + eslint dep (outside owns_paths, would need non-trivial rule choices); weaken lint script (forbidden - would weaken a gate). Neither is permitted within scope.",
   "changed_paths": [
-    "package.json",
-    "pnpm-lock.yaml",
-    "docs/PROJECTFOUNDRYOS_MIGRATION_READINESS.md",
     ".agent-results/PFORG-MIG-WEIGHT-003.json"
   ],
   "pr_number": null,
@@ -117,7 +116,7 @@
       }
     ],
     "material_difference": "The chosen route changes what evidence backs the mission's conclusion: instead of an unexplained 'build fails' status or an over-broad tooling rewrite, the deliverable is a diagnosed defect chain (Turbopack panic -> masked type-declaration gap) fixed with two minimal, version-matched, already-validated-elsewhere edits, plus an honest boundary drawn at the tooling gaps that require net-new scope decisions and would conflict with already-open work. This changes the actual risk surface (verified build health vs. an assumed blocker) and the workflow (reusing a sibling mission's validated fix vs. guessing at a fix, and deferring to an already-in-flight PR vs. duplicating it).",
-    "validation_result": "Full-repository recursive search for 'TheRealSynth' returned zero hits. pnpm build initially failed with a Turbopack panic (node:worker_threads); bumping next to 16.2.6 (matching the sibling GLH-PROD-002 mission's validated version) resolved the panic and the build proceeded to a new failure: a TypeScript declaration error for 'turndown'. Adding @types/turndown@5.0.6 resolved that, and pnpm build then passed cleanly, generating 40 routes -- verified twice, including a run with .next removed first to rule out stale-cache artifacts. pnpm lint failed with 'no eslint.config.js found' both before and after these fixes, confirmed unrelated to the next-version change. list_pull_requests confirmed PR #29 and PR #22 are open against this exact repository; get_files on PR #29 confirmed it independently adds vitest.config.mts and new tests, informing the decision not to duplicate test-runner setup here. get_check_runs on merged PR #13 confirmed a Vercel GitHub App integration is installed on this repository.",
+    "validation_result": "Re-run on current origin/main b3fa6d6 under lease 55d30c46: pnpm install --frozen-lockfile PASS; pnpm build PASS (exit 0, static+dynamic routes generated incl. /tools/*, /programs/[slug]); pnpm lint FAIL exit 2 (ESLint cannot find eslint.config.*; eslint not a declared dependency). Prior fixes (next 16.2.6, @types/turndown) confirmed present on main. Full-repository recursive search for 'TheRealSynth' returned zero hits. pnpm build initially failed with a Turbopack panic (node:worker_threads); bumping next to 16.2.6 (matching the sibling GLH-PROD-002 mission's validated version) resolved the panic and the build proceeded to a new failure: a TypeScript declaration error for 'turndown'. Adding @types/turndown@5.0.6 resolved that, and pnpm build then passed cleanly, generating 40 routes -- verified twice, including a run with .next removed first to rule out stale-cache artifacts. pnpm lint failed with 'no eslint.config.js found' both before and after these fixes, confirmed unrelated to the next-version change. list_pull_requests confirmed PR #29 and PR #22 are open against this exact repository; get_files on PR #29 confirmed it independently adds vitest.config.mts and new tests, informing the decision not to duplicate test-runner setup here. get_check_runs on merged PR #13 confirmed a Vercel GitHub App integration is installed on this repository.",
     "evidence_refs": [
       "docs/PROJECTFOUNDRYOS_MIGRATION_READINESS.md on the mission branch (full hazard inventory, defect-classification table, Vercel/domain binding assumptions, owner actions, validation checklist, rollback, verdict)",
       "pnpm build output on branch claude/claude-seat-1/pforg-mig-weight-003 before commit df069b9 (Turbopack panic log at /tmp/next-panic-*.log: 'NftJsonAsset: cannot handle filepath node:worker_threads')",
@@ -125,8 +124,12 @@
       "pnpm build output after adding @types/turndown (PASS, 40 routes, verified again after `rm -rf .next`)",
       "pnpm lint output before and after the above fixes (unchanged failure: 'ESLint couldn't find an eslint.config.(js|mjs|cjs) file')",
       "TheRealSynth/Healthy-Weight-Literacy-Foundation open PR #29 (claude/claude-seat-2/wl-build-001) file list via mcp__github__pull_request_read get_files, confirming vitest.config.mts is already being added there",
-      "TheRealSynth/Healthy-Weight-Literacy-Foundation merged PR #13 check runs via mcp__github__pull_request_read get_check_runs, confirming the Vercel GitHub App integration"
+      "TheRealSynth/Healthy-Weight-Literacy-Foundation merged PR #13 check runs via mcp__github__pull_request_read get_check_runs, confirming the Vercel GitHub App integration",
+      "package.json (next 16.2.6, @types/turndown, lint script 'eslint .')",
+      "docs/PROJECTFOUNDRYOS_MIGRATION_READINESS.md",
+      "git origin/main b3fa6d6 build log: pnpm build exit 0 this run",
+      "pnpm lint exit 2 this run: no eslint.config.*"
     ]
   },
-  "completed_at": "2026-09-07T21:45:00Z"
+  "completed_at": "2026-11-03T14:23:49.562813+00:00"
 }
