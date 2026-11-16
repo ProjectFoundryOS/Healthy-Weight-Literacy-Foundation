@@ -1403,6 +1403,74 @@
       "content": "# How to compare food labels when serving sizes differ\n\nBefore comparing two nutrition numbers, check how much food each number describes. A cereal with less sodium per listed serving can have more sodium when you compare the same weight of food.\n\nThe method is simple: **check the serving, choose an equal amount, then adjust the numbers.** The worked example below shows how—and where the calculation has limits.\n\n## Start at the serving information\n\nUS Nutrition Facts labels generally give nutrient amounts for one serving. Some also have a whole-package column, so check the heading above the numbers. The serving size reflects an amount people typically consume; it is not a recommendation for how much you should eat. One package may contain several servings. [FDA serving-size guidance](https://www.fda.gov/food/nutrition-facts-label/serving-size-nutrition-facts-label).\n\nFor similar dry foods, the weight in grams gives you a common basis even when the household measures differ. Compare dry cereal with dry cereal. If one column includes milk or describes a prepared food, it answers a different question. Check the food form as well as the weight before doing any math.\n\n## Two servings, two different amounts\n\nThese are **invented cereal values for a math exercise**, not measurements of real products. The table shows selected nutrients, not complete Nutrition Facts labels.\n\n| Listed information | Cereal A | Cereal B |\n|---|---:|---:|\n| Serving weight | 30 g | 45 g |\n| Sodium per serving | 150 mg | 180 mg |\n| Fiber per serving | 3 g | 4 g |\n\nA's sodium number looks smaller: 150 mg versus 180 mg. But A's number describes only 30 g of food; B's describes 45 g.\n\nLet's compare **45 g of each cereal**. This is a convenient comparison amount, **not a recommended portion**.\n\nFor A, divide the comparison weight by its listed serving weight:\n\n**45 ÷ 30 = 1.5 servings**\n\nThen multiply each nutrient amount by 1.5:\n\n- Sodium: 150 × 1.5 = **225 mg**\n- Fiber: 3 × 1.5 = **4.5 g**\n\nB's serving is already 45 g, so its multiplier is 1 and its numbers stay the same.\n\n| Calculated for 45 g of each | Cereal A | Cereal B |\n|---|---:|---:|\n| Sodium | 225 mg | 180 mg |\n| Fiber | 4.5 g | 4 g |\n\nOn this arithmetic, A has a higher estimate for both sodium and fiber. We have answered two nutrient questions; we have not ranked the cereals' overall healthfulness. A single nutrient number cannot describe everything someone may consider when choosing food.\n\nThis calculation applies the FDA's explanation that nutrient amounts change in proportion to the number of servings. [FDA label guide](https://www.fda.gov/food/nutrition-facts-label/how-understand-and-use-nutrition-facts-label).\n\n## Use this formula with another label\n\nFirst calculate the multiplier:\n\n**Comparison weight ÷ listed serving weight**\n\nThen calculate the nutrient amount:\n\n**Listed nutrient amount × multiplier**\n\nUse matching units for the two weights: grams with grams, for example. Keep the nutrient's unit too—milligrams of sodium remain milligrams. A phone calculator is fine.\n\nLabel values are rounded. For example, the US rules specify rounding increments for sodium and fiber. Multiplying a displayed value does not recover the unrounded amount. Treat the results as estimates for comparison, and avoid reading too much into a small difference such as the half-gram fiber gap above. [Nutrition-label rounding rules, sections (c)(4) and (c)(6)(i)](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9).\n\nIf a label says “less than 1 g,” it has not supplied an exact number to multiply. Keep that limitation visible rather than silently treating it as either zero or one.\n\n## Equal weight or the portion you plan to eat?\n\nThose are two useful questions with different denominators—the amounts behind the numbers.\n\n- **Equal weight:** What would each food contribute at the same weight? This is the question our 45 g comparison answers.\n- **Planned portions:** What would each contribute in the amount you actually intend to eat? Calculate each portion separately, then name those amounts beside the results.\n\nFor example, if you plan to eat 30 g of fictional cereal A and 45 g of fictional cereal B, the starting table already describes those portions. A then contributes an estimated 150 mg sodium and B 180 mg. That does not contradict the equal-weight result; the question changed.\n\nBefore comparing prepared foods, check whether both labels include the same additions. A column for cereal alone and one for cereal plus milk should not be treated as equivalent. [US label-format rules, section (e)](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9).\n\n## What about percent Daily Value?\n\nPercent Daily Value, or **%DV**, compares a nutrient amount with a daily reference. FDA's general guide is **5% DV or less is low** and **20% DV or more is high**, per serving. These percentages need the same serving-size attention as grams and milligrams. They are label-reading references, not a personalized nutrition plan. [FDA Daily Value explanation](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels).\n\n## Try it yourself\n\nTwo imaginary crackers list:\n\n- Cracker A: **90 mg sodium per 20 g**\n- Cracker B: **120 mg sodium per 30 g**\n\nWhich has less sodium when you compare **30 g of each**? Try the multiplier before reading the answer.\n\n**Answer:** A's multiplier is 30 ÷ 20 = 1.5, so its estimate is 90 × 1.5 = **135 mg**. B's multiplier is 1, giving **120 mg**. B has the lower calculated sodium amount at equal weight, even though its original per-serving number was larger. These are fictional teaching values, and 30 g is not a portion recommendation.\n\nFor your next comparison, write down four things: **food form, amount, nutrient and unit**. Once those match, the numbers are much easier to interpret.\n",
       "body_sha256": "17d6f0c1eb13f5b9b032f3eaa78552d05f1882210bb581d3105b40d98c6aeff0",
       "metadata_sha256": "0e05b4c83632e6801634bd5ea382b87a9cba217f989703b62b317e6c8adea102"
+    },
+    {
+      "metadata": {
+        "article_id": "A4",
+        "slug": "total-sugars-and-added-sugars",
+        "title": "Why a food label lists both total and added sugars",
+        "description": "Read two oatmeal labels and see how one cup can have more total sugar and less added sugar. Then see why a jar of pure honey can list the percentage differently.",
+        "author": "Healthy Weight Literacy Foundation",
+        "category": "Weight Literacy",
+        "tags": [
+          "added sugars",
+          "total sugars",
+          "food labels"
+        ],
+        "citations": [
+          {
+            "title": "Added Sugars on the Nutrition Facts Label",
+            "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+            "type": "reference"
+          },
+          {
+            "title": "How to Understand and Use the Nutrition Facts Label",
+            "url": "https://www.fda.gov/food/nutrition-facts-label/how-understand-and-use-nutrition-facts-label",
+            "type": "reference"
+          },
+          {
+            "title": "Daily Value on the Nutrition and Supplement Facts Labels",
+            "url": "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels",
+            "type": "reference"
+          },
+          {
+            "title": "FDA guidance update on single-ingredient sugars and syrups",
+            "url": "https://www.fda.gov/food/hfp-constituent-updates/fda-issues-final-guidance-regarding-declaration-added-sugars-nutrition-facts-label-honey-maple-syrup",
+            "type": "reference"
+          }
+        ],
+        "published_at": "2026-11-16T21:49:47.680Z",
+        "updated_at": "2026-11-16T21:49:47.680Z",
+        "next_review_date": "2027-11-16T23:59:59-08:00",
+        "editor_name": "Tony Lewis",
+        "reviewed_at": "2026-11-16T21:49:47.680Z",
+        "approved_at": "2026-11-16T21:49:47.680Z",
+        "visuals": {
+          "hero": {
+            "src": "/images/editorial/sugars-includes-paper.png",
+            "alt": "The word “Includes” underlined on a folded food label.",
+            "width": 1200,
+            "height": 780,
+            "sha256": "f4851d1ee5251ab6d6c85f42e5083309a488b54033315b9acd9f1427f0d6b918",
+            "overlay": {
+              "title": "Total and added sugars"
+            }
+          },
+          "body": [
+            {
+              "src": "/images/editorial/sugars-sixteen-grams.png",
+              "alt": "Sixteen tiles stand for 16 grams of total sugars. Four marked tiles show the 4 grams of added sugars already included.",
+              "width": 1000,
+              "height": 720,
+              "sha256": "a2c8ed23c4f8313e1b82caf7e93f42bf682aa977b507bf1e94695bb1fd92fb4b",
+              "before_heading": "Why four grams can also say 8%"
+            }
+          ]
+        }
+      },
+      "content": "A cup of fruit oatmeal lists **16 g Total Sugars** and, just below, **Includes 4 g Added Sugars**. How much sugar is in the cup? **16 grams.** The word *includes* tells you where the four grams went. They’re already counted in the line above. This oatmeal is a made-up example of how to read a U.S. Nutrition Facts label. [FDA guide to added sugars](https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label)\n\n## Where the four grams fit\n\nPicture oatmeal made with milk, fruit and a little maple syrup. Milk and fruit bring some sugar with them. The syrup used to sweeten the oatmeal contributes added sugars. The **Total Sugars** line counts sugars from all of those ingredients together. The **Added Sugars** line tells you how much of that total comes from added sugars. In our example, four of the 16 grams are added, leaving 12 grams from other sources. The panel doesn’t break those 12 grams down between the milk and the fruit. [FDA explanation of the two sugar lines](https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label)\n\nThat same distinction explains how plain milk can show sugar even when its added sugars line reads zero. A zero on the second line answers a question about what went into the food. For the total amount of sugar in the serving, read the first line. [FDA guide to reading the nutrition panel](https://www.fda.gov/food/nutrition-facts-label/how-understand-and-use-nutrition-facts-label)\n\n## Why four grams can also say 8%\n\nRead across the added sugars row and you may see **8% Daily Value**. That uses a different comparison. The standard U.S. label for adults uses **50 grams** as the daily reference for added sugars, based on a 2,000-calorie diet. Four grams divided by 50 grams is 8%. The percentage describes one serving’s contribution to that daily reference. It doesn’t tell you what percentage of the oatmeal is sugar. The Total Sugars row has no corresponding percentage because the FDA hasn’t set a Daily Value for total sugars. [FDA Daily Values table](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) · [FDA guide to total sugars](https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label)\n\n## Which cup has less added sugar?\n\nImagine two fruit oatmeals on the shelf. For this exercise, each label describes the same amount of prepared oatmeal, one 240 g cup. Only the sugar lines are shown.\n\n| Per 240 g cup | Oatmeal A | Oatmeal B |\n| --- | ---: | ---: |\n| Total sugars | 16 g | 14 g |\n| Includes added sugars | 4 g | 7 g |\n\nIf you’re comparing **total sugars**, B has 2 grams less per cup. If you’re comparing **added sugars**, A has 3 grams less per cup. Both readings are correct. The two rows answer different shopping questions. When the packages describe different serving sizes, first put them on an equal footing. [How to compare serving sizes](https://www.weightliteracy.org/blog/compare-food-labels-serving-sizes)\n\n## What changes on a jar of honey?\n\nPick up a jar whose only ingredient is honey and the panel can look different. Honey itself is a sweetener. The label on a jar of pure honey can list the **percent Daily Value** for added sugars without displaying a separate gram amount for added sugars. Some labels explain the grams in a footnote. The percentage describes how much a serving of honey contributes when you use it as a sweetener. It doesn’t mean the producer mixed another sugar into the jar. [FDA explanation for honey and other single-ingredient sweeteners](https://www.fda.gov/food/hfp-constituent-updates/fda-issues-final-guidance-regarding-declaration-added-sugars-nutrition-facts-label-honey-maple-syrup)\n",
+      "body_sha256": "bfed54fe9c4397e9acadf89f60d221c84f1655e600995bee4c0ae568759f3fab",
+      "metadata_sha256": "029b7f8022bbd21bdd81ec15074bc6ce673a5fb87efa080b321bc4bb170aa6a6"
     }
   ]
 }

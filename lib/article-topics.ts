@@ -28,6 +28,7 @@ export const articleTopics = [
     description:
       "Make sense of appetite changes, eating well, and protecting muscle.",
     slugs: [
+      "total-sugars-and-added-sugars",
       "compare-food-labels-serving-sizes",
       "what-to-eat-on-glp-1",
       "what-is-food-noise",
